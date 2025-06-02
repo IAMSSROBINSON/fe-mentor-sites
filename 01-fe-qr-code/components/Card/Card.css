@@ -8,7 +8,7 @@
 }
 
 .card-image-container {
-    margin-bottom: var(--margin-l);
+    margin-bottom: var(--margin-xl);
     border-radius: var(--border-radius-m);
     overflow: hidden;
     background-color: var(--bgc-fallback);
@@ -21,7 +21,7 @@
     gap: var(--gap-l);
     text-align: center;
     justify-content: center;
-    margin-bottom: var(--margin-xxxl);
+    margin-bottom: var(--margin-xl);
 }
 
 .card-title {
