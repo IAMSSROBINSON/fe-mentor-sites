@@ -1,0 +1,71 @@
+@import '../../components/Card/Card.css';
+
+:root {
+    font-size: 62.5%;
+
+    /* FONT */
+    --font-stack: Outfit, sans-serif;
+    --font-size-s: 1.5rem;
+    --font-size-l: 2.2rem;
+
+     /* COLORS */
+    --white: hsl(0, 0%, 100%);
+    --slate-300: hsl(212, 45%, 89%);
+    --slate-500: hsl(216, 15%, 48%);
+    --slate-900: hsl(218, 44%, 22%);
+
+    /* BORDER-RADIUS */
+    --border-radius-m: 10px;
+    --border-radius-l: 20px;
+
+    /* MARGIN */
+    --margin-xxl: 2.4rem;
+
+    /* PADDING */
+    --padding-l: 1.6rem;
+
+    /* GAP */
+    --gap-l: 1.6rem;
+
+    /* LINE-HEIGHT */
+    --line-height-s: 1.2;
+    --line-height-l: 1.4;
+    --line-height-xl: 1.5;
+
+    /* LETTER-SPACING */
+    --letter-spacing-s: 0.2px;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    line-height: var(--line-height-xl);
+}
+
+body {
+    background-color: var(--slate-300);;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    font-family: var(--font-stack);
+    padding: var(--padding-l);
+}
+
+img {
+    width: 100%;
+    line-height: 0;
+    display: block;
+    object-fit: cover;
+}
