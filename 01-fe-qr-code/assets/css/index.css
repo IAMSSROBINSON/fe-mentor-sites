@@ -75,4 +75,13 @@ img {
 
 .main-heading, .footer {
     visibility: hidden;
+    text-align: center;
+}
+
+.main-heading {
+    margin-bottom: var(--margin-l);
+}
+
+.footer {
+    margin-top: var(--margin-l);
 }
