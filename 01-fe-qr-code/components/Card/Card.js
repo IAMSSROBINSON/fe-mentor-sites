@@ -3,7 +3,7 @@ export default function Card (title, text, imgSrc) {
     const cardContainer = document.createElement("article");
     cardContainer.classList.add("card-container");
 
-    const cardImageContainer = document.createElement("div");
+    const cardImageContainer = document.createElement("figure");
     cardImageContainer.classList.add("card-image-container");
 
     const cardImage = document.createElement("img");
