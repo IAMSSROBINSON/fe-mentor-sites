@@ -11,6 +11,8 @@
     margin-bottom: var(--margin-l);
     border-radius: var(--border-radius-m);
     overflow: hidden;
+    background-color: var(--bgc-fallback);
+    min-height: 268px;
 }
 
 .card-content-container {
