@@ -17,7 +17,11 @@
     --grey950: hsl(0, 0%, 7%);
 
     /* BORDER-RADIUS */
+    --border-radius-m: 10px;
     --border-radius-l: 20px;
+
+    /* PADDING */
+    --padding-l: 2.4rem;
 }
 
 *,
@@ -65,4 +69,15 @@ img {
     border-radius: var(--border-radius-l);
     box-shadow: 8px 8px 0 0 var(--grey950);
     background-color: var(--white);
+    padding: var(--padding-l);
+}
+
+
+.card-image-container {
+    border-radius: var(--border-radius-m);
+    overflow: hidden;
+}
+
+.card-image {
+    max-height: 200px;
 }
