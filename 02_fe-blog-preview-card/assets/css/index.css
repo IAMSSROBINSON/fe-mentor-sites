@@ -3,6 +3,7 @@
 
     /* FONT */
     --font-stack: "Figtree", sans-serif;
+    --font-size-xs: 1.4rem;
     --font-size-s: 1.6rem;
     --font-weight-m: 500;
     --font-weight-l: 800;
@@ -17,11 +18,17 @@
     --grey950: hsl(0, 0%, 7%);
 
     /* BORDER-RADIUS */
+    --border-radius-s: 4px;
     --border-radius-m: 10px;
     --border-radius-l: 20px;
 
     /* PADDING */
+    --padding-xs: 0.4rem;
+    --padding-s: 1.2rem;
     --padding-l: 2.4rem;
+
+    /* GAP */
+    --gap-l: 2.4rem;
 }
 
 *,
@@ -62,7 +69,6 @@ img {
 
 /* CARD */
 .card-container {
-    position: relative;
     width: 384px;
     height: 522px;
     border: 1px solid var(--grey950);
@@ -70,8 +76,11 @@ img {
     box-shadow: 8px 8px 0 0 var(--grey950);
     background-color: var(--white);
     padding: var(--padding-l);
-}
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-l);
 
+}
 
 .card-image-container {
     border-radius: var(--border-radius-m);
@@ -80,4 +89,38 @@ img {
 
 .card-image {
     max-height: 200px;
+}
+
+.card-content-container {
+
+}
+
+.card-label {
+    font-weight: var(--font-weight-l);
+    font-size: var(--font-size-xs);
+    color: var(--grey950);
+    padding: var(--padding-xs) var(--padding-s);
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-s);
+    width: fit-content;
+}
+
+.card-date {
+
+}
+
+.card-description {
+
+}
+
+.card-avatar-container {
+
+}
+
+.card-avatar-image {
+    max-width: 32px;
+}
+
+.card-avatar-name {
+
 }
