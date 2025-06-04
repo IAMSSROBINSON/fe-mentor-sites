@@ -13,7 +13,7 @@ fe-mentor qr code website challenge submission
 
 - Component Based Architecture
 
-View live site here:  
+## View live site here 
 https://01-fe-qr-code.netlify.app/  
 
 ##### Final Screenshot
