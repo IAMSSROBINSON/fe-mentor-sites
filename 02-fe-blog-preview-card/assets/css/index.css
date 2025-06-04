@@ -70,7 +70,7 @@ img {
 
 /* CARD */
 .card-container {
-  width: 384px;
+  max-width: 384px;
   border: 1px solid var(--grey950);
   border-radius: var(--border-radius-l);
   box-shadow: 8px 8px 0 0 var(--grey950);
@@ -119,10 +119,11 @@ img {
   font-weight: var(--font-weight-m);
 }
 
-.card-title {
-  font-size: var(--font-size-l);
+.card-content-container h1 {
+   font-size: var(--font-size-l);
   font-weight: var(--font-weight-l);
 }
+
 
 .card-description {
   color: var(--grey500);
