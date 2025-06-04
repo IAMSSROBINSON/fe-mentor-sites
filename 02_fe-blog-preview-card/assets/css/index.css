@@ -64,4 +64,5 @@ img {
     border: 1px solid var(--grey950);
     border-radius: var(--border-radius-l);
     box-shadow: 8px 8px 0 0 var(--grey950);
+    background-color: var(--white);
 }
