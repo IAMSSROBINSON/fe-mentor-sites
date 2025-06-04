@@ -81,6 +81,13 @@ img {
     display: flex;
     flex-direction: column;
     gap: var(--gap-l);
+    cursor: pointer;
+
+    &:hover, &:focus, &:active {
+        .card-title {
+            color: var(--primary-color);
+        }
+    }
 }
 
 .card-image-container {
@@ -115,7 +122,6 @@ img {
 .card-title {
     font-size: var(--font-size-l);
     font-weight: var(--font-weight-l);
-    
 }
 
 .card-description {
