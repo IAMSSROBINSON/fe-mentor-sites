@@ -22,6 +22,7 @@
   --border-radius-s: 4px;
   --border-radius-m: 10px;
   --border-radius-l: 20px;
+  --border-radius-50pc: 50%;
 
   /* PADDING */
   --padding-xs: 0.4rem;
@@ -139,6 +140,7 @@ img {
 
 .card-avatar-image {
   max-width: 32px;
+  border-radius: var(--border-radius-50pc);
 }
 
 .card-avatar-name {
