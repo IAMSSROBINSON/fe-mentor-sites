@@ -3,13 +3,19 @@
 
     /* FONT */
     --font-stack: "Figtree", sans-serif;
+    --font-size-s: 1.6rem;
+    --font-weight-m: 500;
+    --font-weight-l: 800;
 
     /* LINE-HEIGHT */
     --line-height-m: 1.6;
 
     /* COLOR */
-    --white: #fafafa;
+    --white: hsl(0, 0%, 100%);
     --black: #212529;
+    --primary-color: hsl(47, 88%, 63%);
+    --grey500: hsl(0, 0%, 42%);
+    --grey950: hsl(0, 0%, 7%);
 }
 
 *,
