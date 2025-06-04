@@ -2,6 +2,17 @@
 
 fe-mentor qr code website challenge submission
 
+## Tools
+
+- HTML
+- CSS
+- JAVASCRIPT
+- Figma
+
+## Methodology
+
+- Component Based Architecture
+
 View live site here:  
 https://01-fe-qr-code.netlify.app/  
 
