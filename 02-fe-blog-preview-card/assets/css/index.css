@@ -147,3 +147,7 @@ img {
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-l);
 }
+
+footer {
+  visibility: hidden;
+}
