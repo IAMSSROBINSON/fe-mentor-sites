@@ -50,3 +50,7 @@ img {
 footer {
     visibility: hidden;
 }
+
+.profile-avatar-image {
+    max-width: 80px;
+}
