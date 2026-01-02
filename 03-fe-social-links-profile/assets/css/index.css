@@ -40,22 +40,6 @@ html {
 
 body {
     height: 100%;
+    background-color: dodgerblue;
 }
 
-<<<<<<< HEAD
-=======
-img {
-    width: 100%;
-    line-height: 0;
-    object-fit: cover;
-    display: block;
-}
-
-footer {
-    visibility: hidden;
-}
-
-.profile-avatar-image {
-    max-width: 80px;
-}
->>>>>>> ec9cdfe9c5e4b32993d8bf488172751a7751e31c
