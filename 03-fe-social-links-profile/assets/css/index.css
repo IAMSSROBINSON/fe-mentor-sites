@@ -123,30 +123,26 @@ img {
 
 /* LIST LINKS */
 .links-container {
-  list-style: none;
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
-.links-container li {
+.links-container a {
   background-color: var(--grey-700);
   padding: calc(var(--padding-24) / 2);
   border-radius: var(--border-radius-8);
-}
-
-.links-container li:not(:last-of-type) {
-  margin-bottom: var(--margin-16);
-}
-
-.links-container a {
   color: inherit;
   text-decoration: none;
   text-align: center;
   font-weight: var(--font-weight-700);
 }
 
-.links-container li:hover {
+.links-container a:not(:last-of-type) {
+  margin-bottom: var(--margin-16);
+}
+
+.links-container a:hover {
   background-color: var(--green);
   color: var(--grey-700);
   cursor: pointer;
