@@ -15,11 +15,29 @@
   /* Font */
   --font-stack: "Inter", sans-serif;
 
+  --font-size-24: 2.4rem;
+  --font-size-14: 1.4rem;
+
   --body-default: 1.4rem;
 
   --font-weight-400: 400;
   --font-weight-600: 600;
   --font-weight-700: 700;
+
+  /* Line-height */
+  --line-height-default: 1.5;
+
+  /* Padding */
+  --padding-24: 2.4rem;
+
+  /* Border Radius */
+  --border-radius-8: 8px;
+  --border-radius-12: 12px;
+
+  /* Margin */
+  --margin-4: 4px;
+  --margin-16: 16px;
+  --margin-24: 24px;
 }
 
 /* General */
@@ -35,52 +53,51 @@
 }
 
 html {
-    height: 100vh;
+  height: 100vh;
 }
 
 body {
   background-color: var(--grey-900);
   color: var(--white);
+  font-size: var(--font-size-14);
   font-family: var(--font-stack);
-  font-size: 14px;
   height: 100%;
-  padding: 24px;
+  padding: var(--padding-24);
+  line-height: var(--line-height-default);
 }
 
 main {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-
 
 /* CARD CONTAINER */
 .card-container {
   width: 100%;
   max-width: 384px;
   background-color: var(--grey-800);
-  padding: 24px;
-  border-radius: 12px;
+  padding: var(--padding-24);
+  border-radius: var(--border-radius-12);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 24px;
   margin: auto;
 }
 
 .item {
-    margin-bottom: 24px;
+  margin-bottom: var(--margin-24);
 }
 
 .profile-name {
-    font-size: 24px;
-    font-weight: var(--font-weight-600);
+  font-size: var(--font-size-24);
+  font-weight: var(--font-weight-600);
 }
 
 .address-details {
-    color: var(--green);
-    font-weight: var(--font-weight-700);
+  color: var(--green);
+  font-weight: var(--font-weight-700);
 }
 
 /* IMAGES */
@@ -100,7 +117,7 @@ img {
 }
 
 .profile-name {
-    margin-bottom: 4px;
+  margin-bottom: var(--margin-4);
 }
 
 /* LIST LINKS */
@@ -112,26 +129,24 @@ img {
 }
 
 .links-container li {
-    background-color: var(--grey-700);
-    padding: 12px;
-    border-radius: 8px;
+  background-color: var(--grey-700);
+  padding: calc(var(--padding-24) / 2);
+  border-radius: var(--border-radius-8);
 }
 
 .links-container li:not(:last-of-type) {
-     margin-bottom: 16px;    
+  margin-bottom: var(--margin-16);
 }
 
 .links-container a {
-    color: inherit;
-    text-decoration: none;
-    text-align: center;
-    line-height: 1.5;
-    font-size: 1.4rem;
-    font-weight: var(--font-weight-700);
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
+  font-weight: var(--font-weight-700);
 }
 
 .links-container li:hover {
-    background-color: var(--green);
-    color: var(--grey-700);
-    cursor: pointer;
+  background-color: var(--green);
+  color: var(--grey-700);
+  cursor: pointer;
 }
