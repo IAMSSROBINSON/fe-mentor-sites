@@ -1,0 +1,44 @@
+:root {
+    font-size: 62.5%;
+
+    /* Variables */
+    --mobile-size: 375px;
+    --desktop-size: 1440px;
+
+    /* Colors */
+    --green: hsl(75, 94%, 57%);
+    --white: hsl(0, 0%, 100%);
+    --grey-700: hsl(0, 0%, 20%);
+    --grey-800: hsl(0, 0%, 12%);
+    --grey-900: hsl(0, 0%, 8%);
+
+    /* Font */
+    --font-stack: 'Inter', sans-serif;
+
+    --body-default: 1.4rem;
+
+    --font-weight-400: 400;
+    --font-weight-600: 600;
+    --font-weight-700: 700;
+   
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100%;
+}
+
