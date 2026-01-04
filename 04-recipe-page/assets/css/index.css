@@ -76,12 +76,10 @@ html {
 body {
   background-color: var(--stone-100);
   color: var(--stone-600);
-  display: grid;
   font-family: var(--font-outfit);
   font-size: var(--font-size-16);
   line-height: var(--line-height-1p5);
   min-height: 100vh;
-  place-items: center;
 }
 
 img {
