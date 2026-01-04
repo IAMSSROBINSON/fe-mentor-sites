@@ -28,22 +28,20 @@
 
   /* margin */
   --margin-8: 0.8rem;
+  --margin-12: 1.2rem;
   --margin-16: 1.6rem;
   --margin-24: 2.4rem;
   --margin-32: 3.2rem;
   --margin-40: 4rem;
 
   /* padding */
-  --padding-12: 1.2rem;
+  --padding-12: 12rem;
   --padding-24: 2.4rem;
-  --padding-32: 3.2rem;
-  --padding-40: 4rem;
-  --padding-76: 7.6rem;
-  --padding-128: 12.8rem;
+  --padding-76: 76rem;
+  --padding-128: 128rem;
 
   /* gap */
   --gap-8: 0.8rem;
-  --gap-8: 3.2rem;
 
   /* border-radius */
   --border-radius-12: 12px;
@@ -97,7 +95,7 @@ img {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  gap: var(--gap-32);
+  gap: 3.2rem;
   max-width: 736px;
   overflow: hidden;
   padding-block: var(--margin-40);
@@ -107,8 +105,8 @@ img {
 /* HERO */
 .hero-image-container {
   background-color: var(--white);
-  margin-inline: calc(- var(--margin-40));
-  margin-top: calc(- var(--margin-40));
+  margin-inline: calc(-1 * var(--margin-40));
+  margin-top: calc(-1 * var(--margin-40));
 }
 
 .hero-title {
@@ -234,8 +232,8 @@ img {
   }
 
   .hero-image-container {
-    padding-inline: var(--padding-40);
     padding-top: var(--padding-40);
+    padding-inline: var(--padding-40);
   }
 
   .hero-image {
