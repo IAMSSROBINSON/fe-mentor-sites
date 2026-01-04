@@ -1,6 +1,6 @@
 # recipe-page
 
-fe-mentor qr code website challenge submission
+fe-mentor recipe-page website challenge submission
 
 ## Tools
 
