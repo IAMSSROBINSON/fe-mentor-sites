@@ -147,3 +147,7 @@ img {
   color: var(--grey-700);
   cursor: pointer;
 }
+
+address {
+  font-style: normal;
+}
