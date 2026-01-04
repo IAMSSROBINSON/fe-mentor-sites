@@ -98,6 +98,7 @@ img {
   overflow: hidden;
   padding-block: var(--margin-40);
   padding-inline: var(--margin-32);
+  margin: 0 auto;
 }
 
 /* HERO */
