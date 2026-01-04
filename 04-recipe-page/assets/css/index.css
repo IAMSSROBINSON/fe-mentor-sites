@@ -172,3 +172,21 @@ img {
     width: 100%;
     border-top: 1px solid var(--stone-150);
 }
+
+.nutrition-text {
+    margin-bottom: var(--margin-24);
+}
+
+.nutrition-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.nutrition-heading {
+    text-align: left;
+    padding-left: 32px;
+}
+
+.nutrition-table td {
+   padding-bottom: 12px;
+}
