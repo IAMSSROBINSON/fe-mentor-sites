@@ -93,7 +93,7 @@ main {
 
 .profile-name {
   font-size: var(--font-size-24);
-  font-weight: var(--font-weight-400);
+  font-weight: var(--font-weight-600);
 }
 
 .address-details {
