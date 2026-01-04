@@ -126,7 +126,7 @@ img {
 }
 
 .hero-text-container {
-    margin-top: var(--margin-40);
+    /* margin-top: var(--margin-8); */
 }
 
 .hero-info {
