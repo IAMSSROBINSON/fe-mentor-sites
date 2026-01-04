@@ -34,10 +34,16 @@
   --margin-40: 4rem;
 
   /* padding */
+  --padding-12: 1.2rem;
   --padding-24: 2.4rem;
+  --padding-32: 3.2rem;
+  --padding-40: 4rem;
+  --padding-76: 7.6rem;
+  --padding-128: 12.8rem;
 
   /* gap */
   --gap-8: 0.8rem;
+  --gap-8: 3.2rem;
 
   /* border-radius */
   --border-radius-12: 12px;
@@ -91,7 +97,7 @@ img {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  gap: 3.2rem;
+  gap: var(--gap-32);
   max-width: 736px;
   overflow: hidden;
   padding-block: var(--margin-40);
@@ -101,8 +107,8 @@ img {
 /* HERO */
 .hero-image-container {
   background-color: var(--white);
-  margin-inline: -40px;
-  margin-top: -40px;
+  margin-inline: calc(- var(--margin-40));
+  margin-top: calc(- var(--margin-40));
 }
 
 .hero-title {
@@ -146,7 +152,7 @@ img {
 }
 
 .preparation-list li {
-  margin-left: 12px;
+  margin-left: var(--margin-12);
 }
 
 .preparation-list strong {
@@ -205,12 +211,9 @@ img {
   width: 100%;
 }
 
-.nutrition-table th {
-}
-
 .nutrition-heading {
   font-weight: var(--font-weight-400);
-  padding-left: 32px;
+  padding-left: var(--padding-32);
   text-align: left;
 }
 
@@ -220,19 +223,19 @@ img {
 }
 
 .nutrition-table td {
-  padding-bottom: 12px;
+  padding-bottom: var(--padding-12);
 }
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
   body {
-    padding-block: 128px;
-    padding-inline: 76px;
+    padding-block: var(--padding-128);
+    padding-inline: var(--padding-76);
   }
 
   .hero-image-container {
-    padding-inline: 40px;
-    padding-top: 40px;
+    padding-inline: var(--padding-40);
+    padding-top: var(--padding-40);
   }
 
   .hero-image {

@@ -10,7 +10,8 @@ fe-mentor recipe-page website challenge submission
 
 ## Methodology
 
-- 
+- Mobile fist
+- Responsive design
 
 ## View live site here 
 https://04-recipe-page.netlify.app/
