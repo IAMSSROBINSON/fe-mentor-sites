@@ -99,7 +99,7 @@ img {
   max-width: 736px;
   overflow: hidden;
   padding-block: var(--margin-40);
-  padding-inline: var(--margin-32);
+  padding-inline: var(--margin-40);
   margin: 0 auto;
 }
 
@@ -107,7 +107,11 @@ img {
 .hero-image-container {
   background-color: var(--white);
   margin-inline: calc(-1 * var(--margin-40));
-  margin-top: calc(-1 * var(--margin-40));
+  margin-top: calc(-1 * var(--margin-40))
+}
+
+.hero-image {
+    max-height: 300px;
 }
 
 .hero-title {
