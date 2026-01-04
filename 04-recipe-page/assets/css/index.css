@@ -41,8 +41,10 @@
 
   /* border-radius */
   --border-radius-12: 12px;
+  --border-radius-24: 24px;
 
   /* colors */
+  --white: hsl(0, 0%, 100%);
   --brown-800: hsl(14, 45%, 36%);
   --rose-800: hsl(332, 51%, 32%);
   --rose-50: hsl(330, 100%, 98%);
@@ -68,10 +70,13 @@ html {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-family: var(--font-outfit);
   font-size: var(--font-size-16);
   line-height: var(--line-height-1p5);
+  background-color: var(--stone-100);
+  display: grid;
+  place-items: center;
 }
 
 img {
@@ -81,18 +86,21 @@ img {
   object-fit: cover;
 }
 
+.hero-image-container {
+    background-color: var(--white);
+    margin-top: -40px;
+    margin-inline: -40px;
+}
+
 .content-wrapper {
-  margin-block: var(--margin-40);
-  margin-inline: var(--margin-32);
+  padding-block: var(--margin-40);
+  padding-inline: var(--margin-32);
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
-}
-
-@media screen and (min-width: 768px) {
-  .content-wrapper {
-    margin-block: var(--margin-40);
-  }
+  background-color: var(--white);
+  overflow: hidden;
+  max-width: 736px;
 }
 
 .hero-title {
@@ -189,4 +197,26 @@ img {
 
 .nutrition-table td {
    padding-bottom: 12px;
+}
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+    body {
+        padding-block: 128px;
+        padding-inline: 76px;
+    }
+
+    .hero-image-container {
+        padding-top : 40px;
+        padding-inline: 40px;
+    }
+
+    .hero-image {
+        border-radius: var(--border-radius-12);
+    }
+
+  .content-wrapper {
+    /* margin-block: var(--margin-40); */
+    border-radius: var(--border-radius-24);
+  }
 }
