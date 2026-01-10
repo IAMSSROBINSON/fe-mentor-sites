@@ -307,6 +307,7 @@ ol li{
     border-radius: var(--border-radius-24);
     max-width: 616px;
     padding-inline: var(--padding-40);
+    margin-bottom: var(--margin-123);
   }
 
   .hero-image-container {
