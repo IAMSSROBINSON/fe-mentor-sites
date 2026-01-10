@@ -291,7 +291,7 @@ ol li{
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-700);
   line-height: var(--line-height-1p5);
-  padding-left: var(--padding-32);
+  padding-right: var(--padding-32);
 }
 
 /* MEDIA QUERIES */
