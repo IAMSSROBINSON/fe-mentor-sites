@@ -211,7 +211,7 @@ body {
   flex-shrink: 0;
   height: 4px;
   margin-left: var(--margin-8);
-  margin-right: var(--margin-16);
+  margin-right: var(--margin-32);
   width: 4px;
 }
 
