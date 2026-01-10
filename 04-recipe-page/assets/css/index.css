@@ -46,6 +46,7 @@
   --padding-12: 1.2rem;
   --padding-23: 2.3rem;
   --padding-24: 2.4rem;
+  --padding-26: 2.6rem;
   --padding-28: 2.8rem;
   --padding-32: 3.2rem;
   --padding-40: 4rem;
@@ -181,6 +182,7 @@ body {
   border-radius: var(--border-radius-12);
   padding: var(--padding-24);
   padding-top: var(--padding-28);
+  padding-bottom: var(--padding-26);
   margin-bottom: var(--margin-32);
 }
 
