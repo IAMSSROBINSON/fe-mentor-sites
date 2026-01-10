@@ -295,11 +295,7 @@ ol li{
 }
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 1080px) {
-  .card-container {
-    max-width: 736px;
-  }
-}
+
 
 @media screen and (min-width: 768px) {
 
@@ -330,5 +326,8 @@ ol li{
 }
 
 
-
-
+@media screen and (min-width: 1080px) {
+  .card-container {
+    max-width: 736px;
+  }
+}
