@@ -281,7 +281,7 @@ ol li{
 
 .nutrition-table th  {
     font-weight: var(--font-weight-400);
-    padding-block: var(--padding-10);
+    padding-block: var(--padding-12);
     padding-left: var(--padding-32);
     text-align: start;
 }
