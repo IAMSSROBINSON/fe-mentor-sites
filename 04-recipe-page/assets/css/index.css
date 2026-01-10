@@ -32,6 +32,7 @@
   --margin-8: 0.8rem;
   --margin-12: 1.2rem;
   --margin-16: 1.6rem;
+  --margin-18: 1.8rem;
   --margin-20: 2rem;
   --margin-24: 2.4rem;
   --margin-32: 3.2rem;
@@ -188,7 +189,7 @@ body {
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-600);
   line-height: var(--line-height-1);
-  margin-bottom: var(--margin-20);
+  margin-bottom: var(--margin-18);
 }
 
 .prep-list {
