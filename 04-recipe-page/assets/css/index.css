@@ -24,10 +24,11 @@
   --font-weight-700: 700;
 
   /* line-height */
-  --line-default: 1;
+  --line-height-1: 1;
   --line-height-1p5: 1.5;
 
   /* margin */
+  --margin-6: 0.6rem;
   --margin-8: 0.8rem;
   --margin-12: 1.2rem;
   --margin-16: 1.6rem;
@@ -48,6 +49,7 @@
   --padding-128: 12.8rem;
 
   /* gap */
+  --gap-4: 0.4rem;
   --gap-8: 0.8rem;
   --gap-32: 3.2rem;
 
@@ -127,7 +129,7 @@ body {
   font-family: var(--font-young-serif);
   font-size: var(--font-size-40);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-default);
+  line-height: var(--line-height-1);
   margin-bottom: var(--margin-12);
 }
 
@@ -150,7 +152,8 @@ body {
   font-family: var(--font-outfit);
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-600);
-  margin-bottom: var(--margin-8);
+  margin-bottom: var(--margin-6);
+  line-height: var(--line-height-1)
 }
 
 .preparation-list li::marker {
@@ -162,7 +165,7 @@ body {
 .preparation-list {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-8);
+  gap: var(--gap-4);
 }
 
 .preparation-list li {
@@ -179,7 +182,7 @@ body {
   font-family: var(--font-young-serif);
   font-size: var(--font-size-28);
   font-weight: var(--font-weight-400);
-  line-height: var(--line-height-default);
+  line-height: var(--line-height-1);
   margin-bottom: var(--margin-24);
 }
 
