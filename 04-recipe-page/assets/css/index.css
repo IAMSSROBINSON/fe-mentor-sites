@@ -35,6 +35,7 @@
   --margin-16: 1.6rem;
   --margin-18: 1.8rem;
   --margin-20: 2rem;
+  --margin-22: 2.2rem;
   --margin-24: 2.4rem;
   --margin-32: 3.2rem;
   --margin-34: 3.4rem;
@@ -235,7 +236,7 @@ body {
   
 }
 
-.ingredients-title, .instructions-title {
+.ingredients-title, .instructions-title, .nutrition-title {
   color: var(--brown-800);
   font-family: var(--font-young-serif);
   font-size: var(--font-size-28);
@@ -292,3 +293,48 @@ ol li{
   font-weight: bold;
   color: var(--brown-800);
 }
+
+/* NUTRITION */
+.nutrition-container {
+
+}
+.nutrition-title {
+
+}
+
+.nutrition-table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nutrition-table tr  {
+    border: none;
+
+}
+
+.nutrition-table tr  {
+    border-bottom: 1px solid var(--stone-150);
+}
+
+
+.nutrition-table th  {
+    text-align: start;
+    padding-left: var(--padding-32);
+    font-weight: var(--font-weight-400);
+}
+
+.nutrition-text {
+  margin-bottom: var(--margin-24);
+}
+
+.nutrition-table td {
+  color: var(--brown-800);
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-700);
+  line-height: var(--line-height-1p5);
+}
+
+
+
+
