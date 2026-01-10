@@ -37,6 +37,7 @@
 
   /* padding */
   --padding-12: 1.2rem;
+  --padding-23: 2.3rem;
   --padding-24: 2.4rem;
   --padding-32: 3.2rem;
   --padding-40: 4rem;
@@ -138,7 +139,10 @@ body {
 .preparation-container {
   background-color: var(--rose-50);
   border-radius: var(--border-radius-12);
-  padding: var(--padding-24);
+  padding-top: var(--padding-23);
+  padding-bottom: var(--padding-24);
+  padding-inline: var(--padding-24);
+  
 }
 
 .preparation-title {
@@ -146,7 +150,7 @@ body {
   font-family: var(--font-outfit);
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-600);
-  margin-bottom: var(--margin-16);
+  margin-bottom: var(--margin-8);
 }
 
 .preparation-list li::marker {
