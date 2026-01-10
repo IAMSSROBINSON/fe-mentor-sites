@@ -127,7 +127,7 @@ body {
   font-size: var(--font-size-40);
   font-weight: var(--font-weight-400);
   line-height: var(--line-height-default);
-  margin-bottom: var(--margin-8);
+  margin-bottom: var(--margin-12);
 }
 
 .hero-description {
