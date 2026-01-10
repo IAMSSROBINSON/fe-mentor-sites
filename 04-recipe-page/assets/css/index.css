@@ -113,47 +113,46 @@ body {
 /* HERO */
 .hero-image-container {
   background-color: var(--stone-600);
-  margin-top: calc(-1 * var(--margin-40));
-  margin-inline: calc(-1 * var(--margin-32));
   margin-bottom: var(--margin-40);
+  margin-inline: calc(-1 * var(--margin-32));
+  margin-top: calc(-1 * var(--margin-40));
 }
 
 /* INTRO */
 .intro-container {
-
+  margin-bottom: var(--margin-32);
 }
 
 .intro-title {
+  color: var(--stone-900);
   font-family: var(--font-young-serif);
   font-size: var(--font-size-36);
   font-weight: var(--font-weight-400);
-  color: var(--stone-900);
   line-height: var(--line-height-1);
   margin-bottom: var(--margin-24);
-
 }
 
 .intro-text {
+  color: var(--stone-600);
   font-family: var(--font-outfit);
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-400);
-  color: var(--stone-600);
   line-height: var(--line-height-1p5);
 }
 
 @media screen and (min-width: 768px) {
   .card-container {
-    max-width: 616px;
-    width: 100%;
-    margin: var(--margin-123) auto;
     border-radius: var(--border-radius-24);
+    margin: var(--margin-123) auto;
+    max-width: 616px;
     padding-inline: var(--padding-40);
+    width: 100%;
   }
 
   .hero-image-container {
-    margin-top: 0;
-    margin-inline: 0;
     border-radius: var(--border-radius-12);
+    margin-inline: 0;
+    margin-top: 0;
     overflow: hidden;
   }
 
@@ -170,4 +169,43 @@ body {
   .card-container {
     max-width: 736px;
   }
+}
+
+/* PREPARATION */
+.prep-container {
+  background-color: var(--rose-50);
+  border-radius: var(--border-radius-12);
+  padding: var(--padding-24);
+}
+
+.prep-title {
+  color: var(--rose-800);
+}
+
+.prep-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+
+.prep-list li {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+
+.prep-list li::before {
+  background-color: var(--rose-800);
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  height: 4px;
+  margin-left: var(--margin-8);
+  margin-right: var(--margin-16);
+  width: 4px;
+}
+
+.prep-list strong {
+  font-weight: var(--font-weight-700);
 }
