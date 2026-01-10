@@ -196,6 +196,8 @@ body {
 .prep-list li {
   align-items: center;
   display: flex;
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-1p5);
   list-style: none;
 }
 
