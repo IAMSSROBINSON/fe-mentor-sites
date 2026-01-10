@@ -180,6 +180,11 @@ body {
 
 .prep-title {
   color: var(--rose-800);
+  font-family: var(--font-outfit);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-1);
+  margin-bottom: var(--margin-16);
 }
 
 .prep-list {
