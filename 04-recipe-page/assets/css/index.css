@@ -38,6 +38,7 @@
   --margin-22: 2.2rem;
   --margin-24: 2.4rem;
   --margin-30: 3rem;
+  --margin-31: 3.1rem;
   --margin-32: 3.2rem;
   --margin-34: 3.4rem;
   --margin-40: 4rem;
@@ -274,7 +275,7 @@ body {
 
 /* RULE */
 .rule {
-  margin-block: var(--margin-30);
+  margin-block: var(--margin-32);
   border: 1px solid var(--stone-150);
   width: 100%;
 }
