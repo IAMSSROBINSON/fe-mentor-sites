@@ -141,9 +141,10 @@ body {
   line-height: var(--line-height-1p5);
 }
 
-@media screen and (min-width: 785px) {
+@media screen and (min-width: 768px) {
   .card-container {
     max-width: 616px;
+    width: 100%;
     margin: var(--margin-122) auto;
     border-radius: var(--border-radius-24);
     padding-inline: var(--padding-40);
@@ -158,5 +159,11 @@ body {
 
   .hero-image {
     height: 300px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .card-container {
+    max-width: 736px;
   }
 }
