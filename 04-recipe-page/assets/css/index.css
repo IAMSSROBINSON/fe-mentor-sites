@@ -30,6 +30,7 @@
   /* margin */
   --margin-6: 0.6rem;
   --margin-8: 0.8rem;
+  --margin-10: 1rem;
   --margin-12: 1.2rem;
   --margin-16: 1.6rem;
   --margin-18: 1.8rem;
@@ -189,7 +190,7 @@ body {
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-600);
   line-height: var(--line-height-1);
-  margin-bottom: var(--margin-18);
+  margin-bottom: var(--margin-16);
 }
 
 .prep-list {
@@ -213,7 +214,7 @@ body {
   display: inline-block;
   flex-shrink: 0;
   height: 4px;
-  margin-left: var(--margin-8);
+  margin-left: var(--margin-10);
   margin-right: var(--margin-32);
   width: 4px;
 }
