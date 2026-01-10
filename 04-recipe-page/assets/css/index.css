@@ -304,7 +304,7 @@ ol li{
 @media screen and (min-width: 768px) {
 
   body {
-    padding: var(--margin-123);
+    padding-top: var(--padding-123);
   }
 
   .card-container {
