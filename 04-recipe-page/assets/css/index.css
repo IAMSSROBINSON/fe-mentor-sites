@@ -48,6 +48,7 @@
 
   /* padding */
   --padding-8: 0.8rem;
+  --padding-10: 1rem;
   --padding-12: 1.2rem;
   --padding-16: 1.6rem;
   --padding-22: 2.2rem;
@@ -310,14 +311,13 @@ ol li{
 
 .nutrition-table tr:not(:last-of-type)  {
     border-bottom: 1px solid var(--stone-150);
-
 }
 
 .nutrition-table th  {
-    text-align: start;
-    padding-left: var(--padding-32);
     font-weight: var(--font-weight-400);
-    padding-block: var(--padding-8);
+    padding-block: var(--padding-10);
+    padding-left: var(--padding-32);
+    text-align: start;
 }
 
 .nutrition-table td {
@@ -325,6 +325,7 @@ ol li{
   font-size: var(--font-size-16);
   font-weight: var(--font-weight-700);
   line-height: var(--line-height-1p5);
+  padding-left: calc(-1 *  var(--padding-32));
 }
 
 
