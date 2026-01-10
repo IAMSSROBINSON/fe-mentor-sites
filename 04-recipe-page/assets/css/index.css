@@ -37,6 +37,7 @@
   --margin-20: 2rem;
   --margin-22: 2.2rem;
   --margin-24: 2.4rem;
+  --margin-30: 3rem;
   --margin-32: 3.2rem;
   --margin-34: 3.4rem;
   --margin-40: 4rem;
@@ -273,7 +274,7 @@ body {
 
 /* RULE */
 .rule {
-  margin-block: var(--margin-32);
+  margin-block: var(--margin-30);
   border: 1px solid var(--stone-150);
   width: 100%;
 }
@@ -296,7 +297,7 @@ ol li{
 
 /* NUTRITION */ 
 .nutrition-text {
-  margin-bottom: var(--margin-24);
+  margin-bottom: var(--margin-20);
 }
 
 .nutrition-table {
@@ -304,8 +305,6 @@ ol li{
   margin: 0 auto;
   width: 100%;
 }
-
-
 
 .nutrition-table tr:not(:last-of-type)  {
     border-bottom: 1px solid var(--stone-150);
