@@ -275,7 +275,7 @@ body {
 
 /* RULE */
 .rule {
-  margin-block: var(--margin-32);
+  margin-block: var(--margin-30);
   border: 1px solid var(--stone-150);
   width: 100%;
 }
@@ -316,7 +316,7 @@ ol li{
     text-align: start;
     padding-left: var(--padding-32);
     font-weight: var(--font-weight-400);
-    padding-block: var(--padding-12);
+    padding-block: var(--padding-4);
 }
 
 .nutrition-table td {
