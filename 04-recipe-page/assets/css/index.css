@@ -246,6 +246,8 @@ body {
   list-style: none;
   display: flex;
   align-items: center;
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-1p5);
 }
 
 .ingredients-list li::before {
