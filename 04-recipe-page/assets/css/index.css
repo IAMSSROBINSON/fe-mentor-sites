@@ -35,6 +35,8 @@
   --margin-24: 2.4rem;
   --margin-32: 3.2rem;
   --margin-40: 4rem;
+  --margin-122: 12.2rem;
+  --margin-124: 12.4rem;
   --margin-128: 12.8rem;
 
   /* padding */
@@ -142,7 +144,7 @@ body {
 @media screen and (min-width: 785px) {
   .card-container {
     max-width: 616px;
-    margin: var(--margin-128) auto;
+    margin: var(--margin-122) auto;
     border-radius: var(--border-radius-24);
     padding-inline: var(--padding-40);
   }
