@@ -41,6 +41,7 @@
   --padding-32: 3.2rem;
   --padding-40: 4rem;
   --padding-76: 7.6rem;
+  --padding-126: 12.6rem;
   --padding-128: 12.8rem;
 
   /* gap */
@@ -62,6 +63,7 @@
   --stone-900: hsl(24, 5%, 18%);
 }
 
+/* GENERAL */
 *,
 *::before,
 *::after {
@@ -77,6 +79,13 @@ html {
   height: 100%;
 }
 
+img {
+  display: block;
+  line-height: 0;
+  object-fit: cover;
+  width: 100%;
+}
+
 body {
   background-color: var(--stone-100);
   color: var(--stone-600);
@@ -86,13 +95,7 @@ body {
   min-height: 100vh;
 }
 
-img {
-  display: block;
-  line-height: 0;
-  object-fit: cover;
-  width: 100%;
-}
-
+/* INSIDE MAIN CONTAINER */
 .content-wrapper {
   background-color: var(--white);
   display: flex;
@@ -127,10 +130,12 @@ img {
 
 .hero-text-container {
     /* margin-top: var(--margin-8); */
+    /* background-color: dodgerblue; */
 }
 
-.hero-info {
+.hero-description {
   color: var(--stone-600);
+  background-color: dodgerblue;
 }
 
 /* PREPARATION */
@@ -238,7 +243,7 @@ img {
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
   body {
-    padding-block: var(--padding-128);
+    padding-block: var(--padding-126);
     padding-inline: var(--padding-76);
   }
 
@@ -254,4 +259,10 @@ img {
   .content-wrapper {
     border-radius: var(--border-radius-24);
   }
+}
+
+@media screen and (max-width: 375px) {
+  .content-wrapper {
+  padding-inline: var(--margin-32);
+}
 }
