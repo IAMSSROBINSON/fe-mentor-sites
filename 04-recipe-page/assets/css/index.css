@@ -128,14 +128,8 @@ body {
   margin-bottom: var(--margin-8);
 }
 
-.hero-text-container {
-    /* margin-top: var(--margin-8); */
-    /* background-color: dodgerblue; */
-}
-
 .hero-description {
   color: var(--stone-600);
-  background-color: dodgerblue;
 }
 
 /* PREPARATION */
