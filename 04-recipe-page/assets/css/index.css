@@ -243,7 +243,7 @@ body {
 
 /* RULE */
 .rule {
-  margin-block: var(--margin-32);
+  margin-block: var(--margin-31);
   border: 1px solid var(--stone-150);
   width: 100%;
 }
