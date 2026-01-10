@@ -114,7 +114,6 @@ body {
   margin-top: calc(-1 * var(--margin-40));
   margin-inline: calc(-1 * var(--margin-32));
   margin-bottom: var(--margin-40);
-
 }
 
 /* INTRO */
@@ -153,6 +152,9 @@ body {
     margin-inline: 0;
     border-radius: var(--border-radius-12);
     overflow: hidden;
+  }
 
+  .hero-image {
+    height: 300px;
   }
 }
