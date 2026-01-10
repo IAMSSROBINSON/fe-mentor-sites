@@ -47,6 +47,7 @@
   --margin-128: 12.8rem;
 
   /* padding */
+  --padding-8: 0.8rem;
   --padding-12: 1.2rem;
   --padding-16: 1.6rem;
   --padding-22: 2.2rem;
@@ -316,7 +317,7 @@ ol li{
     text-align: start;
     padding-left: var(--padding-32);
     font-weight: var(--font-weight-400);
-    padding-block: var(--padding-4);
+    padding-block: var(--padding-8);
 }
 
 .nutrition-table td {
