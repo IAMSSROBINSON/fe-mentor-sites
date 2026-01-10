@@ -41,6 +41,7 @@
   --padding-32: 3.2rem;
   --padding-40: 4rem;
   --padding-76: 7.6rem;
+  --padding-124: 12.4rem;
   --padding-126: 12.6rem;
   --padding-128: 12.8rem;
 
@@ -237,7 +238,7 @@ body {
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
   body {
-    padding-block: var(--padding-126);
+    padding-block: var(--padding-124);
     padding-inline: var(--padding-76);
   }
 
