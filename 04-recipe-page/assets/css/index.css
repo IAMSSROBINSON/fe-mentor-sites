@@ -175,7 +175,7 @@ body {
 .prep-container {
   background-color: var(--rose-50);
   border-radius: var(--border-radius-12);
-  padding: var(--padding-24);
+  padding: var(--padding-28) var(--padding-24) var(--padding-24) var(--padding-24);
 }
 
 .prep-title {
