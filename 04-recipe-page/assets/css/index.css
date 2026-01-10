@@ -290,16 +290,13 @@ ol li{
 }
 
 .instructions-list li::marker {
-  font-weight: bold;
+  font-weight: var(--font-weight-700);
   color: var(--brown-800);
 }
 
-/* NUTRITION */
-.nutrition-container {
-
-}
-.nutrition-title {
-
+/* NUTRITION */ 
+.nutrition-text {
+  margin-bottom: var(--margin-24);
 }
 
 .nutrition-table {
@@ -308,24 +305,18 @@ ol li{
   width: 100%;
 }
 
-.nutrition-table tr  {
-    border: none;
 
-}
 
-.nutrition-table tr  {
+.nutrition-table tr:not(:last-of-type)  {
     border-bottom: 1px solid var(--stone-150);
-}
 
+}
 
 .nutrition-table th  {
     text-align: start;
     padding-left: var(--padding-32);
     font-weight: var(--font-weight-400);
-}
-
-.nutrition-text {
-  margin-bottom: var(--margin-24);
+    padding-block: var(--padding-12);
 }
 
 .nutrition-table td {
@@ -334,6 +325,10 @@ ol li{
   font-weight: var(--font-weight-700);
   line-height: var(--line-height-1p5);
 }
+
+
+
+
 
 
 
