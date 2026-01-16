@@ -103,6 +103,7 @@ main {
     border-radius: var(--border-radius-8);
     overflow: hidden;
     background-color: var(--color-white);
+    width: 100%;
 }
 
 /* card content */
@@ -111,6 +112,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--gap-24);
+    justify-content: center;
 }
 
 .card-label {
@@ -176,6 +178,7 @@ main {
     justify-content: center;
     padding: var(--padding-16);
     border: none;
+    margin: 0;
 }
 
 .card-button:hover {
