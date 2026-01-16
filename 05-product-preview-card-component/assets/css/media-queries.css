@@ -1,0 +1,16 @@
+@media screen and (min-width: 600px) {
+    main {
+        padding-top: initial;
+        padding-bottom: initial;
+        display: grid;
+        place-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .card-container {
+        /* display: flex; */
+        max-width: 600px;
+        column-count: 2;
+    }
+
+}
