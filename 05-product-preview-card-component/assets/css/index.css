@@ -92,94 +92,94 @@ img {
 }
 
 main {
-    padding-top: 80px;
-    padding-bottom: 172px;
     height: 100%;
+    padding-bottom: 172px;
+    padding-top: 80px;
     width: 100%;
 }
 
 /* card */
 .card-container {
-    border-radius: var(--border-radius-8);
-    overflow: hidden;
     background-color: var(--color-white);
-    width: 100%;
+    border-radius: var(--border-radius-8);
     margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
 }
 
 /* card content */
 .card-content-container {
-    padding: var(--padding-32);
     display: flex;
     flex-direction: column;
     gap: var(--gap-24);
     justify-content: center;
+    padding: var(--padding-32);
 }
 
 .card-label {
+    color: var(--color-grey);
     font-family: var(--font-family-montserrat);
     font-size: var(--font-size-12);
     font-weight: var(--font-weight-500);
-    line-height: var(--line-height-1p2);
     letter-spacing: var(--letter-spacing-5);
+    line-height: var(--line-height-1p2);
     text-transform: uppercase;
-    color: var(--color-grey);
 }
 
 .card-title {
+    color: var(--color-black);
     font-family: var(--font-family-fraunces);
     font-size: var(--font-size-32);
     font-weight: var(--font-weight-700);
     line-height: var(--line-height-1p);
-    color: var(--color-black);
 }
 
 .card-description {
+    color: var(--color-grey);
     font-family: var(--font-family-montserrat);
     font-size: var(--font-size-14);
     font-weight: var(--font-weight-500);
     line-height: var(--line-height-1p6);
-    color: var(--color-grey);
 }
 
 .card-price-container {
-    display: flex;
     align-items: center;
+    display: flex;
     gap: calc(var(--gap-8) * 2);
 }
 
 .card-price {
+    color: var(--color-green-500);
     font-family: var(--font-family-fraunces);
     font-size: var(--font-size-32);
     font-weight: var(--font-weight-700);
     line-height: var(--line-height-1p);
-    color: var(--color-green-500);
 }
 
 .card-price-old {
+    color: var(--color-grey);
     font-family: var(--font-family-montserrat);
     font-size: var(--font-size-13);
     font-weight: var(--font-weight-500);
     line-height: var(--line-height-1p2);
-    color: var(--color-grey);
     text-decoration: line-through;
 }
 
 .cart-icon {
-    width: 18px;
     height: 18px;
+    width: 18px;
 }
 
 .card-button {
     background-color: var(--color-green-500);
     border-radius: var(--border-radius-8);
+    border: none;
     color: var(--color-white);
     display: flex;
     gap: var(--gap-8);
     justify-content: center;
-    padding: var(--padding-16);
-    border: none;
     margin: 0;
+    padding: var(--padding-16);
 }
 
 .card-button:hover {
