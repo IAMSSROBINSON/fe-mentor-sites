@@ -10,6 +10,13 @@
     .card-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
         max-width: 600px;
+    }
+    .card-image-container {
+        grid-column: 1/2;
+    }
+     .card-content-container {
+        grid-column: 2/-1;
     }
 }
