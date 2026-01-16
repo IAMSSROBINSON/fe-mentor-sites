@@ -19,4 +19,11 @@
      .card-content-container {
         grid-column: 2/-1;
     }
+    .card-description {
+     margin-bottom: var(--margin-32);
+    }
+    .card-price-container {
+    margin-bottom: var(--margin-32);
+}
+
 }
