@@ -118,7 +118,8 @@ main {
 .card-image-container {
     width: 100%;
     background-color: var(--color-green-700);
-    height: auto;
+    max-height: 456px;
+    height: 100%;
 }
 
 .card-label {
