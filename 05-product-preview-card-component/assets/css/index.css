@@ -36,7 +36,7 @@
     --line-height-1p6: 1.6;
     --line-height-1p2: 1.2;
     --line-height-1p1: 1.1;
-    --line-height-1p: 1;
+    --line-height-1p: 100%;
 
     /* margin */
     --margin-40: 4rem;
@@ -58,8 +58,8 @@
     --border-radius-8: 8px;
 
     /* gap */
-    --gap-24: 24px;
-    --gap-8: 8px;
+    --gap-24: 2.4rem;
+    --gap-8: 0.9rem;
 }
 
 *,
