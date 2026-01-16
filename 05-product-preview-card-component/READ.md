@@ -19,4 +19,4 @@ https://04-product-preview-card-component.netlify.app/
 
 
 ##### Final Screenshot
-![Recipe-page screen shot](./assets/design/01_screen_shot_render.png)
+![Product-preview-card-component screen shot](./assets/design/01_screen_shot_render.png)
