@@ -8,9 +8,8 @@
         width: 100vw;
     }
     .card-container {
-        /* display: flex; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         max-width: 600px;
-        column-count: 2;
     }
-
 }

@@ -168,7 +168,7 @@ main {
 }
 
 .card-button {
-    background-color: var(--color-green-700);
+    background-color: var(--color-green-500);
     border-radius: var(--border-radius-8);
     color: var(--color-white);
     display: flex;
@@ -176,6 +176,11 @@ main {
     justify-content: center;
     padding: var(--padding-16);
     border: none;
+}
+
+.card-button:hover {
+    background-color: var(--color-green-700);
+    cursor: pointer;
 }
 
 .card-button-text {
