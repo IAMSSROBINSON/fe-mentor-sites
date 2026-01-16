@@ -116,7 +116,9 @@ main {
 }
 
 .card-image-container {
-  background-color: var(--color-green-700);
+    width: 100%;
+    background-color: var(--color-green-700);
+    height: auto;
 }
 
 .card-label {
