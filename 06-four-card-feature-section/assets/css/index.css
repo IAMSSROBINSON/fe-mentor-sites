@@ -2,6 +2,42 @@
     font-size: 62.5%;
 
     /* VARIABLES */
+
+    /* colors */
+    --grey-500: #4D4F62;
+    --grey-400: #6A7178;
+    --red: #EA5454;
+    --cyan: #44D3D2;
+    --blue: #549EF2;
+    --orange: #FCAE4A;
+
+    /* font */
+    --font-poppins: "Poppins", sans-serif;
+
+    --font-size-36: 3.6rem;
+    --font-size-20: 2rem;
+    --font-size-15: 1.5rem;
+    --font-size-13: 1.3rem;
+
+    --line-height-1p6: 1.6;
+    --line-height-1p4: 1.4;
+    --line-height-1p35: 1.35;
+
+    --letter-spacing-0: 0;
+    --letter-spacing-0p25: 0.25px;
+
+    /* spacing */
+    --margin-40: 4rem; 
+    --margin-32: 3.2rem; 
+    --margin-24: 2.4rem; 
+    --margin-16: 1.6rem; 
+    --margin-8: 0.8rem; 
+
+    --padding-40: 4rem; 
+    --padding-32: 3.2rem; 
+    --padding-24: 2.4rem; 
+    --padding-16: 1.6rem; 
+    --padding-8: 0.8rem; 
 }
 
 *,
@@ -28,5 +64,5 @@ img {
 
 body {
     min-height: 100vh;
-    background-color: #ffd43b;
+
 }
