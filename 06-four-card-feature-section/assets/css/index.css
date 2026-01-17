@@ -146,6 +146,18 @@ body {
     border-top: 4px solid var(--cyan);
 }
 
+.teambuilder {
+    border-top: 4px solid var(--red);
+}
+
+.karma {
+    border-top: 4px solid var(--orange);
+}
+
+.calculator {
+    border-top: 4px solid var(--blue);
+}
+
 .card-image-container {
     text-align: right;
     margin-bottom: var(--margin-15);
