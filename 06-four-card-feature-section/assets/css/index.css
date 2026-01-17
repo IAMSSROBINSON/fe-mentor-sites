@@ -4,8 +4,8 @@
     /* VARIABLES */
 
     /* colors */
-    --grey-500: hsl(234, 12%, 34%)
-    --grey-400: hsl(212, 6%, 44%)
+    --grey-500: hsl(234, 12%, 34%);
+    --grey-400: hsl(212, 6%, 44%);
     --red: hsl(0, 78%, 62%);
     --cyan: hsl(180, 62%, 55%);
     --blue: hsl(212, 86%, 64%);
@@ -16,6 +16,7 @@
     --font-poppins: "Poppins", sans-serif;
 
     --font-size-36: 3.6rem;
+    --font-size-24: 2.4rem;
     --font-size-20: 2rem;
     --font-size-15: 1.5rem;
     --font-size-13: 1.3rem;
@@ -29,20 +30,26 @@
     --line-height-1p35: 1.35;
 
     --letter-spacing-0: 0;
+    --letter-spacing-0p1: 0.1px;
     --letter-spacing-0p25: 0.25px;
 
     /* spacing */
+    --margin-60: 6rem; 
     --margin-40: 4rem; 
     --margin-32: 3.2rem; 
     --margin-24: 2.4rem; 
     --margin-16: 1.6rem; 
     --margin-8: 0.8rem; 
 
+    --padding-56: 5.6rem; 
     --padding-40: 4rem; 
     --padding-32: 3.2rem; 
+    --padding-30: 3rem; 
     --padding-24: 2.4rem; 
     --padding-16: 1.6rem; 
     --padding-8: 0.8rem; 
+
+    --gap-16: 1.6rem;
 }
 
 *,
@@ -71,4 +78,33 @@ body {
     min-height: 100vh;
     font-family: var(--font-poppins);
     font-size: var(--font-size-15);
+    padding-block: var(--padding-56);
+    padding-inline: var(--padding-30);
+    background-color: var(--white);
+}
+
+
+/* header */
+.header-container {
+    text-align: center;
+    color: var(--grey-500);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-16);
+    line-height: var(--line-height-1p4);
+    margin-bottom: var(--margin-60);
+}
+
+.title {
+    font-size: clamp(var(--font-size-24), 0.8rem + 1vw, var(--font-size-36));
+    font-weight: var(--font-weight-600);
+    letter-spacing: var(--letter-spacing-0p25);
+}
+
+.title-thin {
+    font-weight: var(--font-weight-400);
+}
+
+.description {
+    letter-spacing: var(--letter-spacing-0p1);
 }
