@@ -32,6 +32,7 @@
     --letter-spacing-0: 0;
     --letter-spacing-0p1: 0.1px;
     --letter-spacing-0p25: 0.25px;
+    --letter-spacing-0p09: 0.09px;
 
     /* spacing */
     --margin-60: 6rem; 
@@ -126,10 +127,19 @@ body {
 
 .card-title {
     margin-bottom: var(--margin-6);
+    font-size: var(--font-size-20);
+    font-weight: var(--font-weight-600);
+    letter-spacing: var(--letter-spacing-0);
+    line-height: var(--line-height-1p35);
+
 }
 
 .card-description {
     margin-bottom: var(--margin-32);
+    font-size: var(--font-size-13);
+    font-weight: var(--font-weight-200);
+    letter-spacing: var(--letter-spacing-0p09);
+    line-height: var(--line-height-1p6);
 }
 
 .supervisor {
