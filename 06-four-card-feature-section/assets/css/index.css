@@ -52,7 +52,8 @@
     --padding-16: 1.6rem; 
     --padding-8: 0.8rem; 
 
-    --gap-16: 1.6rem;
+    --gap-32: 32px;
+    --gap-16: 16px;
 
     --border-radius-8: 8px;
 }
@@ -116,6 +117,12 @@ body {
 
 
 /* cards */
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-32);
+}
+
 .card {
     overflow: hidden;
     border-radius: var(--border-radius-8);
