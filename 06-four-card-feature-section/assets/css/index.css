@@ -130,6 +130,7 @@ body {
     box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 50%);
     display: flex;
     flex-direction: column;
+    max-width: 314px;
 }
 
 .card-title {
