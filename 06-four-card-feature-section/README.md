@@ -15,7 +15,7 @@ fe-mentor four-card-feature-section website challenge submission
 - Fluid layout
 
 ## View live site here 
-https://04-four-card-feature-section.netlify.app/
+https://06-four-card-feature-section.netlify.app/
 
 
 ##### Final Screenshot
