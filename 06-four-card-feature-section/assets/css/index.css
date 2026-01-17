@@ -120,7 +120,7 @@ body {
   color: var(--grey-400);
   letter-spacing: var(--letter-spacing-0p1);
   margin: 0 auto;
-  max-inline-size: 55ch;
+  max-inline-size: 58ch;
 }
 
 /* cards */
