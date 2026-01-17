@@ -3,9 +3,15 @@
         padding-block: var(--padding-80);
         padding-inline: var(--padding-54);
     }
+
     .header-container {
         margin-bottom: var(--margin-74);
     }
+
+    .title {
+    font-size: var(--font-size-36);
+    }
+    
     .cards-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -46,7 +52,8 @@
 
 @media screen and (min-width: 880px) {
      body {
-        padding-block: var(--padding-102);
+        padding-top: var(--padding-102);
+        padding-bottom: var(--padding-163);
     }
 
     .cards-container {
