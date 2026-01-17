@@ -4,12 +4,13 @@
     /* VARIABLES */
 
     /* colors */
-    --grey-500: #4D4F62;
-    --grey-400: #6A7178;
-    --red: #EA5454;
-    --cyan: #44D3D2;
-    --blue: #549EF2;
-    --orange: #FCAE4A;
+    --grey-500: hsl(234, 12%, 34%)
+    --grey-400: hsl(212, 6%, 44%)
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --blue: hsl(212, 86%, 64%);
+    --orange: hsl(34, 97%, 64%);
+    --white: hsl(0, 0%, 100%);
 
     /* font */
     --font-poppins: "Poppins", sans-serif;
@@ -18,6 +19,10 @@
     --font-size-20: 2rem;
     --font-size-15: 1.5rem;
     --font-size-13: 1.3rem;
+
+    --font-weight-200: 200;
+    --font-weight-400: 400;
+    --font-weight-600: 600;
 
     --line-height-1p6: 1.6;
     --line-height-1p4: 1.4;
@@ -64,5 +69,6 @@ img {
 
 body {
     min-height: 100vh;
-
+    font-family: var(--font-poppins);
+    font-size: var(--font-size-15);
 }
