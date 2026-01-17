@@ -1,92 +1,89 @@
 @media screen and (min-width: 600px) {
-    body {
-        padding-block: var(--padding-80);
-        padding-inline: var(--padding-54);
-    }
+  body {
+    padding-block: var(--padding-80);
+    padding-inline: var(--padding-54);
+  }
 
-    .header-container {
-        margin-bottom: var(--margin-74);
-    }
+  .header-container {
+    margin-bottom: var(--margin-74);
+  }
 
-    .title {
+  .title {
     font-size: var(--font-size-36);
-    }
-    
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: auto auto auto;
-        gap: var(--gap-32);
-        max-width: 660px;
-        margin: 0 auto;
-    }
+  }
 
-    .card {
-        justify-self: center;
-        max-width: 314px;
-    }
+  .cards-container {
+    display: grid;
+    gap: var(--gap-32);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto auto auto;
+    margin: 0 auto;
+    max-width: 660px;
+  }
 
-    .teambuilder {
-        grid-row: 1/2;
-        grid-column: 1/-1;
-    }
+  .card {
+    justify-self: center;
+    max-width: 314px;
+  }
 
-    .supervisor {
-        grid-row: 2/3;
-        grid-column: 1/2;
-        
-    }
+  .teambuilder {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+  }
 
-    .karma {
-        grid-row: 2/3;
-        grid-column: 2/3;
-    }
+  .supervisor {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
 
-    .calculator {
-        grid-row: 3/-1;
-        grid-column: 1/-1;
-        justify-self: center;
-    }
+  .karma {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  .calculator {
+    grid-column: 1/-1;
+    grid-row: 3/-1;
+    justify-self: center;
+  }
 }
 
-
 @media screen and (min-width: 880px) {
-     body {
-        padding-top: var(--padding-102);
-        padding-bottom: var(--padding-163);
-    }
+  body {
+    padding-bottom: var(--padding-163);
+    padding-top: var(--padding-102);
+  }
 
-    .cards-container {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        grid-template-rows: auto auto;
-        max-width: 1114px;
-    }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto auto;
+    max-width: 1114px;
+  }
 
-    .card {
-        max-width: 350px;
- 
-    }
+  .card {
+    max-width: 350px;
+  }
 
-    .supervisor {
-        grid-row: 1/-1;
-        grid-column: 1/2;
-        align-self: center;
-    }
+  .supervisor {
+    align-self: center;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+  }
 
-    .teambuilder {
-        grid-row: 1/2;
-        grid-column: 2/3;
-    }
+  .teambuilder {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
 
-    .karma {
-        grid-row: 2/3;
-        grid-column: 2/3;
-    }
+  .karma {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
 
-    .calculator {
-        grid-row: 1/-1;
-        grid-column: 3/4;
-        align-self: center;
-    }
+  .calculator {
+    align-self: center;
+    grid-column: 3/4;
+    grid-row: 1/-1;
+  }
 }
