@@ -11,6 +11,7 @@
   --blue: hsl(212, 86%, 64%);
   --orange: hsl(34, 97%, 64%);
   --white: hsl(0, 0%, 100%);
+  --bg-white: #FAFAFA;
 
   /* font */
   --font-poppins: "Poppins", sans-serif;
@@ -86,7 +87,7 @@ img {
 }
 
 body {
-  background-color: var(--white);
+  background-color: var(--bg-white);
   font-family: var(--font-poppins);
   font-size: var(--font-size-15);
   min-height: 100vh;
