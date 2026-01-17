@@ -15,7 +15,7 @@ fe-mentor product-preview-card-component website challenge submission
 - Fluid layout
 
 ## View live site here 
-https://04-product-preview-card-component.netlify.app/
+https://05-product-preview-card-component.netlify.app/
 
 
 ##### Final Screenshot
