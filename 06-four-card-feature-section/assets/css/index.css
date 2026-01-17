@@ -130,6 +130,7 @@ body {
   gap: var(--gap-32);
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
+  margin-bottom: auto;
 }
 
 .card {
