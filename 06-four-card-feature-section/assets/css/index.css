@@ -106,16 +106,18 @@ body {
 }
 
 .title {
+  color: var(--grey-500);
   font-size: var(--font-size-24);
   font-weight: var(--font-weight-600);
   letter-spacing: var(--letter-spacing-0p25);
 }
 
 .title-thin {
-  font-weight: var(--font-weight-400);
+  font-weight: var(--font-weight-200);
 }
 
 .description {
+  color: var(--grey-400);
   letter-spacing: var(--letter-spacing-0p1);
   margin: 0 auto;
   max-inline-size: 55ch;
@@ -140,6 +142,7 @@ body {
 }
 
 .card-title {
+  color: var(--grey-500);
   font-size: var(--font-size-20);
   font-weight: var(--font-weight-600);
   letter-spacing: var(--letter-spacing-0);
@@ -148,6 +151,7 @@ body {
 }
 
 .card-description {
+  color: var(--grey-400);
   font-size: var(--font-size-13);
   font-weight: var(--font-weight-200);
   letter-spacing: var(--letter-spacing-0p09);
