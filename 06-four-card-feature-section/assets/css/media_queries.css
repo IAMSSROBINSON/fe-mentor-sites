@@ -1,13 +1,23 @@
 @media screen and (min-width: 600px) {
+    body {
+        padding-block: var(--padding-80);
+        padding-inline: var(--padding-54);
+    }
+    .header-container {
+        margin-bottom: var(--margin-74);
+    }
     .cards-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         grid-template-rows: auto auto auto;
         gap: var(--gap-32);
+        max-width: 660px;
+        margin: 0 auto;
     }
-    
+
     .card {
         justify-self: center;
+        max-width: 314px;
     }
 
     .teambuilder {
@@ -30,5 +40,46 @@
         grid-row: 3/-1;
         grid-column: 1/-1;
         justify-self: center;
+    }
+}
+
+
+@media screen and (min-width: 880px) {
+     body {
+        padding-block: var(--padding-102);
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: auto auto;
+        max-width: 1114px;
+    }
+
+    .card {
+        max-width: 350px;
+ 
+    }
+
+    .supervisor {
+        grid-row: 1/-1;
+        grid-column: 1/2;
+        align-self: center;
+    }
+
+    .teambuilder {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+
+    .karma {
+        grid-row: 2/3;
+        grid-column: 2/3;
+    }
+
+    .calculator {
+        grid-row: 1/-1;
+        grid-column: 3/4;
+        align-self: center;
     }
 }

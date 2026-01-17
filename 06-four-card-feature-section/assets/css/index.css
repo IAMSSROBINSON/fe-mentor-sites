@@ -35,6 +35,7 @@
     --letter-spacing-0p09: 0.09px;
 
     /* spacing */
+    --margin-74: 7.4rem; 
     --margin-60: 6rem; 
     --margin-40: 4rem; 
     --margin-32: 3.2rem; 
@@ -44,7 +45,10 @@
     --margin-8: 0.8rem; 
     --margin-6: 0.6rem; 
 
+    --padding-102: 10.2rem; 
+    --padding-80: 8rem; 
     --padding-56: 5.6rem; 
+    --padding-54: 5.4rem; 
     --padding-40: 4rem; 
     --padding-32: 3.2rem; 
     --padding-30: 3rem; 
@@ -113,13 +117,16 @@ body {
 
 .description {
     letter-spacing: var(--letter-spacing-0p1);
+     max-inline-size: 55ch;
+     margin: 0 auto;
 }
 
 
 /* cards */
 .cards-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
     gap: var(--gap-32);
 }
 
@@ -130,7 +137,7 @@ body {
     box-shadow: 0 15px 30px -11px rgba(131, 166, 210, 50%);
     display: flex;
     flex-direction: column;
-    max-width: 314px;
+    width: 100%;
 }
 
 .card-title {
@@ -169,4 +176,9 @@ body {
 .card-image-container {
     text-align: right;
     margin-bottom: var(--margin-15);
+}
+
+.card-icon {
+    max-width: 64px;
+    max-height: 64px;
 }
