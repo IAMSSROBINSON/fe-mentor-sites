@@ -1,7 +1,7 @@
 @media screen and (min-width: 600px) {
   body {
-    padding-inline: var(--padding-61);
     padding-block: var(--padding-83);
+    padding-inline: var(--padding-61);
   }
 
   .quotation-pattern {
@@ -47,11 +47,11 @@
   }
   
   .cards-container {
-    max-width: 1114px;
+    column-gap: var(--gap-32);
     grid-template-columns: repeat(3, minmax(0, 1fr)) 255px;
     grid-template-rows: auto auto;
     justify-content: center;
-    column-gap: var(--gap-32);
+    max-width: 1114px;
     row-gap: var(--gap-24);
   }
 
