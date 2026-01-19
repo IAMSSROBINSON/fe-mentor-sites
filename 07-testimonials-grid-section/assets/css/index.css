@@ -1,255 +1,252 @@
 :root {
-    font-size: 62.5%;
+  font-size: 62.5%;
 
-    /* VARIABLES */
+  /* VARIABLES */
 
-    /* colors */
+  /* colors */
 
-    --purple-50: hsl(260, 100%, 95%);
-    --purple-300: hsl(264, 82%, 80%);
-    --purple-300-border: hsl(264, 82%, 70%);
-    --purple-500: hsl(263, 55%, 52%);
+  --purple-50: hsl(260, 100%, 95%);
+  --purple-300: hsl(264, 82%, 80%);
+  --purple-300-border: hsl(264, 82%, 70%);
+  --purple-500: hsl(263, 55%, 52%);
 
-    --white: hsl(0, 0%, 100%);
-    --grey-100: hsl(214, 17%, 92%);
-    --grey-200: hsl(0, 0%, 81%);
-    --grey-400: hsl(224, 10%, 45%);
-    --grey-300: hsl(215, 10%, 67%);
-    --grey-500: hsl(217, 19%, 35%);
-    --dark-blue: hsl(219, 29%, 14%);
-    --black: hsl(0, 0%, 7%);
+  --white: hsl(0, 0%, 100%);
+  --grey-100: hsl(214, 17%, 92%);
+  --grey-200: hsl(0, 0%, 81%);
+  --grey-400: hsl(224, 10%, 45%);
+  --grey-300: hsl(215, 10%, 67%);
+  --grey-500: hsl(217, 19%, 35%);
+  --dark-blue: hsl(219, 29%, 14%);
+  --black: hsl(0, 0%, 7%);
 
+  /* font */
 
-    /* font */
+  --font-stack: "Barlow Semi Condensed", sans-serif;
 
-    --font-stack: "Barlow Semi Condensed", sans-serif;
+  --font-size-20: 2rem;
+  --font-size-13: 1.3rem;
+  --font-size-11: 1.1rem;
 
-    --font-size-20: 2rem;
-    --font-size-13: 1.3rem;
-    --font-size-11: 1.1rem;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
 
-    --font-weight-500: 500;
-    --font-weight-600: 600;
+  --line-height-1p4: 1.4;
+  --line-height-1p2: 1.2;
+  --line-height-1p1: 1.1;
 
-    --line-height-1p4: 1.4;
-    --line-height-1p2: 1.2;
-    --line-height-1p1: 1.1;
+  /* spacing */
 
-    /* spacing */
+  --margin-40: 4rem;
+  --margin-32: 3.2rem;
+  --margin-24: 2.4rem;
+  --margin-16: 1.6rem;
+  --margin-8: 0.8rem;
+  --margin-4: 0.4rem;
 
-    --margin-40: 4rem;
-    --margin-32: 3.2rem;
-    --margin-24: 2.4rem;
-    --margin-16: 1.6rem;
-    --margin-8: 0.8rem;
-    --margin-4: 0.4rem; 
+  --padding-229: 22.9rem;
+  --padding-161: 16.1rem;
+  --padding-83: 8.3rem;
+  --padding-73: 7.3rem;
+  --padding-61: 6.1rem;
+  --padding-40: 4rem;
+  --padding-35: 3.5rem;
+  --padding-32: 3.2rem;
+  --padding-24: 2.4rem;
+  --padding-16: 1.6rem;
+  --padding-8: 0.8rem;
+  --padding-4: 0.4rem;
 
-    --padding-73: 7.3rem;
-    --padding-40: 4rem;
-    --padding-35: 3.5rem;
-    --padding-32: 3.2rem;
-    --padding-24: 2.4rem;
-    --padding-16: 1.6rem;
-    --padding-8: 0.8rem;
-    --padding-4: 0.4rem; 
+  /* gap */
+  --gap-32: 3.2rem;
+  --gap-24: 2.4rem;
+  --gap-17: 1.7rem;
+  --gap-16: 1.6rem;
 
-    /* gap */
-    --gap-32: 3.2rem;
-    --gap-17: 1.7rem;
-    --gap-16: 1.6rem;
+  /* other */
+  --box-shadow-card: 40px 60px 50px -47px rgb(72, 85, 106, 0.2474);
 
+  --border-radius: 8px;
 
-    /* other */
-    --box-shadow-card: 40px 60px 50px -47px rgb(72, 85, 106, 0.2474);
-
-
-    --border-radius: 8px;
-
-    --profile-image-width: 24px;
-    --profile-image-height: 24px;
+  --profile-image-width: 24px;
+  --profile-image-height: 24px;
 }
 
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    margin: 0;
-    padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    height: 100%;
+  height: 100%;
 }
 
 body {
-    min-height: 100vh;
-    font-size: var(--font-size-13);
-    font-family: var(--font-stack);
-    background-color: var(--white);
-    padding-inline: var(--padding-35);
-    padding-block: var(--padding-73);
+  min-height: 100vh;
+  font-size: var(--font-size-13);
+  font-family: var(--font-stack);
+  background-color: var(--white);
+  padding-inline: var(--padding-35);
+  padding-block: var(--padding-73);
 }
 
 img {
-    display: block;
-    line-height: 0;
-    width: 100%;
-    object-fit: cover;
+  display: block;
+  line-height: 0;
+  width: 100%;
+  object-fit: cover;
 }
 
 /* cards container */
 .cards-container {
-    display: grid;
-    /* grid-template-columns: minmax(0, 1fr); */
-    /* grid-template-rows: auto; */
-    gap: var(--gap-32);
+  display: grid;
+  /* grid-template-columns: minmax(0, 1fr); */
+  /* grid-template-rows: auto; */
+  gap: var(--gap-32);
+  justify-content: center;
+  margin: 0 auto;
 }
 
 /* card */
 .card {
-    padding: var(--padding-32);
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-16);
-    box-shadow: var(--box-shadow-card);
+  padding: var(--padding-32);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  box-shadow: var(--box-shadow-card);
 }
 
 /* profile container */
 .profile-container {
-    display: flex;
-    align-items: center;
-    gap: var(--gap-17);
+  display: flex;
+  align-items: center;
+  gap: var(--gap-17);
 }
 
 .profile-avatar-container {
-    width: min-content;
+  width: min-content;
 }
 
 .profile-avatar-image {
-    width: var(--profile-image-width);
-    height: var(--profile-image-height);
-    border-radius: 50%;
-    margin: 0;
-    line-height: 0;
+  width: var(--profile-image-width);
+  height: var(--profile-image-height);
+  border-radius: 50%;
+  margin: 0;
+  line-height: 0;
 }
 
 .profile-title {
-    font-size: var(--font-size-13);
-    font-weight: var(--font-weight-500);
-    line-height: var(--line-height-1p1);
-    color: var(--white);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-1p1);
+  color: var(--white);
 }
 
 .profile-verified {
-    font-size: var(--font-size-11);
-    font-weight: var(--font-weight-500);
-    line-height: var(--line-height-1p1);
-    color: var(--white);
+  font-size: var(--font-size-11);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-1p1);
+  color: var(--white);
 }
 
 .card-description.bold {
-    font-size: var(--font-size-20);
-    font-weight: var(--font-weight-600);
-    line-height: var(--line-height-1p2);
-    color: var(--white);
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-600);
+  line-height: var(--line-height-1p2);
+  color: var(--white);
 }
 
 .card-description.thin {
-    font-size: var(--font-size-13);
-    font-weight: var(--font-weight-500);
-    line-height: var(--line-height-1p4);
+  font-size: var(--font-size-13);
+  font-weight: var(--font-weight-500);
+  line-height: var(--line-height-1p4);
 }
 
 /* color card */
 .card.purple {
-    background-color: var(--purple-500);
+  background-color: var(--purple-500);
 }
 
 .card.purple .profile-avatar-image {
-    outline: 2px solid var(--purple-300-border);
+  outline: 2px solid var(--purple-300-border);
 }
 
-.card.purple .card-description.thin, .profile-verified {
-    color: var(--purple-50);
+.card.purple .card-description.thin,
+.profile-verified {
+  color: var(--purple-50);
 }
-
-
-
 
 .card.grey {
-    background-color: var(--grey-500);
+  background-color: var(--grey-500);
 }
 
 .card.grey .profile-avatar-image {
-    outline: 2px solid transparent;
+  outline: 2px solid transparent;
 }
 
 .card.grey .profile-verified {
-    color: var(--grey-300);
-} 
-
-.card.grey .card-description.thin {
-    color: var(--grey-100);
+  color: var(--grey-300);
 }
 
-
-
+.card.grey .card-description.thin {
+  color: var(--grey-100);
+}
 
 .card.white {
-    background-color: var(--white);
+  background-color: var(--white);
 }
 
 .card.white .profile-avatar-image {
-    outline: 2px solid transparent;
+  outline: 2px solid transparent;
 }
 
 .card.white .profile-title {
-      color: var(--grey-500);
+  color: var(--grey-500);
 }
 
 .card.white .profile-verified {
-    color: var(--grey-400);
-} 
+  color: var(--grey-400);
+}
 
 .card.white .card-description.bold {
-    color: var(--grey-500);
-} 
+  color: var(--grey-500);
+}
 
 .card.white .card-description.thin {
-    color: var(--grey-400);
-} 
-
-
-
+  color: var(--grey-400);
+}
 
 .card.blue {
-    background-color: var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .card.blue .profile-avatar-image {
-    outline: 2px solid var(--purple-500);
+  outline: 2px solid var(--purple-500);
 }
 
-.card.blue .profile-title, .card-description.bold {
-      color: var(--white);
+.card.blue .profile-title,
+.card-description.bold {
+  color: var(--white);
 }
 
 .card.blue .profile-verified {
-    color: var(--white);
-} 
+  color: var(--white);
+}
 
 .card.blue .card-description.bold {
-    color: var(--grey-200);
+  color: var(--grey-200);
 }
 
 .card.blue .card-description.thin {
-    color: var(--grey-100);
-} 
+  color: var(--grey-100);
+}
 
 .card.white.kira .profile-verified {
-    color: var(--grey-300);
-} 
+  color: var(--grey-300);
+}
