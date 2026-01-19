@@ -178,6 +178,8 @@ img {
 }
 
 
+
+
 .card.grey {
     background-color: var(--grey-500);
 }
@@ -193,6 +195,8 @@ img {
 .card.grey .card-description.thin {
     color: var(--grey-100);
 }
+
+
 
 
 .card.white {
@@ -238,7 +242,7 @@ img {
     color: var(--white);
 } 
 
-.card-description.bold {
+.card.blue .card-description.bold {
     color: var(--grey-200);
 }
 
