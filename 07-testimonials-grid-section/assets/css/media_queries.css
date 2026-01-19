@@ -37,8 +37,7 @@
 
 @media screen and (min-width: 1000px) {
   body {
-    display: grid;
-    place-content: center;
+    padding-block: var(--padding-229);
   }
 
   .quotation-pattern {
