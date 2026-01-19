@@ -33,14 +33,6 @@
   .white.kira {
     grid-column: 1/-1;
   }
-
-  .card.grey .profile-verified {
-  color: var(--grey-100);
-}
-
-.white.kira .profile-verified{
-    color: var(--grey-400) !important;
-  }
 }
 
 @media screen and (min-width: 1000px) {
