@@ -103,10 +103,6 @@ img {
   width: 100%;
 }
 
-h1 {
-    display: none;
-}
-
 /* cards container */
 .cards-container {
   display: grid;
