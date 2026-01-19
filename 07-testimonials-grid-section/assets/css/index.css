@@ -14,6 +14,7 @@
     --grey-100: hsl(214, 17%, 92%);
     --grey-200: hsl(0, 0%, 81%);
     --grey-400: hsl(224, 10%, 45%);
+    --grey-300: hsl(215, 10%, 67%);
     --grey-500: hsl(217, 19%, 35%);
     --dark-blue: hsl(219, 29%, 14%);
     --black: hsl(0, 0%, 7%);
@@ -53,12 +54,14 @@
     --padding-4: 0.4rem; 
 
     /* gap */
+    --gap-32: 3.2rem;
     --gap-17: 1.7rem;
     --gap-16: 1.6rem;
 
 
     /* other */
-    --box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 24.74);
+    --box-shadow-card: 40px 60px 50px -47px rgb(72, 85, 106, 0.2474);
+
 
     --border-radius: 8px;
 
@@ -100,6 +103,9 @@ img {
 /* cards container */
 .cards-container {
     display: grid;
+    /* grid-template-columns: minmax(0, 1fr); */
+    /* grid-template-rows: auto; */
+    gap: var(--gap-32);
 }
 
 /* card */
@@ -109,6 +115,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: var(--gap-16);
+    box-shadow: var(--box-shadow-card);
 }
 
 /* profile container */
@@ -158,18 +165,87 @@ img {
 }
 
 /* color card */
-
-.purple .profile-avatar-image {
-    outline: 2px solid var(--purple-300-border);
-}
-
-.purple {
+.card.purple {
     background-color: var(--purple-500);
 }
 
-.purple .profile-verified, 
-.purple .card-description.thin {
+.card.purple .profile-avatar-image {
+    outline: 2px solid var(--purple-300-border);
+}
+
+.card.purple .card-description.thin, .profile-verified {
     color: var(--purple-50);
 }
 
 
+.card.grey {
+    background-color: var(--grey-500);
+}
+
+.card.grey .profile-avatar-image {
+    outline: 2px solid transparent;
+}
+
+.card.grey .profile-verified {
+    color: var(--grey-300);
+} 
+
+.card.grey .card-description.thin {
+    color: var(--grey-100);
+}
+
+
+.card.white {
+    background-color: var(--white);
+}
+
+.card.white .profile-avatar-image {
+    outline: 2px solid transparent;
+}
+
+.card.white .profile-title {
+      color: var(--grey-500);
+}
+
+.card.white .profile-verified {
+    color: var(--grey-400);
+} 
+
+.card.white .card-description.bold {
+    color: var(--grey-500);
+} 
+
+.card.white .card-description.thin {
+    color: var(--grey-400);
+} 
+
+
+
+
+.card.blue {
+    background-color: var(--dark-blue);
+}
+
+.card.blue .profile-avatar-image {
+    outline: 2px solid var(--purple-500);
+}
+
+.card.blue .profile-title, .card-description.bold {
+      color: var(--white);
+}
+
+.card.blue .profile-verified {
+    color: var(--white);
+} 
+
+.card-description.bold {
+    color: var(--grey-200);
+}
+
+.card.blue .card-description.thin {
+    color: var(--grey-100);
+} 
+
+.card.white.kira .profile-verified {
+    color: var(--grey-300);
+} 
