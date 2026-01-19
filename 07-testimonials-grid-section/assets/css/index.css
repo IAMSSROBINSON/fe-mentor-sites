@@ -15,7 +15,6 @@
   --grey-100: hsl(214, 17%, 92%);
   --grey-200: hsl(0, 0%, 81%);
   --grey-400: hsl(224, 10%, 45%);
-  --grey-300: hsl(215, 10%, 67%);
   --grey-500: hsl(217, 19%, 35%);
   --dark-blue: hsl(219, 29%, 14%);
   --black: hsl(0, 0%, 7%);
@@ -261,8 +260,4 @@ img {
 
 .card.blue .card-description.thin {
   color: var(--grey-100);
-}
-
-.card.white.kira .profile-verified {
-  color: var(--grey-300);
 }
