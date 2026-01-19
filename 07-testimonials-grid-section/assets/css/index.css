@@ -5,6 +5,8 @@
 
   /* colors */
 
+  --body-bg: #F6F5F6;
+
   --purple-50: hsl(260, 100%, 95%);
   --purple-300: hsl(264, 82%, 80%);
   --purple-300-border: hsl(264, 82%, 70%);
@@ -67,8 +69,8 @@
 
   --border-radius: 8px;
 
-  --profile-image-width: 24px;
-  --profile-image-height: 24px;
+  --profile-image-width: 28px;
+  --profile-image-height: 28px;
 }
 
 *,
@@ -90,7 +92,7 @@ body {
   min-height: 100vh;
   font-size: var(--font-size-13);
   font-family: var(--font-stack);
-  background-color: var(--white);
+  background-color: var(--body-bg);
   padding-inline: var(--padding-35);
   padding-block: var(--padding-73);
 }
