@@ -65,7 +65,7 @@
 
 
   /* other */
-  --box-shadow-card: 40px 60px 50px -47px rgba(72, 85, 106, 24.74%);
+  --box-shadow-card: 40px 60px 50px 47px rgba(72, 85, 106, 24.74%);
 
   --border-radius: 8px;
 
