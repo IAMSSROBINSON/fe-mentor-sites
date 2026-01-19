@@ -47,7 +47,7 @@
   --padding-229: 22.9rem;
   --padding-161: 16.1rem;
   --padding-83: 8.3rem;
-  --padding-73: 7.3rem;
+  --padding-73: 7.5rem;
   --padding-61: 6.1rem;
   --padding-40: 4rem;
   --padding-35: 3.5rem;
@@ -65,7 +65,7 @@
 
 
   /* other */
-  --box-shadow-card: 40px 60px 50px -47px rgb(72, 85, 106, 0.2474);
+  --box-shadow-card: 40px 60px 50px -47px rgb(72, 85, 106, 24.74);
 
   --border-radius: 8px;
 
