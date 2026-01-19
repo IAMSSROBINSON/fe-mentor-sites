@@ -16,7 +16,7 @@ fe-mentor testimonials-grid-section website challenge submission
 - CSS Grid
 
 ## View live site here 
-https://06-testimonials-grid-section.netlify.app/
+https://07-testimonials-grid-section.netlify.app/
 
 
 ##### Final Screenshot
