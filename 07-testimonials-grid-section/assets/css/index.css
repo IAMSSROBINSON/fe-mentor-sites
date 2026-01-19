@@ -173,6 +173,21 @@ img {
 /* color card */
 .card.purple {
   background-color: var(--purple-500);
+  position: relative;
+  overflow: hidden;
+}
+
+.quotation-pattern {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.card.purple .profile-verified  .profile-title, .card-description.bold, .card-description.thin{
+    position: relative;
+    z-index: 1;
 }
 
 .card.purple .profile-avatar-image {

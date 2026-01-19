@@ -4,6 +4,11 @@
     padding-block: var(--padding-83);
   }
 
+  .quotation-pattern {
+    display: block;
+    right: 167px;
+  }
+
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -35,6 +40,12 @@
     display: grid;
     place-content: center;
   }
+
+  .quotation-pattern {
+    display: block;
+    right: 60px;
+  }
+  
   .cards-container {
     max-width: 1114px;
     grid-template-columns: repeat(3, minmax(0, 1fr)) 255px;
