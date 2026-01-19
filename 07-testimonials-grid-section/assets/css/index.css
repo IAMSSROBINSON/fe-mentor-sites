@@ -274,3 +274,7 @@ img {
 .card.blue .card-description.thin {
   color: var(--grey-100);
 }
+
+.card.white.kira .profile-verified {
+  color: var(--grey-300);
+}
