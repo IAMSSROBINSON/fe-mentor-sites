@@ -20,10 +20,10 @@
     /* font */
     --font-stack: "Red Hat Display", sans-serif;
 
-    --font-size-64:;
-    --font-size-40:;
-    --font-size-18:;
-    --font-size-16:;
+    --font-size-64: 6.4rem;
+    --font-size-40: 4rem;
+    --font-size-18: 1.8rem;
+    --font-size-16: 1.6rem;
 
     --font-weight-900: 900;
     --font-weight-500: 500;
