@@ -22,8 +22,10 @@
 
     --font-size-64: 6.4rem;
     --font-size-40: 4rem;
+    --font-size-32: 3.2rem;
     --font-size-18: 1.8rem;
     --font-size-16: 1.6rem;
+    --font-size-12: 1.2rem;
 
     --font-weight-900: 900;
     --font-weight-500: 500;
@@ -67,6 +69,7 @@
     --gap-64: 6.4rem;
     --gap-24: 2.4rem;
     --gap-16: 1.6rem;
+    --gap-4: 0.4rem;
 
     /* other */
     --border-radius-29: 29px;
@@ -156,14 +159,14 @@ img {
     font-size: var(--font-size-40);
     font-weight: var(--font-weight-900);
     line-height: var(--line-height-1p1);
-   
+    color: var(--slate-900);
 }
 
 .hero-description {
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-500);
     line-height: var(--line-height-1p5);
-   
+    color: var(--slate-600);
 }
 
 /* hero text */
@@ -196,6 +199,12 @@ img {
 
 .download-btn {
     background-color: var(--cyan-600);
+    display: flex;
+    gap: var(--gap-4);
+}
+
+.download-btn-version {
+    color: var(--cyan-300);
 }
 
 .what-btn {
@@ -238,6 +247,7 @@ img {
     font-size: var(--font-size-16);
     font-weight: var(--font-weight-900);
     line-height: var(--line-height-1p5);
+    background-color: var(--white);
 }
 
 /* gallery */
@@ -252,3 +262,35 @@ img {
     border-radius: var(--border-radius-8);
   
 }
+
+/* information */
+.information-container {
+    text-align: center;
+}
+
+.information-label {
+    font-size: var(--font-size-12);
+    font-weight: var(--font-weight-900);
+    line-height: var(--line-height-1p1);
+    color: var(--cyan-600);
+    letter-spacing: var(--letter-spacing-4);
+    text-transform: uppercase;
+    margin-bottom: var(--margin-16);
+}
+
+.information-title {
+   font-size: var(--font-size-32);
+    font-weight: var(--font-weight-900);
+    line-height: var(--line-height-1p1);
+    color: var(--slate-900);
+     margin-bottom: var(--margin-32);
+}
+
+.information-description {
+   font-size: var(--font-size-16);
+    font-weight: var(--font-weight-500);
+    line-height: var(--line-height-1p5);
+    color: var(--slate-600);
+}
+
+
