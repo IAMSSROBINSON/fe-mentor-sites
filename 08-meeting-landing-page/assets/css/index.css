@@ -22,6 +22,7 @@
     --font-stack: "Red Hat Display", sans-serif;
 
     --font-size-64: 6.4rem;
+    --font-size-48: 4.8rem;
     --font-size-40: 4rem;
     --font-size-32: 3.2rem;
     --font-size-18: 1.8rem;
@@ -58,6 +59,7 @@
     --padding-64: 6.4rem;
     --padding-56: 5.6rem;
     --padding-48: 4.8rem;
+    --padding-44: 4.4rem;
     --padding-40: 4rem;
     --padding-35: 3.5rem;
     --padding-32: 3.2rem;
@@ -152,6 +154,7 @@ img {
 .hero-text-container {
      text-align: center;
      display: flex;
+     align-items: center;
      flex-direction: column;
      gap: var(--gap-24);
 }
@@ -259,7 +262,7 @@ img {
       grid-template-rows: auto;
       gap: var(--gap-16);
 }
-.galllery-img {
+.gallery-img {
     border-radius: var(--border-radius-8);
   
 }
@@ -295,18 +298,13 @@ img {
     color: var(--slate-600);
 }
 
-.footer-title, .footer-description {
-    color: var(--white);
-}
-
-
 /* footer */
 .footer {
     /* position: relative; */
     background-image: linear-gradient(var(--cyan-600-rgba), var(--cyan-600-rgba)), 
     url('../images/tablet/image-footer.jpg');
-    background-position: center;
-    height: 374px;
+    background-position: center top;
+    height: 375px;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -315,12 +313,14 @@ img {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     padding-inline: var(--padding-32);
     padding-block: var(--padding-64);
-    gap: var(--gap-24);
+    /* gap: var(--gap-24); */
     margin-top: -28px;
 }
+
 
 .footer-title, .footer-description {
      color: var(--white);
