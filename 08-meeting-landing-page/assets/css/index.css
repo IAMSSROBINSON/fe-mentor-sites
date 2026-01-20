@@ -59,6 +59,7 @@
     --padding-35: 3.5rem;
     --padding-32: 3.2rem;
     --padding-24: 2.4rem;
+    --padding-19: 1.9rem;
     --padding-16: 1.6rem;
     --padding-8: 0.8rem;
     --padding-4: 0.4rem;
@@ -90,7 +91,6 @@ body {
     min-height: 100vh;
     background-color: var(--white);
     padding-top: var(--padding-48);
-    overflow: hidden;
     font-family: var(--font-stack);
 }
 
@@ -125,7 +125,6 @@ img {
 .hero-image-container {
     display: flex;
     justify-content: center;
-    /* align-items: stretch; */
     height: 100%;
     flex-shrink: 0;
     gap: 0;
@@ -199,5 +198,41 @@ img {
 
 .what-btn {
     background-color: var(--purple-600);
+}
+
+
+/* main */
+.main-container {
+    padding: var(--padding-32) var(--padding-32) var(--padding-64) var(--padding-32);
+}
+
+.separator {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    position: relative;
+    flex-direction: column;
+
+}
+
+.separator::before {
+    content: "";
+    width: 1px;
+    height: 80px;
+    background-color: var(--slate-300);
+}
+
+.separator-title {
+    border: 1px solid var(--slate-300);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    color: var(--slate-600);
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-900);
+    line-height: var(--line-height-1p5);
 }
 
