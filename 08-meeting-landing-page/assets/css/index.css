@@ -123,9 +123,7 @@ img {
   grid-template-rows: clamp(160px, 40vw, 360px) auto;
   row-gap: var(--gap-48);
   column-gap: var(--gap-16);
- /* justify-content: center;
- align-items: center; */
- overflow: hidden;
+ overflow-x: hidden;
  justify-content: center;
 }
 
