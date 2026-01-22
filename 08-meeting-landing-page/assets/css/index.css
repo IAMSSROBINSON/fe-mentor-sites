@@ -255,6 +255,8 @@ img {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       gap: var(--gap-16);
+      max-width: 1120px;
+      margin-inline: auto;
 }
 .gallery-img {
     border-radius: var(--border-radius-8);
@@ -311,7 +313,7 @@ img {
     align-items: center;
     padding-inline: var(--padding-32);
     padding-block: var(--padding-64);
-    /* gap: var(--gap-24); */
+    gap: var(--gap-24);
     margin-top: -28px;
 }
 
