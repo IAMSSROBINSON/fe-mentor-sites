@@ -42,16 +42,13 @@
     margin-top: var(--margin-80);
     }
 
-    .hero-image-mobile {
-  width: 120%;
- 
-}
+
     
    .hero-content-container {
 
   padding-inline: var(--padding-32);
   /* padding-inline: 0; */
-  align-self: end;
+  align-self: center;
 }
 
 .hero-image-container-0 {
