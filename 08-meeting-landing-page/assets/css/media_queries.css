@@ -1,6 +1,8 @@
 @media screen and (min-width: 768px) {
     :root {
             --font-h1: 900 var(--font-size-48)/var(--line-height-1p1) var(--font-stack);
+            --font-h2: 900 3.6rem/1.1 "Red Hat Display", sans-serif;
+
 
     }
     .hero-image-mobile {
@@ -25,8 +27,19 @@
  
 }
 
-.separator-container  {
-  margin-top: var(--margin-56);
+.main-container {
+  padding: 56px 44px 64px;
+}
+
+.gallery-container {
+  grid-template-columns: repeat(4, 152px);
+  grid-template-rows: 1fr;
+  gap: var(--gap-24);
+}
+
+.gallery-image {
+  /* height: 160px; */
+  /* width: auto; */
 }
 
 }
@@ -36,6 +49,7 @@
 @media screen and (min-width: 1440px) {
     :root {
             --font-h1: 900 var(--font-size-64)/var(--line-height-1p1) var(--font-stack);
+            --font-h2: 900 4rem/1.1 "Red Hat Display", sans-serif;
 
             --font-body: 500 1.8rem/1.5 "Red Hat Display", sans-serif;
 
@@ -100,5 +114,24 @@
     transform: translateX(25.97px);
 }
 
+.main-container {
+  padding: 56px 160px 72px;
+}
+
+.gallery-container {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: var(--gap-32);
+}
+
+.information-container h2{
+
+      max-inline-size: 16ch;
+    
+}
+
+.information-container p {
+  max-inline-size: 46ch;
+}
 
 }
