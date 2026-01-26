@@ -102,12 +102,20 @@ html {
 body {
     min-height: 100vh;
     background-color: var(--white);
-    padding-top: var(--padding-48);
     font-family: var(--font-stack);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 img {
     display: block;
     line-height: 0;
     width: 100%;
+}
+
+
+/* logo */
+.logo-container {
+  margin-top: var(--margin-48);
 }
