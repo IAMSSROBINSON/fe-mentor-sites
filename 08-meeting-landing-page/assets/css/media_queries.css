@@ -39,8 +39,8 @@
 }
 
 .gallery-image {
-  /* height: 160px; */
-  /* width: auto; */
+  height: 160px;
+width: auto;
 }
 
 }
@@ -124,6 +124,11 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   gap: var(--gap-32);
+}
+
+.gallery-image {
+  height: 256px;
+width: auto;
 }
 
 .information-container h2{
