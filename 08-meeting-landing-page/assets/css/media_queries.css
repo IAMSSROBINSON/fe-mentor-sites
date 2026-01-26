@@ -28,6 +28,8 @@
 
 }
 
+
+/* DESKTOP */
 @media screen and (min-width: 1440px) {
     :root {
             --font-h1: 900 var(--font-size-64)/var(--line-height-1p1) var(--font-stack);
@@ -43,6 +45,8 @@
    .hero-content-container {
 
   padding-inline: var(--padding-32);
+  /* padding-inline: 0; */
+  align-self: center;
 }
 
 .hero-image-container-0 {
