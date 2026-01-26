@@ -267,7 +267,8 @@ img {
 
 .gallery-container img {
   border-radius: var(--border-radius-8);
-
+  width: 100%;
+  height: auto;
 }
 
 
