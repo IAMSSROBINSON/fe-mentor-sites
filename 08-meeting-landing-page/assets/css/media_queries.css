@@ -117,19 +117,13 @@
 }
 
 .main-container {
-  padding: 56px 160px 72px;
+  padding: 56px auto 72px;
 }
-
 .gallery-container {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 256px;
+  
   gap: var(--gap-32);
 }
 
-.gallery-image {
-  /* height: 256px; */
-/* width: auto; */
-}
 
 .information-container h2{
 

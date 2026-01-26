@@ -220,6 +220,7 @@ img {
   align-items: center;
   /* background-color: rgb(105, 105, 146); */
   padding: 32px 32px 64px;
+  max-width: 1120px;
 }
 
 .separator-container {
@@ -257,7 +258,7 @@ img {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  /* grid-template-rows: repeat(2, 1fr); */
   gap: var(--gap-16);
   margin-top: var(--margin-64);
 
@@ -267,11 +268,6 @@ img {
 .gallery-container img {
   border-radius: var(--border-radius-8);
 
-}
-
-.gallery-image {
-  /* height: 144px; */
-  /* width: auto; */
 }
 
 
