@@ -53,6 +53,10 @@
 
 /* desktop */
 @media screen and (min-width: 1440px) {
+    body {
+    padding-top: var(--padding-80);
+}
+
 .hero-container {
   display: grid;
   grid-template-columns: 1fr 540px 1fr;
