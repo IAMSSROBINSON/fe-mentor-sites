@@ -42,6 +42,14 @@
     margin-top: var(--margin-80);
     }
 
+    .hero-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
     .hero-image {
   width: 105%;
 /* transform: scale(3); */
@@ -88,10 +96,5 @@
     transform: translateX(25.97px);
 }
 
-.hero-container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    grid-template-rows: 1fr;
-    justify-content: center;
-}
+
 }
