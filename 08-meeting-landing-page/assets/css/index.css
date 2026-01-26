@@ -21,6 +21,9 @@
     /* font */
     --font-stack: "Red Hat Display", sans-serif;
 
+    --font-h1: 900 3.6rem/1.1 "Red Hat Display", sans-serif;
+    --font-body: 500 1.6rem/1.5 "Red Hat Display", sans-serif;
+
     --font-size-64: 6.4rem;
     --font-size-48: 4.8rem;
     --font-size-40: 4rem;
@@ -71,10 +74,12 @@
     --padding-8: 0.8rem;
     --padding-4: 0.4rem;
 
+    --gap-72: 7.2rem;
     --gap-64: 6.4rem;
     --gap-48: 4.8rem;
     --gap-32: 3.2rem;
     --gap-24: 2.4rem;
+    --gap-17: 1.7rem;
     --gap-16: 1.6rem;
     --gap-4: 0.4rem;
 
@@ -118,4 +123,86 @@ img {
 /* logo */
 .logo-container {
   margin-top: var(--margin-48);
+  background-color: red;
+}
+
+
+/* hero */
+.hero-image-left, 
+.hero-image-right, 
+.hero-image-container-1, 
+.hero-image-container-2 {
+  display: none;
+}
+
+.hero-container {
+  padding-top: var(--padding-64);
+  padding-bottom: var(--padding-32);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--gap-48);
+  background-color: rgba(255, 255, 0, 0.405);
+}
+
+.hero-image-mobile {
+  width: 115%;
+  height: auto;
+  transform: translateX(-28px)
+}
+
+.hero-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap-24);
+  padding-inline: var(--padding-35);
+}
+
+
+.hero-content-container h1 {
+  font: var(--font-h1);
+  color: red;
+    color: var(--slate-900);
+
+}
+
+
+.hero-content-container p {
+  font: var(--font-body);
+  color: var(--slate-600);
+  max-inline-size: 35ch;
+}
+
+/* buttons */
+.hero-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16 );
+ 
+}
+
+.button {
+   color: var(--white);
+   text-decoration: none;
+   font-size: var(--font-size-16);
+   font-weight: var(--font-weight-900);
+   line-height: var(--line-height-1p5);
+   padding-block: var(--padding-16);
+   padding-inline: var(--padding-40);
+   border-radius: var(--border-radius-29);
+}
+
+.hero-button-left {
+  background-color: var(--cyan-600);
+  
+}
+
+.hero-button-left span {
+  color: var(--cyan-300);
+}
+
+.hero-button-right {
+    background-color: var(--purple-600);
 }
