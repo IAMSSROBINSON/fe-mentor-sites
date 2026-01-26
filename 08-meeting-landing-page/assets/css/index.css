@@ -206,3 +206,40 @@ img {
 .hero-button-right {
     background-color: var(--purple-600);
 }
+
+
+/* SEPARATOR */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.separator-container {
+    margin-top: var(--margin-32);
+  background-color: var(--slate-600);
+  width: 1px;
+  height: 80px;
+}
+
+
+.separator-number {
+  border: 1px solid var(--slate-600);
+  color: var(--slate-600);
+  font-weight: var(--font-weight-900);
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-1p5);
+  /* padding-block: var(--padding-16); */
+  /* padding-inline: var(--padding-19); */
+  width: 56px;
+  height: 56px;
+  background-color: var(--white);
+  /* background-color: red; */
+  border-radius: var(--border-radius-29);
+  border-radius: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
