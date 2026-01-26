@@ -42,7 +42,11 @@
     margin-top: var(--margin-80);
     }
 
-
+    .hero-image {
+  width: 100%;
+/* transform: scale(3); */
+ 
+}
     
    .hero-content-container {
 
