@@ -2,6 +2,7 @@
     :root {
             --font-h1: 900 var(--font-size-48)/var(--line-height-1p1) var(--font-stack);
             --font-h2: 900 3.6rem/1.1 "Red Hat Display", sans-serif;
+                --label: 900 1.4rem/1.1 "Red Hat Display", sans-serif;
 
 
     }
@@ -52,6 +53,7 @@
             --font-h2: 900 4rem/1.1 "Red Hat Display", sans-serif;
 
             --font-body: 500 1.8rem/1.5 "Red Hat Display", sans-serif;
+                --label: 900 1.6rem/1.1 "Red Hat Display", sans-serif;
 
     }
     /* logo */
