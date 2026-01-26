@@ -84,6 +84,15 @@
     align-self: center;
     grid-column: 2;
     grid-row: 1;
+    gap: var(--gap-32);
+}
+
+.hero-title {
+    font-size: var(--font-size-64);
+}
+
+.hero-description {
+    font-size: var(--font-size-18);
 }
 
 .main-container {
