@@ -39,8 +39,8 @@
 }
 
 .gallery-image {
-  height: 160px;
-width: auto;
+  /* height: 160px; */
+/* width: auto; */
 }
 
 }
@@ -127,8 +127,8 @@ width: auto;
 }
 
 .gallery-image {
-  height: 256px;
-width: auto;
+  /* height: 256px;
+width: auto; */
 }
 
 .information-container h2{
