@@ -224,14 +224,14 @@ img {
 
 .separator-container {
     /* margin-top: var(--margin-32); */
-  background-color: var(--slate-600);
+  background-color: var(--slate-300);
   width: 1px;
   height: 80px;
 }
 
 
 .separator-number {
-  border: 1px solid var(--slate-600);
+  border: 1px solid var(--slate-300);
   color: var(--slate-600);
   font-weight: var(--font-weight-900);
   font-size: var(--font-size-16);
