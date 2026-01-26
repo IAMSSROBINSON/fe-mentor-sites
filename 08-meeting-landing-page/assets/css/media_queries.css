@@ -43,13 +43,14 @@
     }
 
     .hero-image {
-  width: 100%;
+  width: 105%;
 /* transform: scale(3); */
  
 }
     
    .hero-content-container {
 
+  padding-block: var(--padding-23);
   padding-inline: var(--padding-32);
   /* padding-inline: 0; */
   align-self: center;
