@@ -1,0 +1,104 @@
+:root {
+  /* VARIABLES */
+
+  /* colors */
+  --clr-white: #fafafa;
+
+  --clr-cyan-600: rgb(77, 151, 169);
+  --clr-cyan-600-fade: rgb(77, 150, 169, 0.9);
+  --clr-cyan-300: #8fe3f9;
+
+  --clr-purple-600: #855fb1;
+  --clr-purple-300: #d9b8ff;
+
+  --clr-slate-900: #28283d;
+  --clr-slate-600: #87879d;
+  --clr-slate-300: #d1d1df;
+
+  /* font */
+  --ff-base: "Red Hat Display", sans-serif;
+
+  /* font size */
+  --fs-900: 4rem;
+  --fs-800: 2.5rem;
+  --fs-700: 1.125rem;
+  --fs-600: 1rem;
+  --fs-200: 0.75rem;
+
+  /* font weight */
+  --fw-900: 900;
+  --fw-500: 500;
+
+  /* line height */
+  --lh-l: 1.5;
+  --lh-sm: 1.1;
+
+  /* spacing */
+  --space-1400: 112px;
+  --space-1000: 80px;
+  --space-900: 72px;
+  --space-800: 64px;
+  --space-700: 56px;
+  --space-600: 48px;
+  --space-500: 40px;
+  --space-400: 32px;
+  --space-300: 24px;
+  --space-200: 16px;
+  --space-100: 8px;
+  --space-50: 4px;
+
+  /* other */
+  --br-pill: 100vw;
+  --br-sm: 8px;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--clr-slate-600);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  line-height: 0;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
