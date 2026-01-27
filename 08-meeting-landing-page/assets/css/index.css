@@ -34,18 +34,18 @@
   --lh-sm: 1.1;
 
   /* spacing */
-  --space-1400: 112px;
-  --space-1000: 80px;
-  --space-900: 72px;
-  --space-800: 64px;
-  --space-700: 56px;
-  --space-600: 48px;
-  --space-500: 40px;
-  --space-400: 32px;
-  --space-300: 24px;
-  --space-200: 16px;
-  --space-100: 8px;
-  --space-50: 4px;
+  --space-1400: 7rem;
+  --space-1000: 5rem;
+  --space-900: 4.5rem;
+  --space-800: 4rem;
+  --space-700: 3.5rem;
+  --space-600: 3rem;
+  --space-500: 2.5rem;
+  --space-400: 2rem;
+  --space-300: 1.5rem;
+  --space-200: 1rem;
+  --space-100: 0.5rem;
+  --space-50: 0.25rem;
 
   /* other */
   --br-pill: 100vw;
