@@ -64,15 +64,15 @@
 
 html {
   height: 100%;
-  scrollbar-gutter: stable;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   background-color: var(--clr-white);
   font-family: var(--ff-base);
+  min-height: 100vh;
 }
 
 p,
@@ -100,6 +100,23 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
   color: inherit;
+  font: inherit;
+}
+
+/* header */
+.header {
+  padding-top: var(--space-600);
+}
+
+.logo {
+  height: auto;
+  width: 7.375rem;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
