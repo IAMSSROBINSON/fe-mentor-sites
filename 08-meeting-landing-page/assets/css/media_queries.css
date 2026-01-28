@@ -63,7 +63,7 @@
     padding: var(--space-800) 2.1875rem var(--space-400);
     row-gap: none;
     column-gap: var(--space-400);
-    overflow: initial;
+    overflow: hidden;
     max-width: 1440px;
   }
 
