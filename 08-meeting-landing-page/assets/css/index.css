@@ -130,23 +130,30 @@ select {
 
 /* HERO */
 .hero-container {
-  align-items: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: auto auto;
   justify-content: center;
+  align-items: center;
   padding: var(--space-800) 2.1875rem var(--space-400);
   row-gap: var(--space-600);
+  overflow: hidden;
+  background-color: rgba(255, 255, 0, 0.274);
+  margin-inline: auto;
 }
 
 .hero-image-container-0 {
   grid-column: 1/-1;
   grid-row: 1/2;
   margin-inline: -2.1875rem;
+  width: calc(115vw);
+
+  display: flex;
+  align-content: center;
+  justify-content: center;
 }
 
 .hero-image-mobile {
-  transform: scale(1.15);
 }
 
 .hero-image-container-1,
