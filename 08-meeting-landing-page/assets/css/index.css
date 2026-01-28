@@ -201,7 +201,10 @@ p {
   border: none;
   padding-block: var(--space-200);
   padding-inline: var(--space-500);
+  display: flex;
+  column-gap: var(--space-50);
 }
+
 
 .hero-button-left {
   background-color: var(--clr-cyan-600);
