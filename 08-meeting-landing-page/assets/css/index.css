@@ -179,7 +179,7 @@ h1 {
 
 p {
   color: var(--clr-slate-600);
-  font-size: var(--space-200);
+  font-size: var(--fs-600);
   font-weight: var(--fw-500);
   line-height: var(--lh-l);
 }
@@ -189,7 +189,7 @@ p {
   color: var(--clr-white);
   display: flex;
   flex-direction: column;
-  font-size: var(--space-200);
+  font-size: var(--fs-600);
   font-weight: var(--fw-900);
   gap: var(--space-200);
   line-height: var(--lh-l);
