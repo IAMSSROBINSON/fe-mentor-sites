@@ -32,6 +32,10 @@
     flex-direction: row;
     gap: calc(var(--space-200) + 1px);
   }
+
+  .separator-container {
+  padding: var(--space-700) calc(var(--space-500) + var(--space-50)) 0;
+}
 }
 
 /* DESKTOP */
@@ -99,4 +103,5 @@
   .hero-image {
     max-width: none;
   }
+
 }

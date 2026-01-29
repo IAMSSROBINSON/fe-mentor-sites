@@ -166,6 +166,10 @@ select {
   text-align: center;
 }
 
+.hero-content-container p {
+  max-inline-size: 29ch;
+}
+
 h1 {
   color: var(--clr-slate-900);
   font-size: var(--fs-800);
@@ -211,4 +215,31 @@ p {
 
 .button span {
   color: var(--clr-cyan-300);
+}
+
+ /* SEPARATOR */
+.separator-container {
+  background-color: rgba(30, 143, 255, 0.152);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-400) var(--space-400) 0;
+  margin-bottom: var(--space-800);
+}
+
+.separator-line {
+  width: 1px;
+  height: 80px;
+  background-color: var(--clr-slate-300);
+}
+
+.separator-number {
+  color: var(--clr-slate-600);
+  font-size: var(--fs-600);
+  font-weight: var(--fw-900);
+  line-height: var(--lh-l);
+  border: 1px solid var(--clr-slate-300);
+  padding: var(--space-200) 1.1875rem;
+  border-radius: var(--br-pill);
 }
