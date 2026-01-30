@@ -260,6 +260,6 @@ p {
 
 .gallery-img {
   border-radius: var(--br-sm);
-  width: minmax(147.5px, 1fr);
-  height: auto;
+  /* width: minmax(147.5px, 1fr); */
+  /* height: auto; */
 }

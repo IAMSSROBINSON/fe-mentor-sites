@@ -49,7 +49,7 @@
 
 
 .gallery-img {
-  width: minmax(152px, 1fr);
+  /* width: minmax(152px, 1fr); */
 }
 }
 
@@ -130,7 +130,7 @@
 }
 
 .gallery-img {
-  width: minmax(256px, 1fr);
+  /* width: minmax(256px, 1fr); */
 }
 
 }
