@@ -36,6 +36,21 @@
   .separator-container {
   padding: var(--space-700) calc(var(--space-500) + var(--space-50)) 0;
 }
+
+.gallery-list {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1;
+  gap: var(--space-300);
+}
+
+.gallery-container {
+  padding-inline: calc(var(--space-500) + var(--space-50));
+}
+
+
+.gallery-img {
+  width: minmax(152px, 1fr);
+}
 }
 
 /* DESKTOP */
@@ -103,5 +118,19 @@
   .hero-image {
     max-width: none;
   }
+
+  .gallery-list {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1;
+  gap: var(--space-400);
+}
+
+.gallery-container {
+  padding-inline: calc(var(--space-1400) + var(--space-600));
+}
+
+.gallery-img {
+  width: minmax(256px, 1fr);
+}
 
 }

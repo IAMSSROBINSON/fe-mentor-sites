@@ -47,7 +47,6 @@
   --space-100: 0.5rem;
   --space-50: 0.25rem;
 
-  /* other */
   --br-pill: 100vw;
   --br-sm: 8px;
 }
@@ -242,4 +241,25 @@ p {
   border: 1px solid var(--clr-slate-300);
   padding: var(--space-200) 1.1875rem;
   border-radius: var(--br-pill);
+}
+
+
+/* GALLERY */
+.gallery-container {
+  padding-inline: var(--space-400);
+  margin-bottom: var(--space-800);
+}
+
+.gallery-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: var(--space-200);
+  list-style: none;
+}
+
+.gallery-img {
+  border-radius: var(--br-sm);
+  width: minmax(147.5px, 1fr);
+  height: auto;
 }
