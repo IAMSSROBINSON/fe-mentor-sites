@@ -123,10 +123,13 @@
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1;
   gap: var(--space-400);
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
 .gallery-container {
-  padding-inline: calc(var(--space-1400) + var(--space-600));
+  /* padding-inline: calc(var(--space-1400) + var(--space-600)); */
+
 }
 
 .gallery-img {
