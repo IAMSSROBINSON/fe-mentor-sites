@@ -43,11 +43,6 @@
   gap: var(--space-300);
 }
 
-.gallery-container {
-  padding-inline: calc(var(--space-500) + var(--space-50));
-}
-
-
 .gallery-img {
   width: auto;
   height: 152px;
@@ -127,11 +122,6 @@
   gap: var(--space-400);
   max-width: 1120px;
   margin: 0 auto;
-}
-
-.gallery-container {
-  /* padding-inline: calc(var(--space-1400) + var(--space-600)); */
-
 }
 
 .gallery-img {
