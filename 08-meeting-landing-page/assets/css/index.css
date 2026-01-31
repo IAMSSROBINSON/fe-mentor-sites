@@ -252,7 +252,6 @@ p {
 /* GALLERY */
 .gallery-container {
   padding-inline: var(--space-400);
-  margin-bottom: var(--space-800);
 }
 
 .gallery-list {
@@ -275,6 +274,7 @@ p {
 .information-container {
   padding: 0 var(--space-400) var(--space-800); 
   text-align: center;
+  margin-top: var(--space-800);
 }
 
 .information-container h2 {
