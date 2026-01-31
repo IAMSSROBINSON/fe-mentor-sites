@@ -51,10 +51,15 @@
 
 .information-container h2 {
   max-inline-size: 18ch;
+  font-size: calc(var(--fs-200) * 3);
 }
 
 .information-container p {
   max-inline-size: 48ch;
+}
+
+.information-container h3 {
+  font-size: var(--fs-300);
 }
 }
 
@@ -139,11 +144,18 @@
 }
 
 .information-container h2 {
+  font-size: var(--fs-800);
   max-inline-size: 15ch;
+}
+
+.information-container h3 {
+  font-size: var(--fs-600);
 }
 
 .information-container p {
   max-inline-size: 46ch;
 }
+
+
 
 }
