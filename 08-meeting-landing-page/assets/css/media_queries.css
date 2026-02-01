@@ -37,6 +37,10 @@
   padding: var(--space-700) calc(var(--space-500) + var(--space-50)) 0;
 }
 
+.separator-container-2 {
+  padding-top: 0;
+}
+
 .gallery-list {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1;

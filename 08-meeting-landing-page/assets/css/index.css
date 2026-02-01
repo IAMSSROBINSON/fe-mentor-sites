@@ -232,6 +232,11 @@ p {
   margin-bottom: var(--space-800);
 }
 
+.separator-container-2 {
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
 .separator-line {
   width: 1px;
   height: 80px;
@@ -275,6 +280,7 @@ p {
   padding: 0 var(--space-400) var(--space-800); 
   text-align: center;
   margin-top: var(--space-800);
+  background-color: rgba(255, 255, 0, 0.228);
 }
 
 .information-container h2 {
