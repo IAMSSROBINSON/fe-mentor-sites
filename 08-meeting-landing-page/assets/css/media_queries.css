@@ -179,7 +179,7 @@
   max-width: 1120px;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 256px;
+  grid-template-columns: repeat(2, 1fr) auto;
   grid-template-rows: 1;
    align-items: start;
   row-gap: 0;
@@ -202,6 +202,8 @@
 .footer button {
   grid-column: 3/-1;
   grid-row: 1;
+  margin-left: auto;
+  width: max-content;
 }
 
 
