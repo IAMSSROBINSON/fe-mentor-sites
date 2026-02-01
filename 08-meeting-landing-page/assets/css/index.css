@@ -258,6 +258,7 @@ p {
 /* GALLERY */
 .gallery-container {
   padding-inline: var(--space-400);
+  background-color: yellow;
 }
 
 .gallery-list {
@@ -266,13 +267,16 @@ p {
   grid-template-rows: repeat(2, auto);
   gap: var(--space-200);
   list-style: none;
+  /* background-color: blue; */
+  justify-content: space-between;
 }
 
 .gallery-img {
   border-radius: var(--br-sm);
-  width: auto;
-  height: 144px;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 /* INFORMATION */

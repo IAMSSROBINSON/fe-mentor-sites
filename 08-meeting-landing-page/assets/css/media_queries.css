@@ -45,12 +45,13 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1;
     row-gap: 0;
+      justify-content: center;
+  align-items: center;
+
   }
 
   .gallery-img {
-    height: 152px;
-    max-height: 100%;
-    width: auto;
+    min-height: 152px;
   }
 
   .information-container h2,
@@ -145,13 +146,11 @@
     grid-template-rows: 1;
     column-gap: var(--space-400);
     max-width: 1120px;
-    margin: 0 auto;
+    margin-inline: auto;
   }
 
   .gallery-img {
-    width: auto;
-    height: 256px;
-    max-height: 100%;
+    min-height: 256px;
   }
 
   .information-container {
