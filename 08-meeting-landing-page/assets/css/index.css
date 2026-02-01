@@ -335,7 +335,7 @@ p {
   margin-bottom: 0;
 }
 
-.footer p {
+.footer h2, .footer p {
   color: var(--clr-white);
 }
 
