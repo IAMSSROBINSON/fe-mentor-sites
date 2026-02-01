@@ -250,9 +250,9 @@ p {
   font-weight: var(--fw-900);
   line-height: var(--lh-l);
   border: 1px solid var(--clr-slate-300);
-  /* padding: var(--space-200) 1.1875rem; */
-    width: 56px;
-    height: 56px;
+  padding: var(--space-200) 1.1875rem;
+    /* width: 56px; */
+    /* height: 56px; */
     display: flex;
     justify-content: center;
     align-items: center;
