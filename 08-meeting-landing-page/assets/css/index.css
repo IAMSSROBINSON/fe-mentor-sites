@@ -236,6 +236,7 @@ p {
 .separator-container-2 {
   padding-top: 0;
   margin-bottom: 0;
+  margin-top: calc(56px / 2);
 }
 
 .separator-line {
