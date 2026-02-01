@@ -258,7 +258,6 @@ p {
 /* GALLERY */
 .gallery-container {
   padding-inline: var(--space-400);
-  background-color: yellow;
 }
 
 .gallery-list {
