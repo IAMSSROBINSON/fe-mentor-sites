@@ -267,8 +267,6 @@ p {
   grid-template-rows: repeat(2, auto);
   gap: var(--space-200);
   list-style: none;
-  /* background-color: blue; */
-  justify-content: space-between;
 }
 
 .gallery-img {
@@ -281,9 +279,9 @@ p {
 
 /* INFORMATION */
 .information-container {
+  margin-top: var(--space-800);
   padding: 0 var(--space-400) var(--space-800);
   text-align: center;
-  margin-top: var(--space-800);
 }
 
 .information-container h2,
@@ -309,22 +307,20 @@ p {
 
 .information-container p,
 .footer p {
-  max-inline-size: 28ch;
   margin-inline: auto;
+  max-inline-size: 28ch;
   text-align: center;
 }
 
 /* FOOTER */
 .footer {
   background-color: var(--cyan-600);
-  padding: var(--space-800) var(--space-400);
-  margin-top: calc(var(--space-700) / 2 * -1);
-  background-image:
-    linear-gradient(rgba(77, 150, 169, 0.9)),
-    url("../images/mobile/image-footer.jpg");
+  background-image: linear-gradient(rgba(77, 150, 169, 0.9)), url("../images/mobile/image-footer.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  margin-top: calc(var(--space-700) / 2 * -1);
+  padding: var(--space-800) var(--space-400);
 }
 
 .footer .wrapper {
