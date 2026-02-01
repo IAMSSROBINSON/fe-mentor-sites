@@ -152,6 +152,10 @@
   max-height: 100%;
 }
 
+.information-container {
+  padding-bottom: var(--space-900); 
+}
+
 .information-container h2, .footer h2 {
   font-size: var(--fs-800);
   max-inline-size: 15ch;
