@@ -54,17 +54,21 @@
   max-height: 100%;
 }
 
-.information-container h2 {
+.information-container h2, .footer h2 {
   max-inline-size: 18ch;
   font-size: calc(var(--fs-200) * 3);
 }
 
-.information-container p {
+.information-container p, .footer p {
   max-inline-size: 48ch;
 }
 
 .information-container h3 {
   font-size: var(--fs-300);
+}
+
+.footer {
+  padding: var(--space-800) calc(var(--space-1400) + var(--space-200) + var(--space-50));
 }
 }
 
@@ -148,7 +152,7 @@
   max-height: 100%;
 }
 
-.information-container h2 {
+.information-container h2, .footer h2 {
   font-size: var(--fs-800);
   max-inline-size: 15ch;
 }
@@ -157,10 +161,42 @@
   font-size: var(--fs-600);
 }
 
-.information-container p {
+.information-container p, .footer p {
   max-inline-size: 46ch;
 }
 
+.footer {
+  padding: var(--space-1400) calc(var(--space-1400) + var(--space-600));
+}
+
+.footer .wrapper {
+  max-width: 1120px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 256px;
+  grid-template-rows: 1;
+   align-items: start;
+  row-gap: 0;
+  column-gap: var(--space-400);
+}
+
+.footer h2 {
+  grid-column: 1;
+  grid-row: 1;
+   text-align: left;
+}
+
+.footer p {
+  grid-column: 2;
+  grid-row: 1;
+   text-align: left;
+   max-inline-size: 30ch;
+}
+
+.footer button {
+  grid-column: 3/-1;
+  grid-row: 1;
+}
 
 
 }
