@@ -4,6 +4,7 @@
     /* font */
     --ff-base: "Manrope", sans-serif;
 
+    --fs-500: 1.25rem; /* 20px */
     --fs-100: 0.8125rem; /* 13px */
 
     --fw-700: 700;
@@ -16,6 +17,28 @@
     --clr-grey-500: hsl(214, 17%, 51%);
     --clr-grey-400: hsl(212, 23%, 69%);
     --clr-grey-200: hsl(210, 46%, 95%);
+
+    /* space */
+    --space-900: 10rem; /* 160px */
+    --space-800: 6.5rem; /* 104px */
+    --space-700: 4rem; /* 64px */
+    --space-600: 3.5rem; /* 56px */
+    --space-500: 1.5625rem; /* 25px */
+    --space-400: 3rem; /* 48px */
+    --space-300: 2.5rem; /* 40px */
+    --space-200: 2rem; /* 32px */
+    --space-100: 1.5rem; /* 24px */
+    --space-50: 1rem; /* 16px */
+  
+
+    /* tracking */
+    --track-l: 1.5625rem; /* 25px */
+    --track-m: 0.0156rem; /* 0.25px */
+    --track-s: 0.0075rem; /* 0.12px */
+
+    /* line-height */
+    --lh-l: 1.4;
+    --lh-s: 1.3;
 
 }
 
