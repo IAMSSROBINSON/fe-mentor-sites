@@ -29,7 +29,6 @@
     --space-200: 2rem; /* 32px */
     --space-100: 1.5rem; /* 24px */
     --space-50: 1rem; /* 16px */
-  
 
     /* tracking */
     --track-l: 1.5625rem; /* 25px */
@@ -55,9 +54,9 @@
 
 img, video, iframe, canvas {
     display: block;
+    line-height: 0;
     max-width: 100%;
     object-fit: cover;
-    line-height: 0;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -72,14 +71,14 @@ button, input, textarea, select {
 
 html {
     height: 100%;
-    scrollbar-gutter: steady;
     scroll-behavior: smooth;
+    scrollbar-gutter: steady;
 }
 
 body {
-    min-height: 100vh;
     font-family: var(--ff-base);
     font-size: var(--fs-100);
     font-weight: var(--fw-500);
+    min-height: 100vh;
 }
 
