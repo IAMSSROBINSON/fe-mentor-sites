@@ -1,0 +1,62 @@
+:root {
+    /* VARIABLES */
+    
+    /* font */
+    --ff-base: "Manrope", sans-serif;
+
+    --fs-100: 0.8125rem; /* 13px */
+
+    --fw-700: 700;
+    --fw-500: 500;
+
+    /* colors */
+    --clr-white: #ffffff;
+
+    --clr-grey-900: hsl(217, 19%, 35%);
+    --clr-grey-500: hsl(214, 17%, 51%);
+    --clr-grey-400: hsl(212, 23%, 69%);
+    --clr-grey-200: hsl(210, 46%, 95%);
+
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+img, video, iframe, canvas {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+    line-height: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    text-wrap: balance;
+}
+
+button, input, textarea, select {
+    color: inherit;
+    font: inherit;
+}
+
+html {
+    height: 100%;
+    scrollbar-gutter: steady;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--ff-base);
+    font-size: var(--fs-100);
+    font-weight: var(--fw-500);
+}
+
