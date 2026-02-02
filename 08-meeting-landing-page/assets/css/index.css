@@ -7,9 +7,11 @@
   --clr-cyan-600: rgb(77, 151, 169);
   --clr-cyan-600-fade: rgb(77, 150, 169, 0.9);
   --clr-cyan-300: #8fe3f9;
+  --clr-cyan-hover: #71C0D4;
 
   --clr-purple-600: #855fb1;
   --clr-purple-300: #d9b8ff;
+  --clr-purple-hover: #B18BDD;
 
   --clr-slate-900: #28283d;
   --clr-slate-600: #87879d;
@@ -205,6 +207,7 @@ p {
   padding-block: var(--space-200);
   padding-inline: var(--space-500);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .hero-button-left {
@@ -217,6 +220,14 @@ p {
 
 .button span {
   color: var(--clr-cyan-300);
+}
+
+.hover-left:hover {
+  background-color: var(--clr-cyan-hover);
+}
+
+.hover-right:hover {
+  background-color: var(--clr-purple-hover);
 }
 
 /* SEPARATORS */
