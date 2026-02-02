@@ -23,10 +23,10 @@
   .main-container {
     grid-column: 2/-1;
     grid-row: 1;
-    .main-container {
-  padding: calc(var(--space-500) + 1) var(--space-400) calc(var(--space-400) + var(--space-50))
-}
+    padding: calc(var(--space-500) + 1px) var(--space-400) calc(var(--space-400) + var(--space-50))
   }
+  
+
   .main-container .description {
     margin-bottom: var(--space-300);
   }

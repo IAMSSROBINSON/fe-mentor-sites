@@ -118,7 +118,7 @@ body {
 }
 
 .hero-image-container {
-  /* width: 100%; */
+  width: 100%;
   height: 200px;
   background-image: url("../assets/images/drawers.jpg");
   background-repeat: no-repeat;
