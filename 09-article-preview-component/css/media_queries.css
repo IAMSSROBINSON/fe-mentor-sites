@@ -13,6 +13,8 @@
   .header-container {
     grid-column: 1/2;
     grid-row: 1;
+    background-position: bottom left 80%;
+    background-size: contain;
   }
   .hero-image-container {
     width: 100%;

@@ -110,6 +110,7 @@ body {
   border-radius: var(--br-s);
   overflow: hidden;
   margin: auto;
+  box-shadow: 0 40px 40px -10px rgba(201, 213, 225, 0.5);
 }
 
 /* header */
