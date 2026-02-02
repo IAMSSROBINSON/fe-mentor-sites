@@ -134,6 +134,9 @@ body {
 .main-container {
   padding: var(--space-400) calc(var(--space-400) - 2px)
     calc(var(--space-200) + 2px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main-container .title {
