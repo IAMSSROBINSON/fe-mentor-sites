@@ -192,6 +192,11 @@ body {
   line-height: var(--lh-l);
 }
 
+.share-container {
+  border: none;
+  border-radius: var(--br-pill);
+}
+
 .share-image-container {
   align-items: center;
   background-color: var(--clr-grey-200);
@@ -206,6 +211,7 @@ body {
   position: relative;
   width: 32px;
 }
+
 .share-image-container.active {
   background-color: var(--clr-grey-500);
   z-index: 3;
