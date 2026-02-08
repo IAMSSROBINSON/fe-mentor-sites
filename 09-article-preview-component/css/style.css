@@ -224,7 +224,7 @@ body {
   color: var(--clr-white);
 }
 
-/* tootip */
+/* tooltip */
 .tooltip-container {
   align-items: center;
   background-color: var(--clr-grey-900);
