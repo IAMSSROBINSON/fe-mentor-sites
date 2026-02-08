@@ -23,12 +23,56 @@
   .main-container {
     grid-column: 2/-1;
     grid-row: 1;
-    padding: calc(var(--space-500) + 1px) var(--space-400) calc(var(--space-400) + var(--space-50))
+    padding: calc(var(--space-500) + 1px) var(--space-400)
+      calc(var(--space-400) + var(--space-50));
   }
-  
 
   .main-container .description {
     margin-bottom: var(--space-300);
+  }
+
+  .share-container {
+    position: relative;
+  }
+
+  .share-image-container {
+    position: relative;
+  }
+
+  .tooltip-container {
+    position: absolute;
+    bottom: calc(100% + 25px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    padding: 16px 24px;
+    margin: 0;
+    top: auto;
+    right: auto;
+    border-radius: var(--br-s);
+    box-shadow: var(--bs-s);
+  }
+
+  .card,
+  .main-container {
+    overflow: initial;
+  }
+
+  .hero-image-container {
+    border-radius: var(--br-s) 0 0 var(--br-s);
+  }
+
+  .tooltip-container::after {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    width: 24px;
+    height: 12px;
+    background-color: var(--clr-grey-900);
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -1px;
   }
 }
 
@@ -52,7 +96,6 @@
     height: 100%;
   }
   .main-container {
-    /* display: none; */
     grid-column: 2/-1;
     grid-row: 1;
     padding: calc(var(--space-400) - 2px) var(--space-500);
