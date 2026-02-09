@@ -91,7 +91,7 @@ select {
 html {
   height: 100%;
   scroll-behavior: smooth;
-  scrollbar-gutter: steady;
+  scrollbar-gutter: stable;
 }
 
 body {
