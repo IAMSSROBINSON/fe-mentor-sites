@@ -16,9 +16,9 @@ fe-mentor article-preview-component website challenge submission
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- JavaScript interactivity
 
 ## What I learned
+- JavaScript interactivity
 
 ## View live site here 
 https://09-article-preview-component.netlify.app/
