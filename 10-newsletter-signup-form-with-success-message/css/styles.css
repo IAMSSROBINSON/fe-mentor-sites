@@ -25,8 +25,8 @@
     --space-200: 16px; /* 16px */
     --space-100: 0.5rem; /* 8px */
 
-    --lh-xl: 1.5;
-    --lh-l: 1;
+    --lh-xl: 1.5; /* 150% */
+    --lh-l: 1; /* 100% */
 
     --br-s: 0.5rem; /* 8px */
 
@@ -141,14 +141,14 @@ p {
     margin-bottom: var(--space-300);
 }
 
-label {
+.label {
      font-size: var(--fs-label);
     font-weight: var(--fw-700);
     line-height: var(--lh-xl);
     color: var(--clr-blue-800);
 }
 
-input {
+.email-input {
     padding: var(--space-200) var(--space-300);
     border-radius: var(--br-s);
     border: 1px solid var(--clr-blue-800);
@@ -161,7 +161,7 @@ input {
     color: var(--clr-blue-800);
 }
 
-button {
+.submit-btn {
     width: 100%;
     padding: var(--space-200) calc(var(--space-400) + 5px);
     border-radius: var(--br-s);
