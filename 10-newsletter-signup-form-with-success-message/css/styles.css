@@ -79,7 +79,10 @@ p {
 /* form */
 .card {
     background-color: var(--clr-white);
-    /* height: 100vh; */
+}
+
+.hero-image {
+    width: 100%;
 }
 
 .heading {
@@ -127,6 +130,7 @@ p {
 
 .card-content-container {
     padding: var(--space-500) var(--space-300) calc(var(--space-500) + 4px) var(--space-300);
+    height: 100%;
 }
 
 .flex {
