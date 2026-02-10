@@ -8,6 +8,7 @@
     <meta name="robots" content="index,follow">
     <meta name="description" content="Newsletter sign-up form with success message">
     <title>Newsletter Sign-Up Form With Success Message</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/icons/favicon-32x32.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -18,8 +19,28 @@
 </head>
 
 <body>
-    <h1>Hello World!</h1>
-    <p>Product discovery and building what matters</p>
+    
+    <div class="card">
+        <figure class="hero-container">
+            <img src="./assets/images/illustration-sign-up-mobile.svg" alt="Decorative image of flying computer objects">
+        </figure>
+        <main class="card-content-container">
+            <h1 class="heading">Stay updated!</h1>
+            <p class="sub-heading">Join 60,000+ product managers receiving monthly updates on:</p>
+            <ul class="card-list flex">
+                <li>Product discovery and building what matters</li>
+                <li>Measuring to ensure updates are a success</li>
+                <li>And much more!</li>
+            </ul>
+            <form id="card-form" action="#" method="#">
+                <div class="email-container flex">
+                    <label for="email">Email address</label>
+                    <input type="email" name="email" id="email" placeholder="ash@loremcompany.com">
+                </div>
+                 <button type="submit">Subscribe to monthly newsletter</button>
+            </form>
+        </main>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 

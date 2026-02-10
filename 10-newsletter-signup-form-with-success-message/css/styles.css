@@ -1,5 +1,35 @@
 :root {
     --font-base: "Roboto", sans-serif;
+
+    --fs-title: 2.5rem; /* 40px */
+    --fs-body: 1rem; /* 16px */
+    --fs-label: 0.75rem; /* 12px */
+
+    --fw-700: 700;
+    --fw-400: 400;
+
+    --clr-red: hsl(4, 100%, 67%);
+    --clr-blue-800: hsl(234, 29%, 20%);
+    --clr-blue-700: hsl(235, 18%, 26%);
+    --clr-grey: hsl(0, 0%, 58%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --space-1300: 6.5rem; /*1 04px  */
+    --space-900: 4.5rem; /* 72px */
+    --space-800: 4rem; /* 64px */
+    --space-700: 3.5rem; /* 56px */
+    --space-600: 3rem; /* 48px */
+    --space-500: 2.5rem; /* 40px */
+    --space-400: 2rem; /* 32px */
+    --space-300: 1.5rem ; /* 24px */
+    --space-200: 16px; /* 16px */
+    --space-100: 0.5rem; /* 8px */
+
+    --lh-xl: 1.5;
+    --lh-l: 1;
+
+    --br-s: 0.5rem; /* 8px */
+
 }
 
 *,
@@ -39,8 +69,106 @@ input, select, textarea, button {
 body {
     min-height: 100vh;
     font-family: var(--font-base);
+    background-color: var(--clr-blue-700);
 }
 
 p {
     font-weight: 400;
+}
+
+/* form */
+.card {
+    background-color: var(--clr-white);
+    /* height: 100vh; */
+}
+
+.heading {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-700);
+    line-height: var(--lh-l);
+    color: var(--clr-blue-800);
+    margin-bottom: var(--space-300);
+}
+
+.sub-heading {
+    margin-bottom: var(--space-300);
+}
+
+.sub-heading, .card-list li {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-400);
+    line-height: var(--lh-xl);
+    color: var(--clr-blue-800);
+
+}
+
+.card-list li {
+    list-style: none;
+    position: relative;
+    padding-left: var(--space-500);
+}
+
+.card-list li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 21px;
+    height: 21px;
+    background-image: url("../assets/images/icons/icon-list.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-list li:last-of-type {
+     margin-bottom: var(--space-500);
+}
+
+.card-content-container {
+    padding: var(--space-500) var(--space-300) calc(var(--space-500) + 4px) var(--space-300);
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-100);
+}
+
+/* email */
+.email-container  {
+    margin-bottom: var(--space-300);
+}
+
+label {
+     font-size: var(--fs-label);
+    font-weight: var(--fw-700);
+    line-height: var(--lh-xl);
+    color: var(--clr-blue-800);
+}
+
+input {
+    padding: var(--space-200) var(--space-300);
+    border-radius: var(--br-s);
+    border: 1px solid var(--clr-blue-800);
+}
+
+::placeholder {
+    font-size: var(--fs-body);
+    font-weight: var(--fw-400);
+    line-height: var(--lh-xl);
+    color: var(--clr-blue-800);
+}
+
+button {
+    width: 100%;
+    padding: var(--space-200) calc(var(--space-400) + 5px);
+    border-radius: var(--br-s);
+    border: none;
+    background-color: var(--clr-blue-800);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-700);
+    line-height: var(--lh-xl);
+    color: var(--clr-white);
 }
