@@ -141,11 +141,20 @@ p {
     margin-bottom: var(--space-300);
 }
 
-.label {
+.label, .error-message {
      font-size: var(--fs-label);
     font-weight: var(--fw-700);
     line-height: var(--lh-xl);
     color: var(--clr-blue-800);
+}
+
+.labels-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.error-message {
+      color: var(--clr-red);
 }
 
 .email-input {
