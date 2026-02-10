@@ -1,3 +1,7 @@
+:root {
+    --font-base: "Roboto", sans-serif;
+}
+
 *,
 *::before,
 *::after {
@@ -34,4 +38,9 @@ input, select, textarea, button {
 
 body {
     min-height: 100vh;
+    font-family: var(--font-base);
+}
+
+p {
+    font-weight: 400;
 }
