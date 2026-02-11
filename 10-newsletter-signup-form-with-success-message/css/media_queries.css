@@ -9,7 +9,6 @@
         padding-block: calc(var(--space-500) + 2.86px);
         padding-inline: var(--space-500);
         border-radius: calc(var(--space-400) + 4px);
-        
 }
 .card-content-container {
     padding-inline: 0;
@@ -21,6 +20,13 @@
 .heading {
     font-size: var(--fs-xl);
 }
+.card-list li:last-of-type {
+     margin-bottom: var(--space-300);
+}
+.email-container  {
+    margin-bottom: var(--space-200);
+}
+
 }
 
 /* desktop */
@@ -58,8 +64,18 @@
     padding-bottom: 0;
 }
 
+.heading, .sub-heading, .card-list li:last-of-type {
+    margin-bottom: var(--space-400);
+}
+
+
 .hero-image {
   
 }
+
+.email-container  {
+    margin-bottom: var(--space-300);
+}
+
 
 }
