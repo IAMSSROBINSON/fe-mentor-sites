@@ -21,9 +21,11 @@
 <body>
     
     <div class="card">
-        <figure class="hero-container">
-            <img src="./assets/images/illustration-sign-up-mobile.svg" alt="Decorative image of flying computer objects" class="hero-image">
-        </figure>
+        <picture class="hero-container">
+            <source srcset="./assets/images/illustration-sign-up-mobile.svg" media="(max-width: 600px)">
+            <source srcset="./assets/images/illustration-sign-up-tablet.svg" media="(max-width: 920px)">
+            <img src="./assets/images/illustration-sign-up-desktop.svg" alt="Decorative image of flying computer objects" class="hero-image">
+        </picture>
         <main class="card-content-container">
             <h1 class="heading">Stay updated!</h1>
             <p class="sub-heading">Join 60,000+ product managers receiving monthly updates on:</p>

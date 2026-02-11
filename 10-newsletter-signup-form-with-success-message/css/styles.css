@@ -1,6 +1,7 @@
 :root {
     --font-base: "Roboto", sans-serif;
 
+    --fs-xl: 3.5rem; /* 56px */
     --fs-title: 2.5rem; /* 40px */
     --fs-body: 1rem; /* 16px */
     --fs-label: 0.75rem; /* 12px */
@@ -22,7 +23,7 @@
     --space-500: 2.5rem; /* 40px */
     --space-400: 2rem; /* 32px */
     --space-300: 1.5rem ; /* 24px */
-    --space-200: 16px; /* 16px */
+    : 16px; /* 16px */
     --space-100: 0.5rem; /* 8px */
 
     --lh-xl: 1.5; /* 150% */
@@ -58,7 +59,7 @@ img, canvas, video, iframe, svg {
 
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
-    text-wrap: balance;
+    /* text-wrap: balance; */
 }
 
 input, select, textarea, button {
@@ -146,15 +147,16 @@ p {
 }
 
 .label, .error-message {
-     font-size: var(--fs-label);
+    font-size: var(--fs-label);
     font-weight: var(--fw-700);
-    line-height: var(--lh-xl);
+    /* line-height: var(--lh-xl); */
     color: var(--clr-blue-800);
 }
 
 .labels-container {
     display: flex;
     justify-content: space-between;
+    /* margin-bottom: 8px; */
 }
 
 .error-message {
