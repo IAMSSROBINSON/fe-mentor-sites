@@ -186,4 +186,9 @@ p {
     font-weight: var(--fw-700);
     line-height: var(--lh-xl);
     color: var(--clr-white);
+    
+}
+
+.email-input, .submit-btn {
+ cursor: pointer;
 }
