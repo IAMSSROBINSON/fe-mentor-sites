@@ -29,7 +29,7 @@
 }
 
 /* desktop */
-@media screen and (min-width: 920px) {
+@media screen and (min-width: 1004px) {
   body {
     display: grid;
     place-content: center;
@@ -57,8 +57,11 @@
     flex-direction: column;
     grid-column: 1/2;
     grid-row: 1;
+    padding-top: 0;
     padding-bottom: 0;
-    padding-top: calc(var(--space-900) - 0.5px);
+    /* padding-top: calc(var(--space-900) - 0.5px); */
+
+    justify-content: center;
   }
 
   .heading,
