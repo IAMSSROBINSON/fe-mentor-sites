@@ -55,7 +55,7 @@
     flex-direction: column;
     /* justify-content: center; */
     padding-top: 71.5px;
-    padding-block: 0;
+    padding-bottom: 0;
 }
 
 .hero-image {
