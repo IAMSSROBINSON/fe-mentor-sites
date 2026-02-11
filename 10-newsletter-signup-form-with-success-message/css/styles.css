@@ -166,14 +166,14 @@ p {
 .email-input {
     padding: var(--space-200) var(--space-300);
     border-radius: var(--br-s);
-    border: 1px solid var(--clr-blue-800);
+    border: 1px solid var(--clr-grey);
 }
 
 ::placeholder {
     font-size: var(--fs-body);
     font-weight: var(--fw-400);
     line-height: var(--lh-xl);
-    color: var(--clr-blue-800);
+    color: var(--clr-grey);
 }
 
 .submit-btn {
