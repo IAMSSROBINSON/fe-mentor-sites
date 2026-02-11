@@ -73,4 +73,7 @@
   .email-container {
     margin-bottom: var(--space-300);
   }
+  .hero-image {
+    min-height: 593px;
+  }
 }
