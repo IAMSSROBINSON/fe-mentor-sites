@@ -1,0 +1,6 @@
+/* success card */
+.success-card {
+    background-color: var(--clr-white);
+    min-height: 100vh;
+}
+

@@ -2,7 +2,7 @@
 const form = document.getElementById("card-form");
 const submitBtn = document.getElementById("submit-btn");
 const emailInput = document.getElementById("email");
-const emailErrorMessageElement = document.getElementById("error-message-element");
+
 
 // Validation functions
 function required (string) {
@@ -50,6 +50,23 @@ function validateForm (formDataObj) {
 
 
 // Events
+form.addEventListener("submit", handleSubmit);
+function handleSubmit (e) {
+    e.preventDefault();
+    console.log("Handle submit");
+    const formDataObj = objFromForm(form);
+    const formValidationErrorsObj = validateForm(formDataObj);
+    const formValidationErrorsObjValues = Object.values(formValidationErrorsObj);
+    
+    if (formValidationErrorsObjValues.some((value) => value !== null)) {
+        return;
+    }
+    form.reset();
+    return window.location.href = "formSuccess.html";
+}
+
+
+
 emailInput.addEventListener("blur", handleBlur);
 function handleBlur (e) {
     console.log("Handle blur");
@@ -60,7 +77,6 @@ function handleBlur (e) {
 
     // Form values validated, returned obj {key: value string if invalid or null if valid}
     const formValidationErrorsObj = validateForm(formDataObj);
-    const formValidationErrorsObjValues = Object.values(formValidationErrorsObj);
 
     for (const key in formValidationErrorsObj) {
          const domErrorElement = document.getElementById(`${key}-error-message-element`);

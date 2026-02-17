@@ -1,0 +1,7 @@
+@media screen and (max-width: 768px) {
+    .body {
+        display: grid;
+        place-content: center;
+        padding: 40rem;
+    }
+}
