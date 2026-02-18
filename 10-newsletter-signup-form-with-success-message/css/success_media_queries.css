@@ -1,7 +1,21 @@
-@media screen and (max-width: 768px) {
-    .body {
-        display: grid;
-        place-content: center;
-        padding: 40rem;
-    }
+@media screen and (min-width: 600px) {
+body {
+    display: grid;
+    place-content: center;
+
+    /* padding-inline: initial !important;
+    padding-block: initial !important; */
+    margin: 0;
+  }
+  /* success */
+  .success-card {
+    max-width: 504px;
+    border-radius: var(--br-xl);
+    min-height: initial;
+    padding-inline: calc(var(--space-800) - 4px);
+    padding-block: var(--space-800);
+  }
+  .success-card .sub-heading {
+    margin-bottom: var(--space-400);
+}
 }
