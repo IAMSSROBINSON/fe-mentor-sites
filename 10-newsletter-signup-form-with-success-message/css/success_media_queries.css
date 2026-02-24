@@ -1,5 +1,5 @@
 @media screen and (min-width: 600px) {
-body {
+  body {
     display: grid;
     place-content: center;
 
@@ -17,5 +17,5 @@ body {
   }
   .success-card .sub-heading {
     margin-bottom: var(--space-400);
-}
+  }
 }

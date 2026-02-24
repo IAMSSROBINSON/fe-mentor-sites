@@ -1,26 +1,27 @@
 /* success card */
 .success-card {
-    background-color: var(--clr-white);
-    min-height: 100vh;
-    padding: 149px 24px 70px; 
+  background-color: var(--clr-white);
+  min-height: 100vh;
+  padding: 149px 24px 70px;
 }
 
-.insert-email, .success-card button {
-    font-weight: var(--fw-700);
+.insert-email,
+.success-card button {
+  font-weight: var(--fw-700);
 }
 
 .success-image-container {
-    margin-bottom: var(--space-400);
+  margin-bottom: var(--space-400);
 }
 
 .success-card .sub-heading {
-    margin-bottom: 263px;
+  margin-bottom: 263px;
 }
 
 .success-card button {
-    background-color: var(--clr-blue-800);
-    color: var(--clr-white);
-    width: 100%;
-    padding: var(--space-200) 0px;
-    border-radius: var(--br-s);
+  background-color: var(--clr-blue-800);
+  color: var(--clr-white);
+  width: 100%;
+  padding: var(--space-200) 0px;
+  border-radius: var(--br-s);
 }
