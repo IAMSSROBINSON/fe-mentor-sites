@@ -61,8 +61,13 @@ function handleSubmit (e) {
     if (formValidationErrorsObjValues.some((value) => value !== null)) {
         return;
     }
-    form.reset();
-    return window.location.href = "formSuccess.html";
+
+    if (formDataObj['email']) {
+        window.location.href = `formSuccess.html?email=${encodeURIComponent(formDataObj['email'])}`;
+        return form.reset();
+    
+    }
+  return;
 }
 
 
