@@ -14,7 +14,7 @@ function required (string) {
 
 function emailFormat (string) {
     if (!string.includes("@") || !string.includes(".")) {
-        return "Must match email format: name@example.com";
+        return "Valid email required";
     }
     return null;
 }
