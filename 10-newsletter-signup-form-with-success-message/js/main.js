@@ -84,8 +84,14 @@ function handleBlur (e) {
         if (formValidationErrorsObj[key] !== null) {
            
             domErrorElement.textContent = formValidationErrorsObj[key];
+            emailInput.style.border = '1px solid var(--clr-red)';
+            emailInput.style.backgroundColor = 'var(--clr-red-100)';
+            emailInput.style.color = 'var(--clr-red)';
         } else {
             domErrorElement.textContent = "";
+            emailInput.style.border = '1px solid var(--clr-grey)';
+            emailInput.style.backgroundColor = ' var(--clr-white)';
+            emailInput.style.color = ' var(--clr-blue-800)';
         }
     }
     
