@@ -9,6 +9,8 @@
   --fw-700: 700;
   --fw-400: 400;
 
+  --clr-orange: hsl(15, 100%, 61%);
+  --clr-pink: hsl(346, 100%, 66%);
   --clr-red: hsl(4, 100%, 67%);
   --clr-blue-800: hsl(234, 29%, 20%);
   --clr-blue-700: hsl(235, 18%, 26%);
@@ -189,6 +191,7 @@ p {
   line-height: var(--lh-xl);
 }
 
+/* button */
 .submit-btn {
   background-color: var(--clr-blue-800);
   border-radius: var(--br-s);
@@ -199,8 +202,10 @@ p {
   line-height: var(--lh-xl);
   padding: var(--space-200) calc(var(--space-400) + 5px);
   width: 100%;
+  cursor: pointer;
 }
 
-.submit-btn {
-  cursor: pointer;
+.submit-btn:active, .submit-btn:hover, .submit-btn:focus   {
+   background: linear-gradient(to left, var(--clr-orange),var(--clr-pink));
+
 }
