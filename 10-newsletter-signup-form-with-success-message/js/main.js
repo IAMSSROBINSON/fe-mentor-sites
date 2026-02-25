@@ -27,7 +27,7 @@ const fields = {
 function validateFields(value, arrayOfValidationFunctions) {
   for (const func of arrayOfValidationFunctions) {
     const result = func(value);
-    console.log("result:", result);
+
     if (result !== null) {
       return result;
     }
@@ -36,13 +36,10 @@ function validateFields(value, arrayOfValidationFunctions) {
 }
 
 function validateForm(formDataObj) {
-  console.log("validateForm:", formDataObj);
-
   const errorsObj = {};
 
   for (const key in formDataObj) {
     errorsObj[key] = validateFields(formDataObj[key], fields[key]);
-    console.log("validateForm errorsObj:", errorsObj);
   }
   return errorsObj;
 }
@@ -51,7 +48,7 @@ function validateForm(formDataObj) {
 form.addEventListener("submit", handleSubmit);
 function handleSubmit(e) {
   e.preventDefault();
-  console.log("Handle submit");
+
   const formDataObj = objFromForm(form);
   const formValidationErrorsObj = validateForm(formDataObj);
   const formValidationErrorsObjValues = Object.values(formValidationErrorsObj);
@@ -69,11 +66,9 @@ function handleSubmit(e) {
 
 emailInput.addEventListener("blur", handleBlur);
 function handleBlur(e) {
-  console.log("Handle blur");
 
   // get form data obj
   const formDataObj = objFromForm(form);
-  console.log("formDataObj: ", formDataObj);
 
   // Form values validated, returned obj {key: value string if invalid or null if valid}
   const formValidationErrorsObj = validateForm(formDataObj);
