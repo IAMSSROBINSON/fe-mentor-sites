@@ -2,9 +2,6 @@
   body {
     display: grid;
     place-content: center;
-
-    /* padding-inline: initial !important;
-    padding-block: initial !important; */
     margin: 0;
   }
   /* success */
