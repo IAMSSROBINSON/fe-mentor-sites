@@ -1,0 +1,16 @@
+{
+  "name": "11-time-tracking-dashboard",
+  "version": "1.0.0",
+  "description": "fe-mentor time-tracking-dashboard website challenge submission",
+  "main": "./js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}
