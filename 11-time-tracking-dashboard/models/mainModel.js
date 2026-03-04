@@ -1,12 +1,20 @@
-class ModelManager {
+import getData from '../database/db.js';
+class   ModelManager {
 
-    constructor () {
+    data = {};
 
+    constructor (name) {
+        this.name = name;
     }
 
-    mainModelInit () {
-        console.log("mainModelInit");
+    async mainModelInit () {
+        console.log("mainModelInit fetching data..");
+        this.data = await getData();
     }
+
+
+
+
 }
 
 export default ModelManager;
