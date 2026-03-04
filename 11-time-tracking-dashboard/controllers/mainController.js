@@ -11,19 +11,14 @@ async function mainControllerInit () {
     // initialize model and data 
    try {
     await modelManager_1.mainModelInit();
+    mainViewInit({name: modelManager_1.name, data: modelManager_1.data});
    }
    catch (err) {
     console.log("controller", err.message);
     // initialize view with null for failed fetch and err message arguments, to render failed setup with template data
-    mainViewInit(null, err.message);
+    mainViewInit({name: modelManager_1.name, data: null, error: err.message});
    }
 
-   // access data from model if successfully awaited
-   console.log("controller: ", modelManager_1.data);
-   console.log("controller: ", modelManager_1);
-  
-   // initialize view and send data through from model, confirm success with 1 argument
-   mainViewInit(1, modelManager_1.data);
 }
 mainControllerInit();
 
