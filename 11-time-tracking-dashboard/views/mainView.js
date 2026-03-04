@@ -1,3 +1,4 @@
+
 function mainViewInit () {
     console.log("mainViewInit");
 }
