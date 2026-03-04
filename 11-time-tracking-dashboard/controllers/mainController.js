@@ -18,6 +18,7 @@ async function mainControllerInit () {
 
    // access data from model if successfully awaited
    console.log("controller: ", modelManager_1.data);
+   console.log("controller: ", modelManager_1);
   
 }
 mainControllerInit();
