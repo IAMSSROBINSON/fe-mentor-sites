@@ -47,7 +47,12 @@ textarea {
 
 body {
   min-height: 100vh;
+}
+
+body {
   font-family: "Rubik", sans-serif;
+  background-color: #0E1323;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

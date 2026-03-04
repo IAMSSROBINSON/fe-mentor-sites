@@ -3,3 +3,8 @@
 @import 'media-queries';
 
 
+body {
+      font-family: $base-font;
+      background-color: $clr-navy-950;
+      color: $clr-white;
+}
