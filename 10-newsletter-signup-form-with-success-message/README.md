@@ -23,8 +23,7 @@ fe-mentor newsletter-signup-form-with-success-message website challenge submissi
 - Error States
 
 ## View live site here 
-https://10-newsletter-signup-form-with-success-message.netlify.app/
-
+https://10-newsletter-signup-form-with-succes.netlify.app/g
 
 ##### Final Screenshot
 ![Newsletter-signup-form-with-success-message screen shot](./assets/design/01_screen_shot_render.png)
