@@ -18,13 +18,13 @@
 
 .user-img {
   width: $space-800;
+  height: $space-800;
   border: 3px solid $clr-white;
-  border-radius: 100vh;
+  border-radius: 50%;
 }
 
 // user information
 .user-information-container {
-    
 }
 
 .user-label {
@@ -48,6 +48,8 @@
   @include flex(row, space-around, center);
   padding: $space-300;
   flex-wrap: wrap;
+  max-width: 343px;
+  margin-inline: auto;
 }
 .calendar-item {
   cursor: pointer;
@@ -65,10 +67,10 @@
   color: $clr-white;
 }
 
-.calendar-item a:active   {
+.calendar-item a:active {
   color: $clr-white;
 }
 
 a.selected {
-    color: $clr-white;
+  color: $clr-white;
 }

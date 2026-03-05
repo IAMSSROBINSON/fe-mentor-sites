@@ -14,7 +14,7 @@ function Profile({ name,  imgSrc}) {
       </div>
       <ul class='calendar-list'>
          <li class='calendar-item'>
-            <a href='#' id='daily' class='selected'>Daily</a>
+            <a href='#' id='daily'>Daily</a>
          </li>
          <li class='calendar-item'>
             <a href='#' id='weekly'>Weekly</a>

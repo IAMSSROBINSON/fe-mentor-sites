@@ -67,8 +67,9 @@ body {
 
 .user-img {
   width: 4rem;
+  height: 4rem;
   border: 3px solid #ffffff;
-  border-radius: 100vh;
+  border-radius: 50%;
 }
 
 .user-label {
@@ -93,6 +94,8 @@ body {
   align-items: center;
   padding: 1.5rem;
   flex-wrap: wrap;
+  max-width: 343px;
+  margin-inline: auto;
 }
 
 .calendar-item {
