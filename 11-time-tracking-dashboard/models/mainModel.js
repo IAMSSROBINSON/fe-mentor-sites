@@ -1,27 +1,16 @@
 import getData from '../database/db.js';
 class   ModelManager {
 
-    // make data private, accessible via getter and setter
-    #data = {};
-
-    constructor (name) {
-        this.name = name;
+    constructor (userData) {
+        this.user = userData;
+        this.stats = [];
     }
 
     async mainModelInit () {
         console.log("mainModelInit fetching data..");
-        this.#data = await getData();
+        this.stats = await getData();
+        console.log("model:", this.stats);
     }
-
-    get data () {
-        return this.#data;
-    }
-
-    set data (value) {
-        this.data = value;
-    }
-
-    
 
 }
 
