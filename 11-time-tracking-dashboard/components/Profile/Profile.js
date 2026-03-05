@@ -2,8 +2,28 @@
 function Profile({ name,  imgSrc}) {
     console.log("Profile", imgSrc);
  return `
-    <h1 class="profile-name">${name}</h1>
-    <img src=${imgSrc} alt="some img">
+    <header class='user-card'>
+      <div class='user-container'>
+         <div class='user-avatar-container'>
+            <img src=${imgSrc} alt='user-avatar' class='user-img'/>
+         </div>
+         <div class='user-information-container'>
+            <p class='user-label'>Report for</p>
+            <h1 class='user-name'>${name}</h1>
+         </div>
+      </div>
+      <ul class='calendar-list'>
+         <li class='calendar-item'>
+            <a href='#' id='daily' class='selected'>Daily</a>
+         </li>
+         <li class='calendar-item'>
+            <a href='#' id='weekly'>Weekly</a>
+         </li>
+         <li class='calendar-item'>
+            <a href='#' id='monthly'>Monthly</a>
+         </li>
+      </ul>
+    </header>
  `
 }
 

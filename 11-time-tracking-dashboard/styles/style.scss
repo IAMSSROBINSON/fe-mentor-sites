@@ -1,4 +1,6 @@
+
 @import 'variables';
+@import 'mixins';
 @import 'global';
 @import '../components/Profile/Profile.scss';
 @import 'media-queries';
@@ -8,8 +10,11 @@ body {
       font-family: $base-font;
       background-color: $clr-navy-950;
       color: $clr-white;
+      padding-inline: $space-300;
+      padding-block: calc(#{$space-950} + 1px);
+    
 }
 
-h1 {
-    color: $clr-name;
+#root {
+    // background-color: white;
 }

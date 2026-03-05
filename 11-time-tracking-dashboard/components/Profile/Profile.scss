@@ -1,1 +1,74 @@
-$clr-name: red;
+// user
+.user-card {
+  background-color: $clr-navy-900;
+  border-radius: $br-m;
+  overflow: hidden;
+}
+
+.user-container {
+  background-color: $clr-purple-600;
+  padding: $space-400 $space-400 calc(#{$space-400} + 5px) $space-400;
+  border-radius: $br-m;
+  @include flex(row, center, center);
+  gap: $space-300;
+}
+
+.user-avatar-container {
+}
+
+.user-img {
+  width: $space-800;
+  border: 3px solid $clr-white;
+  border-radius: 100vh;
+}
+
+// user information
+.user-information-container {
+    
+}
+
+.user-label {
+  font-size: $fs-400;
+  font-weight: $fw-400;
+  line-height: $fs-500;
+  color: $clr-navy-200;
+  margin-bottom: $space-100;
+}
+
+.user-name {
+  font-size: $fs-600;
+  font-weight: $fw-300;
+  line-height: calc(#{$fs-600} + 4px);
+  color: $clr-white;
+}
+
+// list
+.calendar-list {
+  list-style: none;
+  @include flex(row, space-around, center);
+  padding: $space-300;
+  flex-wrap: wrap;
+}
+.calendar-item {
+  cursor: pointer;
+}
+
+.calendar-item a {
+  text-decoration: none;
+  font-size: $fs-500;
+  font-weight: $fw-400;
+  line-height: calc(#{$fs-500} + 3px);
+  color: $clr-purple-500;
+}
+
+.calendar-item a:hover {
+  color: $clr-white;
+}
+
+.calendar-item a:active   {
+  color: $clr-white;
+}
+
+a.selected {
+    color: $clr-white;
+}

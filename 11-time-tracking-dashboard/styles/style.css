@@ -49,14 +49,82 @@ body {
   min-height: 100vh;
 }
 
+.user-card {
+  background-color: #1C204B;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.user-container {
+  background-color: #5747EA;
+  padding: 2rem 2rem calc(2rem + 5px) 2rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-img {
+  width: 4rem;
+  border: 3px solid #ffffff;
+  border-radius: 100vh;
+}
+
+.user-label {
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  color: #BBC0FF;
+  margin-bottom: 0.5rem;
+}
+
+.user-name {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: calc(1.5rem + 4px);
+  color: #ffffff;
+}
+
+.calendar-list {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.calendar-item {
+  cursor: pointer;
+}
+
+.calendar-item a {
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: calc(1.125rem + 3px);
+  color: #7078C9;
+}
+
+.calendar-item a:hover {
+  color: #ffffff;
+}
+
+.calendar-item a:active {
+  color: #ffffff;
+}
+
+a.selected {
+  color: #ffffff;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   background-color: #0E1323;
   color: #ffffff;
-}
-
-h1 {
-  color: red;
+  padding-inline: 1.5rem;
+  padding-block: calc(5rem + 1px);
 }
 
 /*# sourceMappingURL=style.css.map */
