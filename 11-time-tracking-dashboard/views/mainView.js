@@ -10,6 +10,7 @@ function mainViewInit ({user, data, error}) {
     console.log("mainViewInit data: ", data);
     if (error) {
          console.log("mainViewInit Error", error);
+         root.innerHTML = Profile({name: "Plato", imgSrc: '../assets/images/placeholder_user.png'});
          return;
     }
 
