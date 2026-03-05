@@ -14,4 +14,4 @@ https://03-fe-social-links-profile.netlify.app/
 
 
 ##### Final Screenshot
-![Social-links-profile screen shot](./assets/design/01_screen_shot_render.png)
+![Social-links-profile screen shot](./design/01_screen_shot_render.png)
