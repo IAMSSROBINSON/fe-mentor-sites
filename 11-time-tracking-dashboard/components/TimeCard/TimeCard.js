@@ -1,4 +1,4 @@
-function TimeCard (timeObj) {
+function TimeCard (timeframe='daily', timeObj) {
     console.log("TimeCard obj:", timeObj);
     return `
         <article class='time-card'>
@@ -13,7 +13,7 @@ function TimeCard (timeObj) {
                 </header>
                 <footer class='time-card-footer'>
                     <h3 class='time-card-current'>
-                        ${timeObj.timeframes.weekly.current}
+                        ${timeObj.timeframes[timeframe].current}
                     </h3>
                     <p class='time-card-previous'>
                     ${timeObj.timeframes.weekly.previous}
