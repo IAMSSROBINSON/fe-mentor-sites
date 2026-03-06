@@ -55,22 +55,26 @@
   cursor: pointer;
 }
 
-.calendar-item a {
+.calendar-item button {
   text-decoration: none;
   font-size: $fs-500;
   font-weight: $fw-400;
   line-height: calc(#{$fs-500} + 3px);
   color: $clr-purple-500;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
 }
 
-.calendar-item a:hover {
+.calendar-item button:hover {
   color: $clr-white;
 }
 
-.calendar-item a:active {
+.calendar-item button:active {
   color: $clr-white;
 }
 
-a.selected {
+button.selected {
   color: $clr-white;
 }

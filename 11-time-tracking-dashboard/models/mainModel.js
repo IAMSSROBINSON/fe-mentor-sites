@@ -12,6 +12,10 @@ class   ModelManager {
         console.log("model:", this.stats);
     }
 
+    get data () {
+        return {user: this.user, stats: this.stats};
+    }
+
 }
 
 export default ModelManager;

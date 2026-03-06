@@ -14,13 +14,13 @@ function Profile({ name,  imgSrc}) {
       </div>
       <ul class='calendar-list'>
          <li class='calendar-item'>
-            <a href='#' id='daily' class='link selected'>Daily</a>
+            <button type='button' id='daily' class='link selected'>Daily</button>
          </li>
          <li class='calendar-item'>
-            <a href='#' id='weekly' class='link'>Weekly</a>
+            <button type='button' id='weekly' class='link'>Weekly</button>
          </li>
          <li class='calendar-item'>
-            <a href='#' id='monthly' class='link'>Monthly</a>
+            <button type='button' id='monthly' class='link'>Monthly</button>
          </li>
       </ul>
     </header>
