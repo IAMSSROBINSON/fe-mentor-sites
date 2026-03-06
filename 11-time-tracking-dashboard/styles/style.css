@@ -122,12 +122,62 @@ a.selected {
   color: #ffffff;
 }
 
+.time-card {
+  background-color: tomato;
+  padding-top: calc(2rem + 6px);
+}
+
+.stat-card {
+  background-color: #1C204B;
+  padding-block: calc(1.5rem + 3.5px);
+  padding-inline: 1.5rem;
+}
+
+.time-card, .stat-card {
+  border-radius: 15px;
+}
+
+.time-card-header, .time-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time-card-header {
+  margin-bottom: 0.5rem;
+}
+
+.time-card-title {
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  color: #ffffff;
+}
+
+.ellipsis-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.time-card-current {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  color: #ffffff;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   background-color: #0E1323;
   color: #ffffff;
   padding-inline: 1.5rem;
   padding-block: calc(5rem + 1px);
+}
+
+#root {
+  display: grid;
+  gap: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

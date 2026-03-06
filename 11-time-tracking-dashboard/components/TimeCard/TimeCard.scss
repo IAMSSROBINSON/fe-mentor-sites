@@ -1,0 +1,54 @@
+.time-card {
+    background-color: tomato;
+    padding-top: calc(#{$space-400} + 6px);
+
+}
+
+.stat-card {
+    background-color: $clr-navy-900;
+    padding-block: calc(#{$space-300} + 3.5px);
+    padding-inline: $space-300;
+}
+
+.time-card, .stat-card {
+    border-radius: $br-m;
+}
+
+.time-card-header, .time-card-footer {
+    @include flex(row, space-between, center);
+}
+
+.time-card-header {
+    margin-bottom: $space-100;
+}
+
+.time-card-title {
+    font-weight: $fw-500;
+    font-size: $fs-500;
+    line-height: $lh-m;
+    color: $clr-white;
+}
+.ellipsis-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.ellipsis-icon {
+
+}
+
+.time-card-footer {
+
+}
+
+.time-card-current {
+    font-weight: $fw-300;
+    font-size: $fs-700;
+    line-height: $lh-xl;
+    color: $clr-white;
+}
+
+.time-card-previous {
+
+}

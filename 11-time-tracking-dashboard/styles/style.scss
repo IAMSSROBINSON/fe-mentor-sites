@@ -3,6 +3,7 @@
 @import 'mixins';
 @import 'global';
 @import '../components/Profile/Profile.scss';
+@import '../components/TimeCard/TimeCard.scss';
 @import 'media-queries';
 
 
@@ -17,4 +18,6 @@ body {
 
 #root {
     // background-color: white;
+    display: grid;
+    gap: $space-300;
 }
