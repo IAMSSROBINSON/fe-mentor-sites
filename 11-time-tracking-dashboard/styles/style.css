@@ -136,9 +136,11 @@ button.selected {
   position: absolute;
   top: 0;
   right: 0;
+  width: 78px;
 }
 
 .stat-card {
+  position: relative;
   background-color: #1C204B;
   padding-block: calc(1.5rem + 3.5px);
   padding-inline: 1.5rem;
