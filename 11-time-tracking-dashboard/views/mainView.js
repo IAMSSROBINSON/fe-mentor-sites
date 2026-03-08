@@ -28,26 +28,27 @@ function mainViewInit({data, error}) {
     console.log("mainViewInit data: ", data);
     
   renderProfile(data.user);
-  renderStats(data.stats);
-
-    
+  renderTimeframeStats(data.stats);
 }
 
 function renderProfile (user) {
    profileContainer.innerHTML = Profile(user);
 }
 
-function renderStats (stats) {
-  console.log("stats", stats)
+function renderTimeframeStats (stats) {
+  console.log("stats", stats);
+  const timeframe = getCurrentSelectedTimeframe();
     const fragment = document.createDocumentFragment();
-    console.log("frag", fragment)
+    console.log("frag", fragment);
+    cardsContainer.innerHTML = "";
     stats.forEach(stat => {
-      console.log('stat', stat)
-      cardsContainer.innerHTML += TimeCard(stat);
+      console.log('stat', stat);
+      cardsContainer.innerHTML += TimeCard(timeframe, stat);
     });
 }
 
 function getCurrentSelectedTimeframe () {
+  console.log("getCurrentSelectedTimeframe");
   const links = document.querySelectorAll('.link');
   let selectedLink = '';
   links.forEach((item) => {
@@ -55,6 +56,7 @@ function getCurrentSelectedTimeframe () {
       selectedLink = item.id;
     }
   });
+  console.log("getCurrentSelectedTimeframe selected", selectedLink);
   return selectedLink;
 }
 
@@ -71,19 +73,33 @@ function removeSelectedTimeframe () {
 }
 
 function addSelectedTimeframe(timeframe) {
-  const links = document.querySelectorAll('.list');
+  const links = document.querySelectorAll('.link');
   links.forEach((item) => {
     if (item.id === timeframe) {
       item.classList.add('selected');
+      console.log(" addSelectedTimeframe item", item)
     }
   })
 }
 
 
-function handleTimeframeClicked () {
-  const currentTimeframe = getCurrentSelectedTimeframe();
-  removeSelectedTimeframe();
-  addSelectedTimeframe(currentTimeframe);
+async function handleTimeframeClicked (e) {
+
+  const target = e.target;
+  console.log("handleTimeframeClicked target", target);
+
+  if (e.target.classList.contains('link')) {
+    const targetIdTimeframe = target.id;
+     removeSelectedTimeframe();
+
+   addSelectedTimeframe(targetIdTimeframe);
+
+  const data = await mainControllerGetData();
+  console.log('handleTimeframeClicked data', data);
+  renderTimeframeStats(data.stats);
+  }
+
+ 
 }
 
 export default mainViewInit;

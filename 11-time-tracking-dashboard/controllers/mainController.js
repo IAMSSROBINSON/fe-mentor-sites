@@ -32,6 +32,7 @@ async function mainControllerInit () {
 
 
 
+
 async function mainControllerGetData () {
     const data = await modelManager_1.data;
     console.log("mainControllerGetData:", data)
@@ -39,4 +40,4 @@ async function mainControllerGetData () {
 }
 
 
-export { mainControllerInit, mainControllerGetData };
+export { mainControllerInit, mainControllerGetData};
