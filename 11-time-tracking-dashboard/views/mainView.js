@@ -10,7 +10,7 @@ const cardsContainer = document.getElementById('time-cards-container');
 const errorMessageContainer = document.getElementById('error-message-container');
 
 // events
-window.addEventListener("click", handleTimeframe);
+window.addEventListener("click", handleTimeframeClicked);
 
 
 // functions
@@ -35,7 +35,6 @@ function mainViewInit({data, error}) {
 
 function renderProfile (user) {
    profileContainer.innerHTML = Profile(user);
-  
 }
 
 function renderStats (stats) {
@@ -48,17 +47,15 @@ function renderStats (stats) {
     });
 }
 
-function getCurrentTimeframe (e) {
-  const target = e.target;
-  console.log("getCurrentTimeframe target", e)
-  if (target.classList.contains('link')) {
-    console.log("Timeframe button clicked");
-    console.log("Timeframe button clicked", target);
-    const timeframe = target.id
-    console.log("timeframe button id: ", timeframe);
-    return timeframe;
-  }
-  return;
+function getCurrentSelectedTimeframe () {
+  const links = document.querySelectorAll('.link');
+  let selectedLink = '';
+  links.forEach((item) => {
+    if (item.classList.contains('selected')) {
+      selectedLink = item.id;
+    }
+  });
+  return selectedLink;
 }
 
 function removeSelectedTimeframe () {
@@ -83,8 +80,8 @@ function addSelectedTimeframe(timeframe) {
 }
 
 
-function handleTimeframe (e) {
-  const currentTimeframe = getCurrentTimeframe(e);
+function handleTimeframeClicked () {
+  const currentTimeframe = getCurrentSelectedTimeframe();
   removeSelectedTimeframe();
   addSelectedTimeframe(currentTimeframe);
 }
