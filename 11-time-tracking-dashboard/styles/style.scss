@@ -21,3 +21,7 @@ body {
     display: grid;
     gap: $space-300;
 }
+
+.error-message-container {
+    display: none;
+}
