@@ -184,4 +184,8 @@ body {
   gap: 1.5rem;
 }
 
+.error-message-container {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -13,9 +13,18 @@ const errorMessageContainer = document.getElementById('error-message-container')
 
 
 // functions
-function mainViewInit() {
+function mainViewInit({data, error}) {
   console.log("mainViewInit");
   
+  if (error) {
+    // render template user and stats
+    console.log("mainViewInit no data: ", data);
+
+    // display error message in ui to refresh and try again
+    return;
+  }
+  // render user and stats
+    console.log("mainViewInit data: ", data);
 }
 
 export default mainViewInit;
