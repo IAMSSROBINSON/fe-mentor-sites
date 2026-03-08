@@ -1,7 +1,13 @@
 .time-card {
     background-color: tomato;
     padding-top: calc(#{$space-400} + 6px);
+    position: relative;
+}
 
+.time-card-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .stat-card {

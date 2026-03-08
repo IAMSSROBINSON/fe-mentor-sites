@@ -129,6 +129,13 @@ button.selected {
 .time-card {
   background-color: tomato;
   padding-top: calc(2rem + 6px);
+  position: relative;
+}
+
+.time-card-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .stat-card {
