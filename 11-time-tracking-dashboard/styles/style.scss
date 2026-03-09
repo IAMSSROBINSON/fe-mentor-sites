@@ -1,34 +1,35 @@
-
-@import 'variables';
-@import 'mixins';
-@import 'global';
-@import '../components/Profile/Profile.scss';
-@import '../components/TimeCard/TimeCard.scss';
-@import 'media-queries';
-
+@import "variables";
+@import "mixins";
+@import "global";
+@import "../components/Profile/Profile.scss";
+@import "../components/TimeCard/TimeCard.scss";
+@import "media-queries";
 
 body {
-      font-family: $base-font;
-      background-color: $clr-navy-950;
-      color: $clr-white;
-      padding-inline: $space-300;
-      padding-block: calc(#{$space-950} + 1px);
-    
+  font-family: $base-font;
+  background-color: $clr-navy-950;
+  color: $clr-white;
+    padding-inline: $space-300;
+    padding-block: calc(#{$space-950} + 1px);
 }
 
 #root {
-    
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  gap: $space-300;
 }
 
 // ERRRORS
 .error-message-container {
-    display: none;
+  display: none;
 }
 
 .time-cards-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, auto);
-    // background-color: yellow;
-    gap: $space-300;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  // background-color: yellow;
+  gap: $space-300;
 }

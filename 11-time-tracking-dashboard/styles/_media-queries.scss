@@ -1,0 +1,40 @@
+@media screen and (min-width: 700px) {
+    #root {
+        // background-color: yellow;
+        max-width: 612px;
+        margin: 0 auto;
+        // display: grid;
+        // place-content: center;
+    }
+
+    .body {
+        // background-color: red;
+    //   padding-inline: calc(#{$space-900} + 6px);
+    //   padding-block: calc((#{$space-950} * 2) + 18px);
+    
+}
+
+    #time-cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(188px, 255px));
+        grid-template-rows: auto auto;
+    }
+
+    .time-card-header {
+        margin-bottom: $space-200;
+}
+
+.time-card-current {
+    font-weight: $fw-300;
+    font-size: $fs-900;
+    line-height: $lh-xxxl;
+    color: $clr-white;
+}
+
+    .time-card-footer {
+        @include flex(column, start, center);
+        flex-wrap: wrap !important;
+        // background-color: red;
+        gap: $space-100;
+    }
+}
