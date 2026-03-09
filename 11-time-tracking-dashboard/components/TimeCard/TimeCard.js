@@ -48,11 +48,11 @@ function TimeCard (timeframe, stat) {
     // const timeframe = title.toLowerCase();
     console.log("TIMECARD", timeframe, stat);
     console.log("TIMECARD ../../assets/images/icons/icon-", stat.title.toLowerCase());
-    const titleIconExt = stat.title.toLowerCase() === 'self care' ? 'self-care' : stat.title.toLowerCase(); 
+    const titleConvert = stat.title.toLowerCase() === 'self care' ? 'self-care' : stat.title.toLowerCase(); 
 
     return `
-        <article class='time-card'>
-            <img src='../../assets/images/icons/icon-${titleIconExt}.svg' class='time-card-icon'/>
+        <article class='time-card ${titleConvert}'>
+            <img src='../../assets/images/icons/icon-${titleConvert}.svg' class='time-card-icon'/>
             <div class='stat-card'>
                 <header class='time-card-header'>
                     <h2 class='time-card-title'>

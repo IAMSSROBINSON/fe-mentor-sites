@@ -180,6 +180,49 @@ button.selected {
   color: #ffffff;
 }
 
+.time-card.work {
+  background-color: #FF8B64;
+}
+.time-card.work .time-card-icon {
+  width: 78px;
+  height: 78px;
+}
+.time-card.play {
+  background-color: #55C2E6;
+}
+.time-card.play .time-card-icon {
+  width: 90px;
+  height: 90px;
+}
+.time-card.study {
+  background-color: #FF5E7D;
+}
+.time-card.study .time-card-icon {
+  width: 78px;
+  height: 78px;
+}
+.time-card.exercise {
+  background-color: #4BCF82;
+}
+.time-card.exercise .time-card-icon {
+  width: 79.65px;
+  height: 53.48px;
+}
+.time-card.social {
+  background-color: #7335D2;
+}
+.time-card.social .time-card-icon {
+  width: 79.65px;
+  height: 53.48px;
+}
+.time-card.self-care {
+  background-color: #F1C75B;
+}
+.time-card.self-care .time-card-icon {
+  width: 79.65px;
+  height: 53.48px;
+}
+
 body {
   font-family: "Rubik", sans-serif;
   background-color: #0E1323;

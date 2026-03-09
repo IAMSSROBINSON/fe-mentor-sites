@@ -61,3 +61,62 @@
 .time-card-previous {
 
 }
+
+
+// styles based on title applied to time-card
+.time-card {
+    
+    &.work {
+        background-color: #FF8B64;
+
+        .time-card-icon {
+           width: 78px;
+           height: 78px;
+        }
+    }
+
+    &.play {
+        background-color: #55C2E6;
+
+        .time-card-icon {
+           width: 90px;
+           height: 90px;
+        }
+    }
+
+    &.study {
+        background-color: #FF5E7D;
+
+        .time-card-icon {
+            width: 78px;
+           height: 78px;
+        }
+    }
+
+    &.exercise {
+        background-color: #4BCF82;
+
+        .time-card-icon {
+           width: 79.65px;
+           height: 53.48px;
+        }
+    }
+
+    &.social {
+        background-color: #7335D2;
+
+        .time-card-icon {
+           width: 79.65px;
+           height: 53.48px;
+        }
+    }
+
+    &.self-care {
+        background-color: #F1C75B;
+
+        .time-card-icon {
+           width: 79.65px;
+           height: 53.48px;
+        }
+    }
+}
