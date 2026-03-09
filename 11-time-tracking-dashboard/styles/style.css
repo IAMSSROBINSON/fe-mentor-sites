@@ -180,6 +180,13 @@ button.selected {
   color: #ffffff;
 }
 
+.time-card-previous {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  color: #BBC0FF;
+}
+
 .time-card.work {
   background-color: #FF8B64;
 }
@@ -243,13 +250,15 @@ body {
   padding-block: calc(5rem + 1px);
 }
 
-#root {
-  display: grid;
-  gap: 1.5rem;
-}
-
 .error-message-container {
   display: none;
+}
+
+.time-cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  gap: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

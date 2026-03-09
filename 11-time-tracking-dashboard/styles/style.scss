@@ -17,12 +17,18 @@ body {
 }
 
 #root {
-    // background-color: white;
-    display: grid;
-    gap: $space-300;
+    
 }
 
 // ERRRORS
 .error-message-container {
     display: none;
+}
+
+.time-cards-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    // background-color: yellow;
+    gap: $space-300;
 }
