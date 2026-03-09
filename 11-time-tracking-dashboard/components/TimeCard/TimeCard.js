@@ -18,10 +18,10 @@ function TimeCard (timeframe, stat) {
                 </header>
                 <footer class='time-card-footer'>
                     <h3 class='time-card-current'>
-                        ${stat.timeframes[timeframe]?.current}
+                        ${stat.timeframes[timeframe]?.current}${stat.timeframes[timeframe]?.current <= 1 ? "hr" : "hrs"}
                     </h3>
                     <p class='time-card-previous'>
-                    ${timeframe === "daily" ? "Yesterday - " : timeframe === "weekly" ? "Last Week - " : "Last Month - "}${stat.timeframes[timeframe]?.previous}${stat.timeframes[timeframe]?.previous === 1 ? "hr" : "hrs"}
+                    ${timeframe === "daily" ? "Yesterday - " : timeframe === "weekly" ? "Last Week - " : "Last Month - "}${stat.timeframes[timeframe]?.previous}${stat.timeframes[timeframe]?.previous <= 1 ? "hr" : "hrs"}
                     </p>
                 </footer>
             </div>
