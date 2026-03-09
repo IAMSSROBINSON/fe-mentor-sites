@@ -21,7 +21,7 @@ function TimeCard (timeframe, stat) {
                         ${stat.timeframes[timeframe]?.current}
                     </h3>
                     <p class='time-card-previous'>
-                    ${stat.timeframes[timeframe]?.previous}
+                    ${timeframe === "daily" ? "Yesterday - " : timeframe === "weekly" ? "Last Week - " : "Last Month - "}${stat.timeframes[timeframe]?.previous}
                     </p>
                 </footer>
             </div>
