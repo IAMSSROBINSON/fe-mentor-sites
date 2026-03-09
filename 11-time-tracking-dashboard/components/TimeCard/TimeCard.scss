@@ -3,6 +3,8 @@
   padding-top: calc(#{$space-400} + 6px);
   position: relative;
   overflow: hidden;
+  height: fit-content;
+  @include flex(column, center, center)
 }
 
 .time-card-icon {

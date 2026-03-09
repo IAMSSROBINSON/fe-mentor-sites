@@ -1,3 +1,4 @@
+// Tablet
 @media screen and (min-width: 700px) {
     #root {
         // background-color: yellow;
@@ -11,8 +12,7 @@
         // background-color: red;
     //   padding-inline: calc(#{$space-900} + 6px);
     //   padding-block: calc((#{$space-950} * 2) + 18px);
-    
-}
+    }
 
     #time-cards-container {
         display: grid;
@@ -36,5 +36,49 @@
         flex-wrap: wrap !important;
         // background-color: red;
         gap: $space-100;
+    }
+}
+
+
+
+// Desktop
+@media screen and (min-width: 1440px) {
+    main#root {
+        max-width: 1116px;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 520px;
+        background-color: yellow;
+        padding: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    #profile-container {
+        background-color: red;
+        grid-column: 1/2;
+        grid-row: 1/-1;
+    }
+
+     #time-cards-container {
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(188px, 255px));
+        grid-template-rows: auto auto;
+    }
+
+    .time-card {
+        // height: 244px;
+        // padding-top: 45px;
+        // @include flex(column, center, end);
+    }
+
+    .stat-card {
+        height: 199px;
+        width: 100%;
     }
 }

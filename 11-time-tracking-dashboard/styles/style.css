@@ -131,6 +131,10 @@ button.selected {
   padding-top: calc(2rem + 6px);
   position: relative;
   overflow: hidden;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .time-card-icon {
@@ -269,6 +273,35 @@ button.selected {
     align-items: center;
     flex-wrap: wrap !important;
     gap: 0.5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  main#root {
+    max-width: 1116px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 520px;
+    background-color: yellow;
+    padding: 0;
+  }
+  body {
+    padding: 0;
+  }
+  #profile-container {
+    background-color: red;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+  }
+  #time-cards-container {
+    grid-column: 2/-1;
+    grid-row: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(188px, 255px));
+    grid-template-rows: auto auto;
+  }
+  .stat-card {
+    height: 199px;
+    width: 100%;
   }
 }
 body {
