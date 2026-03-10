@@ -3,7 +3,7 @@
   padding-top: calc(#{$space-400} + 6px);
   position: relative;
   overflow: hidden;
-  height: fit-content;
+  // height: fit-content;
   @include flex(column, center, center)
 }
 
@@ -18,6 +18,8 @@
   background-color: $clr-navy-900;
   padding-block: calc(#{$space-300} + 3.5px);
   padding-inline: $space-300;
+  flex: 1;
+  align-self: end;
 }
 
 .time-card,
@@ -25,7 +27,10 @@
   border-radius: $br-m;
 }
 
-.time-card-header,
+.time-card-header {
+   @include flex(row, space-between, center);
+}
+
 .time-card-footer {
   @include flex(row, space-between, center);
 }

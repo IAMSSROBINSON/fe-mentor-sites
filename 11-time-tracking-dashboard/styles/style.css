@@ -131,7 +131,6 @@ button.selected {
   padding-top: calc(2rem + 6px);
   position: relative;
   overflow: hidden;
-  height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,6 +147,8 @@ button.selected {
   background-color: #1C204B;
   padding-block: calc(1.5rem + 3.5px);
   padding-inline: 1.5rem;
+  flex: 1;
+  align-self: end;
 }
 
 .time-card,
@@ -155,7 +156,12 @@ button.selected {
   border-radius: 15px;
 }
 
-.time-card-header,
+.time-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .time-card-footer {
   display: flex;
   justify-content: space-between;
@@ -249,59 +255,122 @@ button.selected {
 }
 
 @media screen and (min-width: 700px) {
-  #root {
-    max-width: 612px;
-    margin: 0 auto;
+  .user-container {
+    justify-content: start;
   }
   #time-cards-container {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(188px, 255px));
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(3, minmax(188px, 1fr));
+    grid-template-rows: repeat(2, auto);
   }
-  .time-card-header {
+  .time-card {
+    background-color: green;
+    padding-top: 33px;
+  }
+  .stat-card {
+    padding-block: 25.5px;
+    padding-inline: 21.5px;
+    max-height: 180px;
+  }
+  .time-card-title {
     margin-bottom: 1rem;
+  }
+  .time-card-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
   }
   .time-card-current {
     font-weight: 300;
     font-size: 3.5rem;
     line-height: 4.125rem;
     color: #ffffff;
+    margin-bottom: 0.5rem;
   }
-  .time-card-footer {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap !important;
-    gap: 0.5rem;
+  .time-card.work {
+    background-color: #ff8b64;
+  }
+  .time-card.work .time-card-icon {
+    width: 57.48px;
+    min-height: 57.48px;
+    top: -7.78px;
+    right: 12.77px;
+  }
+  .time-card.play {
+    background-color: #55c2e6;
+  }
+  .time-card.play .time-card-icon {
+    width: 58.92px;
+    min-height: 34.88px;
+    top: -3.01px;
+    right: 15.69px;
+  }
+  .time-card.study {
+    background-color: #ff5e7d;
+  }
+  .time-card.study .time-card-icon {
+    width: 57.48px;
+    min-height: 57.48px;
+    top: -4.47px;
+    right: 12.55px;
+    left: auto;
+    bottom: auto;
+  }
+  .time-card.exercise {
+    background-color: #4bcf82;
+  }
+  .time-card.exercise .time-card-icon {
+    width: 58.7px;
+    min-height: 39.41px;
+    top: -0.31px;
+    right: 13.01px;
+  }
+  .time-card.social {
+    background-color: #7335d2;
+  }
+  .time-card.social .time-card-icon {
+    width: 40.58px;
+    min-height: 63.35px;
+    top: -7px;
+    right: 14.02px;
+  }
+  .time-card.self-care {
+    background-color: #f1c75b;
+  }
+  .time-card.self-care .time-card-icon {
+    width: 53.06px;
+    min-height: 48.64px;
+    top: -7.39px;
+    right: 11.78px;
   }
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1150px) {
   main#root {
-    max-width: 1116px;
-    display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 255px 1fr;
     grid-template-rows: 520px;
-    background-color: yellow;
-    padding: 0;
+    gap: 32px;
   }
-  body {
-    padding: 0;
-  }
-  #profile-container {
-    background-color: red;
+  .user-card {
     grid-column: 1/2;
     grid-row: 1/-1;
+    height: 100%;
   }
-  #time-cards-container {
+  .time-cards-container {
     grid-column: 2/-1;
     grid-row: 1/-1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(188px, 255px));
-    grid-template-rows: auto auto;
+  }
+  .time-card {
+    padding-top: 45px;
   }
   .stat-card {
-    height: 199px;
-    width: 100%;
+    padding-block: 31px;
+    padding-inline: 30px;
+    max-height: 199px;
+  }
+  #time-cards-container {
+    grid-template-columns: repeat(3, minmax(255px, 1fr));
+    grid-template-rows: repeat(2, 244px);
+    gap: 32px;
   }
 }
 body {
@@ -310,13 +379,12 @@ body {
   color: #ffffff;
   padding-inline: 1.5rem;
   padding-block: calc(5rem + 1px);
+  display: grid;
 }
 
 #root {
   display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
-  justify-content: center;
+  max-width: 1116px;
   gap: 1.5rem;
 }
 

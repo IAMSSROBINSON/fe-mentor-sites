@@ -1,4 +1,3 @@
-
 function Profile({ name,  imgSrc}) {
     console.log("Profile", imgSrc);
  return `

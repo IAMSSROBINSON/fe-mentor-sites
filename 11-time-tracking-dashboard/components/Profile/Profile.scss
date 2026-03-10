@@ -1,12 +1,14 @@
 // user
 .user-card {
   background-color: $clr-navy-900;
+  // background-color: yellow;
   border-radius: $br-m;
   overflow: hidden;
 }
 
 .user-container {
   background-color: $clr-purple-600;
+  // background-color: red;
   padding: $space-400 $space-400 calc(#{$space-400} + 5px) $space-400;
   border-radius: $br-m;
   @include flex(row, center, center);

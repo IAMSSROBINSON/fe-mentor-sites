@@ -1,84 +1,254 @@
 // Tablet
 @media screen and (min-width: 700px) {
     #root {
-        // background-color: yellow;
-        max-width: 612px;
-        margin: 0 auto;
-        // display: grid;
+        // margin: 0 auto;
         // place-content: center;
     }
 
-    .body {
-        // background-color: red;
-    //   padding-inline: calc(#{$space-900} + 6px);
-    //   padding-block: calc((#{$space-950} * 2) + 18px);
+    .user-container {
+        justify-content: start;
     }
 
     #time-cards-container {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(188px, 255px));
-        grid-template-rows: auto auto;
-    }
-
-    .time-card-header {
-        margin-bottom: $space-200;
-}
-
-.time-card-current {
-    font-weight: $fw-300;
-    font-size: $fs-900;
-    line-height: $lh-xxxl;
-    color: $clr-white;
-}
-
-    .time-card-footer {
-        @include flex(column, start, center);
-        flex-wrap: wrap !important;
-        // background-color: red;
-        gap: $space-100;
-    }
-}
-
-
-
-// Desktop
-@media screen and (min-width: 1440px) {
-    main#root {
-        max-width: 1116px;
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-template-rows: 520px;
-        background-color: yellow;
-        padding: 0;
-    }
-
-    body {
-        padding: 0;
-    }
-
-    #profile-container {
-        background-color: red;
-        grid-column: 1/2;
-        grid-row: 1/-1;
-    }
-
-     #time-cards-container {
-        grid-column: 2/-1;
-        grid-row: 1/-1;
-
-        display: grid;
-        grid-template-columns: repeat(3, minmax(188px, 255px));
-        grid-template-rows: auto auto;
+        grid-template-columns: repeat(3, minmax(188px, 1fr));
+        grid-template-rows: repeat(2, auto);
+        // max-width: 829px;
     }
 
     .time-card {
-        // height: 244px;
-        // padding-top: 45px;
-        // @include flex(column, center, end);
+        background-color: green;
+        // padding-top: calc(#{$space-400} + 6px);
+        padding-top: 33px;
     }
 
-    .stat-card {
-        height: 199px;
-        width: 100%;
+       .stat-card {
+    padding-block: 25.5px;
+    padding-inline: 21.5px;
+        max-height: 180px;
+}
+
+
+    .time-card-title {
+        margin-bottom: $space-200;
+    }
+
+    .time-card-footer {
+        // background-color: red;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+    }
+
+    .time-card-current {
+        font-weight: $fw-300;
+        font-size: $fs-900;
+        line-height: $lh-xxxl;
+        color: $clr-white;
+        margin-bottom: $space-100;
+    }
+
+ 
+// styles based on title applied to time-card
+.time-card {
+  &.work {
+    background-color: #ff8b64;
+
+    .time-card-icon {
+      width: 57.48px;
+      min-height: 57.48px;
+      top: -7.78px;
+      right: 12.77px;
+    }
+  }
+
+  &.play {
+    background-color: #55c2e6;
+
+    .time-card-icon {
+      width: 58.92px;   
+      min-height: 34.88px;
+      top: -3.01px;
+      right: 15.69px;
+    }
+  }
+
+  &.study {
+    background-color: #ff5e7d;
+
+    .time-card-icon {
+      width: 57.48px;
+      min-height: 57.48px;
+      top: -4.47px;
+      right: 12.55px;
+      left: auto;
+      bottom: auto;
+    }
+  }
+
+  &.exercise {
+    background-color: #4bcf82;
+
+    .time-card-icon {
+      width: 58.7px;
+      min-height: 39.41px;
+      top: -0.31px;
+      right: 13.01px;
+    }
+  }
+
+  &.social {
+    background-color: #7335d2;
+
+    .time-card-icon {
+      width: 40.58px;
+      min-height: 63.35px;
+      top: -7px;
+      right: 14.02px;
+    }
+  }
+
+  &.self-care {
+    background-color: #f1c75b;
+
+    .time-card-icon {
+      width: 53.06px;
+      min-height: 48.64px;
+      top: -7.39px;
+      right: 11.78px;
+    }
+  }
+}
+
+
+//     #root {
+//         // background-color: yellow;
+//         max-width: 612px;
+//         margin: 0 auto;
+//         // display: grid;
+//         // place-content: center;
+//     }
+
+//     .body {
+//         // background-color: red;
+//     //   padding-inline: calc(#{$space-900} + 6px);
+//     //   padding-block: calc((#{$space-950} * 2) + 18px);
+//     }
+
+//     #time-cards-container {
+//         display: grid;
+//         grid-template-columns: repeat(3, minmax(188px, 255px));
+//         grid-template-rows: auto auto;
+//     }
+
+//     .time-card-header {
+//         margin-bottom: $space-200;
+// }
+
+// .time-card-current {
+//     font-weight: $fw-300;
+//     font-size: $fs-900;
+//     line-height: $lh-xxxl;
+//     color: $clr-white;
+// }
+
+//     .time-card-footer {
+//         @include flex(column, start, center);
+//         flex-wrap: wrap;
+//         // background-color: red;
+//         gap: $space-100;
+//     }
+}
+
+
+// Desktop
+@media screen and (min-width: 1150px) {
+    main#root {
+        // background-color: green !important;
+        grid-template-columns: 255px 1fr;
+        grid-template-rows: 520px;
+        // margin: 0 auto;
+          gap: 32px;
+    }
+
+    .user-card {
+        grid-column: 1/2;
+        grid-row: 1/-1;
+        height: 100%;
+        // max-height: 520px;
+    }
+
+    .time-cards-container {
+        grid-column: 2/-1;
+        grid-row: 1/-1;
+    }
+
+    .time-card {
+        padding-top: 45px;
+    }
+
+          .stat-card {
+    padding-block: 31px;
+    padding-inline: 30px;
+        max-height: 199px;
+        // max-width: 255px;
+}
+
+  #time-cards-container {
+        grid-template-columns: repeat(3, minmax(255px, 1fr));
+        grid-template-rows: repeat(2, 244px);
+        gap: 32px;
+        // max-width: 829px;
     }
 }
+
+
+
+// // Desktop
+// @media screen and (min-width: 1440px) {
+//     main#root {
+//         max-width: 1116px;
+//         display: grid;
+//         grid-template-columns: auto auto;
+//         grid-template-rows: 520px;
+//         background-color: yellow;
+//         padding: 0;
+//     }
+
+//     body {
+//         padding: 0;
+//     }
+
+//     #profile-container {
+//         background-color: red;
+//         grid-column: 1/2;
+//         grid-row: 1/-1;
+//     }
+
+//      #time-cards-container {
+//         grid-column: 2/-1;
+//         grid-row: 1/-1;
+
+//         display: grid;
+//         grid-template-columns: repeat(3, minmax(188px, 255px));
+//         grid-template-rows: auto auto;
+//     }
+
+//     .time-card {
+//         // height: 244px;
+//         // padding-top: 45px;
+//         // @include flex(column, center, end);
+//     }
+
+//     .stat-card {
+//         height: 199px;
+//         width: 100%;
+//     }
+
+//     .time-card-footer {
+//         // @include flex(column, start, center);
+//         // flex-wrap: wrap;
+//         background-color: red;
+//         // gap: $space-100;
+//     }
+// }
