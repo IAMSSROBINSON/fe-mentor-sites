@@ -6,7 +6,7 @@ function TimeCard(timeframe, stat) {
 
   return `
         <article class='time-card ${titleConvert}'>
-            <img src='../../assets/images/icons/icon-${titleConvert}.svg' class='time-card-icon'/>
+            <img src='../../assets/images/icons/icon-${titleConvert}.svg' class='time-card-icon' alt='${titleConvert}-icon'/>
             <div class='stat-card'>
                 <header class='time-card-header'>
                     <h2 class='time-card-title'>
