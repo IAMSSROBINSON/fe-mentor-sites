@@ -163,12 +163,18 @@
 
 // Desktop
 @media screen and (min-width: 1150px) {
+  .body {
+    place-content: center;
+  }
     main#root {
         // background-color: green !important;
         grid-template-columns: 255px 1fr;
         grid-template-rows: 520px;
         // margin: 0 auto;
-          gap: 32px;
+          // gap: 32px;
+          // place-content: center;
+          // justify-content: center;
+          // align-items: center;
     }
 
     .user-card {

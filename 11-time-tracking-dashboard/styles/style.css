@@ -345,10 +345,12 @@ button.selected {
   }
 }
 @media screen and (min-width: 1150px) {
+  .body {
+    place-content: center;
+  }
   main#root {
     grid-template-columns: 255px 1fr;
     grid-template-rows: 520px;
-    gap: 32px;
   }
   .user-card {
     grid-column: 1/2;
