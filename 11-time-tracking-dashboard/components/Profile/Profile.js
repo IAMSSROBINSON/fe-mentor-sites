@@ -1,4 +1,4 @@
-function Profile({ name, imgSrc }) {
+function Profile({ name, imgSrc}) {
   return `
     <header class='user-card'>
       <div class='user-container'>

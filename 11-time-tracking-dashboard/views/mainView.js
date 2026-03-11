@@ -18,6 +18,10 @@ window.addEventListener("click", handleTimeframeClicked);
 function mainViewInit({ data, error }) {
   if (error) {
     // display error message in ui to refresh and try again
+    renderProfile({name: "username", imgSrc: "../../assets/images/placeholder_user.png" });
+    errorMessageContainer.style.display = 'block';
+    errorMessageContainer.innerHTML = `<p class="error-message">Error fetching data.</br>Please refresh to try again..</p>`;
+    console.error(error);
     return;
   }
   // render user and stats

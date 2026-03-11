@@ -25,6 +25,10 @@ body {
   display: none;
 }
 
+.error-message {
+  color: $clr-error;
+}
+
 .time-cards-container {
   display: grid;
   gap: $space-300;

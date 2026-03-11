@@ -15,7 +15,7 @@ async function mainControllerInit() {
     mainViewInit({ data: modelManager_1.data });
   } catch (err) {
     // initialize view and send null data to render template only with error message of failed fetch
-    mainViewInit({ data: null, error: err.message });
+    return mainViewInit({ data: null, error: err.message });
   }
 }
 
