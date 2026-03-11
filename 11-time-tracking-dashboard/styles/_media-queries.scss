@@ -129,7 +129,7 @@
   .user-img {
     width: calc(#{$space-900} + 6px);
     height: calc(#{$space-900} + 6px);
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25); 
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   }
 
   .user-name {
@@ -146,6 +146,10 @@
 
   .time-card {
     padding-top: calc(#{$space-500} + 5px);
+  }
+
+  .time-card-header {
+    margin-bottom: $space-300;
   }
 
   .stat-card {

@@ -24,14 +24,11 @@
 
 .time-card-header {
    @include flex(row, space-between, center);
+   margin-bottom: $space-100;
 }
 
 .time-card-footer {
   @include flex(row, space-between, center);
-}
-
-.time-card-header {
-  margin-bottom: $space-100;
 }
 
 .time-card-title {

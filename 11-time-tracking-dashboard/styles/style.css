@@ -157,6 +157,7 @@ button.selected {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .time-card-footer {
@@ -164,10 +165,6 @@ button.selected {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.time-card-header {
-  margin-bottom: 0.5rem;
 }
 
 .time-card-title {
@@ -376,6 +373,9 @@ button.selected {
   }
   .time-card {
     padding-top: calc(2.5rem + 5px);
+  }
+  .time-card-header {
+    margin-bottom: 1.5rem;
   }
   .stat-card {
     padding-block: calc(1.5rem + 7px);
