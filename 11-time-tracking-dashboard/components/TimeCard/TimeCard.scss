@@ -17,6 +17,11 @@
   position: relative;
 }
 
+.stat-card:hover {
+  background-color: $clr-navy-800;
+
+}
+
 .time-card,
 .stat-card {
   border-radius: $br-m;

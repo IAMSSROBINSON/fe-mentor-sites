@@ -147,6 +147,10 @@ button.selected {
   position: relative;
 }
 
+.stat-card:hover {
+  background-color: #33397A;
+}
+
 .time-card,
 .stat-card {
   border-radius: 15px;
