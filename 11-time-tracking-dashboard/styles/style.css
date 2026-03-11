@@ -147,7 +147,7 @@ button.selected {
   position: relative;
 }
 
-.stat-card:hover {
+.stat-card:active, .stat-card:focus, .stat-card:hover {
   background-color: #33397A;
 }
 

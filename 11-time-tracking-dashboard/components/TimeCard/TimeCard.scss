@@ -17,9 +17,8 @@
   position: relative;
 }
 
-.stat-card:hover {
+.stat-card:active, .stat-card:focus, .stat-card:hover  {
   background-color: $clr-navy-800;
-
 }
 
 .time-card,
