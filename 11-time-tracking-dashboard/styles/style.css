@@ -379,7 +379,7 @@ button.selected {
   .stat-card {
     padding-block: calc(1.5rem + 7px);
     padding-inline: calc(1.5rem + 6px);
-    max-height: 199px;
+    min-height: 199px;
   }
   #time-cards-container {
     grid-template-columns: repeat(3, minmax(255px, 1fr));

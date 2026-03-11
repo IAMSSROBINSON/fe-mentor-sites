@@ -150,7 +150,7 @@
   .stat-card {
     padding-block: calc(#{$space-300} + 7px);
     padding-inline: calc(#{$space-300} + 6px);
-    max-height: 199px;
+    min-height: 199px;
   }
 
   #time-cards-container {
