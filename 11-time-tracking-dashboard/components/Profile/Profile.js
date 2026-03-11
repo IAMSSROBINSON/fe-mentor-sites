@@ -13,10 +13,10 @@ function Profile({ name,  imgSrc}) {
       </div>
       <ul class='calendar-list'>
          <li class='calendar-item'>
-            <button type='button' id='daily' class='link selected'>Daily</button>
+            <button type='button' id='daily' class='link'>Daily</button>
          </li>
          <li class='calendar-item'>
-            <button type='button' id='weekly' class='link'>Weekly</button>
+            <button type='button' id='weekly' class='link selected'>Weekly</button>
          </li>
          <li class='calendar-item'>
             <button type='button' id='monthly' class='link'>Monthly</button>
