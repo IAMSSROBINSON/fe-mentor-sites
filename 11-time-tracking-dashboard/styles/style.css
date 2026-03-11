@@ -263,6 +263,11 @@ button.selected {
   }
   .time-card {
     padding-top: 33px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: stretch;
   }
   .stat-card {
     padding-block: 25.5px;
@@ -442,10 +447,10 @@ button.selected {
     background-color: #7335d2;
   }
   .time-card.social .time-card-icon {
-    width: 54.8px;
-    min-height: 76.62px;
-    top: -9.5px;
-    right: 19.08px;
+    width: 85.84px;
+    min-height: 54.76px;
+    top: -21px;
+    right: 18.99px;
   }
   .time-card.self-care {
     background-color: #f1c75b;

@@ -1,9 +1,5 @@
 // Tablet
 @media screen and (min-width: 700px) {
-  #root {
-
-  }
-
   .user-container {
     justify-content: start;
   }
@@ -14,8 +10,9 @@
   }
 
   .time-card {
-    // padding-top: calc(#{$space-400} + 6px);
     padding-top: 33px;
+    display: flex;
+    @include flex(column, end, stretch);
   }
 
   .stat-card {
@@ -117,6 +114,7 @@
   .body {
     place-content: center;
   }
+
   main#root {
     grid-template-columns: 255px 1fr;
     grid-template-rows: 520px;
@@ -130,16 +128,16 @@
   }
 
   .user-img {
-  width: calc(#{$space-900} + 6px);
-  height: calc(#{$space-900} + 6px);
+    width: calc(#{$space-900} + 6px);
+    height: calc(#{$space-900} + 6px);
   }
 
   .user-name {
-  font-size: $fs-800;
-  font-weight: $fw-300;
-  line-height: $lh-xxl;
-  color: $clr-white;
-}
+    font-size: $fs-800;
+    font-weight: $fw-300;
+    line-height: $lh-xxl;
+    color: $clr-white;
+  }
 
   .time-cards-container {
     grid-column: 2/-1;
@@ -226,10 +224,10 @@
       background-color: #7335d2;
 
       .time-card-icon {
-        width: 54.8px;
-        min-height: 76.62px;
-        top: -9.5px;
-        right: 19.08px;
+        width: 85.84px;
+        min-height: 54.76px;
+        top: -21px;
+        right: 18.99px;
       }
     }
 
