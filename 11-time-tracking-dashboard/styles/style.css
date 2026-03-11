@@ -274,7 +274,7 @@ button.selected {
     padding-inline: 21.5px;
     max-height: 180px;
   }
-  .time-card-title {
+  .time-card-header {
     margin-bottom: 1rem;
   }
   .time-card-footer {
