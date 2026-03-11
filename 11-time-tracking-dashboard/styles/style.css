@@ -262,16 +262,15 @@ button.selected {
     grid-template-rows: repeat(2, auto);
   }
   .time-card {
-    padding-top: 33px;
-    display: flex;
+    padding-top: calc(2rem + 1px);
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: stretch;
   }
   .stat-card {
-    padding-block: 25.5px;
-    padding-inline: 21.5px;
+    padding-block: calc(1.5rem + 1.5px);
+    padding-inline: calc(1rem + 5.5px);
     max-height: 180px;
   }
   .time-card-header {
@@ -354,7 +353,7 @@ button.selected {
   main#root {
     grid-template-columns: 255px 1fr;
     grid-template-rows: 520px;
-    gap: 32px;
+    gap: 2rem;
   }
   .user-card {
     grid-column: 1/2;
@@ -376,17 +375,17 @@ button.selected {
     grid-row: 1/-1;
   }
   .time-card {
-    padding-top: 45px;
+    padding-top: calc(2.5rem + 5px);
   }
   .stat-card {
-    padding-block: 31px;
-    padding-inline: 30px;
+    padding-block: calc(1.5rem + 7px);
+    padding-inline: calc(1.5rem + 6px);
     max-height: 199px;
   }
   #time-cards-container {
     grid-template-columns: repeat(3, minmax(255px, 1fr));
     grid-template-rows: repeat(2, 244px);
-    gap: 32px;
+    gap: 2rem;
   }
   .user-container {
     min-height: 354px;
@@ -394,16 +393,16 @@ button.selected {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 40px;
+    gap: 2.5rem;
   }
   .calendar-list {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap: 21px;
-    padding-block: 28px;
-    padding-inline: 32px;
+    gap: calc(1rem + 5px);
+    padding-block: calc(1.5rem + 4px);
+    padding-inline: 2rem;
   }
   .time-card.work {
     background-color: #ff8b64;

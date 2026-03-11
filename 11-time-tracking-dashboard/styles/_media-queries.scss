@@ -10,14 +10,13 @@
   }
 
   .time-card {
-    padding-top: 33px;
-    display: flex;
+    padding-top: calc(#{$space-400} + 1px);
     @include flex(column, end, stretch);
   }
 
   .stat-card {
-    padding-block: 25.5px;
-    padding-inline: 21.5px;
+    padding-block: calc(#{$space-300} + 1.5px);
+    padding-inline: calc(#{$space-200} + 5.5px);
     max-height: 180px;
   }
 
@@ -118,7 +117,7 @@
   main#root {
     grid-template-columns: 255px 1fr;
     grid-template-rows: 520px;
-    gap: 32px;
+    gap: $space-400;
   }
 
   .user-card {
@@ -145,32 +144,32 @@
   }
 
   .time-card {
-    padding-top: 45px;
+    padding-top: calc(#{$space-500} + 5px);
   }
 
   .stat-card {
-    padding-block: 31px;
-    padding-inline: 30px;
+    padding-block: calc(#{$space-300} + 7px);
+    padding-inline: calc(#{$space-300} + 6px);
     max-height: 199px;
   }
 
   #time-cards-container {
     grid-template-columns: repeat(3, minmax(255px, 1fr));
     grid-template-rows: repeat(2, 244px);
-    gap: 32px;
+    gap: $space-400;
   }
 
   .user-container {
     min-height: 354px;
     @include flex(column, start, start);
-    gap: 40px;
+    gap: $space-500;
   }
 
   .calendar-list {
     @include flex(column, start, start);
-    gap: 21px;
-    padding-block: 28px;
-    padding-inline: 32px;
+    gap: calc(#{$space-200} + 5px);
+    padding-block: calc(#{$space-300} + 4px);
+    padding-inline: $space-400;
   }
 
   .time-card {
