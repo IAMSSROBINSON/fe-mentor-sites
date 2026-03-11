@@ -60,6 +60,7 @@ body {
   padding: 2rem 2rem calc(2rem + 5px) 2rem;
   border-radius: 15px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
@@ -90,6 +91,7 @@ body {
 .calendar-list {
   list-style: none;
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 1.5rem;
@@ -131,9 +133,6 @@ button.selected {
   padding-top: calc(2rem + 6px);
   position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .time-card-icon {
@@ -147,8 +146,6 @@ button.selected {
   background-color: #1C204B;
   padding-block: calc(1.5rem + 3.5px);
   padding-inline: 1.5rem;
-  flex: 1;
-  align-self: end;
 }
 
 .time-card,
@@ -158,12 +155,14 @@ button.selected {
 
 .time-card-header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
 .time-card-footer {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -263,7 +262,6 @@ button.selected {
     grid-template-rows: repeat(2, auto);
   }
   .time-card {
-    background-color: green;
     padding-top: 33px;
   }
   .stat-card {
@@ -277,7 +275,7 @@ button.selected {
   .time-card-footer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: start;
   }
   .time-card-current {
@@ -351,6 +349,7 @@ button.selected {
   main#root {
     grid-template-columns: 255px 1fr;
     grid-template-rows: 520px;
+    gap: 32px;
   }
   .user-card {
     grid-column: 1/2;
@@ -373,6 +372,23 @@ button.selected {
     grid-template-columns: repeat(3, minmax(255px, 1fr));
     grid-template-rows: repeat(2, 244px);
     gap: 32px;
+  }
+  .user-container {
+    min-height: 354px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 40px;
+  }
+  .calendar-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 21px;
+    padding-block: 28px;
+    padding-inline: 32px;
   }
 }
 body {
