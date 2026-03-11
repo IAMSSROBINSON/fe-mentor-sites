@@ -6,36 +6,28 @@
 @import "media-queries";
 
 body {
-  font-family: $base-font;
   background-color: $clr-navy-950;
   color: $clr-white;
-  padding-inline: $space-300;
-  padding-block: calc(#{$space-950} + 1px);
   display: grid;
-  // place-content: center;
-  // background-color: orange;
+  font-family: $base-font;
+  padding-block: calc(#{$space-950} + 1px);
+  padding-inline: $space-300;
 }
 
 #root {
   display: grid;
-  // grid-template-columns: auto;
-  // grid-template-rows: auto auto;
-  // justify-content: center;
-  max-width: 1116px;
-  // margin: 0 auto;
   gap: $space-300;
-  // background-color: yellow;
+  max-width: 1116px;
 }
 
-// ERRRORS
+// ERRORS - not currently used
 .error-message-container {
   display: none;
 }
 
 .time-cards-container {
   display: grid;
+  gap: $space-300;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, auto);
-  // background-color: yellow;
-  gap: $space-300;
 }

@@ -129,23 +129,22 @@ button.selected {
 }
 
 .time-card {
-  background-color: tomato;
+  overflow: hidden;
   padding-top: calc(2rem + 6px);
   position: relative;
-  overflow: hidden;
 }
 
 .time-card-icon {
   position: absolute;
-  top: 0;
   right: 0;
+  top: 0;
 }
 
 .stat-card {
-  position: relative;
   background-color: #1C204B;
   padding-block: calc(1.5rem + 3.5px);
   padding-inline: 1.5rem;
+  position: relative;
 }
 
 .time-card,
@@ -172,30 +171,30 @@ button.selected {
 }
 
 .time-card-title {
-  font-weight: 500;
-  font-size: 1.125rem;
-  line-height: 1.3125rem;
   color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.3125rem;
 }
 
 .ellipsis-btn {
-  border: none;
   background: none;
+  border: none;
   cursor: pointer;
 }
 
 .time-card-current {
-  font-weight: 300;
-  font-size: 2rem;
-  line-height: 2.375rem;
   color: #ffffff;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.375rem;
 }
 
 .time-card-previous {
-  font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.125rem;
   color: #BBC0FF;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.125rem;
 }
 
 .time-card.work {
@@ -462,18 +461,18 @@ button.selected {
   }
 }
 body {
-  font-family: "Rubik", sans-serif;
   background-color: #0E1323;
   color: #ffffff;
-  padding-inline: 1.5rem;
-  padding-block: calc(5rem + 1px);
   display: grid;
+  font-family: "Rubik", sans-serif;
+  padding-block: calc(5rem + 1px);
+  padding-inline: 1.5rem;
 }
 
 #root {
   display: grid;
-  max-width: 1116px;
   gap: 1.5rem;
+  max-width: 1116px;
 }
 
 .error-message-container {
@@ -482,9 +481,9 @@ body {
 
 .time-cards-container {
   display: grid;
+  gap: 1.5rem;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(6, auto);
-  gap: 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

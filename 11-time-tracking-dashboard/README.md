@@ -5,23 +5,25 @@ fe-mentor time-tracking-dashboard website challenge submission
 ## Tools
 
 - HTML
-- CSS
+- SASS / CSS
 - JavaScript
-- Figma
+- Figma (design)
 
 ## Process / Methodology
 
+- MVC design pattern
 - Semantic HTML5 markup
-- CSS variables
-- Flexbox
-- CSS Grid
-- Mobile-first workflow
+- SASS
 - JavaScript interactivity
+- Mobile-first workflow
 - JSON data handling
 
 ## What I learned
-- JSON fetching
-- JSON parsing
+- SASS for variables and mixins across entire project scope
+- JSON fetching, parsing
+
+## Run the project locally
+- run command `npm start` to load project successfully
 
 ## View live site here 
 https://11-time-tracking-dashboard.netlify.app/
