@@ -1,16 +1,58 @@
 // colors
 $clr-green-900: hsl(183, 100%, 15%);
-$clr-green-400: hsl(172, 67%, 45%);
-$clr-grey-500: hsl(186, 14%, 43%);
-$clr-grey-400: hsl(184, 14%, 56%);
+$clr-green-800: #085C61;
+$clr-green-750: #0D686D;
+$clr-green-400: #26C2AE;
+$clr-green-200: #9FE8DF;
+
+$clr-grey-600: #3D6666;
+$clr-grey-550: #547878;
+$clr-grey-500: #5E7A7D;
+$clr-grey-400: #7F9D9F;
+$clr-grey-300: #9EBBBD;
 $clr-grey-200: hsl(185, 41%, 84%);
 $clr-grey-50: hsl(189, 47%, 97%);
+
+$clr-orange-400: #E17052;
+
 $clr-white: hsl(0, 0%, 100%);
+$clr-black: #000000;
 
 // font
 $base-font: "Space mono", sans-serif;
 
+$fs-900: 5rem; // 80px
+$fs-800: 4.5rem; // 72px
+$fs-700: 4rem; // 64px
+$fs-600: 3.5rem; // 56px
+$fs-500: 3rem; // 48px
+$fs-400: 2.5rem; // 40px
+$fs-300: 2rem; // 32px
 $fs-200: 1.5rem; // 24px
 $fs-100: 1rem; // 16px
+$fs-50: 0.8125rem; // 13px
 
 $fw-700: 700; // 700
+
+// spacing
+$space-1600: 8rem; // 0px
+$space-1500: 7.5rem; // 0px
+$space-1200: 6rem; // 0px
+$space-1000: 5rem; // 0px
+$space-600: 3rem; // 0px
+$space-400: 2rem; // 0px
+$space-300: 1.5rem; // 0px
+$space-200: 1rem; // 0px
+$space-100: 0.5rem; // 0px
+$space-0: 0rem; // 0px
+
+
+$lh-xxxl: 4.4375rem; // 71px
+$lh-xl: 2.25rem; // 36px
+$lh-l: 1.875rem; // 30px
+$lh-m: 1.5rem; // 24px
+$lh-s: 1.1875rem; // 19px
+
+
+$ls-m: -0.0625rem; // -1px
+$ls-s: -0.0419rem; // -0.67px
