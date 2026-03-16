@@ -1,0 +1,54 @@
+@use "variables";
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+img,
+svg,
+iframe,
+canvas,
+video {
+  display: block;
+  line-height: 0;
+  min-width: 100%;
+  object-fit: cover;
+}
+
+button,
+select,
+textarea,
+input {
+  color: inherit;
+  font: inherit;
+}
+
+body {
+  background-color: variables.$clr-grey-200;
+  font-family: variables.$base-font;
+  min-height: 100vh;
+}
