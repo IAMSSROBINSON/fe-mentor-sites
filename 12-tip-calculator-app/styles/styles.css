@@ -51,4 +51,16 @@ body {
   min-height: 100vh;
 }
 
+.logo-container {
+  height: 53.14px;
+  margin: 50px auto 48.85px auto;
+  text-align: center;
+  width: 86.66px;
+}
+
+.logo {
+  height: 100%;
+  width: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */
