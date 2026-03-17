@@ -68,7 +68,7 @@ body {
   width: 100%;
 }
 
-.card-container {
+.tip-form {
   background-color: hsl(0, 0%, 100%);
   flex: 1;
   border-radius: 1.5625rem 1.5625rem 0 0;
