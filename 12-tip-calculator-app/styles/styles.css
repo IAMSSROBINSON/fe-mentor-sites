@@ -74,6 +74,9 @@ body {
   border-radius: 1.5625rem 1.5625rem 0 0;
   padding-inline: 1.5rem;
   padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .top {
@@ -90,14 +93,34 @@ body {
   gap: 0.5rem;
 }
 
-label {
+.tp5 {
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5rem;
   color: hsl(186, 14%, 43%);
 }
 
+.tp6 {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 1.1875rem;
+  color: hsl(184, 14%, 56%);
+}
+
+.tp7 {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.1875rem;
+  color: hsl(172, 67%, 45%);
+  letter-spacing: -0.0419rem;
+}
+
+button {
+  width: 100%;
+}
+
 input[type=number]::placeholder {
+  color: hsl(183, 100%, 15%);
   opacity: 35%;
 }
 
@@ -172,10 +195,64 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 0.3125rem;
 }
 
-.tip-btn.custom-btn {
-  background-color: hsl(189, 47%, 97%);
+.custom-btn::placeholder {
+  background-color: hsl(189, 47%, 97%) !important;
   color: hsl(180, 18%, 40%);
   text-align: center;
+}
+
+#custom-btn {
+  background: none;
+}
+
+.bottom {
+  background-color: hsl(183, 100%, 15%);
+  padding-block: 29.5px;
+  padding-inline: 23px;
+  border-radius: 0.9375rem;
+}
+
+.amount-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tip-amount {
+  margin-bottom: 1.5rem;
+}
+
+.total-amount {
+  margin-bottom: 2rem;
+}
+
+.text-container h3 {
+  color: hsl(0, 0%, 100%);
+}
+.text-container p {
+  color: hsl(184, 14%, 56%);
+}
+
+.tp8 {
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 1.1875rem;
+  color: hsl(184, 14%, 56%);
+}
+
+.reset-btn {
+  background-color: hsl(183, 79%, 24%);
+  padding-block: 9px;
+  padding-inline: 32px;
+  border-radius: 0.3125rem;
+  border: none;
+}
+
+.tp9 {
+  font-weight: 700;
+  font-size: calc(1rem + 4px);
+  line-height: 1.875rem;
+  color: hsl(183, 85%, 21%);
 }
 
 /*# sourceMappingURL=styles.css.map */

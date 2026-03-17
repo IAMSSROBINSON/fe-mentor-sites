@@ -29,6 +29,9 @@ body {
   border-radius: variables.$br-l variables.$br-l 0 0;
   padding-inline: variables.$space-300;
   padding-block: variables.$space-400;
+  display: flex;
+  flex-direction: column;
+  gap: variables.$space-400;
 }
 
 .top {
@@ -46,14 +49,34 @@ body {
   gap: variables.$space-100;
 }
 
-label {
+.tp5 {
   font-weight: variables.$fw-700;
   font-size: variables.$fs-100;
   line-height: variables.$lh-m;
   color: variables.$clr-grey-500;
 }
 
+.tp6 {
+  font-weight: variables.$fw-700;
+  font-size: variables.$fs-50;
+  line-height: variables.$lh-s;
+  color: variables.$clr-grey-400;
+}
+
+.tp7 {
+  font-weight: variables.$fw-700;
+  font-size: variables.$fs-300;
+  line-height: variables.$lh-s;
+  color: variables.$clr-green-400;
+  letter-spacing: variables.$ls-s;
+}
+
+button {
+    width: 100%;
+}
+
 input[type="number"]::placeholder {
+    color: variables.$clr-green-900;
   opacity: 35%;
 }
 
@@ -76,6 +99,7 @@ input {
 .tp3.tip-btn {
   color: variables.$clr-white;
 }
+
 
 input[type="number"] {
   -moz-appearance: textfield;
@@ -129,8 +153,78 @@ input[type="number"]::-webkit-inner-spin-button {
   border-radius: variables.$br-s;
 }
 
-.tip-btn.custom-btn {
-  background-color: variables.$clr-grey-50;
+.custom-btn::placeholder {
+  background-color: variables.$clr-grey-50 !important;
   color: variables.$clr-grey-550;
   text-align: center;
+ 
 }
+
+#custom-btn {
+    background: none;
+}
+
+
+
+// Number of people
+
+
+// Bottom
+.bottom {
+    background-color:  variables.$clr-green-900;
+    padding-block: 29.5px;
+    padding-inline: 23px;
+    border-radius: variables.$br-m;
+}
+
+.amount-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tip-amount {
+        margin-bottom: variables.$space-300;
+}
+
+.total-amount {
+    margin-bottom: variables.$space-400;
+}
+
+.text-container {
+
+
+    h3 {
+         color: variables.$clr-white;
+         
+    }
+
+    p {
+        color:  variables.$clr-grey-400;
+
+    }
+
+}
+
+.tp8 {
+  font-weight: variables.$fw-700;
+  font-size: variables.$fs-50;
+  line-height: variables.$lh-s;
+  color: variables.$clr-grey-400;
+}
+
+.reset-btn {
+    background-color: variables.$clr-green-750;
+    padding-block: 9px;
+    padding-inline: 32px;
+    border-radius: variables.$br-s;
+    border: none;
+}
+
+.tp9 {
+  font-weight: variables.$fw-700;
+  font-size: calc(#{variables.$fs-100} + 4px);
+  line-height: variables.$lh-l;
+  color: variables.$clr-green-800;
+}
+
