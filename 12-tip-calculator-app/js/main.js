@@ -1,28 +1,102 @@
 console.log("Hello World!");
 
 // elements
-const bill = document.getElementById("bill");
+const bill = document.getElementById('bill');
+const buttonsContainer = document.getElementById('buttons-container');
+const customTipBtn = document.getElementById('custom-btn');
 console.log("bill: ", bill);
+console.log("buttons-container: ", buttonsContainer);
 
 // events
 bill.addEventListener("blur", handleBill);
+buttonsContainer.addEventListener("click", handleTipClick);
+customTipBtn.addEventListener("blur", handleCustomTip);
 
 
 // functions
 function handleBill (e) {
     const billValue = getBillValue();
-    const isValidBillValue = validateBillValue(billValue);
+    const isValidBillValue = isValidNumber(billValue);
 
-    if (billValue.trim() === "") {
+    if (billValue.trim() === "" || Number(billValue) === 0) {
         applyInitialToParent(e);
+        bill.value = "";
         return
     }
-    else if (isValidBillValue) {
+    else if (isValidBillValue && Number(billValue) >= 1) {
         applyValidToParent(e);
-    } else if (!isValidBillValue) {
-        applyInvalidToParent(e);
+         console.log("isValidBillValue:", isValidBillValue);
+         return;
     }
-    console.log("isValidBillValue:", isValidBillValue);
+    applyInvalidToParent(e);
+    return;
+}
+
+function handleCustomTip (e) {
+    const target = e.target;
+    const targetValue = e.target.value;
+    const isValidTip = isValidNumber(targetValue) && !isValueEmpty(e);
+    if (isValueEmpty(e)) {
+        target.value = "";
+        target.classList.remove('selected-tip');
+        target.style.border = "initial";
+    }
+    else if (!isValidTip) {
+        // invalid number, apply error to custom tip border and error message
+        isInvalidCustomTip(target);
+        target.classList.remove('selected-tip');
+    } else {
+        isValidCustomTip(target);
+    }
+    console.log("handleCustomTip target", target);
+    console.log("handleCustomTip value", target.value);
+}
+
+function isValueEmpty (e) {
+    return e.target.value.trim() === "";
+}
+
+function isValidCustomTip (target) {
+    target.style.border = "2px solid #26C2AE";
+}
+
+function isInvalidCustomTip (target) {
+    target.style.border = "2px solid #E17052";
+}
+
+function handleTipClick (e) {
+    const target = e.target;
+    if (target.classList.contains('tip-btn')) {
+        console.log("handleTipClick valid btn");
+        applySelectedTipClass(target);
+
+        if (target.classList.contains('custom-btn')) {
+            console.log("custom input button clicked");
+            const customInputValue = document.querySelector('.custom-btn').value;
+            console.log("custom tip button value", customInputValue);
+        } else {
+            console.log("regular tip button clicked");
+            console.log("regular tip button value", target.value);
+            resetCustomTipBtn();
+        }
+    }
+    return;
+}
+
+function applySelectedTipClass (target) {
+    // remove .selected-tip from all tip-btn's 
+    const tipBtns = document.querySelectorAll('.tip-btn');
+    tipBtns.forEach((btn) => {
+        btn.classList.remove('selected-tip');
+        console.log(btn);
+    })
+    target.classList.add('selected-tip');
+    // apply .selected-tip to target
+}
+
+function resetCustomTipBtn () {
+    customTipBtn.value = "";
+    customTipBtn.style.border = "initial";
 }
 
 function applyInvalidToParent (e) {
@@ -50,8 +124,8 @@ function getBillValue () {
     return billValue;
 }
 
-function validateBillValue (value) {
+function isValidNumber (value) {
     const valueToNumber = Number(value);
     console.log(typeof valueToNumber)
-    return !Number.isNaN(valueToNumber) && valueToNumber > 0;
+    return !Number.isNaN(valueToNumber) && valueToNumber >= 0;
 }

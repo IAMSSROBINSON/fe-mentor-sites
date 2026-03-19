@@ -204,6 +204,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 #custom-btn {
   background: none;
+  color: hsl(183, 100%, 15%);
 }
 
 .bottom {
@@ -254,6 +255,11 @@ input[type=number]::-webkit-inner-spin-button {
   font-size: calc(1rem + 4px);
   line-height: 1.875rem;
   color: hsl(183, 85%, 21%);
+}
+
+.selected-tip {
+  background-color: hsl(172, 67%, 45%) !important;
+  color: hsl(183, 100%, 15%) !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
