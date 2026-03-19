@@ -4,13 +4,16 @@ console.log("Hello World!");
 const bill = document.getElementById('bill');
 const buttonsContainer = document.getElementById('buttons-container');
 const customTipBtn = document.getElementById('custom-btn');
+const person = document.getElementById('person');
+const personErrorMessage = document.getElementById('people-error-msg');
 console.log("bill: ", bill);
 console.log("buttons-container: ", buttonsContainer);
 
 // events
-bill.addEventListener("blur", handleBill);
-buttonsContainer.addEventListener("click", handleTipClick);
-customTipBtn.addEventListener("blur", handleCustomTip);
+bill.addEventListener('blur', handleBill);
+buttonsContainer.addEventListener('click', handleTipClick);
+customTipBtn.addEventListener('blur', handleCustomTip);
+person.addEventListener('blur', handleNumberOfPeople)
 
 
 // functions
@@ -52,8 +55,18 @@ function handleCustomTip (e) {
     console.log("handleCustomTip value", target.value);
 }
 
+function renderTipAmount () {
+    // get the bill amount
+
+    // get the tip %
+
+    // multiply the bill by the tip % = tip amount 
+
+    // change value 
+}
+
 function isValueEmpty (e) {
-    return e.target.value.trim() === "";
+    return e?.target?.value?.trim() === "";
 }
 
 function isValidCustomTip (target) {
@@ -100,19 +113,19 @@ function resetCustomTipBtn () {
 }
 
 function applyInvalidToParent (e) {
-    const target = e.target;
+    const target = e?.target || e;
     const parent = target.closest('.input-container');
     parent.style.border = "2px solid #E17052";
 }
 
 function applyInitialToParent (e) {
-    const target = e.target;
+    const target = e?.target | e;
     const parent = target.closest('.input-container');
     parent.style.border = "initial";
 }
 
 function applyValidToParent (e) {
-    const target = e.target;
+    const target = e?.target || e;
     const parent = target.closest('.input-container');
     parent.style.border = "2px solid #26C2AE";
 }
@@ -128,4 +141,36 @@ function isValidNumber (value) {
     const valueToNumber = Number(value);
     console.log(typeof valueToNumber)
     return !Number.isNaN(valueToNumber) && valueToNumber >= 0;
+}
+
+function handleNumberOfPeople (e = null) {
+    console.log("handleNumberOfPeople clicked", person);
+    const numberOfPeopleValue = person.value;
+    console.log("handleNumberOfPeople numberOfPeopleValue", numberOfPeopleValue);
+    const isValidNumberOfPeople = isValidNumber(numberOfPeopleValue) && numberOfPeopleValue !== '0';
+    if (isValueEmpty(e) || Number(person.value) === 0) {
+        // apply error 
+        applyPeopleError("Can't be zero");
+        return
+    }
+    else if (!isValidNumberOfPeople) {
+        applyPeopleError("Invalid value");
+        return
+    }
+    person.value = Math.floor(person.value);
+    applyValidToParent(person);
+    removePeopleError();
+
+
+
+}
+
+
+function applyPeopleError (msg) {
+    personErrorMessage.textContent = msg;
+    applyInvalidToParent(person);
+}
+
+function removePeopleError() {
+    personErrorMessage.textContent = "";
 }
