@@ -28,7 +28,7 @@ function handleBill (e) {
 function applyInvalidToParent (e) {
     const target = e.target;
     const parent = target.closest('.input-container');
-    parent.style.border = "1px solid #E17052";
+    parent.style.border = "2px solid #E17052";
 }
 
 function applyInitialToParent (e) {
@@ -40,7 +40,7 @@ function applyInitialToParent (e) {
 function applyValidToParent (e) {
     const target = e.target;
     const parent = target.closest('.input-container');
-    parent.style.border = "1px solid #26C2AE";
+    parent.style.border = "2px solid #26C2AE";
 }
 
 function getBillValue () {
