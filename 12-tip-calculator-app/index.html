@@ -30,7 +30,7 @@
             <!-- bill -->
             <div class="input-group-container">
                 <label for="bill" class="bill-label tp5">Bill</label>
-                <div class="input-container">
+                <div id="input-container" class="input-container">
                     <span class="dollar-icon-container icon-container">
                         <svg xmlns="http://www.w3.org/2000/svg" width="9.84" height="15.46" viewBox="0 0 9.84 15.46"
                             class="dollar-icon input-icon">
@@ -45,7 +45,7 @@
             <!-- select tip -->
             <div class="input-group-container">
                 <div>
-                    <label for="buttons-container" class="tip-label tp5">Select Tip %</label><span class="tip-error-msg"></span>
+                    <label for="buttons-container" class="tip-label tp5">Select Tip %</label><span id="tip-error-msg" class="tip-error-msg"></span>
                 </div>
                 <div class="input-container buttons-container" id="buttons-container">
                     <button name="tip-value" value="0.05" class="tip-btn tp3">5%</button>
@@ -74,23 +74,23 @@
         <section class="bottom">
             <div class="tip-amount amount-container">
                 <div class="text-container">
-                    <h3 class="tp5">Tip Amount</h3>
+                    <h3 class="tp5" id="tip-amount">Tip Amount</h3>
                     <p class="tp8">/ person</p>
                 </div>
                 <p class="dollar-amount tp7">$0.00</p>
             </div>
             <div class="total-amount amount-container">
                 <div class="text-container">
-                    <h3 class="tp5">Total</h3>
+                    <h3 class="tp5" id="total-amount">Total</h3>
                     <p class="tp8">/ person</p>
                 </div>
                 <p class="dollar-amount tp7">$0.00</p>
             </div>
-            <button disabled="true" class="reset-btn tp9">RESET</button>
+            <button disabled="true" id="reset-btn" class="reset-btn tp9">RESET</button>
         </section>
         
     </main>
-    <script src="./js/main.js"></script>
+    <script type="module" src="./app.js"></script>
 </body>
 
 </html>
