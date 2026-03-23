@@ -9,21 +9,23 @@ console.log("billInput: ", billInput);
 const tipsButtonsContainer = document.getElementById('buttons-container');
 console.log("tipsButtonsContainer: ", tipsButtonsContainer);
 
-
 const numberOfPeopleContainer = document.getElementById('number-of-people-container');
 const peopleErrorElement = document.getElementById('people-error-msg');
 const numberOfPeopleInput = document.getElementById('person');
 console.log("numberOfPeopleInput: ", numberOfPeopleInput);
 
-
 const customTipInput = document.getElementById('custom-btn');
 console.log("customTipInput: ", customTipInput);
+
+const resetButton = document.getElementById('reset-btn');
 
 // eventListeners
 billInput.addEventListener('input', handleBillInput);
 tipsButtonsContainer.addEventListener('click', handleTip);
 numberOfPeopleInput.addEventListener('input', handleNumberOfPeople);
+numberOfPeopleInput.addEventListener('blur', handleNumberOfPeople);
 customTipInput.addEventListener('input', handleCustomTip);
+resetButton.addEventListener('click', resetValues);
 
 
 // functions
@@ -38,6 +40,7 @@ function handleBillInput (e) {
     const billAmount = convertStringToNumber(e.target.value);
     setBill(billAmount);
     recalculateAll();
+    isReset();
 }
 
 function handleTip (e) {
@@ -59,6 +62,7 @@ function handleTip (e) {
         const tipPercentageToNumber = convertStringToNumber(target.value);
         setTipPercentage(tipPercentageToNumber);
         recalculateAll();
+        isReset();
         return
     }
 
@@ -71,12 +75,16 @@ function handleNumberOfPeople (e) {
         console.log(" handleNumberOfPeopleCannot be 0", numberOfPeopleToNumber);
         renderInvalidNumberOfPeople(numberOfPeopleContainer);
         renderErrorMessage(peopleErrorElement, "Can’t be zero");
+       
+        // numberOfPeopleInput.value = "";
+         isReset();
         return;
     }
     setNumberOfPeople(numberOfPeopleToNumber);
     renderValidNumberOfPeople(numberOfPeopleContainer);
-    removeErrorMessage(peopleErrorElement, "");
+    removeErrorMessage(peopleErrorElement, " ");
     recalculateAll();
+    isReset();
 }
 
 function isValidPeopleNumber (value) {
@@ -90,6 +98,7 @@ function handleCustomTip () {
 
     setTipPercentage(customTipValueToNumber);
     recalculateAll();
+    isReset();
 }
 
 function convertStringToNumber (value) {
@@ -106,6 +115,26 @@ function recalculateAll() {
     console.log("stateManager:", stateManager)
 }
 
+function resetValues () {
+    console.log("resetValues");
+}
+
+function isReset () {
+    console.log("isRest");
+    const isValuesToReset = Object.values(stateManager).some(value => {
+        return Number(value) !== 0;
+    });
+    console.log("isRest", isValuesToReset);
+    
+    if (isValuesToReset) {
+        resetButton.disabled = false;
+        resetButton.style.color = "#fff";
+    } else {
+        resetButton.disabled = true;
+        resetButton.style.color = "initial";
+    }
+    console.log("isRest state", stateManager);
+}
 
 
 export  { mainControllerInit };

@@ -239,6 +239,16 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 // Number Of People error
+.label-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .people-error-msg {
   color: variables.$clr-orange-400;
+  margin-left: auto;
 }

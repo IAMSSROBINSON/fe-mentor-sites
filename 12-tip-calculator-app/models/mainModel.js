@@ -10,10 +10,6 @@ function getTipAmount (state) {
     return (state.billAmount / 100) * state.tipPercentage;
 }
 
-function convertToPercentage (value) {
-    
-}
-
 function getTipsPerPerson (state) {
     const tipAmount = getTipAmount(state);
         console.log("getTipsPerPerson: ", tipAmount / state.numberOfPeople);

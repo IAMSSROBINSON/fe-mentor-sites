@@ -262,8 +262,18 @@ input[type=number]::-webkit-inner-spin-button {
   color: hsl(183, 100%, 15%) !important;
 }
 
+.label-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .people-error-msg {
   color: hsl(13, 70%, 60%);
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
