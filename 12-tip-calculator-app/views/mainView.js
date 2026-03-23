@@ -35,5 +35,22 @@ function isValidNumber (value) {
     return Number.isFinite(value);
 }
 
+function renderInvalidNumberOfPeople (container) {
+    container.style.border = "2px solid #E17052";
+}
 
-export { mainViewInit, renderTipAmountPP, renderTotalAmountPP};
+function renderValidNumberOfPeople (container) {
+        container.style.border = "2px solid #26C2AE";
+}
+
+function renderErrorMessage (element, message) {
+    element.textContent = message;
+}
+
+function removeErrorMessage (element, message) {
+        element.textContent = message;
+}
+
+
+
+export { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage};

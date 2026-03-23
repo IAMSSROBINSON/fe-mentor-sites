@@ -1,6 +1,6 @@
 // imports
 import { stateManager, getTipAmount, getTipsPerPerson, getTotalPerPerson, setBill,  setTipPercentage, setNumberOfPeople } from '../models/mainModel.js';
-import { mainViewInit, renderTipAmountPP, renderTotalAmountPP  } from '../views/mainView.js';
+import { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage } from '../views/mainView.js';
 
 // elements
 const billInput = document.getElementById('bill');
@@ -9,8 +9,12 @@ console.log("billInput: ", billInput);
 const tipsButtonsContainer = document.getElementById('buttons-container');
 console.log("tipsButtonsContainer: ", tipsButtonsContainer);
 
+
+const numberOfPeopleContainer = document.getElementById('number-of-people-container');
+const peopleErrorElement = document.getElementById('people-error-msg');
 const numberOfPeopleInput = document.getElementById('person');
 console.log("numberOfPeopleInput: ", numberOfPeopleInput);
+
 
 const customTipInput = document.getElementById('custom-btn');
 console.log("customTipInput: ", customTipInput);
@@ -65,11 +69,13 @@ function handleNumberOfPeople (e) {
     const numberOfPeopleToNumber = convertStringToNumber(e.target.value);
     if (!isValidPeopleNumber(numberOfPeopleToNumber)) {
         console.log(" handleNumberOfPeopleCannot be 0", numberOfPeopleToNumber);
-        renderInvalidNumberOfPeople();
+        renderInvalidNumberOfPeople(numberOfPeopleContainer);
+        renderErrorMessage(peopleErrorElement, "Can’t be zero");
         return;
     }
     setNumberOfPeople(numberOfPeopleToNumber);
-    renderValidNumberOfPeople();
+    renderValidNumberOfPeople(numberOfPeopleContainer);
+    removeErrorMessage(peopleErrorElement, "");
     recalculateAll();
 }
 
@@ -100,14 +106,6 @@ function recalculateAll() {
     console.log("stateManager:", stateManager)
 }
 
-function renderInvalidNumberOfPeople () {
-    numberOfPeopleInput.style.border = "2px solid red";
-}
-
-function renderValidNumberOfPeople () {
-        numberOfPeopleInput.style.border = "2px solid green";
-
-}
 
 
 export  { mainControllerInit };
