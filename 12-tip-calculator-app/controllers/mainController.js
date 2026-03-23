@@ -64,10 +64,12 @@ function handleNumberOfPeople (e) {
     console.log("handleNumberOfPeople", e.target.value);
     const numberOfPeopleToNumber = convertStringToNumber(e.target.value);
     if (!isValidPeopleNumber(numberOfPeopleToNumber)) {
-        console.log(" handleNumberOfPeopleCannot be 0", numberOfPeopleToNumber)
+        console.log(" handleNumberOfPeopleCannot be 0", numberOfPeopleToNumber);
+        renderInvalidNumberOfPeople();
         return;
     }
     setNumberOfPeople(numberOfPeopleToNumber);
+    renderValidNumberOfPeople();
     recalculateAll();
 }
 
@@ -79,7 +81,9 @@ function handleCustomTip () {
     console.log("handleCustomTip");
     const customTipValue = customTipInput.value;
     const customTipValueToNumber = convertStringToNumber(customTipValue);
+
     setTipPercentage(customTipValueToNumber);
+    recalculateAll();
 }
 
 function convertStringToNumber (value) {
@@ -95,5 +99,15 @@ function recalculateAll() {
 
     console.log("stateManager:", stateManager)
 }
+
+function renderInvalidNumberOfPeople () {
+    numberOfPeopleInput.style.border = "2px solid red";
+}
+
+function renderValidNumberOfPeople () {
+        numberOfPeopleInput.style.border = "2px solid green";
+
+}
+
 
 export  { mainControllerInit };

@@ -6,8 +6,12 @@ const stateManager = {
 
 
 function getTipAmount (state) {
-    console.log("getTipAmount:", state.billAmount * state.tipPercentage);
-    return state.billAmount * state.tipPercentage;
+    console.log("getTipAmount:",(state.billAmount / 100) * state.tipPercentage);
+    return (state.billAmount / 100) * state.tipPercentage;
+}
+
+function convertToPercentage (value) {
+    
 }
 
 function getTipsPerPerson (state) {
