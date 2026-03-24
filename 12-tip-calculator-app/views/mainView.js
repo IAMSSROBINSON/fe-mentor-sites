@@ -2,6 +2,11 @@
 const tipDollarAmount = document.querySelector('.tip-amount .dollar-amount');
 const totalDollarAmount = document.querySelector('.total-amount .dollar-amount');
 
+const numberOfPeopleContainer = document.getElementById('number-of-people-container');
+const peopleErrorElement = document.getElementById('people-error-msg');
+const resetButton = document.getElementById('reset-btn');
+
+
 // functions
 function mainViewInit () {
     console.log("MainViewInit");
@@ -52,5 +57,25 @@ function removeErrorMessage (element) {
 }
 
 
+function renderResetTrue() {
+    resetButton.disabled = false;
+        resetButton.style.backgroundColor = "#26C2AE";
+        resetButton.style.color = "#00474B";
+    
+}
 
-export { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage};
+function renderResetFalse () {
+    resetButton.disabled = true;
+        resetButton.style.backgroundColor = "#0D686D";
+        resetButton.style.color = "#085C61";
+}
+
+function resetUIValues (element) {
+     numberOfPeopleContainer.style.border = "initial";
+    peopleErrorElement.textContent = "";
+}
+
+
+
+
+export { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage, resetUIValues, renderResetTrue, renderResetFalse};

@@ -1,6 +1,6 @@
 // imports
 import { stateManager, getTipAmount, getTipsPerPerson, getTotalPerPerson, setBill,  setTipPercentage, setNumberOfPeople, resetStateManager } from '../models/mainModel.js';
-import { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage } from '../views/mainView.js';
+import { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage, resetUIValues, renderResetTrue, renderResetFalse } from '../views/mainView.js';
 
 // elements
 const billInput = document.getElementById('bill');
@@ -77,7 +77,6 @@ function handleNumberOfPeople (e) {
         renderInvalidNumberOfPeople(numberOfPeopleContainer);
         renderErrorMessage(peopleErrorElement, "Can’t be zero");
        
-        // numberOfPeopleInput.value = "";
             setNumberOfPeople(0);
             recalculateAll();
 
@@ -125,8 +124,7 @@ function resetValues () {
     billInput.value = "";
     numberOfPeopleInput.value = "";
     customTipInput.value = "";
-    numberOfPeopleContainer.style.border = "initial";
-    peopleErrorElement.textContent = "";
+    resetUIValues();
     resetStateManager();
     recalculateAll();
     isValidReset();
@@ -140,15 +138,19 @@ function isValidReset () {
     const isTruthyValue = stateValues.some((value) => value !== 0);
     if (isTruthyValue) {
         console.log("isTruthyValue yes", stateManager);
-        resetButton.disabled = false;
-        resetButton.style.backgroundColor = "#26C2AE";
-        resetButton.style.color = "#00474B";
+        // resetButton.disabled = false;
+        // resetButton.style.backgroundColor = "#26C2AE";
+        // resetButton.style.color = "#00474B";
+        renderResetTrue();
     } else {
         console.log("isTruthyValue no", stateManager);
-        resetButton.disabled = true;
-        resetButton.style.backgroundColor = "#0D686D";
-        resetButton.style.color = "#085C61";
+    //     resetButton.disabled = true;
+    //     resetButton.style.backgroundColor = "#0D686D";
+    //     resetButton.style.color = "#085C61";
+    // 
+      renderResetFalse();
     }
+  
 }
 
 
