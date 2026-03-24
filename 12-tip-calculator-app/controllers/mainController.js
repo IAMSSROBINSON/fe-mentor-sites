@@ -1,5 +1,5 @@
 // imports
-import { stateManager, getTipAmount, getTipsPerPerson, getTotalPerPerson, setBill,  setTipPercentage, setNumberOfPeople } from '../models/mainModel.js';
+import { stateManager, getTipAmount, getTipsPerPerson, getTotalPerPerson, setBill,  setTipPercentage, setNumberOfPeople, resetStateManager } from '../models/mainModel.js';
 import { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage } from '../views/mainView.js';
 
 // elements
@@ -78,7 +78,7 @@ function handleNumberOfPeople (e) {
         renderErrorMessage(peopleErrorElement, "Can’t be zero");
        
         // numberOfPeopleInput.value = "";
-        setNumberOfPeople(0);
+        setNumberOfPeople();
             recalculateAll();
 
         isValidReset();
@@ -122,6 +122,14 @@ function recalculateAll() {
 
 function resetValues () {
     console.log("resetValues");
+    billInput.value = "";
+    numberOfPeopleInput.value = "";
+    customTipInput.value = "";
+    numberOfPeopleContainer.style.border = "initial";
+    peopleErrorElement.textContent = "";
+    resetStateManager();
+    recalculateAll();
+    isValidReset();
 }
 
 function isValidReset () {

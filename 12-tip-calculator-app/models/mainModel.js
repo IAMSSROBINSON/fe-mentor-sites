@@ -40,4 +40,10 @@ function setNumberOfPeople (value) {
     console.log("setNumberOfPeople:", stateManager.numberOfPeople);
 }
 
-export { stateManager, getTipAmount, getTipsPerPerson, getTotalPerPerson, setBill, setTipPercentage, setNumberOfPeople };
+function resetStateManager () {
+    stateManager.billAmount = 0;
+    stateManager.tipPercentage = 0;
+    stateManager.numberOfPeople = 0;
+}
+
+export { stateManager, getTipAmount, getTipsPerPerson, getTotalPerPerson, setBill, setTipPercentage, setNumberOfPeople, resetStateManager };
