@@ -14,14 +14,25 @@ function getTipsPerPerson (state) {
     const tipAmount = getTipAmount(state);
         console.log("getTipsPerPerson: ", tipAmount / state.numberOfPeople);
 
-    return tipAmount / state.numberOfPeople;
+        if (state.numberOfPeople > 0) {
+            const tipsPerPerson = tipAmount / state.numberOfPeople;
+            return tipsPerPerson;
+        }
+    return 0;
 }
 
 function getTotalPerPerson (state) {
     const tipAmount = getTipAmount(state);
     console.log("Model tipAmount: ", tipAmount);
-    console.log("Model getTotalPerPerson: ", (state.billAmount + tipAmount) / state.numberOfPeople);
-    return (state.billAmount + tipAmount) / state.numberOfPeople;
+    console.log("Model getTotalPerPerson: ");
+
+    const totalPerPerson = (state.billAmount + tipAmount) / state.numberOfPeople;
+
+    if (state.numberOfPeople > 0) {
+        return totalPerPerson;
+    }
+
+    return 0;
 }
 
 function setBill (value) {
@@ -36,7 +47,7 @@ function setTipPercentage (percent) {
 }
 
 function setNumberOfPeople (value) {
-    stateManager.numberOfPeople = value;
+    stateManager.numberOfPeople = value || 0;
     console.log("setNumberOfPeople:", stateManager.numberOfPeople);
 }
 

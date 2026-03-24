@@ -78,7 +78,7 @@ function handleNumberOfPeople (e) {
         renderErrorMessage(peopleErrorElement, "Can’t be zero");
        
         // numberOfPeopleInput.value = "";
-        setNumberOfPeople();
+            setNumberOfPeople(0);
             recalculateAll();
 
         isValidReset();
@@ -86,7 +86,7 @@ function handleNumberOfPeople (e) {
     }
     setNumberOfPeople(numberOfPeopleToNumber);
     renderValidNumberOfPeople(numberOfPeopleContainer);
-    removeErrorMessage(peopleErrorElement, " ");
+    removeErrorMessage(peopleErrorElement);
     recalculateAll();
     isValidReset();
     
@@ -137,7 +137,7 @@ function isValidReset () {
     console.log("isRest state", stateManager);
 
     const stateValues = Object.values(stateManager);
-    const isTruthyValue = stateValues.some((value) => Number(value) !== 0);
+    const isTruthyValue = stateValues.some((value) => value !== 0);
     if (isTruthyValue) {
         console.log("isTruthyValue yes", stateManager);
         resetButton.disabled = false;

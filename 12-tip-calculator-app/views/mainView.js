@@ -47,8 +47,8 @@ function renderErrorMessage (element, message) {
     element.textContent = message;
 }
 
-function removeErrorMessage (element, message) {
-        element.textContent = message;
+function removeErrorMessage (element) {
+        element.textContent = "";
 }
 
 
