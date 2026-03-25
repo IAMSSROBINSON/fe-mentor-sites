@@ -75,6 +75,7 @@ function handleTip(e) {
 
   if (target.classList.contains("custom-btn")) {
     console.log("custom-btn tip", customTipInput.value);
+    removeSelectedTipClassFromAllBtns();
     return;
   } else {
     console.log("tip-btn tip", target.value);
@@ -83,8 +84,23 @@ function handleTip(e) {
     customTipInput.value = "";
     recalculateAll();
     isValidReset();
+    applySelectedTipClass(target);
     return;
   }
+}
+
+function applySelectedTipClass (target) {
+  removeSelectedTipClassFromAllBtns();
+  target.classList.add('selected-tip');
+}
+
+function removeSelectedTipClassFromAllBtns () {
+  const tipButtons = document.querySelectorAll('.tip-btn');
+  tipButtons.forEach((btn) => {
+    if (btn.classList.contains('selected-tip')) {
+      btn.classList.remove('selected-tip');
+    }
+  });
 }
 
 function handleNumberOfPeople(e) {
@@ -116,10 +132,15 @@ function handleCustomTip() {
   console.log("handleCustomTip");
   const customTipValue = customTipInput.value.trim();
   const customTipValueToNumber = convertStringToNumber(customTipValue);
-
+  
+  if (customTipValueToNumber < 0 || !Number.isFinite(customTipValueToNumber)) {
+    customTipInput.value = "";
+    return
+  }
   setTipPercentage(customTipValueToNumber || 0);
   recalculateAll();
   isValidReset();
+
 }
 
 function convertStringToNumber(value) {

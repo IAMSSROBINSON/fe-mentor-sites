@@ -78,4 +78,5 @@ function resetUIValues (element) {
 
 
 
+
 export { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage, resetUIValues, renderResetTrue, renderResetFalse};
