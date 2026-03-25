@@ -20,6 +20,8 @@ import {
   resetUIValues,
   renderResetTrue,
   renderResetFalse,
+  applySelectedTipClass,
+  removeSelectedTipClassFromAllBtns
 } from "../views/mainView.js";
 
 // elements
@@ -89,19 +91,6 @@ function handleTip(e) {
   }
 }
 
-function applySelectedTipClass (target) {
-  removeSelectedTipClassFromAllBtns();
-  target.classList.add('selected-tip');
-}
-
-function removeSelectedTipClassFromAllBtns () {
-  const tipButtons = document.querySelectorAll('.tip-btn');
-  tipButtons.forEach((btn) => {
-    if (btn.classList.contains('selected-tip')) {
-      btn.classList.remove('selected-tip');
-    }
-  });
-}
 
 function handleNumberOfPeople(e) {
   console.log("handleNumberOfPeople", e.target.value);

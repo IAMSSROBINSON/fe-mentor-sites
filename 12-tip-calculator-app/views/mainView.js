@@ -75,8 +75,22 @@ function resetUIValues (element) {
     peopleErrorElement.textContent = "";
 }
 
+function applySelectedTipClass (target) {
+  removeSelectedTipClassFromAllBtns();
+  target.classList.add('selected-tip');
+}
+
+
+function removeSelectedTipClassFromAllBtns () {
+    const tipButtons = document.querySelectorAll('.tip-btn');
+  tipButtons.forEach((btn) => {
+    if (btn.classList.contains('selected-tip')) {
+      btn.classList.remove('selected-tip');
+    }
+  });
+}
 
 
 
 
-export { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage, resetUIValues, renderResetTrue, renderResetFalse};
+export { mainViewInit, renderTipAmountPP, renderTotalAmountPP, renderInvalidNumberOfPeople, renderValidNumberOfPeople, renderErrorMessage, removeErrorMessage, resetUIValues, renderResetTrue, renderResetFalse, applySelectedTipClass, removeSelectedTipClassFromAllBtns};
