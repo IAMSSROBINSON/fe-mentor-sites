@@ -13,15 +13,16 @@ import {
   mainViewInit,
   renderTipAmountPP,
   renderTotalAmountPP,
-  renderInvalidNumberOfPeople,
-  renderValidNumberOfPeople,
+  renderInvalid,
+  renderValid,
   renderErrorMessage,
   removeErrorMessage,
   resetUIValues,
   renderResetTrue,
   renderResetFalse,
   applySelectedTipClass,
-  removeSelectedTipClassFromAllBtns
+  removeSelectedTipClassFromAllBtns,
+  setElementBorderToInitial
 } from "../views/mainView.js";
 
 // elements
@@ -61,10 +62,25 @@ function mainControllerInit() {
 function handleBillInput(e) {
   console.log("handleBillInput", e.target.value);
   const billAmount = convertStringToNumber(e.target.value.trim());
+  const billInputParentElement = billInput.parentElement;
+
+  if (!Number.isFinite(billAmount) || billAmount < 0) {
+    renderInvalid(billInputParentElement);
+    setBill(billAmount || 0);
+    isValidReset();
+    recalculateAll();
+    return;
+  } 
+  else if (billAmount === 0) {
+    setElementBorderToInitial(billInputParentElement);
+    
+  }
   setBill(billAmount || 0);
   recalculateAll();
   isValidReset();
+  renderValid(billInputParentElement);
 }
+
 
 function handleTip(e) {
   // check that a tip button was clicked
@@ -95,9 +111,9 @@ function handleTip(e) {
 function handleNumberOfPeople(e) {
   console.log("handleNumberOfPeople", e.target.value);
   const numberOfPeopleToNumber = convertStringToNumber(e.target.value.trim());
-  if (!isValidPeopleNumber(numberOfPeopleToNumber)) {
+  if (!isValidNumber(numberOfPeopleToNumber)) {
     console.log(" handleNumberOfPeopleCannot be 0", numberOfPeopleToNumber);
-    renderInvalidNumberOfPeople(numberOfPeopleContainer);
+    renderInvalid(numberOfPeopleContainer);
     renderErrorMessage(peopleErrorElement, "Can’t be zero");
 
     setNumberOfPeople(0);
@@ -107,13 +123,13 @@ function handleNumberOfPeople(e) {
     return;
   }
   setNumberOfPeople(numberOfPeopleToNumber);
-  renderValidNumberOfPeople(numberOfPeopleContainer);
+  renderValid(numberOfPeopleContainer);
   removeErrorMessage(peopleErrorElement);
   recalculateAll();
   isValidReset();
 }
 
-function isValidPeopleNumber(value) {
+function isValidNumber(value) {
   return Number.isFinite(value) && Number(value) > 0;
 }
 
@@ -155,6 +171,7 @@ function resetValues() {
   resetStateManager();
   recalculateAll();
   isValidReset();
+  setElementBorderToInitial(billInput.parentElement);
 }
 
 function isValidReset() {
