@@ -200,6 +200,15 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 0.3125rem;
 }
 
+.tip-btn:hover:not(.custom-btn) {
+  cursor: pointer;
+}
+
+.tip-btn:active {
+  background-color: hsl(173, 61%, 77%);
+  color: hsl(183, 100%, 15%);
+}
+
 .custom-btn::placeholder {
   background-color: hsl(189, 47%, 97%) !important;
   color: hsl(180, 18%, 40%);
@@ -252,6 +261,12 @@ input[type=number]::-webkit-inner-spin-button {
   padding-inline: 32px;
   border-radius: 0.3125rem;
   border: none;
+  cursor: pointer;
+}
+
+.reset-btn:not(:disabled):hover {
+  background-color: hsl(173, 61%, 77%) !important;
+  color: hsl(183, 100%, 15%) !important;
 }
 
 .tp9 {
