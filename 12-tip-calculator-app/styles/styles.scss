@@ -89,6 +89,11 @@ input {
   padding-inline: 0 18.37px;
   border: none;
   background: none;
+  outline: none;
+}
+
+.input-container:focus-within:not(.buttons-container), .custom-btn:focus-within {
+  outline: 2px solid blue;
 }
 
 .tp3 {
@@ -118,7 +123,7 @@ input[type="number"]::-webkit-inner-spin-button {
   align-items: center;
   background-color: variables.$clr-grey-50;
   border-radius: variables.$br-s;
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .icon-container {
