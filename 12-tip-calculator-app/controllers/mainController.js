@@ -172,6 +172,7 @@ function resetValues() {
   recalculateAll();
   isValidReset();
   setElementBorderToInitial(billInput.parentElement);
+  removeSelectedTipClassFromAllBtns();
 }
 
 function isValidReset() {
