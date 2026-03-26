@@ -320,19 +320,19 @@ input[type="number"]::-webkit-inner-spin-button {
     grid-template-columns: 379px 413px;
     grid-template-rows: auto;
     padding-block: variables.$space-400;
-    padding-inline: calc(#{variables.$space-400 + 8px});
+    padding-inline: calc(#{variables.$space-400} + 8px);
     gap: variables.$space-600;
   }
 
   .top {
-    gap: calc(#{variables.$space-400 + 8px});
+    gap: calc(#{variables.$space-400} + 8px);
     height: fit-content;
     padding-block: calc(#{variables.$space-200} + 0.5px);
   }
 
   .bottom {
     padding-block: calc(#{variables.$space-400} + 5.5px);
-    padding-inline: calc(#{variables.$space-400 + 8px});
+    padding-inline: calc(#{variables.$space-400} + 8px);
     display: flex;
     flex-direction: column;
     align-items: space-between;
