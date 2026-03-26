@@ -25,7 +25,6 @@ body {
 // card
 .tip-card {
   background-color: variables.$clr-white;
-  flex: 1;
   border-radius: variables.$br-l variables.$br-l 0 0;
   padding-inline: variables.$space-300;
   padding-block: variables.$space-400;
@@ -40,6 +39,7 @@ body {
   gap: 32px;
   margin: 0 auto;
 }
+
 
 // input
 .input-group-container {
@@ -64,7 +64,7 @@ body {
   color: variables.$clr-grey-400;
 }
 
-.tp7 {
+.tp1 {
   font-weight: variables.$fw-700;
   font-size: variables.$fs-300;
   line-height: variables.$lh-s;
@@ -261,4 +261,48 @@ input[type="number"]::-webkit-inner-spin-button {
 .people-error-msg {
   color: variables.$clr-orange-400;
   margin-left: auto;
+}
+
+
+
+// MEDIA QUERIES
+// Tablet
+@media screen and (min-width:768px) {
+    body {
+        padding: 0 variables.$space-1000 variables.$space-1000;
+    }
+
+    .tip-card {
+      margin: 0 auto;
+        padding-block: 54px;
+        padding-inline: 75.5px;
+        box-shadow: variables.$bs-m;
+        border-radius: variables.$br-l;
+        gap: 40px;
+        max-width: 608px;
+    }
+
+    .top {
+        gap: 24px;
+    }
+
+    .buttons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: variables.$space-200;
+}
+
+    .bottom {
+      padding-block: 43px;
+      padding-inline: 47.5px;
+    }
+
+    .tp1 {
+  font-weight: variables.$fw-700;
+  font-size: variables.$fs-500;
+  line-height: variables.$lh-xxxl;
+  color: variables.$clr-green-400;
+  letter-spacing: variables.$ls-m;
+}
 }
