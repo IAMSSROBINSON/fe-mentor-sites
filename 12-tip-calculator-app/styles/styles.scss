@@ -1,7 +1,6 @@
 @use "variables";
 @use "mixins";
 @use "global";
-@use "media-queries";
 
 // body
 body {
@@ -39,7 +38,6 @@ body {
   gap: 32px;
   margin: 0 auto;
 }
-
 
 // input
 .input-group-container {
@@ -263,46 +261,109 @@ input[type="number"]::-webkit-inner-spin-button {
   margin-left: auto;
 }
 
-
-
 // MEDIA QUERIES
 // Tablet
-@media screen and (min-width:768px) {
-    body {
-        padding: 0 variables.$space-1000 variables.$space-1000;
-    }
+@media screen and (min-width: 768px) {
+  body {
+    padding: 0 variables.$space-1000 variables.$space-1000;
+  }
 
-    .tip-card {
-      margin: 0 auto;
-        padding-block: 54px;
-        padding-inline: 75.5px;
-        box-shadow: variables.$bs-m;
-        border-radius: variables.$br-l;
-        gap: 40px;
-        max-width: 608px;
-    }
+  .tip-card {
+    margin: 0 auto;
+    padding-block: 54px;
+    padding-inline: 75.5px;
+    box-shadow: variables.$bs-m;
+    border-radius: variables.$br-l;
+    gap: 40px;
+    max-width: 608px;
+  }
 
-    .top {
-        gap: 24px;
-    }
+  .top {
+    gap: 24px;
+  }
 
-    .buttons-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto;
-  gap: variables.$space-200;
+  .buttons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: variables.$space-200;
+  }
+
+  .bottom {
+    padding-block: 43px;
+    padding-inline: 47.5px;
+    // display: flex;
+    // flex-direction: column;
+  }
+
+  .amount-container {
+    // padding-block: 14px;
+    // margin-bottom: 8px;
+  }
+
+  .tip-amount {
+  margin-bottom: 8px;
 }
 
-    .bottom {
-      padding-block: 43px;
-      padding-inline: 47.5px;
-    }
-
-    .tp1 {
-  font-weight: variables.$fw-700;
-  font-size: variables.$fs-500;
-  line-height: variables.$lh-xxxl;
-  color: variables.$clr-green-400;
-  letter-spacing: variables.$ls-m;
+.total-amount {
+  margin-bottom: 16px;
 }
+
+  .tp1 {
+    font-weight: variables.$fw-700;
+    font-size: variables.$fs-500;
+    line-height: variables.$lh-xxxl;
+    color: variables.$clr-green-400;
+    letter-spacing: variables.$ls-m;
+  }
+}
+
+// Desktop
+@media screen and (min-width: 1440px) {
+
+  .logo-container {
+
+  margin: 163px auto 87.86px auto;
+ 
+}
+
+  .tip-card {
+    max-width: fit-content;
+    display: grid;
+    grid-template-columns: 379px 413px;
+    grid-template-rows: auto;
+
+    padding-block: 32px;
+    padding-inline: 40px;
+    
+    gap: 48px;
+    // align-items: center;
+    // justify-content: center;
+
+  }
+
+  .top {
+    gap: 40px;
+    height: fit-content;
+    padding-block: 16.5px;
+  }
+
+  .bottom {
+    padding-block: 37.5px;
+    padding-inline: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+  }
+
+    .tip-amount {
+  margin-bottom: 24px;
+}
+
+.total-amount {
+  margin-bottom: auto;
+}
+
+
+
 }
