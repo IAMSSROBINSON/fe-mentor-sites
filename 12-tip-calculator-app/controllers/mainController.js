@@ -27,21 +27,13 @@ import {
 
 // elements
 const billInput = document.getElementById("bill");
-console.log("billInput: ", billInput);
-
 const tipsButtonsContainer = document.getElementById("buttons-container");
-console.log("tipsButtonsContainer: ", tipsButtonsContainer);
-
 const numberOfPeopleContainer = document.getElementById(
   "number-of-people-container",
 );
 const peopleErrorElement = document.getElementById("people-error-msg");
 const numberOfPeopleInput = document.getElementById("person");
-console.log("numberOfPeopleInput: ", numberOfPeopleInput);
-
 const customTipInput = document.getElementById("custom-btn");
-console.log("customTipInput: ", customTipInput);
-
 const resetButton = document.getElementById("reset-btn");
 
 // eventListeners
@@ -54,13 +46,10 @@ resetButton.addEventListener("click", resetValues);
 
 // functions
 function mainControllerInit() {
-  console.log("MainControllerInit");
-  console.log("MainControllerInit stateManager: ", stateManager);
   mainViewInit();
 }
 
 function handleBillInput(e) {
-  console.log("handleBillInput", e.target.value);
   const billAmount = convertStringToNumber(e.target.value.trim());
   const billInputParentElement = billInput.parentElement;
 
@@ -82,18 +71,15 @@ function handleBillInput(e) {
 function handleTip(e) {
   // check that a tip button was clicked
   const target = e.target;
-  console.log("handleTip", target);
 
   if (!target.classList.contains("tip-btn")) {
     return;
   }
 
   if (target.classList.contains("custom-btn")) {
-    console.log("custom-btn tip", customTipInput.value);
     removeSelectedTipClassFromAllBtns();
     return;
   } else {
-    console.log("tip-btn tip", target.value);
     const tipPercentageToNumber = convertStringToNumber(target.value.trim());
     setTipPercentage(tipPercentageToNumber);
     customTipInput.value = "";
@@ -105,10 +91,8 @@ function handleTip(e) {
 }
 
 function handleNumberOfPeople(e) {
-  console.log("handleNumberOfPeople", e.target.value);
   const numberOfPeopleToNumber = convertStringToNumber(e.target.value.trim());
   if (!isValidNumber(numberOfPeopleToNumber)) {
-    console.log(" handleNumberOfPeopleCannot be 0", numberOfPeopleToNumber);
     renderInvalid(numberOfPeopleContainer);
     renderErrorMessage(peopleErrorElement, "Can’t be zero");
 
@@ -130,7 +114,6 @@ function isValidNumber(value) {
 }
 
 function handleCustomTip() {
-  console.log("handleCustomTip");
   const customTipValue = customTipInput.value.trim();
   const customTipValueToNumber = convertStringToNumber(customTipValue);
 
@@ -153,12 +136,9 @@ function recalculateAll() {
 
   const totalPerPerson = getTotalPerPerson(stateManager);
   renderTotalAmountPP(totalPerPerson);
-
-  console.log("stateManager:", stateManager);
 }
 
 function resetValues() {
-  console.log("resetValues");
   billInput.value = "";
   numberOfPeopleInput.value = "";
   customTipInput.value = "";
@@ -171,16 +151,11 @@ function resetValues() {
 }
 
 function isValidReset() {
-  console.log("isRest");
-  console.log("isRest state", stateManager);
-
   const stateValues = Object.values(stateManager);
   const isTruthyValue = stateValues.some((value) => value !== 0);
   if (isTruthyValue) {
-    console.log("isTruthyValue yes", stateManager);
     renderResetTrue();
   } else {
-    console.log("isTruthyValue no", stateManager);
     renderResetFalse();
   }
 }

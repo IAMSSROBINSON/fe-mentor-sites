@@ -11,25 +11,19 @@ const peopleErrorElement = document.getElementById("people-error-msg");
 const resetButton = document.getElementById("reset-btn");
 
 // functions
-function mainViewInit() {
-  console.log("MainViewInit");
-}
+function mainViewInit() {}
 
 function renderTipAmountPP(value) {
   console.log("renderTipAmountPP:", value);
   console.log("renderTipAmountPP typeof:", typeof value);
   if (!isValidNumber(value)) {
-    console.log("renderTipAmountPP is not a number:", value);
     return;
   }
   tipDollarAmount.textContent = `$${fixedDigits(value, 2)}`;
 }
 
 function renderTotalAmountPP(value) {
-  console.log("renderTotalAmountPP:", value);
   if (!isValidNumber(value)) {
-    console.log("renderTotalAmountPP is not a number:", value);
-    console.log("renderTotalAmountPP is not a number typeof:", typeof value);
     return;
   }
   totalDollarAmount.textContent = `$${fixedDigits(value, 2)}`;
@@ -51,8 +45,8 @@ function renderValid(container) {
   container.style.border = "2px solid #26C2AE";
 }
 
-function setElementBorderToInitial (element) {
-    element.style.border = "initial";
+function setElementBorderToInitial(element) {
+  element.style.border = "initial";
 }
 
 function renderErrorMessage(element, message) {
@@ -107,5 +101,5 @@ export {
   renderResetFalse,
   applySelectedTipClass,
   removeSelectedTipClassFromAllBtns,
-  setElementBorderToInitial
+  setElementBorderToInitial,
 };
