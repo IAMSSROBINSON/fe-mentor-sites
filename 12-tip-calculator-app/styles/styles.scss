@@ -35,11 +35,10 @@ body {
 .top {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: variables.$space-400;
   margin: 0 auto;
 }
 
-// input
 .input-group-container {
   display: flex;
   flex-direction: column;
@@ -82,7 +81,7 @@ input[type="number"]::placeholder {
 input {
   width: 100%;
   text-align: right;
-  padding-block: 6px;
+  padding-block: calc(#{variables.$space-100} - 2px);
   padding-inline: 0 18.37px;
   border: none;
   background: none;
@@ -178,13 +177,11 @@ input[type="number"]::-webkit-inner-spin-button {
   color: variables.$clr-green-900;
 }
 
-// Number of people
-
 // Bottom
 .bottom {
   background-color: variables.$clr-green-900;
-  padding-block: 29.5px;
-  padding-inline: 23px;
+  padding-block: calc(#{variables.$space-300} + 5.5px);
+  padding-inline: calc(#{variables.$space-300} - 1px);
   border-radius: variables.$br-m;
 }
 
@@ -221,8 +218,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .reset-btn {
   background-color: variables.$clr-green-750;
-  padding-block: 9px;
-  padding-inline: 32px;
+  padding-block: calc(#{variables.$space-100} + 1px);
+  padding-inline: variables.$space-400;
   border-radius: variables.$br-s;
   border: none;
   cursor: pointer;
@@ -270,16 +267,16 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .tip-card {
     margin: 0 auto;
-    padding-block: 54px;
-    padding-inline: 75.5px;
+    padding-block: calc(#{variables.$space-600} + 6px);
+    padding-inline: calc(#{variables.$space-1000} - 4.5px);
     box-shadow: variables.$bs-m;
     border-radius: variables.$br-l;
-    gap: 40px;
+    gap: calc(#{variables.$space-600} - 8px);
     max-width: 608px;
   }
 
   .top {
-    gap: 24px;
+    gap: variables.$space-300;
   }
 
   .buttons-container {
@@ -290,24 +287,17 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 
   .bottom {
-    padding-block: 43px;
-    padding-inline: 47.5px;
-    // display: flex;
-    // flex-direction: column;
-  }
-
-  .amount-container {
-    // padding-block: 14px;
-    // margin-bottom: 8px;
+    padding-block: calc(#{variables.$space-600} - 5px);
+    padding-inline: calc(#{variables.$space-600} - 0.5px);
   }
 
   .tip-amount {
-  margin-bottom: 8px;
-}
+    margin-bottom: variables.$space-100;
+  }
 
-.total-amount {
-  margin-bottom: 16px;
-}
+  .total-amount {
+    margin-bottom: variables.$space-200;
+  }
 
   .tp1 {
     font-weight: variables.$fw-700;
@@ -320,50 +310,39 @@ input[type="number"]::-webkit-inner-spin-button {
 
 // Desktop
 @media screen and (min-width: 1440px) {
-
   .logo-container {
-
-  margin: 163px auto 87.86px auto;
- 
-}
+    margin: 163px auto 87.86px auto;
+  }
 
   .tip-card {
     max-width: fit-content;
     display: grid;
     grid-template-columns: 379px 413px;
     grid-template-rows: auto;
-
-    padding-block: 32px;
-    padding-inline: 40px;
-    
-    gap: 48px;
-    // align-items: center;
-    // justify-content: center;
-
+    padding-block: variables.$space-400;
+    padding-inline: calc(#{variables.$space-400 + 8px});
+    gap: variables.$space-600;
   }
 
   .top {
-    gap: 40px;
+    gap: calc(#{variables.$space-400 + 8px});
     height: fit-content;
-    padding-block: 16.5px;
+    padding-block: calc(#{variables.$space-200} + 0.5px);
   }
 
   .bottom {
-    padding-block: 37.5px;
-    padding-inline: 40px;
+    padding-block: calc(#{variables.$space-400} + 5.5px);
+    padding-inline: calc(#{variables.$space-400 + 8px});
     display: flex;
     flex-direction: column;
     align-items: space-between;
   }
 
-    .tip-amount {
-  margin-bottom: 24px;
-}
+  .tip-amount {
+    margin-bottom: variables.$space-300;
+  }
 
-.total-amount {
-  margin-bottom: auto;
-}
-
-
-
+  .total-amount {
+    margin-bottom: auto;
+  }
 }

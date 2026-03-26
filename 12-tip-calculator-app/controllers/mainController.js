@@ -22,7 +22,7 @@ import {
   renderResetFalse,
   applySelectedTipClass,
   removeSelectedTipClassFromAllBtns,
-  setElementBorderToInitial
+  setElementBorderToInitial,
 } from "../views/mainView.js";
 
 // elements
@@ -70,17 +70,14 @@ function handleBillInput(e) {
     isValidReset();
     recalculateAll();
     return;
-  } 
-  else if (billAmount === 0) {
+  } else if (billAmount === 0) {
     setElementBorderToInitial(billInputParentElement);
-    
   }
   setBill(billAmount || 0);
   recalculateAll();
   isValidReset();
   renderValid(billInputParentElement);
 }
-
 
 function handleTip(e) {
   // check that a tip button was clicked
@@ -106,7 +103,6 @@ function handleTip(e) {
     return;
   }
 }
-
 
 function handleNumberOfPeople(e) {
   console.log("handleNumberOfPeople", e.target.value);
@@ -137,15 +133,14 @@ function handleCustomTip() {
   console.log("handleCustomTip");
   const customTipValue = customTipInput.value.trim();
   const customTipValueToNumber = convertStringToNumber(customTipValue);
-  
+
   if (customTipValueToNumber < 0 || !Number.isFinite(customTipValueToNumber)) {
     customTipInput.value = "";
-    return
+    return;
   }
   setTipPercentage(customTipValueToNumber || 0);
   recalculateAll();
   isValidReset();
-
 }
 
 function convertStringToNumber(value) {
