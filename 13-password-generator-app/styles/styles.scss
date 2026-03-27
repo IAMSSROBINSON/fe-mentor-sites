@@ -1,3 +1,7 @@
+@use 'global';
+@use 'variables';
+
 body {
     background-color: dodgerblue;
+    font-family: variables.$base-font;
 }
