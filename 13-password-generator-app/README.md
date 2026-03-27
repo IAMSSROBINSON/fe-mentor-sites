@@ -11,7 +11,7 @@ fe-mentor password-generator-app challenge submission
 
 
 ## View live site here 
-https://13-password-generator-app.netlify.app/
+https://13-password-generator-application.netlify.app/
 
 
 ##### Final Screenshot

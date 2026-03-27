@@ -1,1 +1,48 @@
+// COLORS
+$clr-white: #ffffff;
+$clr-black: #000000;
+
+$clr-grey-950: #08070B;
+$clr-grey-900: #14131B;
+$clr-grey-850: #18171F;
+$clr-grey-800: #24232C;
+$clr-grey-700: #54535B;
+$clr-grey-600: #817D92;
+$clr-grey-200: #E6E5EA;
+
+$clr-green-200: #A4FFAF;
+
+$clr-yellow-300: #F8CD65;
+
+$clr-orange-400: #FB7C58;
+
+$clr-red-500: #F64A4A;
+
+$clr-l-gradient: (to right, #14131B, #08070B);
+
+// SPACING
+$space-2300: 11.5rem; // 184px
+$space-2200: 11rem; // 176px
+$space-2000: 10rem; // 160px
+$space-1600: 8rem; // 128px
+$space-1300: 6.5rem; // 104px
+$space-1000: 5rem; // 80px
+$space-700: 3.5rem; // 56px
+$space-400: 2rem; // 32px
+$space-300: 1.5rem; // 24px
+$space-200: 1rem; // 16px
+$space-100: 0.5rem; // 8px
+
+// FONT
 $base-font: "Jetbrains Mono", monospace, sans-serif;
+
+$fs-400: 2rem; // 32px
+$fs-300: 1.5rem; // 24px
+$fs-200: 1.125rem; // 18px
+$fs-100: 1rem; // 16px
+
+// LINE HEIGHT
+$lh-xl: 2.625rem; // 42px
+$lh-l: 2rem; // 32px
+$lh-m: 1.5rem; // 24px
+$lh-s: 1.25rem; // 20px
