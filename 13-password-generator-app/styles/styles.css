@@ -1,5 +1,41 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+input, textarea, select, button {
+  font: inherit;
+  color: inherit;
+}
+
+img, iframe, canvas, video {
+  width: 100%;
+  display: block;
+  line-height: 0;
+  object-fit: cover;
+}
+
 body {
-  background-color: dodgerblue;
+  min-height: 100vh;
+}
+
+body {
   font-family: "Jetbrains Mono", monospace, sans-serif;
 }
 
