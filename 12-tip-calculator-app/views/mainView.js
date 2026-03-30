@@ -38,15 +38,16 @@ function isValidNumber(value) {
 }
 
 function renderInvalid(container) {
-  container.style.border = "2px solid #E17052";
+  container.style.outline = "2px solid #E17052";
 }
 
 function renderValid(container) {
-  container.style.border = "2px solid #26C2AE";
+  container.style.outline = "2px solid #26C2AE";
 }
 
 function setElementBorderToInitial(element) {
   element.style.border = "initial";
+  element.style.outline = "initial";
 }
 
 function renderErrorMessage(element, message) {
@@ -71,6 +72,7 @@ function renderResetFalse() {
 
 function resetUIValues(element) {
   numberOfPeopleContainer.style.border = "initial";
+  numberOfPeopleContainer.style.outline = "initial";
   peopleErrorElement.textContent = "";
 }
 
