@@ -100,6 +100,7 @@ function handleNumberOfPeople(e) {
     recalculateAll();
 
     isValidReset();
+    renderResetTrue();
     return;
   }
   setNumberOfPeople(numberOfPeopleToNumber);
