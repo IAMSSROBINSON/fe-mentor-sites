@@ -4,3 +4,20 @@
 body {
     font-family: variables.$base-font;
 }
+
+fieldset {
+    position: relative;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    clip: react(0, 0, 0, 0);
+    transform: translateX(-100%);
+}
