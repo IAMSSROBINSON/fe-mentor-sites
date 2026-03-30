@@ -56,4 +56,11 @@ fieldset {
   transform: translateX(-100%);
 }
 
+.password-requirements-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
 /*# sourceMappingURL=styles.css.map */
