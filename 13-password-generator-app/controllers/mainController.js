@@ -91,6 +91,10 @@ function handleSubmit (e) {
     if (!password) return;
     // display password in ui
     updateGeneratedPassword(password);
+
+    // handle strength algorithm 
+
+    // display strength boxes in UI + strength text
 }
 
 function getPassword () {
