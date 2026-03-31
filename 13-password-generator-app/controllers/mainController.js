@@ -1,6 +1,6 @@
 // imports
 import { mainModelInit, stateManager } from '../models/mainModel.js';
-import { mainViewInit } from '../views/mainView.js';
+import { mainViewInit, clearPassword, updateGeneratedPassword } from '../views/mainView.js';
 
 // assets
 const assets = {
@@ -82,11 +82,12 @@ function updateStateChecked (target) {
 function handleSubmit (e) {
     e.preventDefault();
     // clear current password in ui 
-
+    clearPassword()
     // getPassword
-    getPassword();
-
+    const password = getPassword();
+    
     // display password in ui
+    updateGeneratedPassword(password);
 }
 
 function getPassword () {
@@ -108,7 +109,7 @@ function getPassword () {
         password += randomChar;
     }
     console.log("Password: ", password);
-
+    return password;
 }
 
 function getRandomIndex (keysArr) {
