@@ -2,14 +2,59 @@
 @use 'global';
 @use 'variables';
 
+// general
 body {
     font-family: variables.$base-font;
+    // background-color: variables.$clr-grey-950;
+    padding-block: calc(#{variables.$space-700} + 9px) calc(#{variables.$space-700} + 7px);
+    padding-inline: variables.$space-200;
 }
 
 fieldset {
     position: relative;
+    border: none;
 }
 
+// header
+header {
+    margin-bottom: variables.$space-200;
+
+    .app-title {
+      
+    }
+}
+
+// password
+.display-password-container {
+     @include mixins.flex(row, space-between, center);
+     background-color: variables.$clr-grey-800;
+     padding: variables.$space-200;
+    //  padding-block: calc(#{variables.$space-200} + 3px);
+    //  padding-inline: variables.$space-400;
+     margin-bottom: variables.$space-200;
+
+     .generated-password {
+        width: 100%;
+     }
+
+     .copy-btn {
+        border: 0;
+        background: none;
+        @include mixins.flex(row, center, center);
+    }
+
+
+}
+
+// form
+.display-password-container, 
+.create-password-form {
+    // background-color: variables.$clr-grey-800;
+}
+
+
+
+// legends for screen readers only
 .sr-only {
     position: absolute;
     width: 1px;

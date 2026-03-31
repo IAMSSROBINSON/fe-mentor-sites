@@ -37,10 +37,37 @@ body {
 
 body {
   font-family: "Jetbrains Mono", monospace, sans-serif;
+  padding-block: calc(3.5rem + 9px) calc(3.5rem + 7px);
+  padding-inline: 1rem;
 }
 
 fieldset {
   position: relative;
+  border: none;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+.display-password-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #24232C;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.display-password-container .generated-password {
+  width: 100%;
+}
+.display-password-container .copy-btn {
+  border: 0;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .sr-only {
