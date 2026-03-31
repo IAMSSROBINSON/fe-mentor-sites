@@ -82,10 +82,13 @@ function updateStateChecked (target) {
 function handleSubmit (e) {
     e.preventDefault();
     // clear current password in ui 
+    if (stateManager.range === 0) return;
+
     clearPassword()
     // getPassword
     const password = getPassword();
     
+    if (!password) return;
     // display password in ui
     updateGeneratedPassword(password);
 }
@@ -95,6 +98,8 @@ function getPassword () {
     console.log("numberOfCharactersForPassword:", numberOfCharactersForPassword);
 
     const checkedKeys = getCheckedKeys(); // ['uppercase', 'symbols']
+    if (checkedKeys.length === 0) return;
+
     console.log("getPassword:", checkedKeys);
     // getRandomCharFromAssetKey(checkedKeys[0]);
     let password = "";

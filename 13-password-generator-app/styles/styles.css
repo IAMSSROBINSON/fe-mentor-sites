@@ -70,6 +70,16 @@ header {
   align-items: center;
 }
 
+.copy-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.copy-container .copied-text {
+  color: #ffffff;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;

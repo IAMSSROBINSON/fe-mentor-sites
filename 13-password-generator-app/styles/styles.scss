@@ -46,6 +46,15 @@ header {
 
 }
 
+// copy container
+.copy-container {
+    @include mixins.flex(row, center, center);
+
+    .copied-text {
+        color: variables.$clr-white;
+    }
+}
+
 // form
 .display-password-container, 
 .create-password-form {
