@@ -94,6 +94,7 @@ function handleSubmit (e) {
 
     // handle strength algorithm 
 
+
     // display strength boxes in UI + strength text
 }
 

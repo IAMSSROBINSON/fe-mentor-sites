@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::before,
 *::after {
@@ -49,14 +50,48 @@ fieldset {
 header {
   margin-bottom: 1rem;
 }
+header .app-title {
+  color: #817D92;
+  text-align: center;
+}
+
+.tp2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.tp4 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+}
+
 .display-password-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #24232C;
-  padding: 1rem;
+  padding-block: 1rem;
+  padding-inline: calc(1rem + 2px);
   margin-bottom: 1rem;
+}
+.display-password-container input[readonly] {
+  border: none;
+  background: none;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-top: 2px;
+  appearance: none;
+}
+.display-password-container ::placeholder {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2rem;
 }
 .display-password-container .generated-password {
   width: 100%;
@@ -80,6 +115,70 @@ header {
   color: #ffffff;
 }
 
+.create-password-form {
+  background-color: #24232C;
+  color: #E6E5EA;
+  padding: 1rem;
+}
+.create-password-form .character-length-container {
+  margin-bottom: 2rem;
+}
+.create-password-form input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+.create-password-form input[type=range]::-webkit-slider-runnable-track {
+  height: 0.5rem;
+  background-color: #A4FFAF;
+  border-radius: 1.25rem;
+}
+.create-password-form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 28px;
+  width: 28px;
+  border-radius: 1.25rem;
+  background-color: #E6E5EA;
+  cursor: pointer;
+  margin-top: -10px;
+}
+.create-password-form .character-length-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.create-password-form .character-length-number {
+  color: #A4FFAF;
+}
+.create-password-form input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid #E6E5EA;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+.create-password-form input[type=checkbox]:checked {
+  color: #18171F;
+  background: #A4FFAF;
+  border: none;
+}
+.create-password-form input[type=checkbox]:checked::after {
+  content: "✔";
+  display: block;
+  text-align: center;
+  color: #18171F;
+  font-size: 20px;
+  font-weight: 900;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -98,6 +197,47 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: start;
+  gap: calc(1rem + 1px);
+  margin-bottom: 2rem;
+}
+
+.password-strength-container {
+  background-color: #18171F;
+  padding-block: 14px;
+  padding-inline: 1rem calc(1rem + 1px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.password-strength-container .password-strength-text {
+  color: #817D92;
+  text-transform: uppercase;
+}
+.password-strength-container .password-strength-boxes-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.password-strength-container .password-strength-box {
+  border: 1px solid white;
+  height: 28px;
+  width: 10px;
+}
+
+.generate-password-button {
+  background-color: #A4FFAF;
+  padding-block: calc(1rem + 2px);
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #24232C;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -17,7 +17,7 @@
     
     <header>
         <nav>
-            <h1 class="app-title">Password Generator</h1>
+            <h1 class="app-title tp4">Password Generator</h1>
         </nav>
     </header>
 
@@ -38,8 +38,8 @@
          <fieldset class="character-length-container">
             <legend class="sr-only">Select character length</legend>
             <div class="character-length-content-container">
-                <h2 class="character-length-title">Character length</h2>
-                <p class="character-length-number" id="character-length-number">0</p>
+                <h2 class="character-length-title tp4">Character length</h2>
+                <p class="character-length-number tp2" id="character-length-number">0</p>
             </div>
             <input type="range" min="0" max="20" steps="1" value="10" name="range" id="range"/>
          </fieldset>
@@ -48,22 +48,22 @@
          <fieldset class="password-requirements-container" id="password-requirements-container">
             <legend class="sr-only">Select password requirements</legend>
 
-            <label for="uppercase">
+            <label for="uppercase" class="tp4">
                 <input type="checkbox" name="uppercase" id="uppercase" class="checkbox-input" value="uppercase">
                 Include Uppercase Letters
             </label>
 
-            <label for="lowercase">
+            <label for="lowercase" class="tp4">
                 <input type="checkbox" name="lowercase" id="lowercase" class="checkbox-input" value="lowercase">
                 Include Lowercase Letters
             </label>
 
-            <label for="numbers">
+            <label for="numbers" class="tp4">
                 <input type="checkbox" name="numbers" id="numbers" class="checkbox-input" value="numbers">
                 Include Numbers
             </label>
 
-            <label for="symbols">
+            <label for="symbols" class="tp4">
                 <input type="checkbox" name="symbols" id="symbols" class="checkbox-input" value="symbols">
                 Include Symbols
             </label>
@@ -72,20 +72,20 @@
          
         <!-- display password strength container -->
          <div class="password-strength-container">
-            <p class="password-strength-text">Strength</p>
+            <p class="password-strength-text tp4">Strength</p>
             <div class="password-strength-indicator-container">
                 <p class="password-strength-warning-text"></p>
                 <div class="password-strength-boxes-container">
-                    <div class="password-strength-box-too-weak too-weak"></div>
-                    <div class="password-strength-box-weak weak"></div>
-                    <div class="password-strength-box-medium medium"></div>
-                    <div class="password-strength-box-strong strong"></div>
+                    <div class="password-strength-box too-weak"></div>
+                    <div class="password-strength-box weak"></div>
+                    <div class="password-strength-box medium"></div>
+                    <div class="password-strength-box strong"></div>
                 </div>
             </div>
          </div>
 
         <!-- generate button -->
-         <button type="submit" class="generate-password-button" id="generate-password-button">
+         <button type="submit" class="generate-password-button tp4" id="generate-password-button">
             Generate 
             <svg class="arrow-right-icon" id="arrow-right-icon" width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
         </button>
