@@ -1,244 +1,236 @@
-@use 'mixins';
-@use 'global';
-@use 'variables';
+@use "mixins";
+@use "global";
+@use "variables";
 
 // general
 body {
-    font-family: variables.$base-font;
-    // background-color: variables.$clr-grey-950;
-    padding-block: calc(#{variables.$space-700} + 9px) calc(#{variables.$space-700} + 7px);
-    padding-inline: variables.$space-200;
+  font-family: variables.$base-font;
+  // background-color: variables.$clr-grey-950;
+  padding-block: calc(#{variables.$space-700} + 9px)
+    calc(#{variables.$space-700} + 7px);
+  padding-inline: variables.$space-200;
 }
 
 fieldset {
-    position: relative;
-    border: none;
+  position: relative;
+  border: none;
 }
 
 // header
 header {
-    margin-bottom: variables.$space-200;
+  margin-bottom: variables.$space-200;
 
-    .app-title {
-      color: variables.$clr-grey-600;
-      text-align: center;
-    }
+  .app-title {
+    color: variables.$clr-grey-600;
+    text-align: center;
+  }
 }
 
 // text
 .tp1 {
-    font-size: variables.$fs-400;
-    font-weight: variables.$fw-700;
-    line-height: variables.$lh-xl;
+  font-size: variables.$fs-400;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-xl;
 }
 
 .tp2 {
-    font-size: variables.$fs-300;
-    font-weight: variables.$fw-700;
-    line-height: variables.$lh-l;
+  font-size: variables.$fs-300;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-l;
 }
 
 .tp3 {
-    font-size: variables.$fs-200;
-    font-weight: variables.$fw-700;
-    line-height: variables.$lh-m;
+  font-size: variables.$fs-200;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-m;
 }
 
 .tp4 {
-    font-size: variables.$fs-100;
-    font-weight: variables.$fw-700;
-    line-height: variables.$lh-s;
+  font-size: variables.$fs-100;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-s;
 }
 
 // password
 .display-password-container {
-     @include mixins.flex(row, space-between, center);
-     background-color: variables.$clr-grey-800;
-     padding-block: variables.$space-200;
-     padding-inline: calc(#{variables.$space-200} + 2px);
-     margin-bottom: variables.$space-200;
-     color: variables.$clr-grey-200;
+  @include mixins.flex(row, space-between, center);
+  background-color: variables.$clr-grey-800;
+  padding-block: variables.$space-200;
+  padding-inline: calc(#{variables.$space-200} + 2px);
+  margin-bottom: variables.$space-200;
+  color: variables.$clr-grey-200;
 
+  input[readonly] {
+    border: none;
+    background: none;
+    outline: none;
+    @include mixins.flex(row, start, center);
+    padding-top: 2px;
+    appearance: none;
+  }
 
-     input[readonly] {
-        border: none;
-        background: none;
-        outline: none;
-        @include mixins.flex(row, start, center);
-        padding-top: 2px;
-        appearance: none;
-     }
+  ::placeholder {
+    font-size: variables.$fs-300;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-l;
+  }
 
-      ::placeholder {
-        font-size: variables.$fs-300;
-        font-weight: variables.$fw-700;
-        line-height: variables.$lh-l;
-    }
+  .generated-password {
+    width: 100%;
+  }
 
-     .generated-password {
-        width: 100%;
-     }
-
-     .copy-btn {
-        border: 0;
-        background: none;
-        @include mixins.flex(row, center, center);
-    }
-
-
+  .copy-btn {
+    border: 0;
+    background: none;
+    @include mixins.flex(row, center, center);
+  }
 }
 
 // copy container
 .copy-container {
-    @include mixins.flex(row, center, center);
+  @include mixins.flex(row, center, center);
 
-    .copied-text {
-        color: variables.$clr-white;
-    }
+  .copied-text {
+    color: variables.$clr-white;
+  }
 }
 
 // form
 .create-password-form {
-    background-color: variables.$clr-grey-800;
-    color: variables.$clr-grey-200;
-    padding: variables.$space-200;
+  background-color: variables.$clr-grey-800;
+  color: variables.$clr-grey-200;
+  padding: variables.$space-200;
 
+  //range
+  .character-length-container {
+    margin-bottom: variables.$space-400;
+  }
 
-    //range
-    .character-length-container {
-        margin-bottom: variables.$space-400;
-    }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+    --clr-range: 0%;
+  }
 
-    input[type=range] {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 100%;
-        background: transparent;
-    }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: variables.$space-100;
+    background-color: variables.$clr-grey-850;
+    border-radius: variables.$br-l;
+    background: linear-gradient(
+      to right,
+      variables.$clr-green-200 var(--clr-range),
+      variables.$clr-grey-850 var(--clr-range)
+    );
+  }
 
-    input[type=range]::-webkit-slider-runnable-track 
-    // input[type=range]::-moz-range-track, 
-    // input[type=range]::-ms-track 
-    {
-        height: variables.$space-100;
-        background-color: variables.$clr-green-200;
-         border-radius: variables.$br-l;
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 28px;
+    width: 28px;
+    border-radius: variables.$br-l;
+    background-color: variables.$clr-grey-200;
+    cursor: pointer;
+    margin-top: -10px;
+  }
 
-    }
+  .character-length-content-container {
+    @include mixins.flex(row, space-between, center);
+  }
+  .character-length-number {
+    color: variables.$clr-green-200;
+  }
 
-    input[type=range]::-webkit-slider-thumb{
-        -webkit-appearance: none;
-        appearance: none;
-        height: 28px;
-        width: 28px;
-        border-radius: variables.$br-l;
-        background-color: variables.$clr-grey-200;
-        cursor: pointer;
-        margin-top: -10px;
+  // checkboxes
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 2px solid variables.$clr-grey-200;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+  }
 
-    }
+  input[type="checkbox"]:checked {
+    color: variables.$clr-grey-850;
+    background: variables.$clr-green-200;
+    border: none;
+  }
 
-    .character-length-content-container {
-        @include mixins.flex(row, space-between, center);
-    }
-    .character-length-number {
-        color: variables.$clr-green-200;
-    }
-
-    // checkboxes
-    input[type=checkbox] {
-        -webkit-appearance: none;
-        appearance: none;
-        border: 2px solid variables.$clr-grey-200;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        vertical-align: middle;
-
-    }
-
-    input[type=checkbox]:checked {
-        // accent-color: variables.$clr-green-200;
-        color: variables.$clr-grey-850;
-        background: variables.$clr-green-200;
-        border: none;
-    }
-
-    input[type=checkbox]:checked::after {
-        content: "✔";
-        display: block;
-        text-align: center;
-        color: variables.$clr-grey-850;
-        font-size: 20px;
-        font-weight: 900;
-
-    }
+  input[type="checkbox"]:checked::after {
+    content: "✔";
+    display: block;
+    text-align: center;
+    color: variables.$clr-grey-850;
+    font-size: 20px;
+    font-weight: 900;
+  }
 }
-
-
-
 
 // legends for screen readers only
 .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 0;
-    border: 0;
-    clip: react(0, 0, 0, 0);
-    transform: translateX(-100%);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  clip: react(0, 0, 0, 0);
+  transform: translateX(-100%);
 }
 
 // checkboxes
 .password-requirements-container {
-    @include mixins.flex (column, center, start);
-    gap: calc(#{variables.$space-200} + 1px);
-    margin-bottom: variables.$space-400;
+  @include mixins.flex(column, center, start);
+  gap: calc(#{variables.$space-200} + 1px);
+  margin-bottom: variables.$space-400;
 }
 
 // strength
 .password-strength-container {
-    background-color: variables.$clr-grey-850;
-    padding-block: 14px;
-    padding-inline: variables.$space-200 calc(#{variables.$space-200} + 1px);
-    @include mixins.flex(row, space-between, center);
+  background-color: variables.$clr-grey-850;
+  padding-block: 14px;
+  padding-inline: variables.$space-200 calc(#{variables.$space-200} + 1px);
+  @include mixins.flex(row, space-between, center);
 
-    .password-strength-text {
-        color: variables.$clr-grey-600;
-        text-transform: uppercase;
-    }
+  .password-strength-text {
+    color: variables.$clr-grey-600;
+    text-transform: uppercase;
+  }
 
-    .password-strength-boxes-container {
-        @include mixins.flex(row, center, center);
-        gap: variables.$space-100;
-    }
+  .password-strength-boxes-container {
+    @include mixins.flex(row, center, center);
+    gap: variables.$space-100;
+  }
 
-    .password-strength-box {
-        border: 1px solid variables.$clr-grey-200;
-        height: 28px;
-        width: 10px;
-    }
+  .password-strength-box {
+    border: 1px solid variables.$clr-grey-200;
+    height: 28px;
+    width: 10px;
+  }
 }
 
 // generate password button
 .generate-password-button {
-    background-color: variables.$clr-green-200;
-    padding-block: calc(#{variables.$space-200} + 2px);
-    width: 100%;    
-    border: none;
-    @include mixins.flex(row, center, center);
-    gap: variables.$space-200;
-    color: variables.$clr-grey-800;
+  background-color: variables.$clr-green-200;
+  padding-block: calc(#{variables.$space-200} + 2px);
+  width: 100%;
+  border: none;
+  @include mixins.flex(row, center, center);
+  gap: variables.$space-200;
+  color: variables.$clr-grey-800;
 }
 
 // strength indicator
 .password-strength-indicator-container {
-    @include mixins.flex(row, center, center);
-    gap: variables.$space-200;
+  @include mixins.flex(row, center, center);
+  gap: variables.$space-200;
 }

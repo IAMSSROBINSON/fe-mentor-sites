@@ -107,7 +107,7 @@ const checkboxesContainer = document.getElementById(
 );
 
 // events
-rangeInput.addEventListener("change", handleRange);
+rangeInput.addEventListener("input", handleRange);
 generatePasswordForm.addEventListener("submit", handleSubmit);
 checkboxesContainer.addEventListener("click", handleCheck);
 
@@ -134,10 +134,17 @@ function displayRangeValue(value = 0) {
 }
 
 function handleRange(e) {
-  console.log("RangeInput changed", e.target.value);
-  displayRangeValue(e.target.value);
-  updateStateRange(e.target.value);
+  const value = e.target.value;
+  const max = e.target.max;
+  const percent = (value / max) * 100;
+  console.log("RangeInput changed", value);
+  
+  displayRangeValue(value);
+  updateStateRange(value);
   console.log(stateManager);
+  console.dir(rangeInput);
+  console.log("rangePercent:", percent);
+  e.target.style.setProperty("--clr-range", percent + "%");
 }
 
 function updateStateRange(value) {

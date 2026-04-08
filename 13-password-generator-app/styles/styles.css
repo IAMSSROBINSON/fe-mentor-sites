@@ -141,11 +141,13 @@ header .app-title {
   appearance: none;
   width: 100%;
   background: transparent;
+  --clr-range: 0%;
 }
 .create-password-form input[type=range]::-webkit-slider-runnable-track {
   height: 0.5rem;
-  background-color: #A4FFAF;
+  background-color: #18171F;
   border-radius: 1.25rem;
+  background: linear-gradient(to right, #A4FFAF var(--clr-range), #18171F var(--clr-range));
 }
 .create-password-form input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
