@@ -239,6 +239,12 @@ header {
   color: variables.$clr-grey-800;
 }
 
+.generate-password-button:active {
+    background-color: transparent;
+    outline: 2px solid variables.$clr-green-200;
+    color: variables.$clr-green-200;
+}
+
 // strength indicator
 .password-strength-indicator-container {
   @include mixins.flex(row, center, center);

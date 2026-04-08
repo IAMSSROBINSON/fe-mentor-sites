@@ -265,6 +265,12 @@ header .app-title {
   color: #24232C;
 }
 
+.generate-password-button:active {
+  background-color: transparent;
+  outline: 2px solid #A4FFAF;
+  color: #A4FFAF;
+}
+
 .password-strength-indicator-container {
   display: flex;
   flex-direction: row;
