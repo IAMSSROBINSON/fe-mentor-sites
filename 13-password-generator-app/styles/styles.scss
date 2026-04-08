@@ -26,10 +26,22 @@ header {
 }
 
 // text
+.tp1 {
+    font-size: variables.$fs-400;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-xl;
+}
+
 .tp2 {
     font-size: variables.$fs-300;
     font-weight: variables.$fw-700;
     line-height: variables.$lh-l;
+}
+
+.tp3 {
+    font-size: variables.$fs-200;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-m;
 }
 
 .tp4 {
@@ -45,6 +57,8 @@ header {
      padding-block: variables.$space-200;
      padding-inline: calc(#{variables.$space-200} + 2px);
      margin-bottom: variables.$space-200;
+     color: variables.$clr-grey-200;
+
 
      input[readonly] {
         border: none;
