@@ -235,7 +235,7 @@ header .app-title {
   gap: 0.5rem;
 }
 .password-strength-container .password-strength-box {
-  border: 1px solid white;
+  border: 1px solid #E6E5EA;
   height: 28px;
   width: 10px;
 }

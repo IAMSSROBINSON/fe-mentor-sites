@@ -52,6 +52,7 @@ function fillPasswordStrengthBoxes (string) {
     // reset all background colors to initial
     strengthBoxes.forEach((box) => {
         box.style.backgroundColor = "initial";
+        box.style.border = "1px solid #E6E5EA";
     })
 
     const firstBox = strengthBoxes[0];
@@ -63,24 +64,28 @@ function fillPasswordStrengthBoxes (string) {
         case "too weak":
              
                 firstBox.style.backgroundColor = "#F64A4A";
+                firstBox.style.border = "none";
                 console.log("firstBox:", firstBox)
             break;
 
             case "weak":
                 firstTwoBoxes.forEach((box) => {
                     box.style.backgroundColor = "#FB7C58";
+                    box.style.border = "none";
                 })
             break;
 
             case "medium":
                 firstThreeBoxes.forEach((box) => {
                     box.style.backgroundColor = "#F8CD65";
+                    box.style.border = "none";
                 })
             break;
 
             case "strong":
                 firstFourBoxes.forEach((box) => {
                     box.style.backgroundColor = "#A4FFAF";
+                     box.style.border = "none";
                 })
             break;
     }
