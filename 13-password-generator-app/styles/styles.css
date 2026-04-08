@@ -253,4 +253,12 @@ header .app-title {
   color: #24232C;
 }
 
+.password-strength-indicator-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -236,3 +236,9 @@ header {
     gap: variables.$space-200;
     color: variables.$clr-grey-800;
 }
+
+// strength indicator
+.password-strength-indicator-container {
+    @include mixins.flex(row, center, center);
+    gap: variables.$space-200;
+}

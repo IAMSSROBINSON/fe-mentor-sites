@@ -4,6 +4,8 @@ import {
   mainViewInit,
   clearPassword,
   updateGeneratedPassword,
+  displayStrengthThresholdString,
+  fillPasswordStrengthBoxes
 } from "../views/mainView.js";
 
 // assets
@@ -183,6 +185,8 @@ function handleSubmit(e) {
   console.log("strengthThresholdString: ", strengthThresholdString);
 
   // display strength boxes in UI + strength text
+  displayStrengthThresholdString(strengthThresholdString);
+  fillPasswordStrengthBoxes(strengthThresholdString);
 }
 
 function getCheckboxScore() {
