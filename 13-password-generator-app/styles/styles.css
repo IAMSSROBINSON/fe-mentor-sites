@@ -108,6 +108,14 @@ header .app-title {
 }
 .display-password-container .generated-password {
   width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 20ch;
 }
 .display-password-container .copy-btn {
   border: 0;
