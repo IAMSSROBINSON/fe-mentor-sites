@@ -125,7 +125,9 @@ header .app-title {
   align-items: center;
 }
 .copy-container .copied-text {
-  color: #ffffff;
+  color: #A4FFAF;
+  margin-right: 0.5rem;
+  text-transform: uppercase;
 }
 
 .create-password-form {

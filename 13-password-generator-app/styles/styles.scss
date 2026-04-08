@@ -91,7 +91,9 @@ header {
   @include mixins.flex(row, center, center);
 
   .copied-text {
-    color: variables.$clr-white;
+    color: variables.$clr-green-200;
+    margin-right: variables.$space-100;
+    text-transform: uppercase;
   }
 }
 
