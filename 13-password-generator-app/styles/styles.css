@@ -352,7 +352,7 @@ header .app-title {
     padding: 1.5rem 2rem 2.5625rem;
   }
   .character-length-content-container {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem !important;
   }
   .checkbox-input {
     margin-right: 1.5rem;

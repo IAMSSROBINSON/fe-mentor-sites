@@ -346,7 +346,7 @@ header {
   } 
 
   .character-length-content-container {
-    margin-bottom: variables.$space-200;
+    margin-bottom: variables.$space-200 !important;
   }
 
   .checkbox-input {
