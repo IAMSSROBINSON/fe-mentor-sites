@@ -195,6 +195,7 @@ header .app-title {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 .create-password-form .character-length-number {
   color: #A4FFAF;
@@ -349,6 +350,9 @@ header .app-title {
   }
   .create-password-form {
     padding: 1.5rem 2rem 2.5625rem;
+  }
+  .character-length-content-container {
+    margin-bottom: 1rem;
   }
   .checkbox-input {
     margin-right: 1.5rem;

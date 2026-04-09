@@ -175,6 +175,7 @@ header {
 
   .character-length-content-container {
     @include mixins.flex(row, space-between, center);
+    margin-bottom: variables.$space-100;
   }
   .character-length-number {
     color: variables.$clr-green-200;
@@ -343,6 +344,10 @@ header {
     padding: variables.$space-300 variables.$space-400 variables.$space-500;
   
   } 
+
+  .character-length-content-container {
+    margin-bottom: variables.$space-200;
+  }
 
   .checkbox-input {
   margin-right: variables.$space-300;
