@@ -326,6 +326,12 @@ header {
     margin-bottom: variables.$space-300;
   }
 
+  input[type=text]:read-only::placeholder {
+    font-size: variables.$fs-400;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-xl;
+  }
+
   .display-password-container {
     padding-block: calc(#{variables.$space-200} + 3px);
     padding-inline: calc(#{variables.$space-400} - 1px);

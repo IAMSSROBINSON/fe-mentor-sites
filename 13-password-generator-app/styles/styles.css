@@ -333,6 +333,11 @@ header .app-title {
   header {
     margin-bottom: 1.5rem;
   }
+  input[type=text]:read-only::placeholder {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.625rem;
+  }
   .display-password-container {
     padding-block: calc(1rem + 3px);
     padding-inline: calc(2rem - 1px);
