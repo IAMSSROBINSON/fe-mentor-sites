@@ -38,6 +38,7 @@ body {
 
 body {
   font-family: "Jetbrains Mono", monospace, sans-serif;
+  background-color: #08070B;
   padding-block: calc(3.5rem + 9px) calc(3.5rem + 7px);
   padding-inline: 1rem;
 }
@@ -47,18 +48,10 @@ fieldset {
   border: none;
 }
 
-header {
-  margin-bottom: 1rem;
-}
-header .app-title {
-  color: #817D92;
-  text-align: center;
-}
-
 .tp1 {
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: 700;
-  line-height: 2.625rem;
+  line-height: 1.25rem;
 }
 
 .tp2 {
@@ -77,6 +70,19 @@ header .app-title {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.25rem;
+}
+
+.mx-width {
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+header {
+  margin-bottom: 1rem;
+}
+header .app-title {
+  color: #817D92;
+  text-align: center;
 }
 
 .display-password-container {
@@ -124,6 +130,8 @@ header .app-title {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  width: auto;
+  height: 20px;
 }
 
 .copy-container {
@@ -226,14 +234,19 @@ header .app-title {
   margin-bottom: 2rem;
 }
 
+.checkbox-input {
+  margin-right: 1rem;
+}
+
 .password-strength-container {
   background-color: #18171F;
-  padding-block: 14px;
+  padding-block: calc(1rem - 2px);
   padding-inline: 1rem calc(1rem + 1px);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .password-strength-container .password-strength-text {
   color: #817D92;
@@ -277,6 +290,60 @@ header .app-title {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .tp1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+  .tp2 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.625rem;
+  }
+  .tp3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+  .tp4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+  }
+  body {
+    padding-block: calc(8rem + 5px);
+    padding-inline: calc(6.5rem + 10px);
+  }
+  header {
+    margin-bottom: 1.5rem;
+  }
+  .display-password-container {
+    padding-block: calc(1rem + 3px);
+    padding-inline: calc(2rem - 1px);
+    margin-bottom: 1.5rem;
+  }
+  .display-password-container .copy-btn {
+    height: 24px;
+  }
+  .create-password-form {
+    padding: 1.5rem 2rem;
+  }
+  .checkbox-input {
+    margin-right: 1.5rem;
+  }
+  .password-strength-container {
+    background-color: #18171F;
+    padding-block: calc(1rem + 4px);
+    padding-inline: calc(2rem + 0.25px);
+    margin-bottom: 2rem;
+  }
+  .generate-password-button {
+    padding-block: calc(1rem + 4.5px);
+    gap: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

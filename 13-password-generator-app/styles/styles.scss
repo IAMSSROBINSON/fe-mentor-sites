@@ -5,7 +5,7 @@
 // general
 body {
   font-family: variables.$base-font;
-  // background-color: variables.$clr-grey-950;
+  background-color: variables.$clr-grey-950;
   padding-block: calc(#{variables.$space-700} + 9px)
     calc(#{variables.$space-700} + 7px);
   padding-inline: variables.$space-200;
@@ -16,21 +16,11 @@ fieldset {
   border: none;
 }
 
-// header
-header {
-  margin-bottom: variables.$space-200;
-
-  .app-title {
-    color: variables.$clr-grey-600;
-    text-align: center;
-  }
-}
-
 // text
 .tp1 {
-  font-size: variables.$fs-400;
+  font-size: variables.$fs-100;
   font-weight: variables.$fw-700;
-  line-height: variables.$lh-xl;
+  line-height: variables.$lh-s;
 }
 
 .tp2 {
@@ -50,6 +40,23 @@ header {
   font-weight: variables.$fw-700;
   line-height: variables.$lh-s;
 }
+
+// max-width
+.mx-width {
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+// header
+header {
+  margin-bottom: variables.$space-200;
+
+  .app-title {
+    color: variables.$clr-grey-600;
+    text-align: center;
+  }
+}
+
 
 // password
 .display-password-container {
@@ -91,6 +98,8 @@ header {
     border: 0;
     background: none;
     @include mixins.flex(row, center, center);
+    width: auto;
+    height: 20px;
   }
 }
 
@@ -104,6 +113,7 @@ header {
     text-transform: uppercase;
   }
 }
+
 
 // form
 .create-password-form {
@@ -204,12 +214,17 @@ header {
   margin-bottom: variables.$space-400;
 }
 
+.checkbox-input {
+  margin-right: variables.$space-200;
+}
+
 // strength
 .password-strength-container {
   background-color: variables.$clr-grey-850;
-  padding-block: 14px;
+  padding-block: calc(#{variables.$space-200} - 2px);
   padding-inline: variables.$space-200 calc(#{variables.$space-200} + 1px);
   @include mixins.flex(row, space-between, center);
+  margin-bottom: variables.$space-200;
 
   .password-strength-text {
     color: variables.$clr-grey-600;
@@ -249,4 +264,80 @@ header {
 .password-strength-indicator-container {
   @include mixins.flex(row, center, center);
   gap: variables.$space-200;
+ 
+}
+
+
+// MEDIA QUERIES
+@media screen and (min-width: 768px) {
+  // text
+.tp1 {
+  font-size: variables.$fs-300;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-l;
+}
+
+.tp2 {
+  font-size: variables.$fs-400;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-xl;
+}
+
+.tp3 {
+  font-size: variables.$fs-300;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-l;
+}
+
+.tp4 {
+  font-size: variables.$fs-200;
+  font-weight: variables.$fw-700;
+  line-height: variables.$lh-m;
+}
+
+
+
+
+  body {
+  padding-block: calc(#{variables.$space-1600} + 5px);
+  padding-inline: calc(#{variables.$space-1300} + 10px);
+}
+
+  header {
+    margin-bottom: variables.$space-300;
+  }
+
+  .display-password-container {
+    padding-block: calc(#{variables.$space-200} + 3px);
+    padding-inline: calc(#{variables.$space-400} - 1px);
+    margin-bottom: variables.$space-300;
+
+    .copy-btn {
+      height: 24px;
+    } 
+  }
+
+  .create-password-form {
+    padding: variables.$space-300 variables.$space-400;
+  
+  } 
+
+  .checkbox-input {
+  margin-right: variables.$space-300;
+}
+
+  // strength
+  .password-strength-container {
+    background-color: variables.$clr-grey-850;
+    padding-block: calc(#{variables.$space-200} + 4px);
+    padding-inline: calc(#{variables.$space-400} + 0.25px);
+    margin-bottom: variables.$space-400;
+  }
+
+  // generate password button
+.generate-password-button {
+  padding-block: calc(#{variables.$space-200} + 4.5px);
+  gap: variables.$space-300;
+}
+
 }
