@@ -336,6 +336,10 @@ header {
     .copy-btn {
       height: 24px;
     } 
+
+    .copied-text {
+      margin-right: variables.$space-200;
+    }
   }
 
   .create-password-form {

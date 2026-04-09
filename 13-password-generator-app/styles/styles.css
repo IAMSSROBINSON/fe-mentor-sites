@@ -344,6 +344,9 @@ header .app-title {
   .display-password-container .copy-btn {
     height: 24px;
   }
+  .display-password-container .copied-text {
+    margin-right: 1rem;
+  }
   .create-password-form {
     padding: 1.5rem 2rem;
   }
