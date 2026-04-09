@@ -1,11 +1,10 @@
 // imports
-import { mainModelInit, stateManager } from "../models/mainModel.js";
+import { stateManager } from "../models/mainModel.js";
 import {
-  mainViewInit,
   clearPassword,
   updateGeneratedPassword,
   displayStrengthThresholdString,
-  fillPasswordStrengthBoxes
+  fillPasswordStrengthBoxes,
 } from "../views/mainView.js";
 
 // assets
@@ -113,20 +112,10 @@ checkboxesContainer.addEventListener("click", handleCheck);
 
 // functions
 function mainControllerInit() {
-  console.log("mainControllerInit :");
-  console.log("mainControllerInit :", stateManager);
-  console.log("mainControllerInit rangeInput:", rangeInput);
-  console.log("mainControllerInit rangeInput value:", rangeInput.value);
-  // console.log("mainControllerInit checkboxes:", checkboxes);
-  console.log("mainControllerInit assets:", assets);
-  mainModelInit();
-  mainViewInit();
-
   // display initial value of rangeInput in rangeDisplay and update state with value
   const rangeInputValue = Number(rangeInput.value);
   displayRangeValue(rangeInputValue);
   updateStateRange(rangeInputValue);
-  console.log(stateManager);
 }
 
 function displayRangeValue(value = 0) {
@@ -137,13 +126,10 @@ function handleRange(e) {
   const value = e.target.value;
   const max = e.target.max;
   const percent = (value / max) * 100;
-  console.log("RangeInput changed", value);
-  
+
   displayRangeValue(value);
   updateStateRange(value);
-  console.log(stateManager);
-  console.dir(rangeInput);
-  console.log("rangePercent:", percent);
+
   e.target.style.setProperty("--clr-range", percent + "%");
 }
 
@@ -155,9 +141,6 @@ function handleCheck(e) {
   const target = e.target;
   // check that an actual inputs container was clicked
   if (e.target.classList.contains("checkbox-input")) {
-    console.log("checkbox:", target);
-    console.log("checkbox checked? :", target.checked, target.name);
-
     updateStateChecked(target);
   }
 
@@ -166,7 +149,6 @@ function handleCheck(e) {
 
 function updateStateChecked(target) {
   stateManager[target.name] = target.checked;
-  console.log(stateManager);
 }
 
 function handleSubmit(e) {
@@ -186,10 +168,7 @@ function handleSubmit(e) {
   const checkboxScore = getCheckboxScore();
   const lengthScore = getLengthScore(password);
   const totalScore = checkboxScore + lengthScore;
-  console.log("totalScore: ", totalScore);
-
   const strengthThresholdString = getStrengthThreshold(totalScore);
-  console.log("strengthThresholdString: ", strengthThresholdString);
 
   // display strength boxes in UI + strength text
   displayStrengthThresholdString(strengthThresholdString);
@@ -200,10 +179,6 @@ function getCheckboxScore() {
   const numberOfTrueValues = Object.values(stateManager).filter(
     (value) => value === true,
   ).length;
-  console.log("getCheckboxScore: ", stateManager);
-  console.log("getCheckboxScore: ", Object.values(stateManager));
-  console.log("getCheckboxScore numberOfTrueValues: ", numberOfTrueValues);
-  console.log("numberOfTrueValuesScore: ", numberOfTrueValues * 2);
   return numberOfTrueValues * 2;
 }
 
@@ -222,7 +197,7 @@ function getLengthScore(password) {
   } else {
     score += 4;
   }
-  console.log("getLengthScore:", score);
+
   return score;
 }
 
@@ -244,55 +219,36 @@ function getStrengthThreshold(score) {
 
 function getPassword() {
   const numberOfCharactersForPassword = getRange();
-  console.log("numberOfCharactersForPassword:", numberOfCharactersForPassword);
-
   const checkedKeys = getCheckedKeys(); // ['uppercase', 'symbols']
+
   if (checkedKeys.length === 0) return;
 
-  console.log("getPassword:", checkedKeys);
   let password = "";
   for (let i = 0; i < numberOfCharactersForPassword; i++) {
-    console.log("logs:", i);
-
     const randomKey = checkedKeys[getRandomIndex(checkedKeys)];
-    console.log("randomKey:", randomKey);
-
     const randomChar = getRandomCharFromAssetKey(randomKey);
-    console.log("randomChar:", randomChar);
     password += randomChar;
   }
-  console.log("Password: ", password);
+
   return password;
 }
 
 function getRandomIndex(keysArr) {
-  console.log("getRandomIndex keysArr: ", keysArr);
-
   const randomNumber = Math.floor(Math.random() * keysArr.length);
-  console.log("getRandomIndex:", randomNumber);
   return randomNumber;
 }
 
 function getCheckedKeys() {
   const keys = Object.keys(stateManager);
   const checkedKeys = keys.filter((key) => stateManager[key] === true);
-  console.log("checkedKeys: ", checkedKeys);
+
   return checkedKeys;
 }
 
 function getRandomCharFromAssetKey(key) {
-  const lengthOfAssetValue = assets[key].length;
   const randomIndex = getRandomIndex(assets[key]);
-  console.log(
-    "key",
-    key,
-    "length of keysValueArr:",
-    lengthOfAssetValue,
-    "randomIndex:",
-    randomIndex,
-  );
   const randomCharFromAssetKey = assets[key][randomIndex];
-  console.log("randomCharFromAssetKey:", randomCharFromAssetKey);
+
   return randomCharFromAssetKey;
 }
 
@@ -300,5 +256,4 @@ function getRange() {
   return stateManager.range;
 }
 
-// exports
 export { mainControllerInit };

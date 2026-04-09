@@ -1,7 +1,3 @@
-function mainModelInit() {
-    console.log("mainModelInit :");
-}   
-
 const stateManager = {
     uppercase: false,
     lowercase: false,
@@ -10,6 +6,4 @@ const stateManager = {
     range: 0
 }
 
-
-
-export { mainModelInit, stateManager };
+export { stateManager };

@@ -4,16 +4,16 @@
 
 // general
 body {
-  font-family: variables.$base-font;
   background-color: variables.$clr-grey-950;
+  font-family: variables.$base-font;
   padding-block: calc(#{variables.$space-700} + 9px)
     calc(#{variables.$space-700} + 7px);
   padding-inline: variables.$space-200;
 }
 
 fieldset {
-  position: relative;
   border: none;
+  position: relative;
 }
 
 // text
@@ -57,34 +57,32 @@ header {
   }
 }
 
-
 // password
 .display-password-container {
   @include mixins.flex(row, space-between, center);
   background-color: variables.$clr-grey-800;
+  color: variables.$clr-grey-200;
+  margin-bottom: variables.$space-200;
   padding-block: variables.$space-200;
   padding-inline: calc(#{variables.$space-200} + 2px);
-  margin-bottom: variables.$space-200;
-  color: variables.$clr-grey-200;
 
   input[readonly] {
-    border: none;
-    background: none;
-    outline: none;
     @include mixins.flex(row, start, center);
-    padding-top: 2px;
     appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    padding-top: 2px;
   }
 
   ::placeholder {
+    color: variables.$clr-grey-700;
     font-size: variables.$fs-300;
     font-weight: variables.$fw-700;
     line-height: variables.$lh-l;
-    color: variables.$clr-grey-700;
   }
 
   .generated-password {
-    width: 100%;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
@@ -92,15 +90,16 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: 100%;
     max-width: 20ch;
   }
 
   .copy-btn {
-    border: 0;
-    background: none;
     @include mixins.flex(row, center, center);
-    width: auto;
+    background: none;
+    border: 0;
     height: 20px;
+    width: auto;
   }
 
   .copy-btn:active .copy-icon {
@@ -119,14 +118,13 @@ header {
   }
 
   .copy-btn {
-      cursor: pointer;
+    cursor: pointer;
   }
 
   .copy-icon {
     color: variables.$clr-green-200;
   }
 }
-
 
 // form
 .create-password-form {
@@ -148,7 +146,6 @@ header {
   }
 
   input[type="range"]::-webkit-slider-runnable-track {
-    height: variables.$space-100;
     background-color: variables.$clr-grey-850;
     border-radius: variables.$br-l;
     background: linear-gradient(
@@ -156,16 +153,17 @@ header {
       variables.$clr-green-200 var(--clr-range),
       variables.$clr-grey-850 var(--clr-range)
     );
+    height: variables.$space-100;
   }
 
   input[type="range"]::-webkit-slider-thumb {
+    background-color: variables.$clr-grey-200;
+    border-radius: variables.$br-l;
+    cursor: pointer;
     -webkit-appearance: none;
     appearance: none;
     height: 28px;
     width: 28px;
-    border-radius: variables.$br-l;
-    background-color: variables.$clr-grey-200;
-    cursor: pointer;
     margin-top: -10px;
   }
 
@@ -201,9 +199,9 @@ header {
   }
 
   input[type="checkbox"]:checked {
-    color: variables.$clr-grey-850;
     background: variables.$clr-green-200;
     border: none;
+    color: variables.$clr-grey-850;
   }
 
   input[type="checkbox"]:checked::after {
@@ -238,15 +236,15 @@ header {
 }
 
 .checkbox-input {
-  // margin-right: variables.$space-100;
+  margin-right: variables.$space-100;
 }
 
 // strength
 .password-strength-container {
+  @include mixins.flex(row, space-between, center);
   background-color: variables.$clr-grey-850;
   padding-block: calc(#{variables.$space-200} - 2px);
   padding-inline: variables.$space-200 calc(#{variables.$space-200} + 1px);
-  @include mixins.flex(row, space-between, center);
   margin-bottom: variables.$space-200;
 
   .password-strength-text {
@@ -268,66 +266,64 @@ header {
 
 // generate password button
 .generate-password-button {
+  @include mixins.flex(row, center, center);
   background-color: variables.$clr-green-200;
+  border: none;
+  color: variables.$clr-grey-800;
+  gap: variables.$space-200;
   padding-block: calc(#{variables.$space-200} + 2px);
   width: 100%;
-  border: none;
-  @include mixins.flex(row, center, center);
-  gap: variables.$space-200;
-  color: variables.$clr-grey-800;
 }
 
 .generate-password-button:active {
-    background-color: transparent;
-    outline: 2px solid variables.$clr-green-200;
-    color: variables.$clr-green-200;
+  color: variables.$clr-green-200;
+  background-color: transparent;
+  outline: 2px solid variables.$clr-green-200;
 }
 
 // strength indicator
 .password-strength-indicator-container {
   @include mixins.flex(row, center, center);
   gap: variables.$space-200;
- 
 }
-
 
 // MEDIA QUERIES
 @media screen and (min-width: 600px) {
   // text
-.tp1 {
-  font-size: variables.$fs-300;
-  font-weight: variables.$fw-700;
-  line-height: variables.$lh-l;
-}
+  .tp1 {
+    font-size: variables.$fs-300;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-l;
+  }
 
-.tp2 {
-  font-size: variables.$fs-400;
-  font-weight: variables.$fw-700;
-  line-height: variables.$lh-xl;
-}
+  .tp2 {
+    font-size: variables.$fs-400;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-xl;
+  }
 
-.tp3 {
-  font-size: variables.$fs-300;
-  font-weight: variables.$fw-700;
-  line-height: variables.$lh-l;
-}
+  .tp3 {
+    font-size: variables.$fs-300;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-l;
+  }
 
-.tp4 {
-  font-size: variables.$fs-200;
-  font-weight: variables.$fw-700;
-  line-height: variables.$lh-m;
-}
+  .tp4 {
+    font-size: variables.$fs-200;
+    font-weight: variables.$fw-700;
+    line-height: variables.$lh-m;
+  }
 
   body {
-  padding-block: calc(#{variables.$space-1600} + 5px);
-  padding-inline: calc(#{variables.$space-1300} + 10px);
-}
+    padding-block: calc(#{variables.$space-1600} + 5px);
+    padding-inline: calc(#{variables.$space-1300} + 10px);
+  }
 
   header {
     margin-bottom: variables.$space-300;
   }
 
-  input[type=text]:read-only::placeholder {
+  input[type="text"]:read-only::placeholder {
     font-size: variables.$fs-400;
     font-weight: variables.$fw-700;
     line-height: variables.$lh-xl;
@@ -340,7 +336,7 @@ header {
 
     .copy-btn {
       height: 24px;
-    } 
+    }
 
     .copied-text {
       margin-right: variables.$space-200;
@@ -349,8 +345,7 @@ header {
 
   .create-password-form {
     padding: variables.$space-300 variables.$space-400 variables.$space-500;
-  
-  } 
+  }
 
   .character-length-content-container {
     margin-bottom: variables.$space-300 !important;
@@ -358,7 +353,7 @@ header {
 
   .checkbox-input {
     margin-right: variables.$space-100;
-}
+  }
 
   // strength
   .password-strength-container {
@@ -369,9 +364,8 @@ header {
   }
 
   // generate password button
-.generate-password-button {
-  padding-block: calc(#{variables.$space-200} + 4.5px);
-  gap: variables.$space-300;
-}
-
+  .generate-password-button {
+    padding-block: calc(#{variables.$space-200} + 4.5px);
+    gap: variables.$space-300;
+  }
 }
