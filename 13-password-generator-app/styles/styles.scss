@@ -112,6 +112,10 @@ header {
     margin-right: variables.$space-100;
     text-transform: uppercase;
   }
+
+  .copy-btn {
+      cursor: pointer;
+  }
 }
 
 
@@ -154,6 +158,11 @@ header {
     background-color: variables.$clr-grey-200;
     cursor: pointer;
     margin-top: -10px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:active {
+    background: variables.$clr-grey-800;
+    border: 2px solid variables.$clr-green-200;
   }
 
   .character-length-content-container {

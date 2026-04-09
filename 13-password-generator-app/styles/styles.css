@@ -145,6 +145,9 @@ header .app-title {
   margin-right: 0.5rem;
   text-transform: uppercase;
 }
+.copy-container .copy-btn {
+  cursor: pointer;
+}
 
 .create-password-form {
   background-color: #24232C;
@@ -176,6 +179,10 @@ header .app-title {
   background-color: #E6E5EA;
   cursor: pointer;
   margin-top: -10px;
+}
+.create-password-form input[type=range]::-webkit-slider-thumb:active {
+  background: #24232C;
+  border: 2px solid #A4FFAF;
 }
 .create-password-form .character-length-content-container {
   display: flex;
