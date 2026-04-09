@@ -164,6 +164,13 @@ header .app-title {
 .create-password-form .character-length-container {
   margin-bottom: 2.5625rem;
 }
+.create-password-form .character-length-content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .create-password-form input[type=range] {
   -webkit-appearance: none;
   appearance: none;
@@ -261,6 +268,7 @@ header .app-title {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   background-color: #18171f;
   padding-block: calc(1rem - 2px);
   padding-inline: 1rem calc(1rem + 1px);

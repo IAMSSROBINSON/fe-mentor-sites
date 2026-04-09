@@ -135,6 +135,12 @@ header {
   //range
   .character-length-container {
     margin-bottom: variables.$space-500;
+  
+  }
+
+  .character-length-content-container {
+    @include mixins.flex(row, space-between, center);
+    flex-wrap: wrap;
   }
 
   input[type="range"] {
@@ -242,6 +248,7 @@ header {
 // strength
 .password-strength-container {
   @include mixins.flex(row, space-between, center);
+  flex-wrap: wrap;
   background-color: variables.$clr-grey-850;
   padding-block: calc(#{variables.$space-200} - 2px);
   padding-inline: variables.$space-200 calc(#{variables.$space-200} + 1px);
