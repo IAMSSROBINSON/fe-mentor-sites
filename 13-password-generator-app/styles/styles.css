@@ -309,7 +309,7 @@ header .app-title {
   gap: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   .tp1 {
     font-size: 1.5rem;
     font-weight: 700;
