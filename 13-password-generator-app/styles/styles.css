@@ -133,6 +133,9 @@ header .app-title {
   width: auto;
   height: 20px;
 }
+.display-password-container .copy-btn:active .copy-icon {
+  color: #ffffff;
+}
 
 .copy-container {
   display: flex;
@@ -147,6 +150,9 @@ header .app-title {
 }
 .copy-container .copy-btn {
   cursor: pointer;
+}
+.copy-container .copy-icon {
+  color: #A4FFAF;
 }
 
 .create-password-form {
@@ -204,6 +210,9 @@ header .app-title {
   justify-content: center;
   align-items: center;
   vertical-align: middle;
+}
+.create-password-form input[type=checkbox]:active {
+  border: 2px solid #A4FFAF;
 }
 .create-password-form input[type=checkbox]:checked {
   color: #18171F;

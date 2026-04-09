@@ -101,6 +101,10 @@ header {
     width: auto;
     height: 20px;
   }
+
+  .copy-btn:active .copy-icon {
+    color: variables.$clr-white;
+  }
 }
 
 // copy container
@@ -115,6 +119,10 @@ header {
 
   .copy-btn {
       cursor: pointer;
+  }
+
+  .copy-icon {
+    color: variables.$clr-green-200;
   }
 }
 
@@ -184,6 +192,10 @@ header {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+  }
+
+  input[type="checkbox"]:active {
+    border: 2px solid variables.$clr-green-200;
   }
 
   input[type="checkbox"]:checked {
