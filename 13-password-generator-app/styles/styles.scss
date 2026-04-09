@@ -316,9 +316,6 @@ header {
   line-height: variables.$lh-m;
 }
 
-
-
-
   body {
   padding-block: calc(#{variables.$space-1600} + 5px);
   padding-inline: calc(#{variables.$space-1300} + 10px);
@@ -343,7 +340,7 @@ header {
   }
 
   .create-password-form {
-    padding: variables.$space-300 variables.$space-400;
+    padding: variables.$space-300 variables.$space-400 variables.$space-500;
   
   } 
 
