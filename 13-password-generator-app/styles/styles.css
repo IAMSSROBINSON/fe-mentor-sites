@@ -134,7 +134,8 @@ header .app-title {
   height: 20px;
   width: auto;
 }
-.display-password-container .copy-btn:active .copy-icon {
+.display-password-container .copy-btn:active .copy-icon,
+.display-password-container .copy-btn:hover .copy-icon {
   color: #ffffff;
 }
 
@@ -194,7 +195,8 @@ header .app-title {
   width: 28px;
   margin-top: -10px;
 }
-.create-password-form input[type=range]::-webkit-slider-thumb:active {
+.create-password-form input[type=range]::-webkit-slider-thumb:active,
+.create-password-form input[type=range]::-webkit-slider-thumb:hover {
   background: #24232c;
   border: 2px solid #a4ffaf;
 }
@@ -220,7 +222,8 @@ header .app-title {
   align-items: center;
   vertical-align: middle;
 }
-.create-password-form input[type=checkbox]:active {
+.create-password-form input[type=checkbox]:active,
+.create-password-form input[type=checkbox]:hover {
   border: 2px solid #a4ffaf;
 }
 .create-password-form input[type=checkbox]:checked {
@@ -304,7 +307,8 @@ header .app-title {
   width: 100%;
 }
 
-.generate-password-button:active {
+.generate-password-button:active,
+.generate-password-button:hover {
   color: #a4ffaf;
   background-color: transparent;
   outline: 2px solid #a4ffaf;
