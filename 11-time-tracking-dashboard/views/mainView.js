@@ -35,7 +35,6 @@ function renderProfile(user) {
 
 function renderTimeframeStats(stats) {
   const timeframe = getCurrentSelectedTimeframe();
-  const fragment = document.createDocumentFragment();
   cardsContainer.innerHTML = "";
   stats.forEach((stat) => {
     cardsContainer.innerHTML += TimeCard(timeframe, stat);
