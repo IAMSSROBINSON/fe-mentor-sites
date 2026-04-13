@@ -1,6 +1,71 @@
 :root {
-    /* VARIABLES */
+    /* TOKENS */
+
+    /* colors */
+    --clr-black: #000000;
+    --clr-white: #ffffff;
+
+    --clr-grey-500: #626C7F;
+    --clr-grey-50: #F4F6FA;
+
+    --clr-blue-950: #2D3949;
+    --clr-blue-900: #313E51;
+    --clr-blue-850: #3B4D66;
+    --clr-blue-500: #306AFF;
+    --clr-blue-300: #ABC1E1;
+    --clr-blue-100: #EDF1F9;
+    --clr-blue-50: #EBF0FF;
+
+    --clr-green-500: #2FD887;
+    --clr-green-100: #E0FDEF;
+
+    --clr-purple-600: #A729F5;
+    --clr-purple-100: #F6E7FF;
+
+    --clr-orange-400: #FF7E35;
+    --clr-orange-50: #FFF5ED;
+
+    --clr-red-500: #EE5454;
+    
+
+    /* spacing */
+    --spacing-2300: 11.5rem; /* 184px */
+    --spacing-1800: 9rem; /* 144px */
+    --spacing-1600: 8rem; /* 128px */
+    --spacing-800: 4rem; /* 64px */
+    --spacing-600: 3rem; /* 48px */
+    --spacing-500: 2.5rem; /* 40px */
+    --spacing-400: 2rem; /* 32px */
+    --spacing-300: 1.5rem; /* 24px */
+    --spacing-200: 1rem; /* 16px */
+    --spacing-100: 0.5rem; /* 8px */
+
+    /* font */
+    --fs-900: 9rem; /* 144px */
+    --fs-800: 5.5rem; /* 88px */
+    --fs-700: 2.75rem; /* 44px */
+    --fs-600: 2.5rem; /* 40px */
+    --fs-500: 2.25rem; /* 36px */ 
+    --fs-400: 1.75rem; /* 28px */ 
+    --fs-300: 1.5rem; /* 24px */ 
+    --fs-200: 1.25rem; /* 20px */ 
+    --fs-100: 1.125rem; /* 18px */ 
+    --fs-50: 0.875rem; /* 14px */ 
+
+    --fw-medium: 500;
+    --fw-regular: 400;
+    --fw-light: 300;
+
+    --fs-italic: italic;
+    --fs-regular: regular;
+
+
+    /* line height */
+    --lh-l: 1.5; /* 150% */
+    --lh-m: 1.2; /* 120% */
+    --lh-s: 1; /* 100% */
 }
+
 
 *,
 *::before,
