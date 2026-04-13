@@ -41,6 +41,8 @@
     --spacing-100: 0.5rem; /* 8px */
 
     /* font */
+    --base-font: "Rubik Medium", san-serif;
+
     --fs-900: 9rem; /* 144px */
     --fs-800: 5.5rem; /* 88px */
     --fs-700: 2.75rem; /* 44px */
