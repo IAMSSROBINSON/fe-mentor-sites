@@ -29,6 +29,9 @@
 
 @media screen and (min-width: 768px) {
     :root {
+        /* HEADER */
+        --header-p: calc(var(--spacing-800) - 10px) var(--spacing-800) calc(var(--spacing-600) - 1px);
+
         /* SWITCH */
         --switch-gap: var(--spacing-200); /* 16px */
         --icon-dimensions: var(--spacing-300); /* 24px */
