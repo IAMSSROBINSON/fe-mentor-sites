@@ -4,7 +4,7 @@ async function mainModelInit() {
     console.log("mainModelInit");
 
     const data = await getData();
-    console.log("data: ", await data);
+    console.log("data: ", await data.quizzes);
 }
 
 export { mainModelInit };

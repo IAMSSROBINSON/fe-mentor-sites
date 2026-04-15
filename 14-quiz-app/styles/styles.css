@@ -66,6 +66,34 @@
     --lh-l: 1.5; /* 150% */
     --lh-m: 1.2; /* 120% */
     --lh-s: 1; /* 100% */
+
+    
+    /* border-radius */
+    --br-max: 999px;
+    --br-50: 50%;
+
+ 
+    /* COMPONENTS */
+    /* MAIN */
+    --main-pb: var(--spacing-400);
+    --main-pi: var(--spacing-300);
+
+    /* HEADER */
+    --header-p: calc(var(--spacing-300) + 2px) var(--spacing-300);
+
+    /* SWITCH */
+    --switch-gap: var(--spacing-100); /* 8px */
+    --icon-dimensions: var(--spacing-200); /* 16px */
+    --thumb-container-width: var(--spacing-400); /* 32px */
+    --thumb-dimensions: calc(var(--spacing-200) - 4px); /* 12px */
+
+    /* TITLE */
+    --title-size: var(--fs-600);
+
+    /* SUBTITLE */
+    --subtitle-fs: var(--fs-50);
+    --subtitle-mt: var(--spacing-200);
+  
 }
 
 
@@ -91,7 +119,7 @@ p, h1, h2, h3, h4, h5, h6 {
     text-wrap: pretty;
 }
 
-img, svg, iframe, canvas, video {
+img, iframe, canvas, video {
     width: 100%;
     display: block;
     line-height: 0;
@@ -107,3 +135,78 @@ body {
     min-height: 100vh;
     font-family: var(--base-font);
 }
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: end;
+    padding: var(--header-p);
+}
+
+/* MAIN */
+.main {
+    height: 100vh;
+    display: flex;
+    padding-block: var(--main-pb);
+    padding-inline: var(--main-pi);
+}
+
+/* TOP */
+ .top {
+    width: 100%;
+ }
+
+ .title-mob-l, .title-mob-m {
+    font-size: var(--title-size);
+ }
+
+ .title-mob-l {
+    font-weight: var(--fw-light);
+    display: block;
+    margin-bottom: var(--spacing-100);
+ }
+
+ .title-mob-m {
+    font-weight: var(--fw-medium);
+ }
+
+ .subtitle {
+    font-size: var(--subtitle-fs);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-l);
+    font-style: var(--fs-italic);
+    margin-top: var(--subtitle-mt);
+ }
+
+/* BOTTOM */
+ .bottom {
+   
+    
+ }
+
+ /* MEDIA QUERIES */
+ /* TABLET */
+ @media screen and (min-width: 768px) {
+    :root {
+        /* MAIN */
+        --main-pb: 0;
+        --main-pi: var(--spacing-800);
+
+        /* TITLE */
+        --title-size: calc(var(--fs-600) + var(--fs-300)); /* 64px */
+
+        /* SUBTITLE */
+        --subtitle-fs: calc(var(--fs-300) - 4px);
+    }
+ }
+
+ /* DESKTOP */
+ @media screen and (min-width: 1440px) {
+    :root {
+        /* MAIN */
+        --main-pi: calc(var(--spacing-1800) - 1px);
+
+        /* SUBTITLE */
+        --subtitle-mt: var(--spacing-600);
+    }
+ }
