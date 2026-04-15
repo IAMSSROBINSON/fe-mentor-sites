@@ -27,6 +27,9 @@
     width: var(--icon-dimensions);
 }
 
+/* MEDIA QUERIES */
+
+/* TABLET */
 @media screen and (min-width: 768px) {
     :root {
         /* HEADER */
@@ -37,5 +40,13 @@
         --icon-dimensions: var(--spacing-300); /* 24px */
         --thumb-container-width: var(--spacing-600); /* 48px */
         --switch-dimensions: calc(var(--spacing-300) - 4px);
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width: 1440px) {
+    /* HEADER */
+    :root {
+        --header-p: calc(var(--spacing-800) + 33px) calc(var(--spacing-1800) - 4px) calc(var(--spacing-800) + 35px);
     }
 }
