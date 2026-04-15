@@ -67,7 +67,7 @@
     --lh-m: 1.2; /* 120% */
     --lh-s: 1; /* 100% */
 
-    
+
     /* border-radius */
     --br-max: 999px;
     --br-50: 50%;
@@ -114,9 +114,9 @@ html {
     scroll-behavior: smooth;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, span {
     overflow-wrap: break-word;
-    text-wrap: pretty;
+    text-wrap: balance;
 }
 
 img, iframe, canvas, video {
