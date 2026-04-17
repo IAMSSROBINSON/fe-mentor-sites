@@ -14,7 +14,6 @@ const moonIcon = document.getElementById("moon-icon");
 switchContainer.addEventListener("click", handleSwitch);
 
 // functions
-
 async function mainControllerInit() {
   console.log("mainControllerInit");
 
@@ -25,7 +24,7 @@ async function mainControllerInit() {
       : "light";
 
     setDocElTheme(currentTheme);
-    renderSwitchThumb();
+    setToggleThumb();
 
     stateManager = new StateManager(data.quizzes, currentTheme);
     console.log("mainController stateManager:", stateManager);
@@ -49,10 +48,10 @@ function handleSwitch(e) {
   const themeSwitched = theme === "dark" ? "light" : "dark";
   setDocElTheme(themeSwitched);
   stateManager.setTheme(themeSwitched);
-  renderSwitchThumb();
+  setToggleThumb();
 }
 
-function renderSwitchThumb() {
+function setToggleThumb() {
   const theme = getCurrentTheme();
   const switchThumb = document.querySelector(".switch-thumb");
 
