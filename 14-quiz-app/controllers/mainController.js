@@ -6,7 +6,6 @@ import getData from '../database/db.js';
 // elements
     const docEle = document.documentElement;
     const switchContainer = document.getElementById('switch-container');
-    // const switchThumb = document.getElementById('switch-thumb');
     const sunIcon = document.getElementById('sun-icon');
     const moonIcon = document.getElementById('moon-icon');
 
