@@ -1,9 +1,11 @@
-import { mainModelInit  } from "../models/mainModel.js";
+import StateManger from "../models/mainModel.js";
 import { mainViewInit } from "../views/mainView.js";
 
-function mainControllerInit() {
+async function mainControllerInit() {
     console.log("mainControllerInit");
-    mainModelInit();
+    const stateManager = new StateManger();
+    await stateManager.mainModelInit();
+    console.log("mainControllerInit:", stateManager);
     mainViewInit();
 }
 
