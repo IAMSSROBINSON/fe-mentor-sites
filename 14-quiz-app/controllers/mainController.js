@@ -21,7 +21,8 @@ async function mainControllerInit() {
     try {
         const data = await getData();
         const currentTheme = matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-        setTheme(currentTheme);
+        console.log("matchMedia theme:", currentTheme);
+        setDocElTheme(currentTheme);
         renderSwitchThumb();
         console.log("initial theme:", currentTheme);
 
@@ -38,7 +39,7 @@ async function mainControllerInit() {
 }
 
 
-function setTheme (theme) {
+function setDocElTheme (theme) {
     docEle.dataset.theme = theme;
 
     return;
@@ -51,7 +52,7 @@ function handleSwitch (e) {
     console.log("handleSwitch currentTheme", theme)
 
     const themeSwitched = theme === 'dark' ? 'light' : 'dark';
-    setTheme(themeSwitched);
+    setDocElTheme(themeSwitched);
     stateManager.setTheme(themeSwitched);
 
     console.log("handleSwitch docEl dataset.theme switched to:", themeSwitched);
@@ -61,8 +62,11 @@ function handleSwitch (e) {
 
 function renderSwitchThumb () {
     const theme = getCurrentTheme();
+    console.log("renderSwitchThumb theme:", theme);
+
     const switchThumb = document.querySelector('.switch-thumb');
     console.log("switchThumb:", switchThumb, theme);
+
     if (theme === 'light') {
         switchThumb.classList.remove('moon');
         console.log("switchThumb:", switchThumb, theme);
