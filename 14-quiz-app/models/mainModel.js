@@ -8,6 +8,10 @@ class StateManager {
         console.log("mainModelInit");
     }
 
+    setTheme (theme) {
+        this.theme = theme;
+    }
+
 
 }
 

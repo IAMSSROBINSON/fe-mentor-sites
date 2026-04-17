@@ -7,8 +7,9 @@ const header = document.getElementById('header');
 
 
 // functions
-function mainViewInit() {
+function mainViewInit(data = []) {
     console.log("mainViewInit");
+    console.log("mainViewInit data:", data);
 }
 
 export { mainViewInit };

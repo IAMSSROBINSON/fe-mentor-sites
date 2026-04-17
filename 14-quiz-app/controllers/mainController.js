@@ -4,6 +4,7 @@ import { mainViewInit } from "../views/mainView.js";
 import getData from '../database/db.js';
 
 // elements
+    let stateManager = {};
     const docEle = document.documentElement;
     const switchContainer = document.getElementById('switch-container');
     const sunIcon = document.getElementById('sun-icon');
@@ -20,12 +21,12 @@ async function mainControllerInit() {
     try {
         const data = await getData();
         const currentTheme = matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-        setNewTheme(currentTheme);
+        setTheme(currentTheme);
         renderSwitchThumb();
         console.log("initial theme:", currentTheme);
 
-        const stateManager = new StateManager(data.quizzes, currentTheme);
-        mainViewInit();
+        stateManager = new StateManager(data.quizzes, currentTheme);
+        mainViewInit(stateManager.data);
         console.log("mainController stateManager", stateManager);
     }
     catch (err) {
@@ -36,8 +37,10 @@ async function mainControllerInit() {
 
 }
 
+
 function setTheme (theme) {
     docEle.dataset.theme = theme;
+
     return;
 }
 
@@ -48,7 +51,8 @@ function handleSwitch (e) {
     console.log("handleSwitch currentTheme", theme)
 
     const themeSwitched = theme === 'dark' ? 'light' : 'dark';
-    setNewTheme(themeSwitched);
+    setTheme(themeSwitched);
+    stateManager.setTheme(themeSwitched);
 
     console.log("handleSwitch docEl dataset.theme switched to:", themeSwitched);
 
@@ -73,8 +77,5 @@ function getCurrentTheme () {
     return docEle.dataset.theme;
 }
 
-function setNewTheme (theme) {
-    docEle.dataset.theme = theme;
-}
 
 export { mainControllerInit };
