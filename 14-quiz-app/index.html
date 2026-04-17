@@ -13,12 +13,19 @@
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon-32x32.ico">
 
     <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./components/Switch/switch.css">
 </head>
 <body>
     <!-- render switch element inside header -->
     <header id="header" class="header">
+        <div id="switch-container" class="switch-container">
+            <img src="/assets/images/icon-sun-dark.svg" alt="sun icon" id="sun-icon" class="sun-icon"/>
 
+            <div id="thumb-container" class="thumb-container">
+                <div id="switch-thumb" class="switch-thumb"></div>
+            </div>
+
+            <img src="/assets/images/icon-moon-dark.svg" alt="moon icon" id="moon-icon" class="moon-icon"/>
+        </div>
     </header>
 
     <!-- main content container with top and bottom sections -->
