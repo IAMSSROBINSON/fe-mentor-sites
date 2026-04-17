@@ -12,6 +12,10 @@ class StateManager {
         this.theme = theme;
     }
 
+    getTheme () {
+        return this.theme;
+    }
+
 
 }
 

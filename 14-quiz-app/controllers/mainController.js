@@ -1,85 +1,71 @@
 // imports
 import StateManager from "../models/mainModel.js";
 import { mainViewInit } from "../views/mainView.js";
-import getData from '../database/db.js';
+import getData from "../database/db.js";
 
 // elements
-    let stateManager = {};
-    const docEle = document.documentElement;
-    const switchContainer = document.getElementById('switch-container');
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
+let stateManager = {};
+const docEle = document.documentElement;
+const switchContainer = document.getElementById("switch-container");
+const sunIcon = document.getElementById("sun-icon");
+const moonIcon = document.getElementById("moon-icon");
 
 // events
-switchContainer.addEventListener('click', handleSwitch);
+switchContainer.addEventListener("click", handleSwitch);
 
 // functions
 
 async function mainControllerInit() {
-    console.log("mainControllerInit");
-    
-    try {
-        const data = await getData();
-        const currentTheme = matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-        console.log("matchMedia theme:", currentTheme);
-        setDocElTheme(currentTheme);
-        renderSwitchThumb();
-        console.log("initial theme:", currentTheme);
+  console.log("mainControllerInit");
 
-        stateManager = new StateManager(data.quizzes, currentTheme);
-        mainViewInit(stateManager.data);
-        console.log("mainController stateManager", stateManager);
-    }
-    catch (err) {
-        // render error message in UI with {data: [], error: "Error message here"}
-        console.error(err.message);
-    }
+  try {
+    const data = await getData();
+    const currentTheme = matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
 
-
-}
-
-
-function setDocElTheme (theme) {
-    docEle.dataset.theme = theme;
-
-    return;
-}
-
-function handleSwitch (e) {
-    console.log("Switch container clicked");
-
-    const theme = getCurrentTheme();
-    console.log("handleSwitch currentTheme", theme)
-
-    const themeSwitched = theme === 'dark' ? 'light' : 'dark';
-    setDocElTheme(themeSwitched);
-    stateManager.setTheme(themeSwitched);
-
-    console.log("handleSwitch docEl dataset.theme switched to:", themeSwitched);
-
+    setDocElTheme(currentTheme);
     renderSwitchThumb();
+
+    stateManager = new StateManager(data.quizzes, currentTheme);
+    console.log("mainController stateManager:", stateManager);
+    mainViewInit(stateManager.data);
+  } catch (err) {
+    // render error message in UI with {data: [], error: "Error message here"}
+    console.error(err.message);
+  }
 }
 
-function renderSwitchThumb () {
-    const theme = getCurrentTheme();
-    console.log("renderSwitchThumb theme:", theme);
+function setDocElTheme(theme) {
+  docEle.dataset.theme = theme;
 
-    const switchThumb = document.querySelector('.switch-thumb');
-    console.log("switchThumb:", switchThumb, theme);
-
-    if (theme === 'light') {
-        switchThumb.classList.remove('moon');
-        console.log("switchThumb:", switchThumb, theme);
-
-    } else {
-        switchThumb.classList.add('moon');
-        console.log("switchThumb:", switchThumb, theme);
-    }
+  return;
 }
 
-function getCurrentTheme () {
-    return docEle.dataset.theme;
+function handleSwitch(e) {
+  console.log("Switch container clicked");
+
+  const theme = getCurrentTheme();
+  const themeSwitched = theme === "dark" ? "light" : "dark";
+  setDocElTheme(themeSwitched);
+  stateManager.setTheme(themeSwitched);
+  renderSwitchThumb();
 }
 
+function renderSwitchThumb() {
+  const theme = getCurrentTheme();
+  const switchThumb = document.querySelector(".switch-thumb");
+
+  if (theme === "light") {
+    switchThumb.classList.remove("moon");
+  } else {
+    switchThumb.classList.add("moon");
+  }
+  console.log("stateManager: ", stateManager);
+}
+
+function getCurrentTheme() {
+  return docEle.dataset.theme;
+}
 
 export { mainControllerInit };
