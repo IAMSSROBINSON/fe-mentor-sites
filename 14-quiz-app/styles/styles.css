@@ -248,7 +248,7 @@ body {
  .title-mob-l {
     font-weight: var(--fw-light);
     display: block;
-    margin-bottom: var(--spacing-100);
+    /* margin-bottom: var(--spacing-100); */
  }
 
  .title-mob-m {
