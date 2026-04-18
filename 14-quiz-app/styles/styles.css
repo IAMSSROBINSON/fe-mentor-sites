@@ -105,8 +105,10 @@
 
     /* LIST */
     --list-mt: var(--spacing-500);
+    --list-gap: var(--spacing-200);
     --list-item-heading-fs: var(--fs-100);
     --list-item-br: var(--br-s);
+    --list-item-p: var(--spacing-200);
 
 
     --icon-container-m: var(--spacing-500);
@@ -267,7 +269,7 @@ body {
  .bottom {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-200);
+    gap: var(--list-gap);
     margin-top: var(--list-mt);
  }
 
@@ -287,6 +289,7 @@ body {
 
         /* LIST */
         --list-mt: var(--spacing-800);
+        --list-gap: var(--spacing-300);
     }
  }
 
@@ -301,6 +304,7 @@ body {
 
         /* LIST */
         --list-mt: 0;
+        --list-gap: var(--spacing-200);
     }
     
     /* MAIN */

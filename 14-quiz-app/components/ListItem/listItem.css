@@ -2,7 +2,7 @@
     list-style: none;
     background-color: var(--clr-white);
     border-radius: var(--list-item-br);
-    padding: var(--spacing-200);
+    padding: var(--list-item-p);
     box-shadow: var(--list-item-shadow);
 
 }
@@ -67,5 +67,12 @@
         --icon-container-br: var(--br-s);
         --list-item-icon-w: var(--spacing-500);
         --list-item-a-gap: var(--spacing-400);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    :root {
+        /* LIST */
+        --list-item-p: var(--spacing-300);
     }
 }
