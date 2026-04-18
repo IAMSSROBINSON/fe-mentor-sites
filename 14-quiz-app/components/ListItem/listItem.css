@@ -1,7 +1,7 @@
 .list-item {
     list-style: none;
     background-color: var(--clr-white);
-    border-radius: var(--br-s);
+    border-radius: var(--list-item-br);
     padding: var(--spacing-200);
     box-shadow: var(--list-item-shadow);
 
@@ -61,6 +61,7 @@
 @media screen and (min-width: 768px) {
     :root {
         --list-item-heading-fs: calc(var(--spacing-300) + 4px);
+        --list-item-br: var(--br-l);
         --icon-container-m: var(--spacing-700);
         --icon-container-ps: var(--spacing-100);
         --icon-container-br: var(--br-s);
