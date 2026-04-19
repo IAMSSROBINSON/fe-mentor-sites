@@ -51,6 +51,8 @@ function handleSwitch(e) {
   setToggleThumb();
 }
 
+
+
 function setToggleThumb() {
   const theme = getCurrentTheme();
   const switchThumb = document.querySelector(".switch-thumb");

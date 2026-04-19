@@ -1,6 +1,6 @@
 .list-item {
     list-style: none;
-    background-color: var(--clr-white);
+    background-color: var(--clr-li-bg);
     border-radius: var(--list-item-br);
     padding: var(--list-item-p);
     box-shadow: var(--list-item-shadow);
@@ -12,6 +12,7 @@
     display: flex;
     align-items: center;
     gap: var(--list-item-a-gap);
+    color: var(--clr-text);
 }
 
 .icon-container {
@@ -29,7 +30,7 @@
   .list-item-heading {
         font-size: var(--list-item-heading-fs);
         font-weight: var(--fw-medium);
-        color: var(--clr-blue-900);
+        color: var(--clr-text);
     }
 
 
