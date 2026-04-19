@@ -1,22 +1,10 @@
-class StateManager {
-    constructor (data = [], theme = "light") {
-        this.data = data;
-        this.theme = theme;
-    }
+// imports
 
-    mainModelInit() {
-        console.log("mainModelInit");
-    }
+// events
 
-    setTheme (theme) {
-        this.theme = theme;
-    }
-
-    getTheme () {
-        return this.theme;
-    }
-
-
+// functions
+function mainModelInit () {
+  console.log('mainModelInit');
 }
 
-export default StateManager;
+export { mainModelInit };
