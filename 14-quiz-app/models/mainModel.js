@@ -1,6 +1,10 @@
 // imports
 
-// events
+// elements
+const stateManager = {
+    data: [],
+    theme: null,
+}
 
 // functions
 function mainModelInit () {

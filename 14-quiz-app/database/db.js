@@ -1,4 +1,4 @@
-async function getData () {
+async function getTheData () {
     try {
           const response = await fetch('./database/data.json');
 
@@ -14,4 +14,4 @@ async function getData () {
     return {data: [], error: "Error fetching data.."}
 }
 
-export default getData;
+export default getTheData;

@@ -9,8 +9,8 @@ import { mainViewInit } from '../views/mainView.js';
 // functions
 function mainControllerInit () {
   console.log('mainControllerInit');
-  console.log('mainModelInit');
-  console.log('mainViewInit');
+  mainModelInit()
+  mainViewInit();
   
 }
 
