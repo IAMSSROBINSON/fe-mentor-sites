@@ -30,24 +30,28 @@ function checkLocalTheme () {
   }
 }
 
-async function loadData () {
+async function initData () {
   
   const isLocal = checkLocalTheme();
   if (!isLocal) {
     console.log('no local data');
     const data = await getTheData();
-    stateManager.data = data;
-    console.log('stateManager data set:', stateManager.data);
-    console.log("loadData data:", stateManager);
+    setData(data);
+    console.log("initData data:", stateManager);
     return data;
   }
 
   console.log('is local data');
   const data = isLocal.data;
-  stateManager.data = data;
-  console.log('stateManager data set:', stateManager.data);
+  setData(data);
 
   return data;
+}
+
+function setData (data) {
+  stateManager.data = data;
+  console.log('data set to:', stateManager);
+
 }
 
 function setModelTheme (theme) {
@@ -56,4 +60,4 @@ function setModelTheme (theme) {
 
 }
 
-export { mainModelInit, checkLocalTheme, setModelTheme, loadData};
+export { mainModelInit, checkLocalTheme, setModelTheme, initData};

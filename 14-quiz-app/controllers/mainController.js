@@ -1,5 +1,5 @@
 // imports
-import { mainModelInit, loadData } from '../models/mainModel.js';
+import { mainModelInit, initData } from '../models/mainModel.js';
 import { mainViewInit } from '../views/mainView.js';
 import handleTheme from './themeController.js';
 
@@ -16,7 +16,7 @@ async function mainControllerInit () {
 
   mainModelInit();
   try {
-    const data = await loadData();
+    const data = await initData();
 
     // load data in ui through view with data
   }
