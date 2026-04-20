@@ -1,17 +1,21 @@
 // imports
-import { mainModelInit } from '../models/mainModel.js';
-import { mainViewInit } from '../views/mainView.js';
+import { mainModelInit, checkLocalTheme, setModelTheme } from '../models/mainModel.js';
+import { mainViewInit, getSystemTheme, setViewDocElTheme } from '../views/mainView.js';
+import handleTheme from './themeController.js';
 
 // elements
 
 // events
 
 // functions
-function mainControllerInit () {
+async function mainControllerInit () {
   console.log('mainControllerInit');
-  mainModelInit()
-  mainViewInit();
+  handleTheme();
   
+  mainModelInit();
+  mainViewInit();
+
+
 }
 
 export { mainControllerInit };
