@@ -15,11 +15,10 @@ async function mainControllerInit () {
 
   // handle setting of theme from local storage or system
   handleTheme();
+  // render loading state in ui
+  renderLoadingState();
 
   try {
-  
-    // render loading state in ui
-    renderLoadingState();
     const data = await initData(); // initialize data in model
     clearRenderLoadingState();
     // load data in ui through view with data
@@ -27,6 +26,7 @@ async function mainControllerInit () {
 
   }
   catch (err) {
+    clearRenderLoadingState();
     console.log('mainController error loading data', err);
     // load error in ui through view with error and empty data
     renderCategories({data: [], error: "Could not load data. Please refresh and try again later.."});

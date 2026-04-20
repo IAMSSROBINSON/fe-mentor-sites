@@ -32,13 +32,11 @@ function renderCategories (data, error) {
 
 
   if (error || data.length === 0) {
-    clearRenderLoadingState();
     console.log('renderCategories error:', error);
     bottom.innerHTML =  `<p>${error}</p>`;
     return;
   }
 
-  clearRenderLoadingState();
   const docFrag = document.createDocumentFragment();
   data.forEach((category) => {
     docFrag.append(ListItem(category.title));
