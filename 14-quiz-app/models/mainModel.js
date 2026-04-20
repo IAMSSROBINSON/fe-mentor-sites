@@ -22,7 +22,6 @@ function checkLocalTheme () {
       return;
     };
     console.log('is local theme model: ', isLocal);
-
     return JSON.parse(isLocal).theme;
   }
   catch (err) {

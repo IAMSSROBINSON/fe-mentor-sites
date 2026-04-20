@@ -1,11 +1,11 @@
 // imports 
 import { checkLocalTheme, setModelTheme } from '../models/mainModel.js';
-import { getSystemTheme, setViewDocElTheme } from '../views/mainView.js';
+import { setViewDocElTheme } from '../views/mainView.js';
 
 // functions
 function handleTheme () {
     console.log('handleThemeController');
-    
+
     const isLocalTheme = checkLocalTheme();
     if (!isLocalTheme){
       // get system theme from view
@@ -24,6 +24,14 @@ function handleTheme () {
     setModelTheme(theme);
     setViewDocElTheme(theme);
   }
+
+  function getSystemTheme () {
+  const systemTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+  console.log('getSystemTheme view: ', systemTheme);
+  return systemTheme;
+}
+
 
 
 export default handleTheme;
