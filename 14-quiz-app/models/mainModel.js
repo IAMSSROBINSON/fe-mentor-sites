@@ -22,12 +22,32 @@ function checkLocalTheme () {
       return;
     };
     console.log('is local theme model: ', isLocal);
-    return JSON.parse(isLocal).theme;
+    return JSON.parse(isLocal);
   }
   catch (err) {
     console.log("Error checking local theme");
     return null;
   }
+}
+
+async function loadData () {
+  
+  const isLocal = checkLocalTheme();
+  if (!isLocal) {
+    console.log('no local data');
+    const data = await getTheData();
+    stateManager.data = data;
+    console.log('stateManager data set:', stateManager.data);
+    console.log("loadData data:", stateManager);
+    return data;
+  }
+
+  console.log('is local data');
+  const data = isLocal.data;
+  stateManager.data = data;
+  console.log('stateManager data set:', stateManager.data);
+
+  return data;
 }
 
 function setModelTheme (theme) {
@@ -36,4 +56,4 @@ function setModelTheme (theme) {
 
 }
 
-export { mainModelInit, checkLocalTheme, setModelTheme };
+export { mainModelInit, checkLocalTheme, setModelTheme, loadData};

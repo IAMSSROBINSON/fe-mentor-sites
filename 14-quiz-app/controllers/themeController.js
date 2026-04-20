@@ -16,7 +16,7 @@ function handleTheme () {
     }
     else {
       // set theme in model and then view, not local yet
-        handleSetTheme(isLocalTheme)
+        handleSetTheme(isLocalTheme.theme)
     }
   }
 
