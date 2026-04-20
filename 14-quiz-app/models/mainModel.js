@@ -51,13 +51,11 @@ async function initData () {
 function setData (data) {
   stateManager.data = data;
   console.log('data set to:', stateManager);
-
 }
 
 function setModelTheme (theme) {
   stateManager.theme = theme;
   console.log('setModelTheme model: ', stateManager);
-
 }
 
 export { mainModelInit, checkLocalTheme, setModelTheme, initData};

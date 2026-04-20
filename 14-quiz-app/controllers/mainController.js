@@ -1,6 +1,6 @@
 // imports
 import { mainModelInit, initData } from '../models/mainModel.js';
-import { mainViewInit } from '../views/mainView.js';
+import { mainViewInit, renderLoadingState, clearRenderLoadingState, renderCategories } from '../views/mainView.js';
 import handleTheme from './themeController.js';
 
 // elements
@@ -9,24 +9,27 @@ import handleTheme from './themeController.js';
 
 // functions
 async function mainControllerInit () {
-  console.log('mainControllerInit');
+  console.log('mainControllerInit'); // initial check that modules are invoking
+  mainModelInit(); // initial check that modules are invoking
+  mainViewInit(); // initial check that modules are invoking
 
   // handle setting of theme from local storage or system
   handleTheme();
 
-  mainModelInit();
   try {
-    const data = await initData();
-
+  
+    // render loading state in ui
+    renderLoadingState();
+    const data = await initData(); // initialize data in model
+    clearRenderLoadingState();
     // load data in ui through view with data
+    renderCategories(data);
+
   }
   catch (err) {
     console.log('mainController error loading data');
     // load error in ui through view with error and empty data
   }
-
-  mainViewInit();
-
 
 }
 
