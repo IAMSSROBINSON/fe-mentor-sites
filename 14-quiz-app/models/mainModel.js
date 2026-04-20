@@ -36,9 +36,9 @@ async function initData () {
   if (!isLocal) {
     console.log('no local data');
     const data = await getTheData();
-    setData(data);
+    setData(data.quizzes);
     console.log("initData data:", stateManager);
-    return data;
+    return stateManager.data;
   }
 
   console.log('is local data');

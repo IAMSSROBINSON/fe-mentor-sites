@@ -27,8 +27,10 @@ async function mainControllerInit () {
 
   }
   catch (err) {
-    console.log('mainController error loading data');
+    console.log('mainController error loading data', err);
     // load error in ui through view with error and empty data
+    renderCategories({data: [], error: "Could not load data. Please refresh and try again later.."});
+
   }
 
 }
