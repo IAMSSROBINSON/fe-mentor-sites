@@ -1,7 +1,7 @@
 // imports
 import { mainModelInit, initData } from '../models/mainModel.js';
 import { mainViewInit, renderLoadingState, clearRenderLoadingState, renderCategories } from '../views/mainView.js';
-import handleTheme from './themeController.js';
+import {handleTheme} from './themeController.js';
 
 // elements
 

@@ -58,4 +58,8 @@ function setModelTheme (theme) {
   console.log('setModelTheme model: ', stateManager);
 }
 
-export { mainModelInit, checkLocalTheme, setModelTheme, initData};
+function getTheme () {
+  return stateManager.theme;
+}
+
+export { mainModelInit, checkLocalTheme, setModelTheme, initData, getTheme};

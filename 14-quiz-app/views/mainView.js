@@ -1,10 +1,16 @@
 // imports
 import ListItem from "../components/ListItem/ListItem.js";
+import { handleSwitch } from "../controllers/themeController.js";
 
 // elements
 const bottom = document.getElementById('bottom');
+const switchContainer = document.getElementById('switch-container');
+console.log("switchContainer", switchContainer);
+const switchThumb = document.getElementById('switch-thumb');
 
 // events
+switchContainer.addEventListener('click', handleSwitch);
+
 
 // functions
 function mainViewInit () {
@@ -45,4 +51,16 @@ function renderCategories (data, error) {
 
 }
 
-export { mainViewInit, setViewDocElTheme, renderLoadingState, clearRenderLoadingState, renderCategories };
+function toggleThumb(theme) {
+  console.log("theme switched to:", theme);
+  if (theme === 'light') {
+    switchThumb.style.marginLeft = '0';
+  }
+  else {
+    switchThumb.style.marginLeft = 'auto';
+  }
+}
+
+
+
+export { mainViewInit, setViewDocElTheme, renderLoadingState, clearRenderLoadingState, renderCategories, toggleThumb };

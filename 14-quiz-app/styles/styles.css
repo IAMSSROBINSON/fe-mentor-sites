@@ -196,11 +196,11 @@ body {
     height: var(--thumb-dimensions);
     width: var(--thumb-dimensions);
     background-color: var(--clr-white);
-    /* margin-left: 0; */
+    /* margin-left: auto; */
 }
 
 .switch-thumb.moon {
-    margin-left: auto;
+    /* margin-left: auto; */
 }
 
 .sun-icon, .moon-icon {

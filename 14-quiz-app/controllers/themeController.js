@@ -1,6 +1,9 @@
 // imports 
-import { checkLocalTheme, setModelTheme } from '../models/mainModel.js';
-import { setViewDocElTheme } from '../views/mainView.js';
+import { checkLocalTheme, setModelTheme, getTheme } from '../models/mainModel.js';
+import { setViewDocElTheme, toggleThumb } from '../views/mainView.js';
+
+// logic
+
 
 // functions
 function handleTheme () {
@@ -33,5 +36,16 @@ function handleTheme () {
 }
 
 
+function handleSwitch (e) {
+    console.log("switch clicked", getTheme());
+    const newTheme = getTheme() === 'light' ? 'dark' : 'light'
+    setModelTheme(newTheme);
+    setViewDocElTheme(newTheme);
+    toggleThumb(newTheme);
+    // if current theme is light change to dark in state and docEl ui
+    // if dark change to light in state and docEl ui
+    // and apply
+}
 
-export default handleTheme;
+
+export  { handleTheme, handleSwitch };
