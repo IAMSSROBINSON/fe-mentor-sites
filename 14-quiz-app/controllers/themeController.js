@@ -38,13 +38,16 @@ function handleTheme () {
 
 function handleSwitch (e) {
     console.log("switch clicked", getTheme());
-    const newTheme = getTheme() === 'light' ? 'dark' : 'light'
+    const newTheme = getTheme() === 'light' ? 'dark' : 'light';
+
+    // set new theme in model
     setModelTheme(newTheme);
+
+    // change document element to dataset.theme = newTheme
     setViewDocElTheme(newTheme);
+
+    // switch over the thumb in the switcher toggle
     toggleThumb(newTheme);
-    // if current theme is light change to dark in state and docEl ui
-    // if dark change to light in state and docEl ui
-    // and apply
 }
 
 
