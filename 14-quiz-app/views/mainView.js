@@ -1,33 +1,29 @@
 // imports
 import ListItem from "../components/ListItem/ListItem.js";
 import { handleSwitch } from "../controllers/themeController.js";
-import Switcher from '../components/Switcher/Switcher.js';
+import Header from '../components/Header/Header.js';
 
 // elements
-
-const header = document.getElementById('header');
 const bottom = document.getElementById('bottom');
-
-
-
-
-
 
 
 // functions
 function mainViewInit () {
   console.log('mainViewInit');
-  renderSwitcher();
+  renderHeader();
 
   const switchContainer = document.getElementById('switch-container');
-console.log("switchContainer", switchContainer);
+  console.log("switchContainer", switchContainer);
 
 // events
-switchContainer.addEventListener('click', handleSwitch);
+  switchContainer.addEventListener('click', handleSwitch);
 }
 
-function renderSwitcher () {
-  header.insertAdjacentHTML('beforeend', Switcher());
+function renderHeader () {
+  console.log("renderHeader");
+  const body = document.getElementById('body');
+  body.insertAdjacentHTML('afterbegin', Header());
+  
 }
 
 function setViewDocElTheme (theme) {
