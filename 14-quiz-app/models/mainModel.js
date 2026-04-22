@@ -50,15 +50,26 @@ async function initData() {
 function setData(data) {
   stateManager.data = data;
   console.log("data set to:", stateManager);
+  saveStateToLocalStorage();
 }
 
 function setModelTheme(theme) {
   stateManager.theme = theme;
   console.log("setModelTheme model: ", stateManager);
+  saveStateToLocalStorage();
 }
 
 function getTheme() {
   return stateManager.theme;
+}
+
+function saveStateToLocalStorage () {
+  if (stateManager.data.length != 0 && stateManager.theme) {
+    localStorage.setItem('quizApp', JSON.stringify({
+      data: stateManager.data, theme: stateManager.theme
+    }))
+  }
+  console.log("LocalStorage updated:", JSON.parse(localStorage.getItem("quizApp")));
 }
 
 export {
