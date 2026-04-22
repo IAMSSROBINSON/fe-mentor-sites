@@ -15,17 +15,22 @@ function handleTheme () {
       const systemTheme = getSystemTheme();
 
       // set the theme in model then docElView, not local yet
-      handleSetTheme(systemTheme)
+      handleSetTheme(systemTheme);
     }
     else {
       // set theme in model and then view, not local yet
-        handleSetTheme(isLocalTheme.theme)
+        handleSetTheme(isLocalTheme.theme);
     }
+    // set local storage now 
+  
   }
 
   function handleSetTheme (theme) {
     setModelTheme(theme);
     setViewDocElTheme(theme);
+    // set local storage with new theme data
+  
+
   }
 
   function getSystemTheme () {
@@ -48,6 +53,9 @@ function handleSwitch (e) {
 
     // switch over the thumb in the switcher toggle
     toggleThumb(newTheme);
+
+    // set local storage with new theme data
+  
 }
 
 

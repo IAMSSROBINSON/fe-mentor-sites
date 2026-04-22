@@ -1,65 +1,70 @@
 // imports
-import getTheData from '../database/db.js';
+import getTheData from "../database/db.js";
 
 // elements
 const stateManager = {
-    data: [],
-    theme: null,
-}
+  data: [],
+  theme: null,
+};
 
 // functions
-function mainModelInit () {
-  console.log('mainModelInit');
+function mainModelInit() {
+  console.log("mainModelInit");
 }
 
-function checkLocalTheme () {
+function checkLocalTheme() {
   try {
-    const isLocal = localStorage.getItem('quizApp');
-    console.log('isLocal model: ', isLocal);
+    const isLocal = localStorage.getItem("quizApp");
+    console.log("isLocal model: ", isLocal);
 
     if (!isLocal) {
-      console.log('no local theme model: ', isLocal);
+      console.log("no local theme model: ", isLocal);
       return;
-    };
-    console.log('is local theme model: ', isLocal);
+    }
+    console.log("is local theme model: ", isLocal);
     return JSON.parse(isLocal);
-  }
-  catch (err) {
+  } catch (err) {
     console.log("Error checking local theme");
     return null;
   }
 }
 
-async function initData () {
-  
+
+async function initData() {
   const isLocal = checkLocalTheme();
   if (!isLocal) {
-    console.log('no local data');
+    console.log("no local data");
     const data = await getTheData();
     setData(data.quizzes);
     console.log("initData data:", stateManager);
     return stateManager.data;
   }
 
-  console.log('is local data');
+  console.log("is local data");
   const data = isLocal.data;
   setData(data);
 
   return data;
 }
 
-function setData (data) {
+function setData(data) {
   stateManager.data = data;
-  console.log('data set to:', stateManager);
+  console.log("data set to:", stateManager);
 }
 
-function setModelTheme (theme) {
+function setModelTheme(theme) {
   stateManager.theme = theme;
-  console.log('setModelTheme model: ', stateManager);
+  console.log("setModelTheme model: ", stateManager);
 }
 
-function getTheme () {
+function getTheme() {
   return stateManager.theme;
 }
 
-export { mainModelInit, checkLocalTheme, setModelTheme, initData, getTheme};
+export {
+  mainModelInit,
+  checkLocalTheme,
+  setModelTheme,
+  initData,
+  getTheme,
+};

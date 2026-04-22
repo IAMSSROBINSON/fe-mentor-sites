@@ -23,7 +23,6 @@ async function mainControllerInit () {
     clearRenderLoadingState();
     // load data in ui through view with data
     renderCategories(data);
-
   }
   catch (err) {
     clearRenderLoadingState();
@@ -32,7 +31,7 @@ async function mainControllerInit () {
     renderCategories({data: [], error: "Could not load data. Please refresh and try again later.."});
 
   }
-
+  
 }
 
 export { mainControllerInit };
