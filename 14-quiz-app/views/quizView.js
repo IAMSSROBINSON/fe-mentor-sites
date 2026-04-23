@@ -26,4 +26,21 @@ function renderLogoInHeader (title) {
     logoContainer.firstElementChild.style.boxShadow = "none";
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader };
+function renderLoadingState () {
+  const bottom =  getBottomSectionElement();
+  bottom.innerHTML = '<p>Loading data...</p>';
+  console.log('loading data...');
+
+}
+
+function clearRenderLoadingState () {
+  const bottom =  getBottomSectionElement();
+  bottom.innerHTML = "";
+  console.log('clear loading data...');
+}
+
+function getBottomSectionElement() {
+    return document.getElementById('bottom');
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState };

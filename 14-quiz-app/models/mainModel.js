@@ -72,10 +72,15 @@ function saveStateToLocalStorage () {
   console.log("LocalStorage updated:", stateManager.theme);
 }
 
+function getData () {
+  return stateManager.data;
+}
+
 export {
   mainModelInit,
   checkLocalTheme,
   setModelTheme,
   initData,
   getTheme,
+  getData,
 };

@@ -172,7 +172,6 @@ body {
     display: flex;
     justify-content: space-between;
     padding: var(--header-p);
-    
 }
 
 /* SWITCH */
