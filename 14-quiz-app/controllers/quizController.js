@@ -1,8 +1,8 @@
 
 // imports
-import { handleSwitch } from "./themeController.js";
+import { quizViewInit, renderHeader } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
-import { handleTheme } from './themeController.js';
+import { handleTheme, handleSwitch } from "./themeController.js";
 
 
 // elements
@@ -20,7 +20,6 @@ console.log('Category title:', category);
     renderHeader();
     handleTheme();
 
-    
     const switchContainer = document.getElementById('switch-container');
     console.log("switchContainer", switchContainer);
 
@@ -28,8 +27,3 @@ console.log('Category title:', category);
     switchContainer.addEventListener('click', handleSwitch);
 })();
 
-function renderHeader () {
-    console.log('renderHeader');
-    const body = document.getElementById('body');
-    body.insertAdjacentHTML('afterbegin', Header());
-}
