@@ -17,11 +17,11 @@ function checkLocalTheme() {
     const isLocal = localStorage.getItem("quizApp");
     console.log("isLocal model: ", isLocal);
 
-    if (!isLocal) {
+    if (!JSON.parse(isLocal).theme) {
       console.log("no local theme model: ", isLocal);
       return;
     }
-    console.log("is local theme model: ", isLocal);
+    console.log("is local theme model: ");
     return JSON.parse(isLocal);
   } catch (err) {
     console.log("Error checking local theme");
@@ -69,7 +69,7 @@ function saveStateToLocalStorage () {
       data: stateManager.data, theme: stateManager.theme
     }))
   }
-  console.log("LocalStorage updated:", JSON.parse(localStorage.getItem("quizApp")));
+  console.log("LocalStorage updated:", stateManager.theme);
 }
 
 export {

@@ -16,10 +16,12 @@ function handleTheme () {
 
       // set the theme in model then docElView, not local yet
       handleSetTheme(systemTheme);
+      toggleThumb(systemTheme);
     }
     else {
       // set theme in model and then view, not local yet
         handleSetTheme(isLocalTheme.theme);
+        toggleThumb(isLocalTheme.theme);
     }
     // set local storage now 
   
