@@ -17,7 +17,7 @@ console.log('Category title:', category);
 // functions
 (function quizControllerInit () {
     console.log('quizControllerInit');
-    renderHeader();
+    renderHeader(category);
     handleTheme();
 
     const switchContainer = document.getElementById('switch-container');
