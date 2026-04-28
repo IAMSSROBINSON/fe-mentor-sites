@@ -1,9 +1,14 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
-import { initData, getData } from '../models/mainModel.js';
+import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
+
+// logic
+let currentQuestionIndex = 0;
+let currentScore = 0;
+let currentQuestions = [];
 
 
 // elements
@@ -19,9 +24,7 @@ const bottom = document.getElementById('bottom');
     const params = new URLSearchParams(window.location.search);
     const category = params.get('category');
     console.log('Category title:', category);
-    initData();
     
-
     // theme operations
     renderHeader(category);
     handleTheme();
@@ -33,15 +36,17 @@ const bottom = document.getElementById('bottom');
     switchContainer.addEventListener('click', handleSwitch);
     console.log('quizController data:', getData());
 
-
-
   renderLoadingState();
 
   try {
     const data = await initData(); // initialize data in model
     clearRenderLoadingState();
-    // load data in ui through view with data
-    // renderCategories(data);
+    const { icon, questions, title } = data.filter(obj => obj.title === category)[0];
+
+    currentQuestions = questions;
+    
+    console.log(icon, questions, title);
+    handleQuestion();
   }
   catch (err) {
     clearRenderLoadingState();
@@ -51,4 +56,17 @@ const bottom = document.getElementById('bottom');
   }
   
 })();
+
+function handleQuestion () {
+  if (currentQuestionIndex >= currentQuestions.length) {
+    // end of quiz, render results
+    return;
+  }
+  const question = currentQuestions[currentQuestionIndex].question;
+  renderCurrentQuestion(currentQuestionIndex, question, currentQuestions.length);
+
+  console.log("handleQuestions:", question);
+
+}
+
 

@@ -1,6 +1,7 @@
 // imports
 import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
+import Question from "../components/Question/Question.js";
 
 
 // functions
@@ -43,4 +44,10 @@ function getBottomSectionElement() {
     return document.getElementById('bottom');
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState };
+function renderCurrentQuestion (index, question, questionsArrLength) {
+    const top = document.getElementById('top');
+    console.log('top:', top);
+    top.insertAdjacentHTML('afterbegin', Question(index, question, questionsArrLength));
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion };

@@ -76,6 +76,10 @@ function getData () {
   return stateManager.data;
 }
 
+function getQuestionsByCategory (category) {
+ return stateManager.data.filter((cat) => cat.title === category)[0].questions;
+}
+
 export {
   mainModelInit,
   checkLocalTheme,
@@ -83,4 +87,5 @@ export {
   initData,
   getTheme,
   getData,
+  getQuestionsByCategory
 };

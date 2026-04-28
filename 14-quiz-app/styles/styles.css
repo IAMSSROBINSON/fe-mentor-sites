@@ -121,6 +121,16 @@
 
     --list-item-icon-w: 28.57px;
     --list-item-a-gap: var(--spacing-200);
+
+    /* QUESTION */
+    --question-number-fs: var(--fs-50);
+    --question-number-mb: var(--spacing-200);
+    --question-number-clr: var(--clr-grey-500);
+
+    --question-fs: var(--fs-200);
+    --question-mb: var(--spacing-300);
+    --question-clr: var(--clr-blue-900);
+  
   
 }
 
@@ -214,6 +224,10 @@ body {
    --clr-subtext: var(--clr-blue-300);
    --clr-li-bg: var(--clr-blue-850);
    --clr-switch-icon: var(--clr-white);
+
+   /* QUESTION */
+   --question-number-clr: var(--clr-blue-300);
+   --question-clr: var(--clr-white);
 }
 
 /* MEDIA QUERIES */
