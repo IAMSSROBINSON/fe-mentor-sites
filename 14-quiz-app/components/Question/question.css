@@ -19,8 +19,8 @@
     border-radius: var(--br-l);
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    justify-content: flex-start;
+    width: 100%;
 }
 
 
@@ -28,12 +28,12 @@
 input[type=range] {
     -webkit-appearance: none;
     appearance: none;
-    width: 100%;
+    background: none;
 }
 
 /* stylet track */
 input[type=range]::-webkit-slider-runnable-track {
-    height: 8px;
+    height: var(--spacing-100);
     background-color: var(--clr-purple-600);
     border-radius: var(--br-l);
 }

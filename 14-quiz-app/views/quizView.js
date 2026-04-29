@@ -2,6 +2,7 @@
 import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
 import Question from "../components/Question/Question.js";
+import Option from "../components/Option/Option.js";
 
 
 // functions
@@ -50,4 +51,19 @@ function renderCurrentQuestion (index, question, questionsArrLength) {
     top.insertAdjacentHTML('afterbegin', Question(index, question, questionsArrLength));
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion };
+function renderOptions (options, answer) {
+    console.log("options:", options);
+    console.log("answer:", answer);
+
+    const bottom = document.getElementById('bottom');
+
+
+    const docFrag = document.createDocumentFragment();
+    options.forEach((optionText, index) => {
+        console.log(optionText, index);
+        docFrag.append(Option(optionText, index));
+    });
+    bottom.appendChild(docFrag);
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions };
