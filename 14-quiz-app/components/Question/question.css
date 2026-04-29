@@ -13,10 +13,42 @@
     margin-bottom: var(--question-mb);
 }
 
+.range-container {
+    background-color: var(--track-bg-clr);
+    padding: calc(var(--spacing-100) / 2);
+    border-radius: var(--br-l);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .range {
     border: none;
     background: none;
 }
+
+/* reset style of range input */
+input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+}
+
+/* stylet track */
+input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    background-color: var(--clr-purple-600);
+    border-radius: var(--br-l);
+}
+
+/* get rid of the thumb */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
 
 @media screen and (min-width: 768px) {
     :root {

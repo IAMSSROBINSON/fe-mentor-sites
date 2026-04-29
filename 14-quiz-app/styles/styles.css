@@ -131,6 +131,7 @@
     --question-mb: var(--spacing-300);
     --question-clr: var(--clr-blue-900);
   
+    --track-bg-clr: var(--clr-white);
   
 }
 
@@ -228,6 +229,8 @@ body {
    /* QUESTION */
    --question-number-clr: var(--clr-blue-300);
    --question-clr: var(--clr-white);
+
+   --track-bg-clr: var(--clr-blue-850);
 }
 
 /* MEDIA QUERIES */
