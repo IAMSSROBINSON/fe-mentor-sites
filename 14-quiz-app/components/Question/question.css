@@ -23,10 +23,6 @@
 
 }
 
-.range {
-    border: none;
-    background: none;
-}
 
 /* reset style of range input */
 input[type=range] {
