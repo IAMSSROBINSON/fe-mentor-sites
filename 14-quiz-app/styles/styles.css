@@ -115,7 +115,7 @@
     --list-item-p: var(--spacing-200);
 
 
-    --icon-container-m: var(--spacing-500);
+    --icon-container-w: var(--spacing-500);
     --icon-container-ps: 5.71px;
     --icon-container-br: var(--br-xs);
 
@@ -133,6 +133,9 @@
   
     --track-bg-clr: var(--clr-white);
   
+
+    /* OPTION */;
+    --option-avatar-text-clr: var(--clr-grey-500);
 }
 
 /* GENERAL */

@@ -16,9 +16,14 @@
 }
 
 .icon-container {
-    width: var(--icon-container-m);
+    min-width: var(--icon-container-w);
     padding: var(--icon-container-ps);
     border-radius: var(--icon-container-br);
+    background-color: var(--clr-grey-50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .list-item-icon {
@@ -63,7 +68,7 @@
     :root {
         --list-item-heading-fs: calc(var(--spacing-300) + 4px);
         --list-item-br: var(--br-l);
-        --icon-container-m: var(--spacing-700);
+        --icon-container-w: var(--spacing-700);
         --icon-container-ps: var(--spacing-100);
         --icon-container-br: var(--br-s);
         --list-item-icon-w: var(--spacing-500);
