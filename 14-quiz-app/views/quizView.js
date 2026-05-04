@@ -68,7 +68,13 @@ function renderOptions (options, answer) {
 
 function renderSubmitButton () {
     const bottom = document.getElementById('bottom');
-    bottom.appendChild(Button('Submit Answer'));
+    const submitButton = Button('Submit Answer');
+
+    submitButton.addEventListener('click', (e) => {
+        console.log('SubmitButtonClicked');
+    });
+
+    bottom.appendChild(submitButton);
 }
 
 export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton };
