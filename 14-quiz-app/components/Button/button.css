@@ -1,0 +1,12 @@
+.option-item.submit-answer{
+    color: var(--submit-btn-f-clr);
+    background-color: var(--submit-btn-clr);
+    
+}
+
+
+
+.option-item.submit-answer .option-button {
+    justify-self: center;
+}
+

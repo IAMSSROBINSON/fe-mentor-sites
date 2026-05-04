@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -48,6 +48,7 @@ const bottom = document.getElementById('bottom');
     console.log(icon, questions, title);
     handleQuestion();
     handleOptions();
+    renderSubmitButton();
   }
   catch (err) {
     clearRenderLoadingState();

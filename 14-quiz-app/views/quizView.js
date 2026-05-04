@@ -3,7 +3,7 @@ import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
 import Question from "../components/Question/Question.js";
 import Option from "../components/Option/Option.js";
-
+import Button from "../components/Button/Button.js";
 
 // functions
 
@@ -66,4 +66,9 @@ function renderOptions (options, answer) {
     bottom.appendChild(docFrag);
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions };
+function renderSubmitButton () {
+    const bottom = document.getElementById('bottom');
+    bottom.appendChild(Button('Submit Answer'));
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton };

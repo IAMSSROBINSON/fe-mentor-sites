@@ -136,6 +136,10 @@
 
     /* OPTION */;
     --option-avatar-text-clr: var(--clr-grey-500);
+
+    /* BUTTON */
+    --submit-btn-f-clr: var(--clr-white);
+    --submit-btn-clr: var(--clr-purple-600);
 }
 
 /* GENERAL */
