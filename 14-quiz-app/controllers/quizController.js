@@ -77,4 +77,14 @@ function handleOptions () {
   renderOptions(options, answer);
 }
 
+function handleSelectedOption (e) {
+
+  const closestLi = e.target.closest('li');
+  const isValidOption = closestLi?.classList?.contains('option');
+  if (isValidOption) {
+      console.log('handleSelectedOption quizController OPTION clicked');
+  }
+}
+
+export { handleSelectedOption };
 

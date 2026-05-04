@@ -2,7 +2,8 @@ function Option(optionTextValue, index) {
   const alphabet = ["a", "b", "c", "d", "e", "f", "g"];
 
   const li = document.createElement("li");
-  li.classList.add("option-item");
+  li.classList.add("option-item", "option");
+  li.dataset.option = optionTextValue.split(" ").join("-").toLowerCase();
 
   const button = document.createElement("button");
   button.classList.add("option-button");

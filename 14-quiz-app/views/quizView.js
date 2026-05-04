@@ -1,4 +1,5 @@
 // imports
+import { handleSelectedOption } from "../controllers/quizController.js";
 import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
 import Question from "../components/Question/Question.js";
@@ -9,7 +10,6 @@ import Button from "../components/Button/Button.js";
 
 function quizViewInit () {
     console.log('quizViewInit');
-
 }
 
 function renderHeader (title) {
@@ -56,7 +56,7 @@ function renderOptions (options, answer) {
     console.log("answer:", answer);
 
     const bottom = document.getElementById('bottom');
-
+    bottom.addEventListener('click', handleSelectedOption);
 
     const docFrag = document.createDocumentFragment();
     options.forEach((optionText, index) => {
