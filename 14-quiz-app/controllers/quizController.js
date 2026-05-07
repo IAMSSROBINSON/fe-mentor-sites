@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -79,10 +79,12 @@ function handleOptions () {
 
 function handleSelectedOption (e) {
 
-  const closestLi = e.target.closest('li');
-  const isValidOption = closestLi?.classList?.contains('option');
+  const optionLi = e.target.closest('li');
+  const isValidOption = optionLi?.classList?.contains('option');
   if (isValidOption) {
       console.log('handleSelectedOption quizController OPTION clicked');
+      console.log("optionLi", optionLi);
+      handleSelectedStyles(optionLi);
   }
 }
 

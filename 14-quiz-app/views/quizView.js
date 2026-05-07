@@ -77,4 +77,17 @@ function renderSubmitButton () {
     bottom.appendChild(submitButton);
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton };
+function handleSelectedStyles (option) {
+    removeSelectedStylesFromAllOptions();
+    option.classList.add('selected-option');
+    console.log("selectedOption class added to option");
+}
+
+function removeSelectedStylesFromAllOptions () {
+    const allOptions = document.querySelectorAll('.option-item');
+    allOptions.forEach((option) => {
+        option.classList.remove('selected-option');
+    })
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles };
