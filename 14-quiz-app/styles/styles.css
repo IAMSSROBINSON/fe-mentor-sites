@@ -140,6 +140,12 @@
     /* BUTTON */
     --submit-btn-f-clr: var(--clr-white);
     --submit-btn-clr: var(--clr-purple-600);
+
+    /* ERROR */
+    --error-icon-width: var(--spacing-400);
+    --error-clr: var(--clr-red-500);
+    --error-fs: var(--fs-100);
+    --error-lh: var(--lh-s);
 }
 
 /* GENERAL */
@@ -238,6 +244,7 @@ body {
    --question-clr: var(--clr-white);
 
    --track-bg-clr: var(--clr-blue-850);
+   --error-clr: var(--clr-white);
 }
 
 /* MEDIA QUERIES */
@@ -253,6 +260,11 @@ body {
         --icon-dimensions: var(--spacing-300); /* 24px */
         --thumb-container-width: var(--spacing-600); /* 48px */
         --thumb-dimensions: calc(var(--spacing-300) - 4px); /* 20px */
+
+        /* ERROR */
+        --error-fs: var(--fs-300);
+        --error-icon-width: var(--spacing-500);
+        --error-lh: var(--lh-l);
     }
 }
 

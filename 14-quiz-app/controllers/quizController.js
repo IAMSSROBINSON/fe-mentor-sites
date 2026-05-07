@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -88,5 +88,23 @@ function handleSelectedOption (e) {
   }
 }
 
-export { handleSelectedOption };
+function handleSubmitButtonClick (e) {
+        console.log('SubmitButtonClicked');
+        console.log('isOptionSelected:', isOptionSelected());
+        const hasSelected = isOptionSelected();
+        if (!hasSelected) {
+          // render wrong answer notification in the ui
+          renderError();
+          return;
+        }
+        removeError();
+
+}
+
+function isOptionSelected () {
+  const options = Array.from(document.querySelectorAll('.option-item'));
+  return options.some((option) => option.classList.contains('selected-option'));
+}
+
+export { handleSelectedOption, handleSubmitButtonClick };
 

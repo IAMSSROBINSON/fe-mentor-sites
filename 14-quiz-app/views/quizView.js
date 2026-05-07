@@ -1,10 +1,11 @@
 // imports
-import { handleSelectedOption } from "../controllers/quizController.js";
+import { handleSelectedOption, handleSubmitButtonClick } from "../controllers/quizController.js";
 import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
 import Question from "../components/Question/Question.js";
 import Option from "../components/Option/Option.js";
 import Button from "../components/Button/Button.js";
+import Error from "../components/Error/Error.js";
 
 // functions
 
@@ -70,9 +71,7 @@ function renderSubmitButton () {
     const bottom = document.getElementById('bottom');
     const submitButton = Button('Submit Answer');
 
-    submitButton.addEventListener('click', (e) => {
-        console.log('SubmitButtonClicked');
-    });
+    submitButton.addEventListener('click', handleSubmitButtonClick);
 
     bottom.appendChild(submitButton);
 }
@@ -90,4 +89,14 @@ function removeSelectedStylesFromAllOptions () {
     })
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles };
+function renderError () {
+    const bottom = document.getElementById('bottom');
+    bottom.appendChild(Error());
+}
+
+function removeError () {
+    const errorContainer = document.querySelector('.error-container');
+    errorContainer.remove();
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError};

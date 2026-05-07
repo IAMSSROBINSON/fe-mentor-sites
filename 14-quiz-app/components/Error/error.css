@@ -1,0 +1,18 @@
+.error-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-100);
+    color: var(--error-clr);
+}
+
+.error-icon {
+    width: var(--error-icon-width);
+    height: var(--error-icon-width);
+}
+
+.error-text {
+    font-size: var(--error-fs);
+    font-weight: var(--fw-medium);
+    line-height: var(--error-lh);
+}
