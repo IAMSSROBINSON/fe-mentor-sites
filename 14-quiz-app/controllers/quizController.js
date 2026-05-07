@@ -99,7 +99,14 @@ function handleSubmitButtonClick (e) {
         }
         removeError();
         // work out if answer is correct or false
-        getCurrentAnswer();
+        const correctAnswer = getCorrectAnswer();
+        const selectedAnswer = getSelectedOptionValue();
+
+        console.log("correctAnswer:", correctAnswer)
+        console.log("selectedAnswer:", selectedAnswer)
+
+        console.log("isAnswerCorrect:", correctAnswer === selectedAnswer);
+        
 }
 
 function isOptionSelected () {
@@ -107,9 +114,16 @@ function isOptionSelected () {
   return options.some((option) => option.classList.contains('selected-option'));
 }
 
-function getCurrentAnswer () {
-  const currentAnswer = currentQuestions[currentQuestionIndex].answer;
-  console.log("getCurrentAnswer", currentAnswer);
+function getCorrectAnswer () {
+  const correctAnswer = currentQuestions[currentQuestionIndex].answer;
+  console.log("getCorrectAnswer", correctAnswer);
+  return correctAnswer;
+}
+
+function getSelectedOptionValue () {
+  const selectedOption = document.querySelector('.selected-option');
+  const optionButtonValue = selectedOption.querySelector('.option-button').value;
+  return optionButtonValue;
 }
 
 export { handleSelectedOption, handleSubmitButtonClick };
