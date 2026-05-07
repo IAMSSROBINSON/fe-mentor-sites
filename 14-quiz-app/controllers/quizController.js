@@ -98,12 +98,18 @@ function handleSubmitButtonClick (e) {
           return;
         }
         removeError();
-
+        // work out if answer is correct or false
+        getCurrentAnswer();
 }
 
 function isOptionSelected () {
   const options = Array.from(document.querySelectorAll('.option-item'));
   return options.some((option) => option.classList.contains('selected-option'));
+}
+
+function getCurrentAnswer () {
+  const currentAnswer = currentQuestions[currentQuestionIndex].answer;
+  console.log("getCurrentAnswer", currentAnswer);
 }
 
 export { handleSelectedOption, handleSubmitButtonClick };

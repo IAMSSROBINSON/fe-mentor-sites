@@ -47,7 +47,7 @@
 }
 
 /* SELECTED OPTION */
-.selected-option {
+.option:hover, .option:active, .selected-option {
     outline: 3px solid var(--clr-purple-600);
 
     .option-avatar-container {

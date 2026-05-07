@@ -100,7 +100,10 @@ function renderError () {
 
 function removeError () {
     const errorContainer = document.querySelector('.error-container');
-    errorContainer.remove();
+    if (errorContainer) {
+        return errorContainer.remove();
+    }
+    return;
 }
 
 export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError};
