@@ -91,7 +91,11 @@ function removeSelectedStylesFromAllOptions () {
 
 function renderError () {
     const bottom = document.getElementById('bottom');
-    bottom.appendChild(Error());
+    const isError = bottom.querySelector('.error-container');
+    if (!isError) {
+        return bottom.appendChild(Error());
+    }
+    return;
 }
 
 function removeError () {
