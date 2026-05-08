@@ -65,7 +65,7 @@
     outline: 3px solid var(--clr-green-500);
 
     .option-avatar-container {
-        background-color: var(--clr-green-500) !important;
+        background-color: var(--clr-green-500);
     }
 
     .option-avatar-text {
