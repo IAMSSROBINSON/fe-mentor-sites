@@ -7,8 +7,8 @@
 }
 
 .error-icon {
-    width: var(--error-icon-width);
-    height: var(--error-icon-width);
+    width: var(--icon-width);
+    height: var(--icon-width);
 }
 
 .error-text {

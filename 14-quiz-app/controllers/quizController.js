@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -101,11 +101,26 @@ function handleSubmitButtonClick (e) {
         // work out if answer is correct or false
         const correctAnswer = getCorrectAnswer();
         const selectedAnswer = getSelectedOptionValue();
+        const isCorrectAnswer = correctAnswer === selectedAnswer;
 
         console.log("correctAnswer:", correctAnswer)
         console.log("selectedAnswer:", selectedAnswer)
+        console.log("isCorrectAnswer:", isCorrectAnswer);
 
-        console.log("isAnswerCorrect:", correctAnswer === selectedAnswer);
+        if (!isCorrectAnswer) {
+          // if answer is incorrect handle here
+          return;
+        }
+        // if answer is correct handle here
+        /*
+
+        apply a class to apply correct answer styles to li option
+
+        */
+       const selectedOption = getSelectedOptionLi();
+       renderCorrectAnswerStyles(selectedOption);
+
+
         
 }
 
@@ -121,9 +136,14 @@ function getCorrectAnswer () {
 }
 
 function getSelectedOptionValue () {
-  const selectedOption = document.querySelector('.selected-option');
+  const selectedOption = getSelectedOptionLi();
   const optionButtonValue = selectedOption.querySelector('.option-button').value;
   return optionButtonValue;
+}
+
+function getSelectedOptionLi () {
+    const selectedOption = document.querySelector('.selected-option');
+    return selectedOption;
 }
 
 export { handleSelectedOption, handleSubmitButtonClick };

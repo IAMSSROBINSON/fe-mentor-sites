@@ -105,5 +105,20 @@ function removeError () {
     }
     return;
 }
+function renderCorrectAnswerStyles (optionLi) {
+    optionLi.classList.add('correct-answer');
+    insertCheckMark(optionLi);
+}
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError};
+function insertCheckMark (optionLi) {
+    const buttonInsideOption = optionLi.querySelector('.option-button');
+    const correctIcon = document.createElement('img');
+    correctIcon.src = '/assets/images/icon-correct.svg';
+    correctIcon.classList.add('correct-icon');
+    correctIcon.setAttribute('alt', 'correct-icon');
+    buttonInsideOption.appendChild(correctIcon);
+    // console.log("insertCheckMark:", correctIcon);
+    console.log(buttonInsideOption);
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles};

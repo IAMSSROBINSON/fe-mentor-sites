@@ -142,7 +142,7 @@
     --submit-btn-clr: var(--clr-purple-600);
 
     /* ERROR */
-    --error-icon-width: var(--spacing-400);
+    --icon-width: var(--spacing-400);
     --error-clr: var(--clr-red-500);
     --error-fs: var(--fs-100);
     --error-lh: var(--lh-s);
@@ -263,7 +263,7 @@ body {
 
         /* ERROR */
         --error-fs: var(--fs-300);
-        --error-icon-width: var(--spacing-500);
+        --icon-width: var(--spacing-500);
         --error-lh: var(--lh-l);
     }
 }

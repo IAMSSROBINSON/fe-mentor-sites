@@ -58,3 +58,23 @@
         color: var(--clr-white);
     }
 }
+
+
+/* CORRECT ANSWER */
+.correct-answer {
+    outline: 3px solid var(--clr-green-500);
+
+    .option-avatar-container {
+        background-color: var(--clr-green-500) !important;
+    }
+
+    .option-avatar-text {
+        color: var(--clr-white);
+    }
+
+    .correct-icon {
+        width: var(--icon-width);
+        height: var(--icon-width);
+        margin-left: auto;
+    }
+}
