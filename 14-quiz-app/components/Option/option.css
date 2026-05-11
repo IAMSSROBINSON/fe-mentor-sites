@@ -5,6 +5,7 @@
     padding: var(--list-item-p);
     box-shadow: var(--list-item-shadow);
     cursor: pointer;
+    display: flex;
 }
 
 .option-button {
@@ -65,7 +66,7 @@
     outline: 3px solid var(--clr-green-500);
 
     .option-avatar-container {
-        background-color: var(--clr-green-500);
+        background-color: var(--clr-green-500) !important;
     }
 
     .option-avatar-text {
@@ -73,6 +74,7 @@
     }
 
     .correct-icon {
+        display: block;
         width: var(--icon-width);
         height: var(--icon-width);
         margin-left: auto;

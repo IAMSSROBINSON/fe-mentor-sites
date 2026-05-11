@@ -106,7 +106,7 @@ function removeError () {
     return;
 }
 function renderCorrectAnswerStyles (optionLi) {
-    removeSelectedStylesFromAllOptions();
+    // removeSelectedStylesFromAllOptions();
     optionLi.classList.add('correct-answer');
     insertCheckMark(optionLi);
 }

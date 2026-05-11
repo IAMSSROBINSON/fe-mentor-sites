@@ -119,7 +119,10 @@ function handleSubmitButtonClick (e) {
         */
        const selectedOption = getSelectedOptionLi();
        renderCorrectAnswerStyles(selectedOption);
-
+       currentQuestionIndex += 1;
+       currentScore += 1;
+       console.log("currentQuestionIndex:", currentQuestionIndex);
+       console.log("currentScore:", currentScore);
 
         
 }
