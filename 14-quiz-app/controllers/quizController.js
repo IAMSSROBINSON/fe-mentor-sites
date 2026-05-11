@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -111,7 +111,12 @@ function handleSubmitButtonClick (e) {
           // if answer is incorrect handle here
           const selectedOption = getSelectedOptionLi();
           renderIncorrectAnswerStyles(selectedOption);
-
+          // disable all button options
+          // disableAllOptions();
+          // show correct answer, render check inside correct option
+          const correctAnswerLi = getCorrectAnswerLi(correctAnswer);
+          console.log('correctAnswerLi:', correctAnswerLi);
+          showCorrectAnswer(correctAnswerLi);
           return;
         }
         // if answer is correct handle here
@@ -126,6 +131,7 @@ function handleSubmitButtonClick (e) {
        currentScore += 1;
        console.log("currentQuestionIndex:", currentQuestionIndex);
        console.log("currentScore:", currentScore);
+      //  disableAllOptions();
 
         
 }
@@ -150,6 +156,20 @@ function getSelectedOptionValue () {
 function getSelectedOptionLi () {
     const selectedOption = document.querySelector('.selected-option');
     return selectedOption;
+}
+
+function disableAllOptions () {
+  const allOptionClassButtons = Array.from(document.querySelectorAll('.option'));
+  allOptionClassButtons.forEach((button) => {
+    button.disable = true;
+  });
+  console.log("All option buttons disabled");
+
+}
+
+function getCorrectAnswerLi (correctAnswer) {
+  const options = Array.from(document.querySelectorAll('.option'));
+  return options.filter((option) => option.firstElementChild.value === correctAnswer)[0];
 }
 
 export { handleSelectedOption, handleSubmitButtonClick };

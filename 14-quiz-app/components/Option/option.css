@@ -72,14 +72,14 @@
     .option-avatar-text {
         color: var(--clr-white);
     }
+}
 
-    .correct-icon {
+ .correct-icon {
         display: block;
         width: var(--icon-width);
         height: var(--icon-width);
         margin-left: auto;
     }
-}
 
 /* INCORRECT ANSWER */
 .incorrect-answer {

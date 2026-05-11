@@ -128,5 +128,9 @@ function renderIncorrectAnswerStyles (optionLi) {
     insertAnswerIcon(optionLi, "incorrect");
 }
 
+function showCorrectAnswer (correctLi) {
+    insertAnswerIcon(correctLi, "correct")
+}
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles};
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer};
