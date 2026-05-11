@@ -118,6 +118,7 @@ function handleSubmitButtonClick (e) {
           console.log('correctAnswerLi:', correctAnswerLi);
           showCorrectAnswer(correctAnswerLi);
           // change submit button into next question button
+          increaseCurrentQuestionIndex();
           renderNextQuestionButton();
           return;
         }
@@ -129,8 +130,8 @@ function handleSubmitButtonClick (e) {
         */
        const selectedOption = getSelectedOptionLi();
        renderCorrectAnswerStyles(selectedOption);
-       currentQuestionIndex += 1;
-       currentScore += 1;
+       increaseCurrentQuestionIndex();
+       increaseScore();
        console.log("currentQuestionIndex:", currentQuestionIndex);
        console.log("currentScore:", currentScore);
        renderNextQuestionButton();
@@ -177,6 +178,17 @@ function getCorrectAnswerLi (correctAnswer) {
 
 function handleNextQuestionButton () {
   console.log('handleNextQuestionButton');
+  handleQuestion();
+  handleOptions();
+  renderSubmitButton();
+}
+
+function increaseCurrentQuestionIndex () {
+  currentQuestionIndex += 1;
+}
+
+function increaseScore () {
+  currentScore += 1;
 }
 
 export { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton };

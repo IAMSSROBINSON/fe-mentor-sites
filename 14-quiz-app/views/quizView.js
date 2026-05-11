@@ -48,6 +48,7 @@ function getBottomSectionElement() {
 
 function renderCurrentQuestion (index, question, questionsArrLength) {
     const top = document.getElementById('top');
+    top.innerHTML = '';
     console.log('top:', top);
     top.insertAdjacentHTML('afterbegin', Question(index, question, questionsArrLength));
 }
@@ -57,6 +58,7 @@ function renderOptions (options, answer) {
     console.log("answer:", answer);
 
     const bottom = document.getElementById('bottom');
+    bottom.innerHTML = '';
     bottom.addEventListener('click', handleSelectedOption);
 
     const docFrag = document.createDocumentFragment();
