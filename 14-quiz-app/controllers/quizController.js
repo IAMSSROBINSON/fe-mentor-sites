@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -117,6 +117,8 @@ function handleSubmitButtonClick (e) {
           const correctAnswerLi = getCorrectAnswerLi(correctAnswer);
           console.log('correctAnswerLi:', correctAnswerLi);
           showCorrectAnswer(correctAnswerLi);
+          // change submit button into next question button
+          renderNextQuestionButton();
           return;
         }
         // if answer is correct handle here
@@ -131,6 +133,7 @@ function handleSubmitButtonClick (e) {
        currentScore += 1;
        console.log("currentQuestionIndex:", currentQuestionIndex);
        console.log("currentScore:", currentScore);
+       renderNextQuestionButton();
       //  disableAllOptions();
 
         
@@ -172,5 +175,9 @@ function getCorrectAnswerLi (correctAnswer) {
   return options.filter((option) => option.firstElementChild.value === correctAnswer)[0];
 }
 
-export { handleSelectedOption, handleSubmitButtonClick };
+function handleNextQuestionButton () {
+  console.log('handleNextQuestionButton');
+}
+
+export { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton };
 

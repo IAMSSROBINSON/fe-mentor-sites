@@ -1,5 +1,5 @@
 // imports
-import { handleSelectedOption, handleSubmitButtonClick } from "../controllers/quizController.js";
+import { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton } from "../controllers/quizController.js";
 import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
 import Question from "../components/Question/Question.js";
@@ -132,5 +132,21 @@ function showCorrectAnswer (correctLi) {
     insertAnswerIcon(correctLi, "correct")
 }
 
+function renderNextQuestionButton () {
+    removeMainButton('submit-answer');
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer};
+    const bottom = document.getElementById('bottom');
+    const nextQuestionButton = Button('Next Question');
+
+    nextQuestionButton.addEventListener('click', handleNextQuestionButton);
+
+    bottom.appendChild(nextQuestionButton);
+}
+
+function removeMainButton (className) {
+    const element = document.querySelector(`.${className}`);
+    console.log('remove this element:', element);
+    element.remove();
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton};
