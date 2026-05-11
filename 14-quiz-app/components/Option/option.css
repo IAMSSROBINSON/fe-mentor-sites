@@ -80,3 +80,23 @@
         margin-left: auto;
     }
 }
+
+/* INCORRECT ANSWER */
+.incorrect-answer {
+    outline: 3px solid var(--clr-red-500);
+
+    .option-avatar-container {
+        background-color: var(--clr-red-500) !important;
+    }
+
+    .option-avatar-text {
+        color: var(--clr-white);
+    }
+
+    .incorrect-icon {
+        display: block;
+        width: var(--icon-width);
+        height: var(--icon-width);
+        margin-left: auto;
+    }
+}

@@ -108,18 +108,25 @@ function removeError () {
 function renderCorrectAnswerStyles (optionLi) {
     // removeSelectedStylesFromAllOptions();
     optionLi.classList.add('correct-answer');
-    insertCheckMark(optionLi);
+    insertAnswerIcon(optionLi, "correct");
 }
 
-function insertCheckMark (optionLi) {
+function insertAnswerIcon (optionLi, answerType) {
     const buttonInsideOption = optionLi.querySelector('.option-button');
-    const correctIcon = document.createElement('img');
-    correctIcon.src = '/assets/images/icon-correct.svg';
-    correctIcon.classList.add('correct-icon');
-    correctIcon.setAttribute('alt', 'correct-icon');
-    buttonInsideOption.appendChild(correctIcon);
-    // console.log("insertCheckMark:", correctIcon);
+    const answerTypeIcon = document.createElement('img');
+    answerTypeIcon.src = answerType === "correct" ? '/assets/images/icon-correct.svg' : '/assets/images/icon-incorrect.svg';
+    answerTypeIcon.classList.add(answerType === "correct" ? 'correct-icon' : 'incorrect-icon');
+    answerTypeIcon.setAttribute('alt', 'answerType-icon');
+    buttonInsideOption.appendChild(answerTypeIcon);
+    // console.log("insertCheckMark:", answerTypeIcon);
     console.log(buttonInsideOption);
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles};
+function renderIncorrectAnswerStyles (optionLi) {
+    // removeSelectedStylesFromAllOptions();
+    optionLi.classList.add('incorrect-answer');
+    insertAnswerIcon(optionLi, "incorrect");
+}
+
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles};

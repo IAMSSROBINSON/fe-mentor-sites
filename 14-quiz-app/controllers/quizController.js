@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -109,6 +109,9 @@ function handleSubmitButtonClick (e) {
 
         if (!isCorrectAnswer) {
           // if answer is incorrect handle here
+          const selectedOption = getSelectedOptionLi();
+          renderIncorrectAnswerStyles(selectedOption);
+
           return;
         }
         // if answer is correct handle here
