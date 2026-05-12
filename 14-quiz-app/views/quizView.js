@@ -33,7 +33,6 @@ function renderLoadingState () {
   const bottom =  getBottomSectionElement();
   bottom.innerHTML = '<p>Loading data...</p>';
   console.log('loading data...');
-
 }
 
 function clearRenderLoadingState () {
@@ -47,10 +46,16 @@ function getBottomSectionElement() {
 }
 
 function renderCurrentQuestion (index, question, questionsArrLength) {
+    console.log("renderCurrentQuestion", index, question, questionsArrLength);
     const top = document.getElementById('top');
     top.innerHTML = '';
     console.log('top:', top);
     top.insertAdjacentHTML('afterbegin', Question(index, question, questionsArrLength));
+    console.log(document.querySelector("input[type=range]"));
+    document.querySelector("input[type=range]").value = 5;
+    console.log(document.querySelector("input[type=range]"));
+
+    
 }
 
 function renderOptions (options, answer) {
@@ -151,4 +156,11 @@ function removeMainButton (className) {
     element.remove();
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton};
+function updateProgress (index) {
+    const progress = document.querySelector("input[type=range]");
+    progress.style.width = `${(index + 1) * 10}%`;
+    console.log("updateProgress:", progress)
+
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress};

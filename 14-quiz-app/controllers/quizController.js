@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -62,10 +62,12 @@ const bottom = document.getElementById('bottom');
 function handleQuestion () {
   if (currentQuestionIndex >= currentQuestions.length) {
     // end of quiz, render results
+    console.log("currentQuestionIndex >= currentQuestions.length, end of quiz");
     return;
   }
   const question = currentQuestions[currentQuestionIndex].question;
   renderCurrentQuestion(currentQuestionIndex, question, currentQuestions.length);
+  updateProgress(currentQuestionIndex);
 
   console.log("handleQuestions:", question);
 
