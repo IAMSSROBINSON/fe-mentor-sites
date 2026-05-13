@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress, renderResultsTitle } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -63,6 +63,7 @@ function handleQuestion () {
   if (currentQuestionIndex >= currentQuestions.length) {
     // end of quiz, render results
     console.log("currentQuestionIndex >= currentQuestions.length, end of quiz");
+    renderResultsTitle();
     return;
   }
   const question = currentQuestions[currentQuestionIndex].question;
@@ -137,7 +138,7 @@ function handleSubmitButtonClick (e) {
        console.log("currentQuestionIndex:", currentQuestionIndex);
        console.log("currentScore:", currentScore);
        renderNextQuestionButton();
-      //  disableAllOptions();
+  
 
         
 }
@@ -162,15 +163,6 @@ function getSelectedOptionValue () {
 function getSelectedOptionLi () {
     const selectedOption = document.querySelector('.selected-option');
     return selectedOption;
-}
-
-function disableAllOptions () {
-  const allOptionClassButtons = Array.from(document.querySelectorAll('.option'));
-  allOptionClassButtons.forEach((button) => {
-    button.disable = true;
-  });
-  console.log("All option buttons disabled");
-
 }
 
 function getCorrectAnswerLi (correctAnswer) {

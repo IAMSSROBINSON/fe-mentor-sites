@@ -27,6 +27,8 @@ function renderLogoInHeader (title) {
     logoContainer.appendChild(ListItem(title));
     logoContainer.firstElementChild.style.background = "none";
     logoContainer.firstElementChild.style.boxShadow = "none";
+    logoContainer.querySelector('.list-item').style.padding = "0";
+
 }
 
 function renderLoadingState () {
@@ -160,7 +162,12 @@ function updateProgress (index) {
     const progress = document.querySelector("input[type=range]");
     progress.style.width = `${(index + 1) * 10}%`;
     console.log("updateProgress:", progress)
-
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress};
+function renderResultsTitle () {
+    const top = document.getElementById('top');
+    top.innerHTML = '';
+    top.innerHTML = "<p class='results-title'>Quiz Completed</p><p class='results-subtitle'>You scored...</p>";
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress, renderResultsTitle};

@@ -4,7 +4,6 @@
     border-radius: var(--list-item-br);
     padding: var(--list-item-p);
     box-shadow: var(--list-item-shadow);
-
 }
 
 .list-item a {
