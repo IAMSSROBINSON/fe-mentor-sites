@@ -37,7 +37,9 @@
         color: var(--clr-text);
     }
 
-
+.justIconNoLink {
+    pointer-events: none;
+}
 
 /* LIST ITEM ICONS */
 .html.icon-container {

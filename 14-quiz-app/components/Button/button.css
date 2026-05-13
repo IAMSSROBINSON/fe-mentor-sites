@@ -1,10 +1,10 @@
-.option-item.submit-answer, .option-item.next-question{
+.option-item.submit-answer, .option-item.next-question, .option-item.play-again{
     color: var(--submit-btn-f-clr);
     background-color: var(--submit-btn-clr);
     text-align: center;
 }
 
-.option-item.submit-answer .option-button, .option-item.next-question .option-button {
+.option-item.submit-answer .option-button, .option-item.next-question .option-button, .option-item.play-again .option-button {
     justify-content: center;
 }
 

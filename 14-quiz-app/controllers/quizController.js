@@ -1,6 +1,6 @@
 
 // imports
-import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress, renderResultsTitle } from "../views/quizView.js";
+import { quizViewInit, renderHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress, renderResultsTitle, renderResultsCard, renderPlayAgainButton } from "../views/quizView.js";
 import Header from "../components/Header/Header.js";
 import { handleTheme, handleSwitch } from "./themeController.js";
 import { initData, getData, getQuestionsByCategory } from '../models/mainModel.js';
@@ -64,6 +64,12 @@ function handleQuestion () {
     // end of quiz, render results
     console.log("currentQuestionIndex >= currentQuestions.length, end of quiz");
     renderResultsTitle();
+
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get('category');
+
+    renderResultsCard(category, currentScore, currentQuestions);
+    renderPlayAgainButton("Play Again");
     return;
   }
   const question = currentQuestions[currentQuestionIndex].question;
@@ -185,5 +191,9 @@ function increaseScore () {
   currentScore += 1;
 }
 
-export { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton };
+function handlePlayAgain (e) {
+  console.log("handlePlayAgain");
+}
+
+export { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton, handlePlayAgain };
 

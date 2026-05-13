@@ -1,0 +1,5 @@
+.result-card-container {
+    background-color: var(--clr-li-bg);
+    box-shadow: var(--list-item-shadow);
+
+}

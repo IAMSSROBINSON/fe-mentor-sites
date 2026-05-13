@@ -1,14 +1,15 @@
 // imports
-import { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton } from "../controllers/quizController.js";
+import { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton, handlePlayAgain } from "../controllers/quizController.js";
 import Header from "../components/Header/Header.js";
 import ListItem from "../components/ListItem/ListItem.js";
 import Question from "../components/Question/Question.js";
 import Option from "../components/Option/Option.js";
 import Button from "../components/Button/Button.js";
 import Error from "../components/Error/Error.js";
+import ResultCard from "../components/ResultCard/ResultCard.js";
+import Logo from "../components/Logo/Logo.js";
 
 // functions
-
 function quizViewInit () {
     console.log('quizViewInit');
 }
@@ -24,7 +25,7 @@ function renderLogoInHeader (title) {
     // get the logo-container by id
     // append ListItem to it and pass in title 
     const logoContainer = document.getElementById('logo-container');
-    logoContainer.appendChild(ListItem(title));
+    logoContainer.appendChild(ListItem(title, true));
     logoContainer.firstElementChild.style.background = "none";
     logoContainer.firstElementChild.style.boxShadow = "none";
     logoContainer.querySelector('.list-item').style.padding = "0";
@@ -170,4 +171,23 @@ function renderResultsTitle () {
     top.innerHTML = "<p class='results-title'>Quiz Completed</p><p class='results-subtitle'>You scored...</p>";
 }
 
-export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress, renderResultsTitle};
+function renderResultsCard (category, score, questionArr) {
+    const bottom = document.getElementById('bottom');
+    bottom.innerHTML = "";
+    bottom.appendChild(ResultCard(category, score, questionArr));
+    const bottomLogoContainer = bottom.querySelector('.logo-container');
+    bottomLogoContainer.appendChild(ListItem(category, true));
+    bottomLogoContainer.firstElementChild.style.background = "none";
+    bottomLogoContainer.firstElementChild.style.boxShadow = "none";
+    bottomLogoContainer.querySelector('.list-item').style.padding = "0";
+}
+
+function renderPlayAgainButton (buttonText) {
+    const bottom = document.getElementById('bottom');
+    bottom.appendChild(Button(buttonText));
+    const buttonTextElement = document.querySelector('.option-text');
+    const playAgainButton = buttonTextElement.closest('li');
+    playAgainButton.addEventListener('click', handlePlayAgain);
+}
+
+export { quizViewInit, renderHeader, renderLogoInHeader, renderLoadingState, clearRenderLoadingState, renderCurrentQuestion, renderOptions, renderSubmitButton, handleSelectedStyles, renderError, removeError, renderCorrectAnswerStyles, renderIncorrectAnswerStyles, showCorrectAnswer, renderNextQuestionButton, updateProgress, renderResultsTitle, renderResultsCard, renderPlayAgainButton};
