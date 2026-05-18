@@ -150,14 +150,16 @@
     /* RESULTS */
     --results-title-fs: var(--fs-600);
     --results-title-fw: var(--fw-light);
+    --results-title-clr: var(--clr-blue-900);
 
     --results-subtitle-fs: var(--fs-600);
     --results-subtitle-fw: var(--fw-medium);
+    --results-subtitle-clr: var(--results-title-clr);
 
     --results-card-container-br: calc(var(--spacing-200) - 4px);
     --results-card-p: var(--spacing-400);
     --results-card-score-title-fs: var(--fs-800);
-    --score-title-clr: var(--clr-blue-900);
+    --score-title-clr: var(--results-title-clr);
     --score-title-m-block: var(--spacing-200);
     --results-card-score-subtitle-fs: var(--fs-100);
     --score-subtitle-clr: var(--clr-grey-500);
@@ -262,7 +264,7 @@ body {
    --error-clr: var(--clr-white);
 
    /* RESULTS */
-    --score-title-clr: var(--clr-white);
+    --results-title-clr: var(--clr-white);
     --score-subtitle-clr: var(--clr-blue-300);
 
 }
@@ -355,6 +357,10 @@ body {
  .results-subtitle {
     font-size:  var(--results-subtitle-fs);;
     font-weight: var(--results-subtitle-fw);
+ }
+
+ .results-title, .results-subtitle, .score-title {
+    color: var(--results-title-clr);
  }
 
 /* BOTTOM */

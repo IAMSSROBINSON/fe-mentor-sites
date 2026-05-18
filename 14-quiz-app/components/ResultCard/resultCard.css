@@ -11,7 +11,7 @@
 .score-title {
     font-size: var(--results-card-score-title-fs);
     font-weight: var(--fw-medium);
-    color: var(--score-title-clr);
+    color: var(--results-title-clr);
     margin-block: var(--results-card-score-title-m-block);
 }
 
