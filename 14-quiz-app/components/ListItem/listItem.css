@@ -6,6 +6,8 @@
     box-shadow: var(--list-item-shadow);
 }
 
+
+
 .list-item a {
     text-decoration: none;
     display: flex;

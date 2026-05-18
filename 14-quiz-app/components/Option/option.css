@@ -8,6 +8,13 @@
     display: flex;
 }
 
+@media screen and (min-width: 768px) {
+    .bottom .submit-answer, .bottom .play-again {
+    margin-top: 8px;
+    }   
+}
+
+
 .option-button {
     display: flex;
     flex: 1;
