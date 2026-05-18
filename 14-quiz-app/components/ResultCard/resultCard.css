@@ -1,5 +1,22 @@
 .result-card-container {
     background-color: var(--clr-li-bg);
     box-shadow: var(--list-item-shadow);
+    border-radius: var(--results-card-container-br);
+    padding: var(--results-card-p);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
+.score-title {
+    font-size: var(--results-card-score-title-fs);
+    font-weight: var(--fw-medium);
+    color: var(--score-title-clr);
+    margin-block: var(--results-card-score-title-m-block);
+}
+
+.score-subtitle {
+    font-size: var(--results-card-score-subtitle-fs);
+    font-weight: var(--fw-medium);
+    color: var(--score-subtitle-clr);
 }

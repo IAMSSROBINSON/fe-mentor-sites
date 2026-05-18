@@ -153,6 +153,14 @@
 
     --results-subtitle-fs: var(--fs-600);
     --results-subtitle-fw: var(--fw-medium);
+
+    --results-card-container-br: calc(var(--spacing-200) - 4px);
+    --results-card-p: var(--spacing-400);
+    --results-card-score-title-fs: var(--fs-800);
+    --score-title-clr: var(--clr-blue-900);
+    --score-title-m-block: var(--spacing-200);
+    --results-card-score-subtitle-fs: var(--fs-100);
+    --score-subtitle-clr: var(--clr-grey-500);
 }
 
 /* GENERAL */
@@ -252,6 +260,11 @@ body {
 
    --track-bg-clr: var(--clr-blue-850);
    --error-clr: var(--clr-white);
+
+   /* RESULTS */
+    --score-title-clr: var(--clr-white);
+    --score-subtitle-clr: var(--clr-blue-300);
+
 }
 
 /* MEDIA QUERIES */
@@ -275,8 +288,15 @@ body {
 
         /* RESULTS */
         --results-title-fs: calc(var(--fs-600) + var(--fs-300)); /* 40px + 24px */
+        --results-card-score-title-m-block: var(--spacing-500) var(--spacing-200);
+
         --results-subtitle-fs: calc(var(--fs-600) + var(--fs-300)); 
   
+        --results-card-container-br: var(--spacing-300); /* 24px */
+        --results-card-p: var(--spacing-600);
+        --results-card-score-title: var(--fs-1800);
+
+
 
         
     }
