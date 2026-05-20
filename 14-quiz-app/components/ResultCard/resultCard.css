@@ -20,3 +20,9 @@
     font-weight: var(--fw-medium);
     color: var(--score-subtitle-clr);
 }
+
+@media screen and (min-width: 768px) {
+    .score-subtitle {
+        line-height: var(--lh-l);
+    }
+}

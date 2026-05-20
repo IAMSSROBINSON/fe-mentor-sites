@@ -301,6 +301,7 @@ body {
         --results-card-container-br: var(--spacing-300); /* 24px */
         --results-card-p: var(--spacing-600);
         --results-card-score-title: var(--fs-1800);
+        --results-card-score-subtitle-fs: var(--fs-300)
     }
 }
 
