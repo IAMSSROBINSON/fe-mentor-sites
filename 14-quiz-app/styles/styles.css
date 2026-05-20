@@ -140,6 +140,7 @@
     /* BUTTON */
     --submit-btn-f-clr: var(--clr-white);
     --submit-btn-clr: var(--clr-purple-600);
+    --main-button-p-block: calc(var(--spacing-200) + 3px);
 
     /* ERROR */
     --icon-width: var(--spacing-400);
@@ -288,6 +289,9 @@ body {
         --icon-width: var(--spacing-500);
         --error-lh: var(--lh-l);
 
+        /* BUTTON */
+        --main-button-p-block: var(--spacing-400);
+
         /* RESULTS */
         --results-title-fs: calc(var(--fs-600) + var(--fs-300)); /* 40px + 24px */
         --results-card-score-title-m-block: var(--spacing-500) var(--spacing-200);
@@ -297,10 +301,6 @@ body {
         --results-card-container-br: var(--spacing-300); /* 24px */
         --results-card-p: var(--spacing-600);
         --results-card-score-title: var(--fs-1800);
-
-
-
-        
     }
 }
 

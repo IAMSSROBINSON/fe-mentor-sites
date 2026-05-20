@@ -4,7 +4,9 @@
     text-align: center;
 }
 
-.option-item.submit-answer .option-button, .option-item.next-question .option-button, .option-item.play-again .option-button {
+.option-item.submit-answer .option-button, 
+.option-item.next-question .option-button, 
+.option-item.play-again .option-button {
     justify-content: center;
 }
 
