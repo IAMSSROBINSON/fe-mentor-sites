@@ -193,6 +193,7 @@ function increaseScore () {
 
 function handlePlayAgain (e) {
   console.log("handlePlayAgain");
+  window.location = 'index.html';
 }
 
 export { handleSelectedOption, handleSubmitButtonClick, handleNextQuestionButton, handlePlayAgain };
