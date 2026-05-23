@@ -20,15 +20,12 @@ function quizViewInit() {
 }
 
 function renderHeader(title) {
-  console.log("renderHeader");
   const body = document.getElementById("body");
   body.insertAdjacentHTML("afterbegin", Header());
   renderLogoInHeader(title);
 }
 
 function renderLogoInHeader(title) {
-  // get the logo-container by id
-  // append ListItem to it and pass in title
   const logoContainer = document.getElementById("logo-container");
   logoContainer.appendChild(ListItem(title, true));
   logoContainer.firstElementChild.style.background = "none";
@@ -39,13 +36,11 @@ function renderLogoInHeader(title) {
 function renderLoadingState() {
   const bottom = getBottomSectionElement();
   bottom.innerHTML = "<p>Loading data...</p>";
-  console.log("loading data...");
 }
 
 function clearRenderLoadingState() {
   const bottom = getBottomSectionElement();
   bottom.innerHTML = "";
-  console.log("clear loading data...");
 }
 
 function getBottomSectionElement() {
@@ -53,30 +48,22 @@ function getBottomSectionElement() {
 }
 
 function renderCurrentQuestion(index, question, questionsArrLength) {
-  console.log("renderCurrentQuestion", index, question, questionsArrLength);
   const top = document.getElementById("top");
   top.innerHTML = "";
-  console.log("top:", top);
   top.insertAdjacentHTML(
     "afterbegin",
     Question(index, question, questionsArrLength),
   );
-  console.log(document.querySelector("input[type=range]"));
   document.querySelector("input[type=range]").value = 5;
-  console.log(document.querySelector("input[type=range]"));
 }
 
 function renderOptions(options, answer) {
-  console.log("options:", options);
-  console.log("answer:", answer);
-
   const bottom = document.getElementById("bottom");
   bottom.innerHTML = "";
   bottom.addEventListener("click", handleSelectedOption);
 
   const docFrag = document.createDocumentFragment();
   options.forEach((optionText, index) => {
-    console.log(optionText, index);
     docFrag.append(Option(optionText, index));
   });
   bottom.appendChild(docFrag);
@@ -85,16 +72,13 @@ function renderOptions(options, answer) {
 function renderSubmitButton() {
   const bottom = document.getElementById("bottom");
   const submitButton = Button("Submit Answer");
-
   submitButton.addEventListener("click", handleSubmitButtonClick);
-
   bottom.appendChild(submitButton);
 }
 
 function handleSelectedStyles(option) {
   removeSelectedStylesFromAllOptions();
   option.classList.add("selected-option");
-  console.log("selectedOption class added to option");
 }
 
 function removeSelectedStylesFromAllOptions() {
@@ -121,7 +105,6 @@ function removeError() {
   return;
 }
 function renderCorrectAnswerStyles(optionLi) {
-  // removeSelectedStylesFromAllOptions();
   optionLi.classList.add("correct-answer");
   insertAnswerIcon(optionLi, "correct");
 }
@@ -138,12 +121,9 @@ function insertAnswerIcon(optionLi, answerType) {
   );
   answerTypeIcon.setAttribute("alt", "answerType-icon");
   buttonInsideOption.appendChild(answerTypeIcon);
-  // console.log("insertCheckMark:", answerTypeIcon);
-  console.log(buttonInsideOption);
 }
 
 function renderIncorrectAnswerStyles(optionLi) {
-  // removeSelectedStylesFromAllOptions();
   optionLi.classList.add("incorrect-answer");
   insertAnswerIcon(optionLi, "incorrect");
 }
@@ -165,14 +145,12 @@ function renderNextQuestionButton() {
 
 function removeMainButton(className) {
   const element = document.querySelector(`.${className}`);
-  console.log("remove this element:", element);
   element.remove();
 }
 
 function updateProgress(index) {
   const progress = document.querySelector("input[type=range]");
   progress.style.width = `${(index + 1) * 10}%`;
-  console.log("updateProgress:", progress);
 }
 
 function renderResultsTitle() {

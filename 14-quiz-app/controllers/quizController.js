@@ -60,7 +60,6 @@ const bottom = document.getElementById("bottom");
 
     currentQuestions = questions;
 
-    console.log(icon, questions, title);
     handleQuestion();
     handleOptions();
     renderSubmitButton();
@@ -121,7 +120,6 @@ function handleSubmitButtonClick(e) {
     renderIncorrectAnswerStyles(selectedOption);
 
     const correctAnswerLi = getCorrectAnswerLi(correctAnswer);
-    console.log("correctAnswerLi:", correctAnswerLi);
     showCorrectAnswer(correctAnswerLi);
 
     // change submit button into next question button

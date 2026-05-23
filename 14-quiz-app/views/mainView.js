@@ -8,7 +8,6 @@ const bottom = document.getElementById("bottom");
 
 // functions
 function mainViewInit() {
-  console.log("mainViewInit");
   renderHeader();
 
   const switchContainer = document.getElementById("switch-container");

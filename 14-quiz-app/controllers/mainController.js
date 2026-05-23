@@ -1,5 +1,5 @@
 // imports
-import { mainModelInit, initData } from "../models/mainModel.js";
+import { initData } from "../models/mainModel.js";
 import {
   mainViewInit,
   renderLoadingState,
@@ -10,7 +10,6 @@ import { handleTheme } from "./themeController.js";
 
 // functions
 async function mainControllerInit() {
-  mainModelInit(); // initial check that modules are invoking
   mainViewInit(); // initial check that modules are invoking
 
   // handle setting of theme from local storage or system
