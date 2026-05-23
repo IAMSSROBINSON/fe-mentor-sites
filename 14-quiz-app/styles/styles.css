@@ -85,6 +85,7 @@
     --bg-image-mobile: url("/assets/images/pattern-background-mobile-light.svg");
     --bg-image-tablet: url("/assets/images/pattern-background-tablet-light.svg");
     --bg-image-desktop: url("/assets/images/pattern-background-desktop-light.svg");
+    --body-pb: var(--spacing-800);
 
     
     /* MAIN */
@@ -211,6 +212,7 @@ body {
     background-color: var(--body-bg);
     color: var(--clr-text);
     overflow-y: auto;
+    padding-bottom: var(--body-pb);
 }
 
 /* BODY */
@@ -345,7 +347,7 @@ body {
 
 /* MAIN */
 .main {
-    min-height: auto;
+    /* min-height: auto; */
     height: auto;
     padding-block: var(--main-pb);
     padding-inline: var(--main-pi);
