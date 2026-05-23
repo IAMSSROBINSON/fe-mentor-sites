@@ -43,7 +43,7 @@
     --spacing-100: 0.5rem; /* 8px */
 
     /* font */
-    --base-font: "Rubik", san-serif;
+    --base-font: "Rubik", sans-serif;
 
     --fs-900: 9rem; /* 144px */
     --fs-800: 5.5rem; /* 88px */
@@ -103,7 +103,7 @@
 
     /* TITLE */
     --title-size: var(--fs-600);
-    --clr-text: var(--clr-blue-);
+    --clr-text: var(--clr-blue-900);
     --clr-subtext: var(--clr-grey-500);
     --clr-li-bg: var(--clr-white);
 
@@ -142,7 +142,7 @@
     --option-avatar-text-clr: var(--clr-grey-500);
 
     /* BUTTON */
-    --submit-btn-f-clr: var(--clr-white);
+    --submit-btn-f-clr: var(--clr-white) !important;
     --submit-btn-clr: var(--clr-purple-600);
     --main-button-p-block: calc(var(--spacing-200) + 3px);
 
@@ -210,6 +210,7 @@ body {
     font-family: var(--base-font);
     background-color: var(--body-bg);
     color: var(--clr-text);
+    overflow-y: auto;
 }
 
 /* BODY */
@@ -322,7 +323,7 @@ body {
     #body {
         background-image: var(--bg-image-tablet);
         background-position: left top;
-        background-size: contain;
+        background-size: 500px 500px;
 
     }
 }

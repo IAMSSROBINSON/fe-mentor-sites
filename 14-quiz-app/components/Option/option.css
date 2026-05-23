@@ -57,7 +57,6 @@
 .option-text {
     font-size: var(--list-item-heading-fs);
     font-weight: var(--fw-medium);
-    color: var(--clr-text);
 }
 
 /* SELECTED OPTION */
