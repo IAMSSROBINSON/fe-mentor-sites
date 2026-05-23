@@ -110,7 +110,6 @@ function handleSubmitButtonClick(e) {
     return;
   }
   removeError();
-  // work out if answer is correct or false
   const correctAnswer = getCorrectAnswer();
   const selectedAnswer = getSelectedOptionValue();
   const isCorrectAnswer = correctAnswer === selectedAnswer;
@@ -121,8 +120,6 @@ function handleSubmitButtonClick(e) {
 
     const correctAnswerLi = getCorrectAnswerLi(correctAnswer);
     showCorrectAnswer(correctAnswerLi);
-
-    // change submit button into next question button
     increaseCurrentQuestionIndex();
     renderNextQuestionButton();
     return;
