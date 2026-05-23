@@ -1,63 +1,59 @@
 .question-number {
-    font-style: var(--fs-italic);
-    color: var(--question-number-clr);
-    font-size: var(--question-number-fs);
-    line-height: var(--lh-l);
-    margin-bottom: var(--question-number-mb);
+  font-style: var(--fs-italic);
+  color: var(--question-number-clr);
+  font-size: var(--question-number-fs);
+  line-height: var(--lh-l);
+  margin-bottom: var(--question-number-mb);
 }
 
 .question {
-    font-size: var(--question-fs);
-    font-weight: var(--fw-medium);
-    line-height: var(--lh-m);
-    margin-bottom: var(--question-mb);
+  font-size: var(--question-fs);
+  font-weight: var(--fw-medium);
+  line-height: var(--lh-m);
+  margin-bottom: var(--question-mb);
 }
 
 .range-container {
-    background-color: var(--track-bg-clr);
-    padding: calc(var(--spacing-100) / 2);
-    border-radius: var(--br-l);
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
+  background-color: var(--track-bg-clr);
+  padding: calc(var(--spacing-100) / 2);
+  border-radius: var(--br-l);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-
 /* reset style of range input */
-input[type=range] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: none;
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
 }
 
 /* stylet track */
-input[type=range]::-webkit-slider-runnable-track {
-    height: var(--spacing-100);
-    background-color: var(--clr-purple-600);
-    border-radius: var(--br-l);
+input[type="range"]::-webkit-slider-runnable-track {
+  height: var(--spacing-100);
+  background-color: var(--clr-purple-600);
+  border-radius: var(--br-l);
 }
 
 /* get rid of the thumb */
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-
-
 @media screen and (min-width: 768px) {
-    :root {
-        --question-number-size: var(--fs-200);
-        --question-number-size-mb: var(--spacing-300);
-
-        --question-fs: var(--fs-500);
-        --question-mb: var(--spacing-500);
-    }
+  :root {
+    --question-number-size: var(--fs-200);
+    --question-number-size-mb: var(--spacing-300);
+    --question-fs: var(--fs-500);
+    --question-mb: var(--spacing-500);
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    :root {
-        --question-mb: var(--spacing-2300);
-    }
+  :root {
+    --question-mb: var(--spacing-2300);
+  }
 }

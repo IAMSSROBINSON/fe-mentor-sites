@@ -1,87 +1,83 @@
 .list-item {
-    list-style: none;
-    background-color: var(--clr-li-bg);
-    border-radius: var(--list-item-br);
-    padding: var(--list-item-p);
-    box-shadow: var(--list-item-shadow);
+  list-style: none;
+  background-color: var(--clr-li-bg);
+  border-radius: var(--list-item-br);
+  padding: var(--list-item-p);
+  box-shadow: var(--list-item-shadow);
 }
 
-
-
 .list-item a {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: var(--list-item-a-gap);
-    color: var(--clr-text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--list-item-a-gap);
+  color: var(--clr-text);
 }
 
 .icon-container {
-    min-width: var(--icon-container-w);
-    padding: var(--icon-container-ps);
-    border-radius: var(--icon-container-br);
-    background-color: var(--clr-grey-50);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+  min-width: var(--icon-container-w);
+  padding: var(--icon-container-ps);
+  border-radius: var(--icon-container-br);
+  background-color: var(--clr-grey-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .list-item-icon {
-    min-width: var(--list-item-icon-w);
-    height: auto;
-    background-color: transparent !important;
+  min-width: var(--list-item-icon-w);
+  height: auto;
+  background-color: transparent !important;
 }
 
-  .list-item-heading {
-        font-size: var(--list-item-heading-fs);
-        font-weight: var(--fw-medium);
-        color: var(--clr-text);
-    }
+.list-item-heading {
+  font-size: var(--list-item-heading-fs);
+  font-weight: var(--fw-medium);
+  color: var(--clr-text);
+}
 
 .justIconNoLink {
-    pointer-events: none;
+  pointer-events: none;
 }
 
 /* LIST ITEM ICONS */
 .html.icon-container {
-    background-color: var(--clr-orange-50);
+  background-color: var(--clr-orange-50);
 }
 
 .css.icon-container {
-    background-color: var(--clr-green-100);
+  background-color: var(--clr-green-100);
 }
 
 .javascript.icon-container {
-    background-color: var(--clr-blue-50);
+  background-color: var(--clr-blue-50);
 }
 
 .accessibility.icon-container {
-    background-color: var(--clr-purple-100);
+  background-color: var(--clr-purple-100);
 }
 
 /* fallback */
 .list-item-icon {
-    background-color: #f1f3f5;
+  background-color: #f1f3f5;
 }
-
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
-    :root {
-        --list-item-heading-fs: calc(var(--spacing-300) + 4px);
-        --list-item-br: var(--br-l);
-        --icon-container-w: var(--spacing-700);
-        --icon-container-ps: var(--spacing-100);
-        --icon-container-br: var(--br-s);
-        --list-item-icon-w: var(--spacing-500);
-        --list-item-a-gap: var(--spacing-400);
-    }
+  :root {
+    --list-item-heading-fs: calc(var(--spacing-300) + 4px);
+    --list-item-br: var(--br-l);
+    --icon-container-w: var(--spacing-700);
+    --icon-container-ps: var(--spacing-100);
+    --icon-container-br: var(--br-s);
+    --list-item-icon-w: var(--spacing-500);
+    --list-item-a-gap: var(--spacing-400);
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    :root {
-        /* LIST */
-        --list-item-p: var(--spacing-300);
-    }
+  :root {
+    /* LIST */
+    --list-item-p: var(--spacing-300);
+  }
 }
