@@ -54,7 +54,8 @@ function renderCurrentQuestion(index, question, questionsArrLength) {
     "afterbegin",
     Question(index, question, questionsArrLength),
   );
-  document.querySelector("input[type=range]").value = 5;
+  const questionEl = document.querySelector('.question');
+  questionEl.textContent = question;
 }
 
 function renderOptions(options, answer) {
