@@ -1,7 +1,7 @@
 import Logo from "../Logo/Logo.js";
 
 function ResultCard(category, score, questionArr) {
-  const card = document.createElement("div");
+  const card = document.createElement("article");
   card.classList.add("result-card-container");
 
   const logoContainer = document.createElement("ul");
