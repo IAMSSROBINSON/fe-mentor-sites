@@ -71,15 +71,15 @@ const bottom = document.getElementById("bottom");
 
 function handleQuestion() {
   if (currentQuestionIndex >= currentQuestions.length) {
-    renderResultsTitle();
-
     const params = new URLSearchParams(window.location.search);
     const category = params.get("category");
-
+    
+    renderResultsTitle();
     renderResultsCard(category, currentScore, currentQuestions);
     renderPlayAgainButton("Play Again");
     return;
   }
+
   const question = currentQuestions[currentQuestionIndex].question;
   renderCurrentQuestion(
     currentQuestionIndex,
@@ -90,9 +90,9 @@ function handleQuestion() {
 }
 
 function handleOptions() {
-  const options = currentQuestions[currentQuestionIndex].options;
-  const answer = currentQuestions[currentQuestionIndex].answer;
-  renderOptions(options, answer);
+  const options = currentQuestions[currentQuestionIndex]?.options;
+  const answer = currentQuestions[currentQuestionIndex]?.answer;
+  options && answer ? renderOptions(options, answer) : null;
 }
 
 function handleSelectedOption(e) {
@@ -163,6 +163,11 @@ function getCorrectAnswerLi(correctAnswer) {
 
 function handleNextQuestionButton() {
   handleQuestion();
+
+  if (currentQuestionIndex >= currentQuestions.length) {
+    return;
+  }
+
   handleOptions();
   renderSubmitButton();
 }
