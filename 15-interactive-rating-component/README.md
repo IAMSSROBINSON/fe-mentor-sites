@@ -1,4 +1,4 @@
-# quiz-app
+# Interactive Rating Component
 fe-mentor interactive-rating-component challenge submission
 
 ## Tools
