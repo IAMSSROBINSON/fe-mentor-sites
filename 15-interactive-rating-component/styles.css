@@ -12,7 +12,7 @@
 
     --clr-orange-500: #FC7614;
 
-    --clr-gradient: linear-gradient(to right, #232A34, #181E27);
+    --clr-gradient: linear-gradient(90deg, #232A34, #181E27);
 
     /* font */
     --base-font: Overpass, sans-serif;
@@ -72,6 +72,8 @@ html {
 
 body {
     min-height: 100vh;
+    font-family: var(--base-font);
+    background-color: var(--clr-grey-950);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
