@@ -1,1 +1,2 @@
-console.log("Hello World!");
+import { mainControllerInnit } from './controllers/mainController.js';
+mainControllerInnit();
