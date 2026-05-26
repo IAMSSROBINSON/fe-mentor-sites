@@ -14,6 +14,43 @@
 
     --clr-gradient: linear-gradient(to right, #232A34, #181E27);
 
+    /* font */
+    --base-font: Overpass, sans-serif;
+
+    --fs-500: 1.75rem ; /* 28px */
+    --fs-400: 1.5rem ; /* 24px */
+    --fs-300: 1rem ; /* 16px */
+    --fs-200: 0.9375rem ; /* 15px */
+    --fs-100: 0.875rem ; /* 14px */
+
+    --fw-bold: 700;
+    --fw-semi-bold: 600;
+    --fw-regular: 400;
+
+
+    /* spacing */
+    --spacing-1700:  8.5rem; /* 136px */
+    --spacing-1300:  6.5rem; /* 104px */
+    --spacing-500:  2.5rem; /* 40px */
+    --spacing-400:  2rem; /* 32px */
+    --spacing-300:  1.5rem; /* 24px */
+    --spacing-200:  1rem; /* 16px */
+    --spacing-100:  0.5rem; /* 8px */
+    --spacing-0:  0rem; /* 8px */
+
+    /* line height */
+    --lh-xxxl: 2.1875rem;  /* 35px */
+    --lh-xxl: 1.875rem;  /* 30px */
+    --lh-xl: 1.5rem;  /* 24px */
+    --lh-l: 1.375rem;  /* 22px */
+    --lh-m: 1.1875rem;  /* 19px */
+    --lh-s: 1.125rem;  /* 18px */
+
+    /* letter spacing */
+    --ls-xl:  0.125rem; /* 2px  */
+    --ls-l:  0.1169rem; /* 1.87px  */
+    --ls-m:  0.0125rem; /* 0.2px  */
+    --ls-s:  0.0106rem; /* 0.17px  */
 }
 
 *,
