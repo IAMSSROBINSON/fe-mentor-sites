@@ -31,6 +31,7 @@
     /* spacing */
     --spacing-1700:  8.5rem; /* 136px */
     --spacing-1300:  6.5rem; /* 104px */
+    --spacing-600:  2.5rem; /* 48px */
     --spacing-500:  2.5rem; /* 40px */
     --spacing-400:  2rem; /* 32px */
     --spacing-300:  1.5rem; /* 24px */
@@ -60,9 +61,17 @@
 
 
     /* COMPONENTS */
+
+    /* card */
     --card-h: 22.5rem; /* 360px */
     --card-w: 20.4375rem; /* 327px */
     --card-p: calc(var(--spacing-300) + 4.5px) var(--spacing-300); /* 28.5px 24px */
+
+    /* star icon  */
+    --star-icon-container-w: var(--spacing-500); /* 40px */
+
+    --star-w: 0.8725rem; /* 13.96px */
+    --star-h: 0.8331rem; /* 13.33px */
 
 }
 
@@ -115,7 +124,29 @@ img, svg, canvas, video, iframe {
     background-color: var(--clr-grey-900);
     border-radius: var(--br-xs);
     background: var(--clr-gradient);
+    padding: var(--card-p);
 }
+
+.star-container {
+    background-color: var(--clr-grey-900);
+    width: var(--star-icon-container-w);
+    height: var(--star-icon-container-w);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--br-l);
+}
+
+/* container */
+.star-icon-wrapper {
+   width: var(--star-w);
+   height: var(--star-h);
+   transform: translateX(1.5px);
+}
+
+
+
+
 
 @media screen and (min-width: 768px) {
   :root {
@@ -124,8 +155,14 @@ img, svg, canvas, video, iframe {
     --card-w: 25.75rem; /* 412px */
     --card-p: var(--spacing-400) var(--spacing-300); /* 32px 24px */
 
+    /* STAR */
+    --star-icon-container-w: var(--spacing-600); /* 48px */
+    --star-w: 1.0469rem; /* 16.75px */
+    --star-h: 1rem; /* 16px */
+
+
   }
-  
+
   .card {
     border-radius: var(--br-s);
   }
