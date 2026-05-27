@@ -12,7 +12,7 @@
 
     --clr-orange-500: #FC7614;
 
-    --clr-gradient: linear-gradient(90deg, #232A34, #181E27);
+    --clr-gradient: radial-gradient(circle at top, #232A34 0%, #181E27 100%);
 
     /* font */
     --base-font: Overpass, sans-serif;
@@ -51,6 +51,19 @@
     --ls-l:  0.1169rem; /* 1.87px  */
     --ls-m:  0.0125rem; /* 0.2px  */
     --ls-s:  0.0106rem; /* 0.17px  */
+
+    /* border radius */
+    --br-l: 50%;
+    --br-m: 1.875rem; /* 30px */
+    --br-s: 1.4063rem; /* 22.5px */
+    --br-xs: 0.9375rem; /* 15px */
+
+
+    /* COMPONENTS */
+    --card-h: 22.5rem; /* 360px */
+    --card-w: 20.4375rem; /* 327px */
+    --card-p: calc(var(--spacing-300) + 4.5px) var(--spacing-300); /* 28.5px 24px */
+
 }
 
 *,
@@ -74,6 +87,8 @@ body {
     min-height: 100vh;
     font-family: var(--base-font);
     background-color: var(--clr-grey-950);
+    display: grid;
+    place-content: center;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -91,4 +106,27 @@ img, svg, canvas, video, iframe {
     width: 100%;
     object-fit: cover;
     line-height: 0;
+}
+
+/*  ELEMENTS */
+.card {
+    height: var(--card-h);
+    width: var(--card-w);
+    background-color: var(--clr-grey-900);
+    border-radius: var(--br-xs);
+    background: var(--clr-gradient);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    /* CARD */
+    --card-h: 26rem; /* 416px */
+    --card-w: 25.75rem; /* 412px */
+    --card-p: var(--spacing-400) var(--spacing-300); /* 32px 24px */
+
+  }
+  
+  .card {
+    border-radius: var(--br-s);
+  }
 }
