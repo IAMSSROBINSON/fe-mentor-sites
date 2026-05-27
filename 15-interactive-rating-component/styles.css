@@ -141,7 +141,7 @@ img, svg, canvas, video, iframe {
 .star-icon-wrapper {
    width: var(--star-w);
    height: var(--star-h);
-   transform: translateX(1.5px);
+   transform: translateX(0.25px);
 }
 
 
