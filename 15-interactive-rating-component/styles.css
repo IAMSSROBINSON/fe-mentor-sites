@@ -220,6 +220,10 @@ label {
     cursor: pointer;
 }
 
+.rating-text {
+    transform: translateY(1.15px);
+}
+
 .submit-btn {
     background-color: var(--clr-orange-500);
     color: var(--clr-grey-950);
