@@ -235,8 +235,24 @@ label {
     font-weight: var(--fw-bold);
     line-height: var(--lh-s);
     letter-spacing: var(--ls-l);
+    cursor: pointer;
+    border: none;
 }
 
+.submit-text {
+    transform: translateY(2px) !important;
+    display: inline-block; 
+}
+
+label:hover, .submit-btn:hover {
+    background-color: var(--clr-white);
+    color: var(--clr-grey-900);
+}
+
+label:active, .submit-btn:active {
+    background-color: var(--clr-orange-500);
+    color: var(--clr-grey-900);
+}
 
 
 /* MEDIA QUERIES */
