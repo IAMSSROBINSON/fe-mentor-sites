@@ -31,7 +31,7 @@
     /* spacing */
     --spacing-1700:  8.5rem; /* 136px */
     --spacing-1300:  6.5rem; /* 104px */
-    --spacing-600:  2.5rem; /* 48px */
+    --spacing-600:  3rem; /* 48px */
     --spacing-500:  2.5rem; /* 40px */
     --spacing-400:  2rem; /* 32px */
     --spacing-300:  1.5rem; /* 24px */
@@ -84,6 +84,8 @@
     /* rating */
     --rating-w: calc(var(--spacing-500) + 2px);
 
+    /* form */
+    --submit-btn-p: calc(var(--spacing-200) - 1px);
 
 }
 
@@ -131,7 +133,7 @@ img, svg, canvas, video, iframe {
 
 /*  ELEMENTS */
 .card {
-    height: var(--card-h);
+    /* height: var(--card-h); */
     width: var(--card-w);
     background-color: var(--clr-grey-900);
     border-radius: var(--br-xs);
@@ -178,7 +180,8 @@ img, svg, canvas, video, iframe {
 fieldset {
     border: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: var(--spacing-200);
     margin-block: 16px 24px;
 }
 
@@ -217,9 +220,24 @@ label {
     cursor: pointer;
 }
 
+.submit-btn {
+    background-color: var(--clr-orange-500);
+    color: var(--clr-grey-950);
+    width: 100%;
+    text-transform: uppercase;
+    padding: var(--submit-btn-p);
+    border-radius: var(--br-s);
+    font-size: var(--fs-100);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-s);
+    letter-spacing: var(--ls-l);
+}
 
 
 
+/* MEDIA QUERIES */
+
+/* TABLET + DESKTOP */
 @media screen and (min-width: 768px) {
   :root {
     /* CARD */
@@ -239,8 +257,10 @@ label {
     /* SPACE */
     --main-icon-mb: var(--spacing-400);
 
-    /* RATING */
+    /* FORM */
     --rating-w: calc(var(--spacing-600) + 3px);
+    --submit-btn-p: calc(var(--spacing-200) - 3.5px);
+
   }
 
   .card {
@@ -259,9 +279,15 @@ label {
    /* form */
    fieldset {
     margin-block: 16px 32px;
+    gap: var(--spacing-300);
    }
 
    label {
     font-size: var(--fs-300);
    }
+
+   .submit-btn {
+    line-height: var(--lh-xl);
+    letter-spacing: var(--ls-s);
+}
 }
