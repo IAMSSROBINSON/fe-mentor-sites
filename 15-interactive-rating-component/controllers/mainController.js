@@ -34,6 +34,20 @@ function handleRating (e) {
 function handleSubmit (e) {
     e.preventDefault();
     console.log("handleSubmit");
+
+    const isRatingValidated = validateAnElementIsChecked();
+    if (isRatingValidated) {
+        console.log("submitForm");
+    } 
+    else {
+        console.log("Must select a rating to submit form");
+    }
+}
+
+function validateAnElementIsChecked () {
+    const labels = Array.from(document.querySelectorAll('.label'));
+    const isOneChecked = labels.some((label) => label.classList.contains('checked'));
+    return isOneChecked;
 }
 
 
