@@ -7,8 +7,6 @@ import {
   renderMessage,
 } from "../views/mainView.js";
 
-// elements
-
 // functions
 function mainControllerInit() {
     

@@ -146,7 +146,7 @@ iframe {
 /*  ELEMENTS */
 .card {
   min-height: var(--card-h);
-  /* width: 100%; */
+  width: 100%;
   max-width: var(--card-w);
   background-color: var(--clr-grey-900);
   border-radius: var(--br-xs);
