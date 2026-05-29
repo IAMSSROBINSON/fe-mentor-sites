@@ -15,7 +15,8 @@ FIGMA
 - A11y
 
 ## What I learned
-
+- Semantic HTML
+- Accessible design
 
 ## View live site here 
 https://15-interactive-rating-component.netlify.app/
