@@ -17,8 +17,7 @@ ratingForm.addEventListener("change", handleRating);
 function handleRating (e) {
     if (e.target.matches('input[type=radio]')) {
         const target = e.target;
-        target.classList.toggle('checked');
-
+        
         const label = document.querySelector(`label[for="${target.id}"]`);
         console.log('label:', label);
 
