@@ -14,8 +14,8 @@ function mainControllerInit() {
   const ratingForm = document.querySelector(".rating-form");
 
   // events
-  ratingForm.addEventListener("change", handleRating);
-  ratingForm.addEventListener("submit", handleSubmit);
+  ratingForm?.addEventListener("change", handleRating);
+  ratingForm?.addEventListener("submit", handleSubmit);
 }
 
 function handleRating(e) {
