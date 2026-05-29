@@ -16,7 +16,6 @@ function mainControllerInnit() {
     
   // elements
   const ratingForm = document.querySelector(".rating-form");
-  const submitBtn = document.getElementById("submit-btn");
 
   // events
   ratingForm.addEventListener("change", handleRating);
