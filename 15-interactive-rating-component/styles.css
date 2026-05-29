@@ -221,7 +221,13 @@ label {
 }
 
 .rating-text {
-    transform: translateY(1.15px);
+    transform: translateY(1.5px);
+}
+
+.checked {
+    background-color: var(--clr-orange-500) !important;
+    color: var(--clr-grey-950);
+
 }
 
 .submit-btn {
