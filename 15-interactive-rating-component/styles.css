@@ -278,7 +278,7 @@ label:active,
   margin-bottom: var(--spacing-300);
 }
 
-.thankyou-label-text-container {
+.thankyou-info-text-container {
   background-color: var(--clr-grey-900);
   width: fit-content;
   padding-block: calc(var(--spacing-100) - 2px);
@@ -288,7 +288,7 @@ label:active,
   margin-bottom: var(--spacing-400);
 }
 
-.thankyou-label-text {
+.thankyou-info-text {
   color: var(--clr-orange-500);
   transform: translateY(1.5px);
   text-align: center;
@@ -367,12 +367,12 @@ label:active,
     margin-bottom: var(--spacing-400);
   }
 
-  .thankyou-label-text-container {
+  .thankyou-info-text-container {
     padding-inline: calc(var(--spacing-200) + 3.5px);
     margin-bottom: var(--spacing-400);
   }
 
-  .thankyou-label-text {
+  .thankyou-info-text {
     font-size: var(--fs-200);
   }
 }

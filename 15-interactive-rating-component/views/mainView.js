@@ -13,11 +13,11 @@ function renderThankyouIcon() {
     `;
 }
 
-function renderLabel(ratingValue, allRatings) {
+function renderStateInfo(ratingValue, allRatings) {
   const card = document.querySelector(".card");
 
-  card.innerHTML += `<div class="thankyou-label-text-container">
-            <p class="body-text thankyou-label-text"> 
+  card.innerHTML += `<div class="thankyou-info-text-container">
+            <p class="body-text thankyou-info-text"> 
                 You selected ${ratingValue} out of ${allRatings}
             </p>
         </div>`;
@@ -41,7 +41,7 @@ function renderMessage() {
 export {
   wipeCard,
   renderThankyouIcon,
-  renderLabel,
+  renderStateInfo,
   renderThankYouHeading,
   renderMessage,
 };

@@ -2,7 +2,7 @@ import { getRating, setRating, resetRating } from "../models/mainModel.js";
 import {
   wipeCard,
   renderThankyouIcon,
-  renderLabel,
+  renderStateInfo,
   renderThankYouHeading,
   renderMessage,
 } from "../views/mainView.js";
@@ -38,7 +38,7 @@ function handleSubmit(e) {
 
     wipeCard();
     renderThankyouIcon();
-    renderLabel(getRating(), numberOfRatings);
+    renderStateInfo(getRating(), numberOfRatings);
     renderThankYouHeading();
     renderMessage();
   } else {
