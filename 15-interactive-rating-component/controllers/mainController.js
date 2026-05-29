@@ -21,12 +21,15 @@ function mainControllerInnit () {
 function handleRating (e) {
     if (e.target.matches('input[type=radio]')) {
         const target = e.target;
+        const value = target.value;
         
         const label = document.querySelector(`label[for="${target.id}"]`);
         console.log('label:', label);
 
         removeAllCheckedClasses();
         applyCheckedClass(label, 'checked');
+        setRating(value);
+        console.log('newRating:', getRating());
     }
 }
 
