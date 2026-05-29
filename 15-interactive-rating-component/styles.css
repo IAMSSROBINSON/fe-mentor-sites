@@ -37,7 +37,7 @@
     --spacing-300:  1.5rem; /* 24px */
     --spacing-200:  1rem; /* 16px */
     --spacing-100:  0.5rem; /* 8px */
-    --spacing-0:  0rem; /* 8px */
+    --spacing-0:  0rem; /* 0px */
 
     /* line height */
     --lh-xxxl: 2.1875rem;  /* 35px */
@@ -87,6 +87,10 @@
     /* form */
     --submit-btn-p: calc(var(--spacing-200) - 1px);
 
+    /* thankyou */
+    --thankyou-icon-w: 9rem; /* 144px */
+    --thankyou-icon-h: 6rem; /* 96px */
+
 }
 
 *,
@@ -112,6 +116,7 @@ body {
     background-color: var(--clr-grey-950);
     display: grid;
     place-content: center;
+    padding: var(--spacing-300);
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -134,7 +139,8 @@ img, svg, canvas, video, iframe {
 /*  ELEMENTS */
 .card {
     /* height: var(--card-h); */
-    width: var(--card-w);
+    width: 100%;
+    max-width: var(--card-w);
     background-color: var(--clr-grey-900);
     border-radius: var(--br-xs);
     background: var(--clr-gradient);
@@ -260,6 +266,39 @@ label:active, .submit-btn:active {
     color: var(--clr-grey-900);
 }
 
+/* thank you */
+.thankyou-icon {
+    margin: 0 auto;
+    width: var(--thankyou-icon-w);
+    height: var(--thankyou-icon-h);
+    margin-bottom: var(--spacing-300);
+}
+
+.thankyou-label-text-container {
+    background-color: var(--clr-grey-900);
+    width: fit-content;
+    padding-block: calc(var(--spacing-100) - 2px);
+    padding-inline: calc((var(--spacing-100) - 2px) * 2);
+    border-radius: var(--br-m);
+    margin: 0 auto;
+    margin-bottom: var(--spacing-400);
+}
+
+.thankyou-label-text {
+    color: var(--clr-orange-500);
+    transform: translateY(1.5px);
+    text-align: center;
+}
+
+.thankyou-heading {
+    text-align: center;    
+    margin-bottom: var(--spacing-200);
+}
+
+.message {
+    text-align: center;
+}
+
 
 /* MEDIA QUERIES */
 
@@ -286,6 +325,10 @@ label:active, .submit-btn:active {
     /* FORM */
     --rating-w: calc(var(--spacing-600) + 3px);
     --submit-btn-p: calc(var(--spacing-200) - 3.5px);
+
+    /* THANKYOU */
+    --thankyou-icon-w: 10.125rem; /* 162px */
+    --thankyou-icon-h: 6.75rem; /* 108px */
 
   }
 
@@ -315,5 +358,21 @@ label:active, .submit-btn:active {
    .submit-btn {
     line-height: var(--lh-xl);
     letter-spacing: var(--ls-s);
-}
+    }
+
+    /* thankyou */
+    .thankyou-icon {
+    margin-bottom: var(--spacing-400);
+    }
+
+    .thankyou-label-text-container {
+        padding-inline: calc(var(--spacing-200) + 3.5px);
+        margin-bottom: var(--spacing-400);
+    }
+
+    .thankyou-label-text {
+    font-size: var(--fs-200);
+    }
+
+
 }

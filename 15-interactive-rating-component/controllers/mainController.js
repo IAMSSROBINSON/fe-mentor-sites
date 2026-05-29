@@ -1,5 +1,5 @@
 import { getRating, setRating, resetRating } from '../models/mainModel.js';
-import { mainViewInnit, removeAllCheckedClasses, applyCheckedClass } from '../views/mainView.js';
+import { mainViewInnit, removeAllCheckedClasses, applyCheckedClass, wipeCard, renderThankyouIcon, renderLabel, renderThankYouHeading, renderMessage } from '../views/mainView.js';
 
 // elements
 const ratingForm = document.querySelector('.rating-form');
@@ -40,7 +40,15 @@ function handleSubmit (e) {
 
     const isRatingValidated = validateAnElementIsChecked();
     if (isRatingValidated) {
+        const allRatings = Array.from(document.querySelectorAll('.label')).length;
+
         console.log("submitForm");
+        // clear card html
+        wipeCard()
+        renderThankyouIcon();
+        renderLabel(getRating(), allRatings);
+        renderThankYouHeading();
+        renderMessage();
     } 
     else {
         console.log("Must select a rating to submit form");
