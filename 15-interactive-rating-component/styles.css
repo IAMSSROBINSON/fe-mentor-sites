@@ -233,7 +233,7 @@ label {
 }
 
 .checked {
-  background-color: var(--clr-orange-500) !important;
+  background-color: var(--clr-orange-500);
   color: var(--clr-grey-950);
 }
 
@@ -253,7 +253,7 @@ label {
 }
 
 .submit-text {
-  transform: translateY(2px) !important;
+  transform: translateY(2px);
   display: inline-block;
 }
 
