@@ -1,4 +1,2 @@
-import { mainControllerInnit } from './controllers/mainController.js';
+import { mainControllerInnit } from "./controllers/mainController.js";
 mainControllerInnit();
-
-
