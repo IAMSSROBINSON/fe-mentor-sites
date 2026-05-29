@@ -1,7 +1,5 @@
 import { getRating, setRating, resetRating } from "../models/mainModel.js";
 import {
-  removeAllCheckedClasses,
-  applyCheckedClass,
   wipeCard,
   renderThankyouIcon,
   renderLabel,
@@ -12,7 +10,7 @@ import {
 // elements
 
 // functions
-function mainControllerInnit() {
+function mainControllerInit() {
     
   // elements
   const ratingForm = document.querySelector(".rating-form");
@@ -26,10 +24,7 @@ function handleRating(e) {
   if (e.target.matches("input[type=radio]")) {
     const target = e.target;
     const value = target.value;
-    const label = document.querySelector(`label[for="${target.id}"]`);
 
-    removeAllCheckedClasses();
-    applyCheckedClass(label, "checked");
     setRating(value);
   }
 }
@@ -37,13 +32,13 @@ function handleRating(e) {
 function handleSubmit(e) {
   e.preventDefault();
 
-  const isRatingValidated = validateAnElementIsChecked();
-  if (isRatingValidated) {
-    const allRatings = Array.from(document.querySelectorAll(".label")).length;
+  const isRadioChecked = validateRadioIsChecked();
+  if (isRadioChecked) {
+    const numberOfRatings = Array.from(document.querySelectorAll(".label")).length;
 
     wipeCard();
     renderThankyouIcon();
-    renderLabel(getRating(), allRatings);
+    renderLabel(getRating(), numberOfRatings);
     renderThankYouHeading();
     renderMessage();
   } else {
@@ -51,12 +46,10 @@ function handleSubmit(e) {
   }
 }
 
-function validateAnElementIsChecked() {
-  const labels = Array.from(document.querySelectorAll(".label"));
-  const isOneChecked = labels.some((label) =>
-    label.classList.contains("checked"),
-  );
-  return isOneChecked;
+function validateRadioIsChecked() {
+  const form = document.getElementById('rating-form');
+  const isChecked = form.querySelector('input[type=radio]:checked');
+  return isChecked;
 }
 
-export { mainControllerInnit };
+export { mainControllerInit };

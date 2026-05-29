@@ -1,14 +1,3 @@
-function removeAllCheckedClasses() {
-  const labels = document.querySelectorAll("label");
-  labels.forEach((label) => {
-    label.classList.remove("checked");
-  });
-}
-
-function applyCheckedClass(element, className) {
-  element.classList.add(className);
-}
-
 function wipeCard() {
   const card = document.querySelector(".card");
   card.innerHTML = "";
@@ -50,8 +39,6 @@ function renderMessage() {
 }
 
 export {
-  removeAllCheckedClasses,
-  applyCheckedClass,
   wipeCard,
   renderThankyouIcon,
   renderLabel,

@@ -228,14 +228,15 @@ label {
   cursor: pointer;
 }
 
+input[type=radio]:checked + label {
+  background-color: var(--clr-orange-500);
+  color: var(--clr-grey-950);
+}
+
 .rating-text {
   transform: translateY(1.5px);
 }
 
-.checked {
-  background-color: var(--clr-orange-500);
-  color: var(--clr-grey-950);
-}
 
 .submit-btn {
   background-color: var(--clr-orange-500);
