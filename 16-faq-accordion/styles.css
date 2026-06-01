@@ -67,7 +67,6 @@ body {
     color: var(--clr-purple-950);
     background-color: var(--clr-purple-100);
     padding: var(--spacing-300);
-
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -85,8 +84,6 @@ input, button, textarea, select {
     font: inherit;
     color: inherit;
 }
-
-
 
 /* bg image */
 .bg-image-wrapper {
@@ -126,6 +123,7 @@ input, button, textarea, select {
 header.logo-text {
     font-size: var(--fs-200);
     font-weight: var(--fw-bold);
+    font-weight: bold;
 }
 
 /* details */
@@ -137,7 +135,6 @@ details{
 details:not(:last-child) {
      margin-bottom: var(--spacing-300);
      padding-bottom: var(--spacing-300);
-
 }
 
 details:not(:last-of-type) {
@@ -192,14 +189,10 @@ summary::-webkit-details-marker {
 }
 
 
-
-
-
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) {
     :root {
         --bg-image: url(./assets/images/background-pattern-desktop.svg);
-
     }
 
     /* bg image */
@@ -211,10 +204,11 @@ summary::-webkit-details-marker {
     .logo-mark {
         width: var(--spacing-500);
         height: var(--spacing-500);
-}
+    }
+
     .logo-text {
         font-size: var(--fs-300);
-}
+    }   
 
     /* card */
     .card {
