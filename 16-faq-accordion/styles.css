@@ -76,7 +76,6 @@ p, h1, h2, h3, h4, h5, h6 {
 
 img, svg, iframe, canvas {
     width: 100%;
-    object-fit: cover;
     display: block;
     line-height: 0;
 }
@@ -114,6 +113,7 @@ input, button, textarea, select {
     justify-content: start;
     align-items: center;
     gap: var(--spacing-300);
+    margin-bottom: var(--spacing-300);
 }
 
 .logo-mark {
@@ -126,6 +126,51 @@ header.logo-text {
     font-size: var(--fs-200);
     font-weight: var(--font-weight-bold);
 }
+
+/* details */
+details{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+}
+
+details:not(:last-of-type) {
+    border-bottom: 1px solid var(--clr-purple-100);
+    margin-bottom: var(--spacing-300);
+
+}
+
+summary {
+   list-style: none;
+    font-size: var(--fs-100);
+    font-weight: var(--fw-medium);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer
+}
+
+.details-text {
+    margin-bottom: var(--spacing-300);
+}
+
+.summary-icon {
+    width: 30px;
+    height: 30px;
+    background-image: url(./assets/icons/icon-plus.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+details[open] .summary-icon{
+    background-image: url(./assets/icons/icon-minus.svg);
+}
+
+summary::-webkit-details-marker {
+   display: none;
+}
+
+
 
 
 
@@ -142,6 +187,10 @@ header.logo-text {
     }
 
     /* header */
+    .logo-mark {
+        width: var(--spacing-500);
+        height: var(--spacing-500);
+}
     .logo-text {
         font-size: var(--fs-300);
         font-weight: var(--font-weight-bold);
@@ -150,10 +199,16 @@ header.logo-text {
     /* card */
     .card {
         max-width: 37.5rem;
-        padding: var(--spacing-300);
+        padding: var(--spacing-500);
         line-height: var(--lh-l);
         border-radius: var(--br-m);
         margin-top: calc(152.5px * -1);
-}
+    }
+
+    /* details */
+    summary {
+        font-size: var(--fs-200);
+        line-height: var(--lh-s);
+    }
 
 }
