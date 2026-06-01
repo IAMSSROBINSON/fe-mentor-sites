@@ -68,6 +68,7 @@ body {
   color: var(--clr-purple-950);
   background-color: var(--clr-purple-100);
   padding: var(--spacing-300);
+  padding-bottom: 8.1563rem;
 }
 
 p,
@@ -201,6 +202,10 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 768px) {
   :root {
     --bg-image: url(./assets/images/background-pattern-desktop.svg);
+  }
+  /* body */
+  body {
+    padding-bottom: 10.4688rem;
   }
 
   /* bg image */
