@@ -10,6 +10,9 @@
     
     --clr-violet-600: #AD28EB;
 
+    --clr-shadow: 0px 32px 56px 0px rgba(81, 0, 118, 0.10);
+   
+
     /* fonts */
     --base-font: 'Work Sans', sans-serif;
 
@@ -103,6 +106,7 @@ input, button, textarea, select {
     padding: var(--spacing-300);
     border-radius: var(--br-s);
     margin-top: calc(101.5px * -1);
+    box-shadow: var(--clr-shadow);
 }
 
 /* header */
