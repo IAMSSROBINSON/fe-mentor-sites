@@ -164,7 +164,7 @@ summary {
   cursor: pointer;
 }
 
-summary:active {
+summary:hover, summary:active {
   color: var(--clr-violet-600);
 }
 
