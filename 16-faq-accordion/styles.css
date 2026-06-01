@@ -18,9 +18,9 @@
     --fs-200: 1.125rem; /* 18px */
     --fs-100: 1rem; /* 16px */
 
-    --font-weight-bold: 700;
-    --font-weight-medium: 600;
-    --font-weight-regular: 400;
+    --fw-bold: 700;
+    --fw-medium: 600;
+    --fw-regular: 400;
 
     /* spacing */
     --spacing-500: 2.5rem; /* 40px */
@@ -91,7 +91,7 @@ input, button, textarea, select {
 /* bg image */
 .bg-image-wrapper {
     background-image: var(--bg-image);
-    height: 232px;
+    height: 14.5rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -132,36 +132,53 @@ header.logo-text {
 details{
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-300);
+}
+
+details:not(:last-child) {
+     margin-bottom: var(--spacing-300);
+     padding-bottom: var(--spacing-300);
+
 }
 
 details:not(:last-of-type) {
     border-bottom: 1px solid var(--clr-purple-100);
-    margin-bottom: var(--spacing-300);
 
 }
 
 summary {
+
    list-style: none;
     font-size: var(--fs-100);
     font-weight: var(--fw-medium);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer
+    cursor: pointer;
 }
 
+
+summary:active {
+    color: var(--clr-violet-600);
+}
+
+.summary-text {
+    margin-right: var(--spacing-200);
+}
+
+
 .details-text {
-    margin-bottom: var(--spacing-300);
+    margin-top: 24px;
     font-size: calc(var(--fs-100) - 2px);
     font-weight: var(--fw-regular);
     color: var(--clr-purple-600);
-    line-height: var(--lh-xl);
+    line-height: var(--lh-xl);    
 }
 
+
 .summary-icon {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
+    padding-left: var(--spacing-400);
     background-image: url(./assets/icons/icon-plus.svg);
     background-size: contain;
     background-repeat: no-repeat;
