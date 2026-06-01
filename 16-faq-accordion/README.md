@@ -13,6 +13,7 @@ FIGMA
 - Media Queries
 - CSS Variables
 - Accessibility
+- WCAG
 
 ## What I learned
 - Applying semantic HTML throughout a project is always best for accessibility.
