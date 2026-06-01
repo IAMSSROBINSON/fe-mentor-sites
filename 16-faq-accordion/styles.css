@@ -14,8 +14,13 @@
     --base-font: 'Work Sans', sans-serif;
 
     --fs-300: 3.5rem; /* 56px */
+    --fs-200: 2rem; /* 32px */
     --fs-200: 1.125rem; /* 18px */
     --fs-100: 1rem; /* 16px */
+
+    --font-weight-bold: 700;
+    --font-weight-medium: 600;
+    --font-weight-regular: 400;
 
     /* spacing */
     --spacing-500: 2.5rem; /* 40px */
@@ -28,6 +33,15 @@
     --lh-l: 4.125rem; /* 66px */
     --lh-m: 1.5rem; /* 24px */
     --lh-s: 1.3125rem; /* 21px */
+
+    /* border radius */
+    --br-l: 50%; /* 50% */
+    --br-m: 1rem; /* 16px */
+    --br-s: 0.5rem; /* 8px */
+
+
+    /* COMPONENT TOKENS */
+    --bg-image: url('./assets/images/background-pattern-mobile.svg');
 }
 
 *,
@@ -50,6 +64,9 @@ body {
     min-height: 100vh;
     font-family: var(--base-font);
     color: var(--clr-purple-950);
+    background-color: var(--clr-purple-100);
+    padding: var(--spacing-300);
+
 }
 
 p, h1, h2, h3, h4, h5, h6 {
@@ -71,3 +88,72 @@ input, button, textarea, select {
 
 
 
+/* bg image */
+.bg-image-wrapper {
+    background-image: var(--bg-image);
+    height: 232px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-inline: calc(var(--spacing-300) * -1);
+    margin-top: calc(var(--spacing-300) * -1);
+}
+ 
+/* card */
+.card {
+    margin-inline: auto;
+    background-color: var(--clr-white);
+    padding: var(--spacing-300);
+    border-radius: var(--br-s);
+    margin-top: calc(101.5px * -1);
+}
+
+/* header */
+.header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: var(--spacing-300);
+}
+
+.logo-mark {
+    width: var(--spacing-300);
+    height: var(--spacing-300);
+}
+
+
+header.logo-text {
+    font-size: var(--fs-200);
+    font-weight: var(--font-weight-bold);
+}
+
+
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 768px) {
+    :root {
+        --bg-image: url(./assets/images/background-pattern-desktop.svg);
+
+    }
+
+    /* bg image */
+    .bg-image-wrapper { 
+        height: 320px;
+    }
+
+    /* header */
+    .logo-text {
+        font-size: var(--fs-300);
+        font-weight: var(--font-weight-bold);
+}
+
+    /* card */
+    .card {
+        max-width: 37.5rem;
+        padding: var(--spacing-300);
+        line-height: var(--lh-l);
+        border-radius: var(--br-m);
+        margin-top: calc(152.5px * -1);
+}
+
+}
