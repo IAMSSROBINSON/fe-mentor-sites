@@ -125,7 +125,7 @@ input, button, textarea, select {
 
 header.logo-text {
     font-size: var(--fs-200);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--fw-bold);
 }
 
 /* details */
@@ -146,7 +146,6 @@ details:not(:last-of-type) {
 }
 
 summary {
-
    list-style: none;
     font-size: var(--fs-100);
     font-weight: var(--fw-medium);
@@ -167,7 +166,7 @@ summary:active {
 
 
 .details-text {
-    margin-top: 24px;
+    margin-top: var(--spacing-300);
     font-size: calc(var(--fs-100) - 2px);
     font-weight: var(--fw-regular);
     color: var(--clr-purple-600);
@@ -205,7 +204,7 @@ summary::-webkit-details-marker {
 
     /* bg image */
     .bg-image-wrapper { 
-        height: 320px;
+        height: 20rem;
     }
 
     /* header */
