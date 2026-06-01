@@ -15,8 +15,8 @@
   /* fonts */
   --base-font: "Work Sans", sans-serif;
 
-  --fs-300: 3.5rem; /* 56px */
-  --fs-200: 2rem; /* 32px */
+  --fs-400: 3.5rem; /* 56px */
+  --fs-300: 2rem; /* 32px */
   --fs-200: 1.125rem; /* 18px */
   --fs-100: 1rem; /* 16px */
 
@@ -135,7 +135,7 @@ select {
 }
 
 header.logo-text {
-  font-size: var(--fs-200);
+  font-size: var(--fs-300);
   font-weight: var(--fw-bold);
   font-weight: bold;
 }
@@ -220,7 +220,7 @@ summary::-webkit-details-marker {
   }
 
   .logo-text {
-    font-size: var(--fs-300);
+    font-size: var(--fs-400);
   }
 
   /* card */
