@@ -214,7 +214,6 @@ summary::-webkit-details-marker {
 }
     .logo-text {
         font-size: var(--fs-300);
-        font-weight: var(--font-weight-bold);
 }
 
     /* card */
@@ -235,6 +234,6 @@ summary::-webkit-details-marker {
     .details-text {
         font-size: calc(var(--fs-100));
         line-height: var(--lh-m);
-}
+    }
 
 }
