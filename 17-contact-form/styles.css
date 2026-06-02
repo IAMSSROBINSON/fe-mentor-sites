@@ -1,0 +1,43 @@
+:root {
+    /* TOKENS */
+
+    /* COMPONENT TOKENS */
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+button, input, textarea, select {
+    font: inherit;
+    color: inherit;
+}
+
+img, svg, iframe, canvas, video {
+    width: 100%;
+    line-height: 0;
+    display: block;
+    object-fit: cover;
+}
+
+body {
+    min-height: 100vh;
+}
