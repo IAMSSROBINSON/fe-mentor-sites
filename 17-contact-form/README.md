@@ -13,7 +13,9 @@ fe-mentor contact-form challenge submission
 - Media Queries
 - CSS Variables
 - Accessibility
+- W3C
 - WCAG
+- WHATWG (Web Hypertext Application Technology Working Group)
 
 ## What I learned
 
