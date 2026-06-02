@@ -1,6 +1,45 @@
 :root {
     /* TOKENS */
 
+    /* colors */
+    --clr-grey-900: #2A4144;
+    --clr-grey-500: #86A2A5;
+
+    --clr-white: #ffffff;
+
+    --clr-green-600: #0C7D69;
+    --clr-green-200: #E0F1E8;
+
+    --clr-red: #D73C3C;
+
+
+    /* font */
+    --base-font: 'Karla', sans-serif;
+
+
+    --fs-300: 2rem ; /* 16px */
+    --fs-200: 1.125rem ; /* 16px */
+    --fs-100: 1rem ; /* 16px */
+
+    --fw-bold: 700;
+    --fw-regular: 400;
+
+    /* spacing */
+    --spacing-1600: 8rem; /* 128px */
+    --spacing-500: 2.5rem; /* 40px */
+    --spacing-400: 2rem; /* 32px */
+    --spacing-300: 1.5rem; /* 24px */
+    --spacing-200: 1rem; /* 16px */
+    --spacing-150: 0.75rem; /* 12px */
+    --spacing-100: 0.5rem; /* 8px */
+
+    /* line height */
+    --lh-l: 1.5; /* 150% */
+
+    /* letter spacing */
+    --ls-s: -0.0625rem; /* -1px */
+
+
     /* COMPONENT TOKENS */
 }
 
@@ -40,4 +79,5 @@ img, svg, iframe, canvas, video {
 
 body {
     min-height: 100vh;
+    font-family: var(--base-font);
 }
