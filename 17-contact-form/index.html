@@ -19,14 +19,28 @@
         <h1 class="title">Contact Us</h1>
 
         <form id="contact-us-form" method="#" action="#">
-            
+
             <fieldset class="container person-details-container">
                 <legend class="sr-only">Personal Details</legend>
 
-                <!-- first name -->
-                <label for="first-name">First Name <span class="require-star"> *</span></label>
-                <input type="text" id="first-name" name="first-name" required autocomplete="first-name" aria-invalid="true" aria-describedby="first-name-error">
-                <p id="first-name-error" class="error-text">This field is required</p>
+                
+
+                <div class="form-row">
+                    <!-- first name -->
+                    <div class="form-group">
+                        <label for="first-name">First Name <span class="required-star"> *</span></label>
+                        <input type="text" id="first-name" name="first-name" required autocomplete="first-name" aria-invalid="true" aria-describedby="first-name-error">
+                        <p id="first-name-error" class="error-text">This field is required</p>
+                    </div>
+
+                    <!-- last name -->
+                    <div class="form-group">
+                        <label for="laset-name">Last Name <span class="required-star"> *</span></label>
+                        <input type="text" id="last-name" name="last-name" required autocomplete="last-name" aria-invalid="true" aria-describedby="last-name-error">
+                        <p id="last-name-error" class="error-text">This field is required</p>
+                    </div>
+                </div>
+                
 
 
             </fieldset>
