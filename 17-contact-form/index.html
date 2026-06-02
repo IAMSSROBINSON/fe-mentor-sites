@@ -15,7 +15,25 @@
 </head>
 <body>
 
-    <h1>Hello World!</h1>
+    <main class="card">
+        <h1 class="title">Contact Us</h1>
+
+        <form id="contact-us-form" method="#" action="#">
+            
+            <fieldset class="container person-details-container">
+                <legend class="sr-only">Personal Details</legend>
+
+                <!-- first name -->
+                <label for="first-name">First Name <span class="require-star"> *</span></label>
+                <input type="text" id="first-name" name="first-name" required autocomplete="first-name" aria-invalid="true" aria-describedby="first-name-error">
+                <p id="first-name-error" class="error-text">This field is required</p>
+
+
+            </fieldset>
+
+            <button type="submit" id="submit-button" class="submit-button">Submit</button>
+        </form>
+    </main>
     <script src="./main.js"></script>
 </body>
 </html>
