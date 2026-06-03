@@ -135,7 +135,7 @@ input:not([type=radio]), textarea, .radio-group {
     margin-block: var(--spacing-100);
 }
 
-input[type=text], input[type=email], button, .radio-group {
+input[type=text], input[type=email], button, .radio-group, .message-area {
     width: 100%;
     border-radius: var(--br-s);
 }
@@ -178,6 +178,13 @@ input[type=radio] {
     height: 1.2188rem; /* 19.5px; */
 }
 
+.message-area {
+    resize: none;
+    font-size: var(--fs-200);
+    line-height: var(--lh-l);
+    height: 240px;
+}
+
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) { 
@@ -205,5 +212,8 @@ input[type=radio] {
     display: flex !important;
   }
 
+  .message-area {
+    height: initial;
+  }
 
 }
