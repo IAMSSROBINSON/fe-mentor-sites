@@ -20,10 +20,8 @@
 
         <form id="contact-us-form" method="#" action="#">
 
-            <fieldset class="container person-details-container">
+            <fieldset class="container person-details-container ">
                 <legend class="sr-only">Personal Details</legend>
-
-                
 
                 <div class="form-row">
                     <!-- first name -->
@@ -34,7 +32,7 @@
                     </div>
 
                     <!-- last name -->
-                    <div class="form-group">
+                    <div class="form-group ln field">
                         <label for="last-name">Last Name <span class="required-star"> *</span></label>
                         <input type="text" id="last-name" name="last-name" required autocomplete="family-name" aria-invalid="true" aria-describedby="last-name-error">
                         <p id="last-name-error" class="error-text">This field is required</p>
@@ -43,7 +41,7 @@
         
             </fieldset>
 
-            <fieldset>
+            <fieldset class="field">
                 <legend class="sr-only">Email Address</legend>
 
                 <div class="form-row">
@@ -55,7 +53,7 @@
                 </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="field">
                 <legend class="sr-only">Select the type of query</legend>
                 <label for="radios">Query Type <span class="required-star">*</span></label>
                 <div class="form-row radio-row">
@@ -77,7 +75,7 @@
                 </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset class="field">
                 <legend class="sr-only">Type a message</legend>
 
                 <div class="form-row">
@@ -88,6 +86,20 @@
                     </div>
                 </div>
 
+            </fieldset>
+
+            <fieldset class="field">
+                <legend class="sr-only">Check the box to consent to being contacted by the team</legend>
+                <div class="form-row">
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consent" name="consent" checked aria-describedby="checbox-error">
+                            <label for="content">I consent to being contacted by the team<span class="required-star">*</span></label>
+                        </div>
+                        <p id="checbox-error" class="error-text">To submit this form, please consent to being contacted</p>
+                    </div>
+                    
+                </div>
             </fieldset>
 
             <button type="submit" id="submit-button" class="submit-button">Submit</button>
