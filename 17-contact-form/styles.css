@@ -126,22 +126,22 @@ fieldset {
 }
 
 label {
-    display: block;
+    /* display: block; */
 }
 
-input, textarea {
+input:not([type=radio]), textarea, .radio-group {
     padding: var(--spacing-150) var(--spacing-300);
     border: 1px solid var(--clr-grey-500);
     margin-block: var(--spacing-100);
 }
 
-input, button {
+input[type=text], input[type=email], button, .radio-group {
     width: 100%;
     border-radius: var(--br-s);
 }
 
 button {
-    border: none;
+     border: none;        
      padding: var(--spacing-200);
      background-color: var(--clr-green-600);
      color: var(--clr-white);
@@ -157,6 +157,25 @@ button {
 
 input[type=text]:invalid {
     /* border: 1px solid var(--clr-red); */
+}
+
+/* query type */
+.radio-group {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border: 1px solid var(--clr-grey-500);
+    /* width: fit-content; */
+    gap: var(--spacing-150);
+    font-size: var(--fs-200);
+    line-height: var(--lh-l);
+}
+
+input[type=radio] {
+   
+    accent-color: var(--clr-green-600);
+    width: 1.2188rem; /* 19.5px; */
+    height: 1.2188rem; /* 19.5px; */
 }
 
 
@@ -180,6 +199,10 @@ input[type=text]:invalid {
 
   .form-group {
     width: 100%;
+  }
+
+  .radio-row {
+    display: flex !important;
   }
 
 
