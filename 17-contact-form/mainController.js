@@ -1,4 +1,23 @@
-import { mainViewInit } from "./mainView.js";
+import { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio } from "./mainView.js";
+
+// states
+const fieldValues = {
+    "first-name": "",
+    "last-name": "",
+    email: "",
+    "query-type": "",
+    message: "",
+    consent: ""
+}
+
+const fieldRules = {
+    "first-name": [required],
+    "last-name": [required],
+    email: [required],
+    "query-type": [required],
+    message: [required],
+    consent: [required]
+}
 
 // functions
 function mainControllerInit () {
@@ -14,19 +33,86 @@ function mainControllerInit () {
     form.addEventListener("submit", handleSubmit, true);
 }
 
+function validateField (value, rules) {
+    for (const rule of rules) {
+        const error = rule(value);
+        if (error) return error;
+    }
+    return null;
+}
+
+function updateValue(field, value) {
+    fieldValues[field] = value;
+    console.log("fieldValues:", fieldValues);
+}
+
+function getCollection (name) {
+    return Array.from(document.querySelectorAll(`input[type="${name}"]`));
+}
+
+// rule functions
+function required (value) {
+    return typeof value !== "string" || value.trim() === "" ? "This field is required" : null;
+}
+
+function format (value) {
+    return !value.includes('@') || !value.includes('.') ? "Please enter a valid email address" : null;
+}
+
 
 // handlers
 function handleBlur (e) {
-    console.log("ThunderCats Are Go!");
     const target = e.target;
-    if (target.id === 'submit-button') return;
+    if (target?.id === 'submit-button' || !target) return;
+    const name = target.name;
+    const value = target.value;
+    const type = target?.type;
+        
+    console.log("target:", target);
+    console.log("name:", name);
+    console.log("value:", value);
 
-    
+    if (type === 'radio') {
+        handleRadio(name, value)
+        return;
+    }
+
+
+    const error = validateField(value, fieldRules[name]);
+    if (error) {
+        console.log("render invalid in ui");
+        renderInvalid(name, error);
+    } else {
+        console.log("render valid in ui");
+        renderValid(name);
+        updateValue(name, value);
+        console.log("fieldValues:", fieldValues);
+    }
+
+}
+
+function handleRadio (name, value) {
+    console.log("handleRadio");
+    const radios = Array.from(document.querySelectorAll(`input[name="${name}"]`));
+    const hasChecked = radios.filter((radio) => radio.checked);
+    if (hasChecked.length === 0) {
+        const error = validateField("", fieldRules[name]);
+        renderInvalid(name, error);
+        updateValue(name, "");
+
+        return;
+    }
+
+    renderValidRadio(name, value, radios);
+    updateValue(name, value);
+
+    console.log("handleRadio radios hasChecked", hasChecked);
 
 }
 
 function handleSubmit (e) {
     e.preventDefault();
+    console.log("Form submitted, preventDefault");
 }
 
 
