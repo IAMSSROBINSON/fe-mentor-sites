@@ -216,6 +216,10 @@ input[type=checkbox] {
     line-height: var(--lh-l);
 }
 
+.error-text {
+    visibility: hidden;
+}
+
 /* MEDIA QUERIES */
 @media screen and (min-width: 768px) { 
 

@@ -26,15 +26,15 @@
                 <div class="form-row">
                     <!-- first name -->
                     <div class="form-group">
-                        <label for="first-name">First Name <span class="required-star"> *</span></label>
+                        <label for="first-name">First Name<span class="required-star">*</span></label>
                         <input type="text" id="first-name" name="first-name" required autocomplete="given-name" aria-invalid="true" aria-describedby="first-name-error">
                         <p id="first-name-error" class="error-text">This field is required</p>
                     </div>
 
                     <!-- last name -->
                     <div class="form-group ln field">
-                        <label for="last-name">Last Name <span class="required-star"> *</span></label>
-                        <input type="text" id="last-name" name="last-name" required autocomplete="family-name" aria-invalid="true" aria-describedby="last-name-error">
+                        <label for="last-name">Last Name <span class="required-star">*</span></label>
+                        <input type="text" id="last-name" name="last-name" required autocomplete="family-name" aria-describedby="last-name-error">
                         <p id="last-name-error" class="error-text">This field is required</p>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">Email Address<span class="required-star">*</span></label>
-                        <input type="email" id="email" name="email" required aria-invalid="true" aria-describedby="email-error">
+                        <input type="email" id="email" name="email" required aria-describedby="email-error">
                         <p id="email-error" class="error-text">Please enter a valid email address</p>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                             <input type="radio" name="query-type" id="general-enquiry" value="general-enquiry" aria-describedby="radio-error-1" required>
                             <label for="general-enquiry">General Enquiry</label>
                         </div>
-                           <p id="radio-error-1" class="error-text">Please select a query type</p>
+                           <p id="general-enquiry-error" class="error-text">Please select a query type</p>
                     </div>
                  
                     <div class="form-group ln field">
@@ -70,7 +70,7 @@
                             <input type="radio" name="query-type" id="support-request" value="support-request" aria-describedby="radio-error-2">
                         <label for="support-request">Support Request</label>
                         </div>
-                        <p id="radio-error-2" class="error-text">Please select a query type</p>
+                        <p id="general-enquiry-error-2" class="error-text">Please select a query type</p>
                     </div>
                 </div>
             </fieldset>
@@ -93,10 +93,10 @@
                 <div class="form-row">
                     <div class="form-group">
                         <div class="checkbox-group">
-                            <input type="checkbox" id="consent" name="consent" checked aria-describedby="checbox-error">
+                            <input type="checkbox" id="consent" name="consent" aria-describedby="checbox-error">
                             <label for="content">I consent to being contacted by the team<span class="required-star">*</span></label>
                         </div>
-                        <p id="checbox-error" class="error-text">To submit this form, please consent to being contacted</p>
+                        <p id="consent-error" class="error-text">To submit this form, please consent to being contacted</p>
                     </div>
                     
                 </div>
