@@ -7,29 +7,24 @@ function renderInvalid (id, error) {
     const element = document.getElementById(id);
     const errorEl = document.getElementById(`${id}-error`);
     errorEl.style.visibility = "visible";
+    console.log("renderInvalidTExtContent:", errorEl.textContent);
+    console.log("renderInvalidTExtContentError:", error);
 
-    if (id === "query-type" || id === "content") {
+    if (id === 'email') {
+        errorEl.textContent = error;
+    }
+
+    if (id === "query-type" || id === "consent") {
         return;
     }
 
-    element.style.outline = "1px solid red";
+    element.style.border = "1px solid #D73C3C";
     
 }
 
 function renderValid (id) {
-    const element = document.getElementById(id);
-    const errorEl = document.getElementById(`${id}-error`);
-
-    if (id === "query-type") {
-        console.log("element:", element);
-         parent.style.outline = "1px solid green";
-        errorEl.style.visibility = "hidden";
-        return;
-    }
-
-    errorEl.style.visibility = "hidden";
-    element.style.outline = "1px solid green";
-
+    removeErrorText(id);
+    document.getElementById(id).style.outline = "1px solid #0C7D69";
 }
 
 function removeValueAttr (id) {
@@ -45,8 +40,16 @@ function renderValidRadio (name, value, radios) {
 
     const parent = checkedRadio.closest('.radio-group');
     parent.style.border = "1px solid #0C7D69";
-    const errorEl = document.getElementById(`${name}-error`);
+    removeErrorText(name);
+}
+
+function renderValidConsent (name) {
+    removeErrorText(name);
+}
+
+function removeErrorText (name) {
+     const errorEl = document.getElementById(`${name}-error`);
     errorEl.style.visibility = "hidden";
 }
 
-export { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio };
+export { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio, renderValidConsent };

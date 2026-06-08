@@ -1,4 +1,4 @@
-import { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio } from "./mainView.js";
+import { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio, renderValidConsent } from "./mainView.js";
 
 // states
 const fieldValues = {
@@ -13,7 +13,7 @@ const fieldValues = {
 const fieldRules = {
     "first-name": [required],
     "last-name": [required],
-    email: [required],
+    email: [required, format],
     "query-type": [required],
     message: [required],
     consent: [required]
@@ -78,6 +78,12 @@ function handleBlur (e) {
     }
 
 
+    if (type === 'checkbox') {
+        handleCheckbox(target, name)
+        return;
+    }
+
+
     const error = validateField(value, fieldRules[name]);
     if (error) {
         console.log("render invalid in ui");
@@ -89,6 +95,16 @@ function handleBlur (e) {
         console.log("fieldValues:", fieldValues);
     }
 
+}
+
+function handleCheckbox (target, name) {
+    if (target.checked) {
+        renderValidConsent(name);
+        updateValue(name, true);
+    } else {
+        renderInvalid(name);
+        updateValue(name, "");
+    }
 }
 
 function handleRadio (name, value) {
