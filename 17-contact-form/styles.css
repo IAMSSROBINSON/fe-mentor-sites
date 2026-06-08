@@ -134,6 +134,10 @@ label {
     /* display: block; */
 }
 
+input, textarea, button {
+    cursor: pointer;
+}
+
 input:not([type=radio]), textarea, .radio-group {
     padding: var(--spacing-150) var(--spacing-300);
     border: 1px solid var(--clr-grey-500);
