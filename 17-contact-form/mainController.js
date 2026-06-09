@@ -41,6 +41,23 @@ function validateField (value, rules) {
     return null;
 }
 
+function validateForm (fieldValues, fieldRules) {
+    const errors = {
+
+    }
+
+    Object.keys(fieldValues).forEach((field) => {
+        console.log("FIELD:", field);
+        const value = fieldValues[field];
+        console.log("VALUE:", value); 
+        const error = validateField(value, fieldRules[field]);
+        if (error) {
+            errors[field] = error;
+        }
+    });
+    return errors;
+}
+
 function updateValue(field, value) {
     fieldValues[field] = value;
     console.log("fieldValues:", fieldValues);
@@ -64,13 +81,14 @@ function format (value) {
 function handleBlur (e) {
     const target = e.target;
     if (target?.id === 'submit-button' || !target) return;
-    const name = target.name;
-    const value = target.value;
+    const name = target?.name;
+    const value = target?.value;
     const type = target?.type;
         
     console.log("target:", target);
     console.log("name:", name);
     console.log("value:", value);
+    console.log("type:", type);
 
     if (type === 'radio') {
         handleRadio(name, value)
@@ -79,7 +97,7 @@ function handleBlur (e) {
 
 
     if (type === 'checkbox') {
-        handleCheckbox(target, name)
+        handleCheckbox(target, name);
         return;
     }
 
@@ -98,12 +116,16 @@ function handleBlur (e) {
 }
 
 function handleCheckbox (target, name) {
+    console.log("handleCheckBox:", target, name, target.checked);
     if (target.checked) {
         renderValidConsent(name);
-        updateValue(name, true);
+        updateValue(name, "true");
+        console.log("values:", fieldValues);
     } else {
         renderInvalid(name);
         updateValue(name, "");
+        console.log("values:", fieldValues);
+
     }
 }
 
@@ -129,6 +151,21 @@ function handleRadio (name, value) {
 function handleSubmit (e) {
     e.preventDefault();
     console.log("Form submitted, preventDefault");
+    console.log("fieldValues:", fieldValues);
+    const errors =  validateForm(fieldValues, fieldRules);
+    console.log("handleSubmit errors", errors);
+
+    if (Object.values(errors).every(value => !value)) {
+        console.log("form successful, submit");
+        // form is complete, submit
+        e.target.submit();
+        return;
+    }
+
+    const fields = Object.keys(errors);
+    fields.forEach((field) => {
+        renderInvalid(field, errors[field]);
+    });
 }
 
 
