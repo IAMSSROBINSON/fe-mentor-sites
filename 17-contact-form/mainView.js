@@ -1,55 +1,36 @@
-
 function mainViewInit () {
-    console.log("mainViewInit")
+    console.log("mainViewInit");
 }
 
-function renderInvalid (id, error) {
-    const element = document.getElementById(id);
-    const errorEl = document.getElementById(`${id}-error`);
+function renderInvalid(fieldName, error) {
+    const errorEl = document.getElementById(`${fieldName}-error`);
+    errorEl.textContent = error;
     errorEl.style.visibility = "visible";
-    console.log("renderInvalidTExtContent:", errorEl.textContent);
-    console.log("renderInvalidTExtContentError:", error);
+    console.log("renderInvalid:", fieldName);
 
-    if (id === 'email') {
-        errorEl.textContent = error;
-    }
+    if (fieldName === "query-type" || fieldName === "consent") return;
 
-    if (id === "query-type" || id === "consent") {
-        return;
-    }
+        const el = document.querySelector(`input[name="${fieldName}"]`) || document.getElementById(fieldName);
+        console.log("renderInvalid fieldName:", fieldName);
+        console.log("renderInvalid fieldName el:", el);
 
-    element.style.border = "1px solid #D73C3C";
-    
+        el.classList?.remove("renderValid");
+        el.classList?.add("renderInvalid");
+        console.log('el:', el);
 }
 
-function renderValid (id) {
-    removeErrorText(id);
-    document.getElementById(id).style.outline = "1px solid #0C7D69";
-}
-
-function removeValueAttr (id) {
-     const element = document.getElementById(id);
-     element.value === "";
-}
-
-function renderValidRadio (name, value, radios) {
-
-    radios.forEach((radio) => radio.closest('.radio-group').style.border = "1px solid #86A2A5");
-
-    const checkedRadio = document.getElementById(value);
-
-    const parent = checkedRadio.closest('.radio-group');
-    parent.style.border = "1px solid #0C7D69";
-    removeErrorText(name);
-}
-
-function renderValidConsent (name) {
-    removeErrorText(name);
-}
-
-function removeErrorText (name) {
-     const errorEl = document.getElementById(`${name}-error`);
+function renderValid (fieldName) {
+    const errorEl = document.getElementById(`${fieldName}-error`);
     errorEl.style.visibility = "hidden";
+    console.log("renderValid:", fieldName);
+
+      if (fieldName === 'query-type' || fieldName === 'consent') return;
+
+        const el = document.getElementById(fieldName);
+        el.classList?.remove("renderInvalid");
+        el.classList?.add("renderValid");
+        console.log('el:', el);
+
 }
 
-export { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio, renderValidConsent };
+export { mainViewInit, renderInvalid, renderValid };

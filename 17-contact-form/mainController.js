@@ -1,44 +1,76 @@
-import { mainViewInit, renderInvalid, renderValid, removeValueAttr, renderValidRadio, renderValidConsent } from "./mainView.js";
+// imports
+import { mainViewInit, renderInvalid, renderValid } from './mainView.js';
 
 // states
 const fieldValues = {
     "first-name": "",
     "last-name": "",
-    email: "",
+    "email": "",
     "query-type": "",
-    message: "",
-    consent: ""
+    "message": "",
+    "consent": ""
 }
 
 const fieldRules = {
     "first-name": [required],
     "last-name": [required],
-    email: [required, format],
-    "query-type": [required],
-    message: [required],
-    consent: [required]
+    "email": [required, format],
+    "query-type": [queryTypeRequired],
+    "message": [required],
+    "consent": [consentRequired]
 }
 
 // functions
 function mainControllerInit () {
-    console.log("mainControllerInit")
+    console.log("mainControllerInit");
     mainViewInit();
 
-    // get elements
+    // elements
     const form = document.getElementById("contact-us-form");
-    console.log("form :", form);
-    
-    // event listeners
-    form.addEventListener("blur", handleBlur, true);
-    form.addEventListener("submit", handleSubmit, true);
+
+    // events
+    form.addEventListener('blur', handleBlur, true);
+    form.addEventListener('submit', handleSubmit);
 }
 
+function updateFieldValues (fieldName, value) {
+    // if field is query-type or consent make sure one of them is checked before updating value
+
+    if (fieldName === 'query-type' || fieldName === 'consent') {
+        const checkedValue = hasCheckedValue(fieldName);
+        checkedValue ? fieldValues[fieldName] = checkedValue : fieldValues[fieldName] = "";
+        console.log("fieldValuesUpdatedAfter:", fieldValues);
+        return;
+    }
+
+    console.log("fieldValuesUpdatedBefore:", fieldValues);
+    fieldValues[fieldName] = value;
+    console.log("fieldValuesUpdatedAfter:", fieldValues);
+}
+
+function getFieldNameValue (field) {
+     if (field.name === 'query-type' || field.name === 'consent') {
+        const checkedValue = hasCheckedValue(field.name);
+        return checkedValue ? checkedValue : null;
+    }
+    return field.value;
+}
+
+function hasCheckedValue (fieldName) {
+    // get all elements with inputs name
+    const collection = Array.from(document.querySelectorAll(`input[name="${fieldName}"]`));
+
+    const checkedEl = collection.filter((element => element.checked));
+    return checkedEl.length !== 0 ? checkedEl[0].value : null; 
+}
+
+// validation functions
 function validateField (value, rules) {
+    console.log("validateField value:", value);
     for (const rule of rules) {
         const error = rule(value);
         if (error) return error;
     }
-    return null;
 }
 
 function validateForm (fieldValues, fieldRules) {
@@ -46,28 +78,27 @@ function validateForm (fieldValues, fieldRules) {
 
     }
 
-    Object.keys(fieldValues).forEach((field) => {
-        console.log("FIELD:", field);
-        const value = fieldValues[field];
-        console.log("VALUE:", value); 
-        const error = validateField(value, fieldRules[field]);
+    const fields = Object.keys(fieldValues);
+    const values = Object.values(fieldValues);
+
+    console.log("validateForm fields:", fields);
+    console.log("validateForm values:", values);
+
+    for (const field of fields) {
+        const error = validateField(fieldValues[field], fieldRules[field]);
         if (error) {
-            errors[field] = error;
+            errors[field] = errors[field] ? error[field] : error;
+            renderInvalid(field, error);
+        } else {
+            errors[field] = "";
+            renderValid(field);
         }
-    });
+    }
+    console.log("validateForm errors:", errors);
     return errors;
 }
 
-function updateValue(field, value) {
-    fieldValues[field] = value;
-    console.log("fieldValues:", fieldValues);
-}
 
-function getCollection (name) {
-    return Array.from(document.querySelectorAll(`input[type="${name}"]`));
-}
-
-// rule functions
 function required (value) {
     return typeof value !== "string" || value.trim() === "" ? "This field is required" : null;
 }
@@ -76,97 +107,60 @@ function format (value) {
     return !value.includes('@') || !value.includes('.') ? "Please enter a valid email address" : null;
 }
 
+function queryTypeRequired (value) {
+    return typeof value !== "string" || value.trim() === "" ? "Please select a query type" : null;
+}
+
+function consentRequired (value) {
+    return typeof value !== "string" || value.trim() === "" ? "To submit this form, please consent to being contacted" : null;
+}
+
+
 
 // handlers
 function handleBlur (e) {
+    console.log("handleBlur clicked");
+    if (e.target.id === 'submit-button') return;
+
     const target = e.target;
-    if (target?.id === 'submit-button' || !target) return;
-    const name = target?.name;
-    const value = target?.value;
-    const type = target?.type;
-        
-    console.log("target:", target);
-    console.log("name:", name);
-    console.log("value:", value);
-    console.log("type:", type);
+    const fieldName = e.target.name;
+    const value = getFieldNameValue(target);
+    const id = e.target.id;
+    console.log("blur target:", target);
+    console.log("blur fieldName:", fieldName);
+    console.log("blur value:", value);
+    console.log("blur id:", id);
 
-    if (type === 'radio') {
-        handleRadio(name, value)
-        return;
-    }
-
-
-    if (type === 'checkbox') {
-        handleCheckbox(target, name);
-        return;
-    }
-
-
-    const error = validateField(value, fieldRules[name]);
+    // validate field value
+    const error = validateField(value, fieldRules[fieldName]);
     if (error) {
-        console.log("render invalid in ui");
-        renderInvalid(name, error);
-    } else {
-        console.log("render valid in ui");
-        renderValid(name);
-        updateValue(name, value);
-        console.log("fieldValues:", fieldValues);
-    }
-
-}
-
-function handleCheckbox (target, name) {
-    console.log("handleCheckBox:", target, name, target.checked);
-    if (target.checked) {
-        renderValidConsent(name);
-        updateValue(name, "true");
-        console.log("values:", fieldValues);
-    } else {
-        renderInvalid(name);
-        updateValue(name, "");
-        console.log("values:", fieldValues);
-
-    }
-}
-
-function handleRadio (name, value) {
-    console.log("handleRadio");
-    const radios = Array.from(document.querySelectorAll(`input[name="${name}"]`));
-    const hasChecked = radios.filter((radio) => radio.checked);
-    if (hasChecked.length === 0) {
-        const error = validateField("", fieldRules[name]);
-        renderInvalid(name, error);
-        updateValue(name, "");
-
+        // renderError and update field values with ""
+        updateFieldValues(fieldName, "");
+        renderInvalid(fieldName, error);
         return;
+    } else {
+        // renderValid and update field values with value
+        updateFieldValues(fieldName, value);
+        renderValid(fieldName);
     }
 
-    renderValidRadio(name, value, radios);
-    updateValue(name, value);
-
-    console.log("handleRadio radios hasChecked", hasChecked);
 
 }
 
 function handleSubmit (e) {
     e.preventDefault();
-    console.log("Form submitted, preventDefault");
-    console.log("fieldValues:", fieldValues);
-    const errors =  validateForm(fieldValues, fieldRules);
-    console.log("handleSubmit errors", errors);
+    console.log("handleSubmit clicked");
+    console.log("currentFieldValues:", fieldValues);
 
-    if (Object.values(errors).every(value => !value)) {
-        console.log("form successful, submit");
-        // form is complete, submit
-        e.target.submit();
-        return;
+    const errorObj = validateForm(fieldValues, fieldRules);
+    if (Object.values(errorObj).every(err => !err)) {
+        // form success, submit form
+        console.log("handleSubmit form success submit form");
+    } else {
+        // form unsuccessful, do not submit form
+        console.log("handleSubmit form unsuccessful do not submit form");
     }
-
-    const fields = Object.keys(errors);
-    fields.forEach((field) => {
-        renderInvalid(field, errors[field]);
-    });
+    console.log("handleSubmit fieldValues:", fieldValues);
 }
-
 
 export { mainControllerInit };

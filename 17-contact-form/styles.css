@@ -165,9 +165,6 @@ button {
     /* visibility: hidden; */
 }
 
-input[type=text]:invalid {
-    /* border: 1px solid var(--clr-red); */
-}
 
 /* query type */
 .radio-group {
@@ -222,6 +219,14 @@ input[type=checkbox] {
 
 .error-text {
     visibility: hidden;
+}
+
+.renderInvalid {
+    border: 1px solid var(--clr-red) !important;
+}
+
+.renderValid {
+    border: 1px solid var(--clr-green-600) !important;
 }
 
 /* MEDIA QUERIES */
