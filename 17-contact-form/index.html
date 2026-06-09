@@ -59,7 +59,7 @@
                 <div class="form-row radio-row">
                     <div class="form-group">
                         <div class="radio-group">
-                            <input type="radio" name="query-type" id="general-enquiry" value="general-enquiry" aria-describedby="radio-error-1" required>
+                            <input type="radio" name="query-type" id="general-enquiry" value="general-enquiry" aria-describedby="query-type-error" required>
                             <label for="general-enquiry">General Enquiry</label>
                         </div>
                            <p id="query-type-error" class="error-text">Please select a query type</p>
@@ -67,10 +67,10 @@
                  
                     <div class="form-group ln field">
                         <div class="radio-group">
-                            <input type="radio" name="query-type" id="support-request" value="support-request" aria-describedby="radio-error-2">
+                            <input type="radio" name="query-type" id="support-request" value="support-request" aria-describedby="query-type-error">
                         <label for="support-request">Support Request</label>
                         </div>
-                        <p id="general-enquiry-error-2" class="error-text">null</p>
+                        <p class="error-text">null</p>
                     </div>
                 </div>
             </fieldset>
@@ -81,7 +81,7 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="message">Message<span class="required-star">*</span></label>
-                        <textarea name="message" id="message" class="message-area" rows="3" aria-described-by="message-error" required></textarea>
+                        <textarea name="message" id="message" class="message-area" rows="3" aria-describedby="message-error" required></textarea>
                         <p id="message-error" class="error-text">This field is required</p>
                     </div>
                 </div>
