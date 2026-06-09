@@ -215,6 +215,7 @@ input[type=checkbox] {
     color: var(--clr-green-600);
     font-size: var(--fs-100);
     line-height: var(--lh-l);
+    margin-left: var(--spacing-100);
 }
 
 .error-text {
