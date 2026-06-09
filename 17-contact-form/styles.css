@@ -88,7 +88,7 @@ body {
     font-family: var(--base-font);
     background-color: var(--clr-green-200);
     padding: var(--body-p);
-    color: var(--grey-900);
+    color: var(--clr-grey-900);
 }
 
 /* card */
@@ -162,7 +162,6 @@ button {
 
 .error-text {
     color: var(--clr-red);
-    /* visibility: hidden; */
 }
 
 
@@ -219,7 +218,7 @@ input[type=checkbox] {
 }
 
 .error-text {
-    visibility: hidden;
+    opacity: 0;
 }
 
 .renderInvalid {

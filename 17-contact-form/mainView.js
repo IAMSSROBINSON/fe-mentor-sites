@@ -6,7 +6,8 @@ function renderInvalid(fieldName, error) {
     console.log("renderInvalid fieldname error:", fieldName, error);
     const errorEl = document.getElementById(`${fieldName}-error`);
     errorEl.textContent = error;
-    errorEl.style.visibility = "visible";
+    // errorEl.style.visibility = "visible";
+    errorEl.style.opacity = "100%";
     console.log("renderInvalid:", fieldName);
 
     if (fieldName === "query-type" || fieldName === "consent") return;
@@ -22,7 +23,8 @@ function renderInvalid(fieldName, error) {
 
 function renderValid (fieldName) {
     const errorEl = document.getElementById(`${fieldName}-error`);
-    errorEl.style.visibility = "hidden";
+    // errorEl.style.visibility = "hidden";
+    errorEl.style.opacity = "0";
     console.log("renderValid:", fieldName);
 
       if (fieldName === 'query-type' || fieldName === 'consent') return;
