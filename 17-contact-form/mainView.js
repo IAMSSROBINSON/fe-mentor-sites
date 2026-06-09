@@ -3,6 +3,7 @@ function mainViewInit () {
 }
 
 function renderInvalid(fieldName, error) {
+    console.log("renderInvalid fieldname error:", fieldName, error);
     const errorEl = document.getElementById(`${fieldName}-error`);
     errorEl.textContent = error;
     errorEl.style.visibility = "visible";

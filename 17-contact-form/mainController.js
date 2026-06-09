@@ -67,9 +67,13 @@ function hasCheckedValue (fieldName) {
 // validation functions
 function validateField (value, rules) {
     console.log("validateField value:", value);
+    console.log("validateField rules:", rules);
     for (const rule of rules) {
         const error = rule(value);
-        if (error) return error;
+        if (error) {
+            console.log("validateField error:", error);
+            return error;
+        };
     }
 }
 
@@ -87,7 +91,7 @@ function validateForm (fieldValues, fieldRules) {
     for (const field of fields) {
         const error = validateField(fieldValues[field], fieldRules[field]);
         if (error) {
-            errors[field] = errors[field] ? error[field] : error;
+            errors[field] = error;
             renderInvalid(field, error);
         } else {
             errors[field] = "";
@@ -135,7 +139,7 @@ function handleBlur (e) {
     const error = validateField(value, fieldRules[fieldName]);
     if (error) {
         // renderError and update field values with ""
-        updateFieldValues(fieldName, "");
+        updateFieldValues(fieldName, value);
         renderInvalid(fieldName, error);
         return;
     } else {
