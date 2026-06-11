@@ -16,8 +16,14 @@ fe-mentor contact-form challenge submission
 - W3C
 - WCAG
 - WHATWG (Web Hypertext Application Technology Working Group)
+- Form Validation
 
 ## What I learned
+How to create and validate accessible forms
+- aria-live
+- aria-describedby
+- aria-invalid
+- aria-atomic
 
 
 ## View live site here 

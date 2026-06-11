@@ -20,7 +20,6 @@ function renderValid (fieldName) {
     errorEl.style.opacity = "0";
     removeAriaInvalidToAllNames(fieldName);
 
-
     if (fieldName === 'query-type' || fieldName === 'consent') return;
 
     const el = document.getElementById(fieldName);
