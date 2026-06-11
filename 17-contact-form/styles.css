@@ -142,6 +142,9 @@ input, textarea, button {
 input:not([type=radio]), textarea, .radio-group {
     padding: var(--spacing-150) var(--spacing-300);
     border: 1px solid var(--clr-grey-500);
+}
+
+input:not([type=radio]), textarea, .radio-group, .checkbox-group {
     margin-bottom: var(--spacing-100);
 }
 
@@ -227,7 +230,6 @@ input[type=checkbox] {
 
 .error-text {
     opacity: 0;
-
 }
 
 .renderInvalid {
@@ -252,8 +254,8 @@ input[type=checkbox] {
   }
   .form-row {
     display: flex;
-    align-items: center;
-    justify-content: start;
+    align-items: flex-start;
+    /* justify-content: start; */
     gap: var(--spacing-300);
   }
 
