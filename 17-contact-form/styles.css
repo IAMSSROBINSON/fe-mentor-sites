@@ -130,8 +130,8 @@ fieldset {
 
 
 .label-title {
-    display: block;
-    margin-bottom: var(--spacing-100);
+    /* display: block; */
+    /* margin-bottom: var(--spacing-100) !important */
 }
 
 input, textarea, button {
@@ -141,6 +141,7 @@ input, textarea, button {
 input:not([type=radio]), textarea, .radio-group {
     padding: var(--spacing-150) var(--spacing-300);
     border: 1px solid var(--clr-grey-500);
+    /* margin-block: var(--spacing-100); */
 }
 
 input[type=text], input[type=email], button, .radio-group, .message-area {
@@ -161,6 +162,8 @@ button {
 
 .error-text {
     color: var(--clr-red);
+    /* height: 24px; */
+    /* margin-top: 8px; */
 }
 
 
@@ -237,6 +240,7 @@ input[type=checkbox] {
 
   :root {
     --body-p: var(--spacing-1600) var(--spacing-500);
+    --card-p: var(--spacing-500);
 
   }
   .card {
