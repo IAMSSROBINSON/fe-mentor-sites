@@ -125,13 +125,14 @@ fieldset {
 }
 
 .field {
-    margin-top: var(--spacing-300);
+    /* margin-top: var(--spacing-300); */
+    /* background-color: yellow; */
 }
 
 
 .label-title {
-    /* display: block; */
-    /* margin-bottom: var(--spacing-100) !important */
+    display: inline-block;
+    margin-bottom: var(--spacing-100);
 }
 
 input, textarea, button {
@@ -141,7 +142,7 @@ input, textarea, button {
 input:not([type=radio]), textarea, .radio-group {
     padding: var(--spacing-150) var(--spacing-300);
     border: 1px solid var(--clr-grey-500);
-    /* margin-block: var(--spacing-100); */
+    margin-bottom: var(--spacing-100);
 }
 
 input[type=text], input[type=email], button, .radio-group, .message-area {
@@ -162,7 +163,7 @@ button {
 
 .error-text {
     color: var(--clr-red);
-    /* height: 24px; */
+    height: var(--spacing-300);
     /* margin-top: 8px; */
 }
 
@@ -207,9 +208,14 @@ input[type=checkbox] {
 .checkbox-group {
     display: flex;
     align-items: center;
+    justify-content: start;
     gap: var(--spacing-200);
     font-size: var(--fs-100);
     line-height: var(--lh-l);
+}
+
+#consent {
+    margin-bottom: 0 !important;
 }
 
 .required-star {
@@ -229,10 +235,6 @@ input[type=checkbox] {
 
 .renderValid {
     border: 1px solid var(--clr-green-600) !important;
-}
-
-.placeholder {
-    visibility: hidden;
 }
 
 /* MEDIA QUERIES */
