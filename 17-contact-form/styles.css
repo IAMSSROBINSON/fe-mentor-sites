@@ -58,7 +58,7 @@
 }
 
 html {
-  scrollbar-gutter: stable;
+  /* scrollbar-gutter: stable; */
   scroll-behavior: smooth;
   height: 100%;
 }
@@ -255,6 +255,11 @@ input[type="checkbox"] {
 
 .renderValid {
   border: 1px solid var(--clr-green-600) !important;
+}
+
+/* form success */
+.form-success-container > h1 {
+    text-align: center;
 }
 
 /* MEDIA QUERIES */
