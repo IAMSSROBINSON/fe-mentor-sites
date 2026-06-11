@@ -125,7 +125,7 @@ fieldset {
 }
 
 .field {
-    /* margin-top: var(--spacing-300); */
+    margin-top: var(--spacing-300);
     /* background-color: yellow; */
 }
 
@@ -163,7 +163,7 @@ button {
 
 .error-text {
     color: var(--clr-red);
-    height: var(--spacing-300);
+    /* height: var(--spacing-300); */
     /* margin-top: 8px; */
 }
 
@@ -190,7 +190,7 @@ input[type=radio] {
     resize: none;
     font-size: var(--fs-200);
     line-height: var(--lh-l);
-    height: 240px;
+    height: calc(var(--spacing-500) * 6);
 }
 
 
@@ -227,6 +227,7 @@ input[type=checkbox] {
 
 .error-text {
     opacity: 0;
+
 }
 
 .renderInvalid {
