@@ -209,6 +209,10 @@ input[type="radio"] {
   height: 1.2188rem; /* 19.5px; */
 }
 
+.radio-group.success {
+  background-color: var(--clr-green-200);;
+}
+
 /* message */
 .message-area {
   resize: none;
