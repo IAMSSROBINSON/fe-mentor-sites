@@ -23,23 +23,23 @@ function renderValid(fieldName) {
   removeAriaInvalidToAllNames(fieldName);
 
   if (fieldName === "query-type") {
-    const radios = Array.from(document.querySelectorAll('input[type=radio]'));
+    const radios = Array.from(document.querySelectorAll("input[type=radio]"));
     radios.forEach((radio) => {
-        const radioGroup = radio.closest('.radio-group');
-        if (radio.checked) {
-            radioGroup.classList.add('success');
-        } else {
-            radioGroup.classList.remove('success');
-        }
-    })
-  }
-  else if (fieldName === "consent") {
+      const radioGroup = radio.closest(".radio-group");
+      if (radio.checked) {
+        radioGroup.classList.add("success");
+      } else {
+        radioGroup.classList.remove("success");
+      }
+    });
+    return;
+  } else if (fieldName === "consent") {
     return;
   }
 
   const el = document.getElementById(fieldName);
-  el.classList?.remove("renderInvalid");
-  el.classList?.add("renderValid");
+  el.classList.remove("renderInvalid");
+  el.classList.add("renderValid");
 }
 
 function setAriaInvalidToAllNames(fieldName) {
