@@ -277,7 +277,6 @@ input[type="checkbox"] {
   padding: var(--spacing-300);
   border-radius: var(--br-m);
   margin: 0 auto;
-  display: none;
 }
 
 .modal-header {
