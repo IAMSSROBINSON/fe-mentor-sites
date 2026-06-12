@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderInvalid, renderValid } from './mainView.js';
+import { mainViewInit, renderInvalid, renderValid, renderSuccess } from './mainView.js';
 
 // states
 const fieldValues = {
@@ -131,7 +131,7 @@ function handleSubmit (e) {
     const errorObj = validateForm(fieldValues, fieldRules);
     if (Object.values(errorObj).every(err => !err)) {
         console.log("handleSubmit form success submit form");
-        window.location.href = "./formSuccess.html";
+        renderSuccess();
     } else {
         console.log("handleSubmit form unsuccessful do not submit form");
     }
