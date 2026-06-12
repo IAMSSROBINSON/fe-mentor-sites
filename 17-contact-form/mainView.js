@@ -54,7 +54,7 @@ function removeAriaInvalidToAllNames(fieldName) {
 
 function renderSuccess() {
   const modalContainer = document.getElementById("modal-container");
-  modalContainer.hidden = "false";
+  modalContainer.removeAttribute('hidden');
   renderReadOnly();
 }
 
