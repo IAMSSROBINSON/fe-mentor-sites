@@ -1,7 +1,3 @@
-function mainViewInit() {
-  console.log("mainViewInit");
-}
-
 function renderInvalid(fieldName, error) {
   const errorEl = document.getElementById(`${fieldName}-error`);
   errorEl.textContent = error;
@@ -54,14 +50,13 @@ function removeAriaInvalidToAllNames(fieldName) {
 
 function renderSuccess() {
   const modalContainer = document.getElementById("modal-container");
-  modalContainer.removeAttribute('hidden');
+  modalContainer.removeAttribute("hidden");
   renderReadOnly();
 }
 
 function renderReadOnly() {
   Array.from(document.querySelectorAll(".read-only")).forEach((ele) => {
     ele.setAttribute("readonly", "");
-    console.log(ele);
   });
 
   Array.from(document.querySelectorAll("input[type=radio]")).forEach((radio) =>
@@ -73,4 +68,4 @@ function renderReadOnly() {
   document.getElementById("submit-button").setAttribute("disabled", "");
 }
 
-export { mainViewInit, renderInvalid, renderValid, renderSuccess };
+export { renderInvalid, renderValid, renderSuccess };

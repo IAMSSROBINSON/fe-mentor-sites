@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderInvalid, renderValid, renderSuccess } from './mainView.js';
+import { renderInvalid, renderValid, renderSuccess } from './mainView.js';
 
 // states
 const fieldValues = {
@@ -22,7 +22,6 @@ const fieldRules = {
 
 // functions
 function mainControllerInit () {
-    mainViewInit();
 
     // elements
     const form = document.getElementById("contact-us-form");
@@ -130,11 +129,9 @@ function handleSubmit (e) {
 
     const errorObj = validateForm(fieldValues, fieldRules);
     if (Object.values(errorObj).every(err => !err)) {
-        console.log("handleSubmit form success submit form");
         renderSuccess();
-    } else {
-        console.log("handleSubmit form unsuccessful do not submit form");
-    }
+    } 
+    return;
 }
 
 export { mainControllerInit };
