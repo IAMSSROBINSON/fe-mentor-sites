@@ -282,6 +282,7 @@ input[type="checkbox"] {
 .modal-header {
   display: flex;
   gap: var(--spacing-100);
+  align-items: center;
 }
 
 .success-icon {
