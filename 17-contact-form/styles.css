@@ -122,9 +122,9 @@ body {
 /* form */
 .sr-only {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  margin: -0.0625rem;
   overflow: hidden;
   white-space: nowrap;
   clip-path: inset(50%);
@@ -228,8 +228,8 @@ input[type="radio"] {
 
 input[type="checkbox"] {
   accent-color: var(--clr-green-600);
-  width: 19px;
-  height: 19px;
+  width: 1.1875rem; /* 19px */
+  height: 1.1875rem; /* 19px */
 }
 
 .checkbox-group {
@@ -273,7 +273,7 @@ input[type="checkbox"] {
   background-color: var(--clr-grey-900);
   color: var(--clr-white);
   width: calc(100% - var(--spacing-600));
-  max-width: 450px;
+  max-width: 28.125rem;
   padding: var(--spacing-300);
   border-radius: var(--br-m);
   margin: 0 auto;
@@ -286,8 +286,8 @@ input[type="checkbox"] {
 }
 
 .success-icon {
-  width: 20px;
-  height: 21px
+  width: 1.25rem;
+  height: 1.3125rem
 }
 
 .modal-title {
