@@ -101,6 +101,7 @@ body {
     font-family: var(--base-font);
     padding: var(--body-p);
     position: relative;
+    color: var(--clr-navy-600);
 }
 
 /* header */
@@ -126,6 +127,18 @@ body {
 
 .menu-container {
     display: none;
+}
+
+.menu-container a {
+    font-size: var(--fs-200);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-m);
+}
+
+.modal-menu {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-s);
 }
 
 .menu-list {
