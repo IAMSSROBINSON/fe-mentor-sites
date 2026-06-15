@@ -157,6 +157,7 @@ a {
     width: 100%;
     max-width: var(--menu-modal-w);
     padding: var(--menu-modal-p);
+    isolation: isolate;
 }
 
 .close-modal-menu-icon {
