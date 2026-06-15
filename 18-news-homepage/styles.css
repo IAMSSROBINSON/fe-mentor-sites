@@ -1,0 +1,93 @@
+:root {
+    /* TOKENS */
+
+    /* color */
+    --clr-white: #ffffff;
+    --clr-black: #000000;
+
+    --clr-grey-300: #C5C6CE;
+    --clr-grey-200: #D8D8D8;
+
+    --clr-navy-950: #00001A;
+    --clr-navy-600: #5E607A;
+
+    --clr-gold-400: #E9AA52;
+
+    --clr-red-500: #F15D51;
+
+
+    /* font */
+    --base-font: 'Inter', sans-serif;
+
+    --fs-700: 3.5rem; /* 56px */;
+    --fs-600: 2.5rem; /* 40px */;
+    --fs-500: 2rem; /* 32px */;
+    --fs-400: 1.25rem; /* 20px */;
+    --fs-300: 1.125rem; /* 18px */;
+    --fs-200: 0.9375rem; /* 15px */;
+    --fs-100: 0.875rem; /* 14px */;
+
+    --fw-extra-bold: 800;
+    --fw-bold: 700;
+    --fw-medium: 600;
+    --fw-regular: 400;
+
+    /* line height */
+    --lh-xxl: 3.5rem; /* 56px */
+    --lh-xl: 2.5rem; /* 40px */
+    --lh-l: 2rem; /* 32px */
+    --lh-m: 1.625rem; /* 26px */
+    --lh-s: 1.5rem; /* 24px */
+
+    /* letter spacing */
+    --ls-l: 0.2737rem; /* 4.38px */
+
+    /* spacing */
+    --spacing-600: 5.5rem; /* 88px */
+    --spacing-500: 4rem; /* 64px */
+    --spacing-400: 2.5rem; /* 40px */
+    --spacing-300: 2rem; /* 32px */
+    --spacing-200: 1.5rem; /* 24px */
+    --spacing-100: 0.5rem; /* 8px */
+
+    /* COMPONENT TOKENS */
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    scrollbar-gutter: steady;
+    scroll-behavior: smooth;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+img, svg, iframe, canvas, video {
+    display: block;
+    line-height: 0;
+    width: 100%;
+    object-fit: cover;
+}
+
+button, select, textarea, input {
+    font: inherit;
+    color: inherit;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--base-font);
+}
