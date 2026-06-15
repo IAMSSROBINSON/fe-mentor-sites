@@ -112,6 +112,7 @@ body {
 .menu-icon {
     width: 2.5rem; /* 40px */
     height: 1.0625rem; /* 17px */
+    cursor: pointer;
 }
 
 .menu-container {
