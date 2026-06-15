@@ -223,9 +223,6 @@ a {
         --menu-modal-w: 19.5rem /* 312 */
     }
 
-     .close-modal-menu-icon {
-        /* margin-right: var(--body-pr); */
-    }
 }
 
 /* desktop */
@@ -234,8 +231,8 @@ a {
         /* body */
         --body-p: 5.5625rem 10.25rem 7.875rem; /* 89px 164px 126px */
         /* header */
-        --icon-w: 4.0056rem; /* 64.09px */
-        --icon-h: 2.4937rem; /* 39.9px */
+        --logo-w: 4.0056rem; /* 64.09px */
+        --logo-h: 2.4937rem; /* 39.9px */
     }
 
     .menu-icon {
