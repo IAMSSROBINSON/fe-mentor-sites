@@ -51,8 +51,12 @@
     --spacing-100: 0.5rem; /* 8px */
 
     /* COMPONENT TOKENS */
+    --body-p: 28px 16px 80px;
+    --logo-w: 2.8112rem; /* 44.98px */
+    --logo-h: 1.75rem; /* 28px */
 }
 
+/* general */
 *,
 *::before,
 *::after {
@@ -90,4 +94,50 @@ button, select, textarea, input {
 body {
     min-height: 100vh;
     font-family: var(--base-font);
+    padding: var(--body-p);
 }
+
+/* header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-icon {
+    width: var(--logo-w);
+    height: var(--logo-h);
+}
+
+.menu-icon {
+    width: 2.5rem; /* 40px */
+    height: 1.0625rem; /* 17px */
+}
+
+.menu-container {
+    display: none;
+}
+
+
+/* MEDIA QUERIES */
+/* tablet */
+@media screen and (min-width: 768px) {
+    :root {
+        /* body */
+        --body-p: 1.75rem 5rem 5rem; /* 28px 80px 80px */
+    }
+}
+
+/* desktop */
+@media screen and (min-width: 1440px) {
+    :root {
+        /* body */
+        --body-p: 5.5625rem 10.25rem 7.875rem; /* 89px 164px 126px */
+        /* header */
+        --icon-w: 4.0056rem; /* 64.09px */
+        --icon-h: 2.4937rem; /* 39.9px */
+
+        
+    }
+}
+
