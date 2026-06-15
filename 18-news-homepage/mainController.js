@@ -1,5 +1,7 @@
 // imports
-import { initMainView } from './mainView.js';
+import { initMainView, showMenu, hideMenu } from './mainView.js';
+
+// elements
 
 // functions
 function initMainController () {
@@ -7,5 +9,19 @@ function initMainController () {
     initMainView();
 }
 
+
+
+// handlers
+function handleMenuIcon (e) {
+    console.log("handleMenuIcon");
+
+    showMenu();
+}
+
+function handleCloseMenuModal (e) {
+    console.log("handleCloseMenuModal");
+    hideMenu();
+}
+
 // exports
-export { initMainController };
+export { initMainController, handleMenuIcon, handleCloseMenuModal };
