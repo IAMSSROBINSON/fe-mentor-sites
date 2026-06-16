@@ -248,7 +248,7 @@ button {
 
 .hero-button {
     background-color: var(--clr-red-500);
-    padding: calc(var(--spacing-200) / 2) var(--spacing-300);
+    padding: calc(var(--spacing-200) / 2) calc(var(--spacing-300) + 1px);
     width: fit-content;
     font-size: var(--fs-100);
     font-weight: var(--fw-bold);
