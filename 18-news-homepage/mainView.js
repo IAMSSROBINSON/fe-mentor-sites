@@ -8,13 +8,14 @@ import {
 // functions
 function initMainView() {
   const menuIcon = document.getElementById("menu-icon");
-  menuIcon.addEventListener("click", handleMenuIcon);
+  menuIcon ? menuIcon.addEventListener("click", handleMenuIcon) :  null;
 
   const closeModalMenuIcon = document.getElementById("close-modal-menu-icon");
-  closeModalMenuIcon.addEventListener("click", handleCloseMenuModal);
+  closeModalMenuIcon ? closeModalMenuIcon.addEventListener("click", handleCloseMenuModal) : null;
+
 
   const menuContainer = document.getElementById("menu-container");
-  menuContainer.addEventListener("click", handleMenuLink);
+  menuContainer ? menuContainer.addEventListener("click", handleMenuLink) : null;
 }
 
 function showMenu() {
