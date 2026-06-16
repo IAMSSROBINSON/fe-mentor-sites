@@ -5,7 +5,6 @@
     --clr-white: #ffffff;
     --clr-black: #000000;
 
-    --clr-grey-400: #979797;
     --clr-grey-300: #C5C6CE;
     --clr-grey-200: #D8D8D8;
 
@@ -314,7 +313,7 @@ button {
 
 .new-list-item:not(:nth-child(3)) {
     padding-bottom: 32px;
-    border-bottom: 1px solid var(--clr-grey-400);
+    border-bottom: 1px solid var(--clr-navy-600);
     margin-bottom: 32px;
 }
 
