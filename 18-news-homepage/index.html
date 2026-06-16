@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta char="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index,follow">
     <meta name="description" content="News Homepage">
@@ -17,14 +17,14 @@
     <div class="all-container">
         <div id="blur-wrapper" class="blur-wrapper" aria-hidden="true"></div>
         <header class="header">
-                <img class="logo-icon" src="./assets/icons/logo.svg" alt="W. logo-text-icon" />
+                <img class="logo-icon" src="./assets/icons/logo.svg" alt="W. logo-text-icon" >
             <nav>
-                <menu id="modal-menu" class="modal-menu" hidden aria-hidden="true">
-                    <button id="modal-button-close" class="modal-button-close">
+                <div id="modal-menu" class="modal-menu" hidden>
+                    <div role="button" id="modal-button-close" class="modal-button-close">
                         <img id="close-modal-menu-icon" class="close-modal-menu-icon" src="./assets/icons/icon-menu-close.svg" alt="Close modal icon">
-                    </button>
+                    </div>
                     
-                    <ul id="modal-menu-list " class="modal-menu-list">
+                    <ul id="modal-menu-list" class="modal-menu-list">
                         <li class="menu-item home">
                             <a href="#" class="modal-link">Home</a>
                         </li>
@@ -41,11 +41,11 @@
                             <a href="#" class="modal-link">Categories</a>
                         </li>
                     </ul>
-                </menu>
-                <button id="menu-button-open" class="menu-button-open">
+                </div>
+                <div role="button" id="menu-button-open" class="menu-button-open">
                     <img id="menu-icon" class="menu-icon" src="./assets/icons/icon-menu.svg" alt="Menu icon">
-                </button>
-                <menu id="menu-container" class="menu-container">
+                </div>
+                <div id="menu-container" class="menu-container">
                     <ul id="menu-list" class="menu-list">
                         <li class="menu-item home">
                             <a href="#" class="menu-link">Home</a>
@@ -63,12 +63,12 @@
                             <a href="#" class="menu-link">Categories</a>
                         </li>
                     </ul>
-                </menu>
+                </div>
             </nav>
         </header>
 
         <main id="main" class="main">
-            <section class="hero-section">
+            <header class="hero-section">
                 <picture>
                     <source srcset="./assets/images/image-web-3-desktop.jpg" media="(min-width: 768px)">
                     <img src="./assets/images/image-web-3-mobile.jpg" alt="Fun Web3 decorative art">
@@ -84,9 +84,9 @@
                     </div>
                 </div>
             
-            </section>
+            </header>
 
-            <section class="new-section">
+            <header class="new-section">
                 <h2 class="new-title">New</h2>
                 <ul class="new-list">
                     <li class="new-list-item">
@@ -114,9 +114,9 @@
                         </article>
                     </li>
                 </ul>
-            </section>
+            </header>
 
-            <section class="topics-section">
+            <header class="topics-section">
                 <ul class="topics-list">
                     <li>
                         <article class="topic-card">
@@ -165,7 +165,7 @@
                         </article>
                     </li>
                 </ul>
-            </section>
+            </header>
         </main>
     </div>
 
