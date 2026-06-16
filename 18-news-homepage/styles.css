@@ -159,12 +159,17 @@ a {
 
 }
 
-/* button {
+button {
     outline: none;
     border: none;
     background-color: transparent;
     cursor: pointer;
-} */
+}
+
+button:focus-visible {
+    outline: 1px solid var(--clr-navy-950);
+    offset: 0.1875rem; /* 3px */
+}
 
 /* modal menu */
 .modal-menu {
