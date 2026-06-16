@@ -291,6 +291,11 @@ button:focus-visible {
     color: var(--clr-navy-950);
 }
 
+.hero-button:hover, .hero-button:active {
+    background-color: var(--clr-navy-950);
+    color: var(--clr-white);
+}
+
 .hero-title-plus-content {
     display: flex;
     flex-direction: column;
