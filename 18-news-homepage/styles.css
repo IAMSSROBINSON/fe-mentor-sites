@@ -332,7 +332,7 @@ button {
 
     .hero-title {
         font-size: var(--fs-700);
-        line-height: var(--fs-xxl);
+        line-height: var(--lh-xxl);
         max-inline-size: 8ch;
         min-width: 350px;
     }
