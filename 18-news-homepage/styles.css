@@ -346,6 +346,7 @@ button:focus-visible {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-300);
+    flex-wrap: wrap;
 }
 
 .topic-card {
