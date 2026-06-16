@@ -29,7 +29,7 @@ function showMenu() {
 
 function hideMenu() {
   const modalMenu = getMenuModal();
-  modalMenu.classList.remove("hideMenu");
+  modalMenu.classList.remove("showMenu");
   modalMenu.classList.add("hideMenu");
   modalMenu.setAttribute("hidden", "");
   modalMenu.setAttribute("aria-hidden", "true");
