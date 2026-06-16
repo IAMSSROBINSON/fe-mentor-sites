@@ -144,7 +144,7 @@ body {
     gap: var(--spacing-400);
 }
 
-.menu-list, .modal-menu-list {
+li {
     list-style: none;
 }
 
@@ -240,6 +240,11 @@ button {
     grid-row: 2/3;
 }
 
+.topics-section {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
 
 /* hero */
 .hero-section{
@@ -324,9 +329,56 @@ button {
 }
 
 
+/* topic */
+.topics-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-300);
+}
+
+.topic-card {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-200);
+}
+
+.topic-image {
+    width: auto;
+    height: 8.125rem; /* 130px */
+}
+
+
+.topic-number {
+    font-size: var(--fs-500);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-l);
+    color: var(--clr-red-500);
+}
+
+.topic-title {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+    line-height: var(--lh-s);
+    color: var(--clr-navy-950);
+}
+
+.topic-text {
+    font-size: var(--fs-200);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-m);
+    color: var(--clr-navy-600);
+}
+
+.topic-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--spacing-100);
+}
 
 
 /* MEDIA QUERIES */
+
 /* tablet */
 @media screen and (min-width: 500px) {
     .hero-title {
@@ -349,9 +401,13 @@ button {
         font-size: var(--fs-600);
         font-weight: var(--fw-bold);
         line-height: var(--lh-xl);
+    }
+
+    .new-section {
+        padding: calc(var(--spacing-300)) calc(var(--spacing-400) + 0.69px);
+    }
 }
 
-}
 
 /* desktop */
 @media screen and (min-width: 1440px) {
@@ -417,6 +473,12 @@ button {
         margin-bottom: var(--spacing-300);
     }   
 
+    /* new */
+    .new-section {
+        padding: calc(var(--spacing-300) + 0.5px) var(--spacing-200);
+    }
+    
+
     /* grid */
     .main {
         grid-template-columns: auto auto auto;
@@ -433,6 +495,23 @@ x
         grid-column: 3/4;
         grid-row: 1/2;
         margin-left: var(--spacing-300);
+    }
+
+    .topics-section {
+        grid-column: 1/4;
+        grid-row: 2/3;
+    }
+
+    .topics-list {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: calc(var(--spacing-300) * 2);
+        gap: var(--spacing-400);
+    }
+
+    .topic-text {
+        max-inline-size: 22ch;
     }
 }
 
