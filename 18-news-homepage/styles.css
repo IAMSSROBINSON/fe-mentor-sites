@@ -156,6 +156,10 @@ a {
     text-decoration: none;
 }
 
+.menu-link {
+
+}
+
 button {
     outline: none;
     border: none;
@@ -381,6 +385,10 @@ button {
 }
 
 .topics-link:hover, .topics-link:active {
+    color: var(--clr-red-500);
+}
+
+.active-link {
     color: var(--clr-red-500);
 }
 

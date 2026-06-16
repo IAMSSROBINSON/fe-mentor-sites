@@ -1,5 +1,5 @@
 // imports 
-import { handleMenuIcon, handleCloseMenuModal } from './mainController.js';
+import { handleMenuIcon, handleCloseMenuModal, handleMenuLink } from './mainController.js';
 
 // functions
 function initMainView () {
@@ -11,7 +11,8 @@ function initMainView () {
     const closeModalMenuIcon = document.getElementById('close-modal-menu-icon');
     closeModalMenuIcon.addEventListener("click", handleCloseMenuModal);
 
-
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.addEventListener("click", handleMenuLink);
 }
 
 function showMenu () {
@@ -40,6 +41,15 @@ function getMenuModal () {
     return document.getElementById('modal-menu');
 }
 
+function renderActiveLink (target) {
+    const allMenuLinks = Array.from(document.querySelectorAll('.menu-link'));
+    allMenuLinks.forEach((link) => {
+        link.classList.remove('active-link');
+    });
+
+    target.classList.add('active-link');
+}
+
 
 // exports
-export { initMainView, showMenu, hideMenu };
+export { initMainView, showMenu, hideMenu, renderActiveLink };

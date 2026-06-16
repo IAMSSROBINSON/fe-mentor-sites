@@ -1,5 +1,5 @@
 // imports
-import { initMainView, showMenu, hideMenu } from './mainView.js';
+import { initMainView, showMenu, hideMenu, renderActiveLink } from './mainView.js';
 
 // elements
 
@@ -23,5 +23,13 @@ function handleCloseMenuModal (e) {
     hideMenu();
 }
 
+function handleMenuLink (e) {
+    console.log("handleMenuLink target:", e.target);
+    if (e.target.classList.includes('menu-link')) {
+        renderActiveLink(e.target);
+    }
+    return;
+}
+
 // exports
-export { initMainController, handleMenuIcon, handleCloseMenuModal };
+export { initMainController, handleMenuIcon, handleCloseMenuModal, handleMenuLink};
