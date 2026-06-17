@@ -1,13 +1,14 @@
 // imports
 import { mainViewInit } from "../views/mainView.js";
 import { mainModelInit } from "../models/mainModel.js";
+import { productModelInit } from "../models/productModel.js";
 
 // functions
-function mainControllerInit () {
+async function mainControllerInit () {
     console.log('mainControllerInit');
     mainViewInit();
     mainModelInit();
-
+    productModelInit()
 }
 
 // handlers

@@ -1,10 +1,13 @@
 // imports
 
+// state
+
 
 // functions
 function mainModelInit () {
     console.log('mainModelInit');
 }
+
 
 // handlers
 
