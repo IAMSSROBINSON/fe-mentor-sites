@@ -8,7 +8,7 @@ fe-mentor e-commerce product page challenge submission
 ## What I learned
 
 ## View live site here 
-https://19-e-commerce-product-page.netlify.app/
+https://clever-starlight-35a134.netlify.app/
 
 ##### Final Screenshot
 ![E-commerce product page challenge screen shot](./assets/design/01_screen_shot_render.png)
