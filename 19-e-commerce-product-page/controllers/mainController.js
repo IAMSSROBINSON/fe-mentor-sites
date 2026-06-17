@@ -3,11 +3,12 @@ import { mainViewInit, renderProduct } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
+let user1 = null;
+
 // functions
 async function mainControllerInit () {
     console.log('mainControllerInit');
-    const user1 = new User('./assets/images/image-avatar.png');
-    console.log("user1:", user1);
+    user1 = new User('./assets/images/image-avatar.png');
     mainViewInit();
     mainModelInit();
     try {
