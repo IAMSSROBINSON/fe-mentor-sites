@@ -14,11 +14,14 @@ function renderProduct ({data, message}) {
 }
 
 function renderProfile (user) {
+    const avatarContainer = document.getElementById('avatar-container');
+
     const img = document.createElement('img');
-    img.src = user.profileSrc;
-    const body = document.querySelector('body');
-    body.appendChild(img);
+    img.classList.add('avatar-image');
+    img.src = user?.profileSrc ? user?.profileSrc : "./assets/icons/avatar-placeholder.svg";
+    avatarContainer.appendChild(img);
 }
+
 // handlers
 
 

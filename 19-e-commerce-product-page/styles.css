@@ -87,7 +87,7 @@ input, select, button, textarea {
     color: inherit;
 }
 
-iframe, img, svg, video, canvas {
+iframe, video, canvas {
     width: 100%;
     object-fit: cover;
     line-height: 0;
@@ -98,4 +98,39 @@ body {
     background-color: #f1f3f5;
     font-family: var(--base-font);
     min-height: 100vh;
+}
+
+
+/* header */
+.main-header {
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-icon-container {
+    display: flex;
+    cursor: pointer;
+}
+
+.menu-icon {
+justify-self: end;
+}
+
+.logo-icon {
+    color: var(--clr-grey-950);
+    width: 8.5938rem; /* 137.5px */
+    height: 1.25rem; /* 120px */
+}
+
+#avatar-container {
+   
+}
+
+.avatar-image {
+     width: 24px;
+    height: 24px;
+    line-height: 0;
+    display: block;
+    object-fit: cover;
 }
