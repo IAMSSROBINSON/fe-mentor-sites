@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -9,7 +9,9 @@ let user1 = null;
 async function mainControllerInit () {
     console.log('mainControllerInit');
     user1 = new User('./assets/images/image-avatar.png');
+    console.log("user1:", user1);
     mainViewInit();
+    renderProfile(user1);
     mainModelInit();
     try {
         await productModelInit();
