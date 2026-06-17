@@ -1,8 +1,54 @@
 :root {
     /* TOKENS */
 
+    /* color */
+    --clr-white: #ffffff;
+    --clr-black: #000000;
+
+    --clr-grey-950: #1D2026; 
+    --clr-grey-500: #69707D; 
+    --clr-grey-300: #C3CAD9; 
+    --clr-grey-100: #E4E9F2; 
+    --clr-grey-50: #F6F8FD; 
+
+    --clr-orange-500: #FF7E1B; 
+    --clr-orange-300: #FFAB6A; 
+
     /* font */
     --base-font: 'Kumbh Sans', sans-serif;
+
+    --fs-600: 2.75rem ; /* 44px */
+    --fs-500: 1.75rem ; /* 28px */
+    --fs-400: 1rem ; /* 16px */
+    --fs-300: 0.9375rem ; /* 15px */
+    --fs-200: 0.8125rem ; /* 13px */
+    --fs-100: 0.75rem ; /* 12px */
+
+    /* line height */
+    --lh-s: 3rem ; /* 48px */ 
+    --lh-s: 2rem ; /* 32px */ 
+    --lh-s: 1.625rem ; /* 26px */ 
+    --lh-s: 1rem ; /* 16px */ 
+    --lh-s: 0.9375rem ; /* 15px */ 
+
+    /* letter spacing */
+    --ls-l: 0.125rem ; /* 2px */ 
+    --ls-s: 0.1156rem ; /* 1.85px */ 
+
+    /* spacing */
+    --spacing-1600: 8rem; /* 128px */
+    --spacing-1300: 6.5rem; /* 104px */
+    --spacing-1200: 6rem; /* 96px */
+    --spacing-1000: 5rem; /* 80px */
+    --spacing-900: 4.5rem; /* 72px */
+    --spacing-700: 3.5rem; /* 56px */
+    --spacing-600: 3rem; /* 48px */
+    --spacing-500: 2.5rem; /* 40px */
+    --spacing-400: 2rem; /* 32px */
+    --spacing-300: 1.5rem; /* 24px */
+    --spacing-200: 1rem; /* 16px */
+    --spacing-100: 0.5rem; /* 8px */
+
 
     /* COMPONENT TOKENS */
 }
