@@ -35,6 +35,13 @@
     --ls-l: 0.125rem ; /* 2px */ 
     --ls-s: 0.1156rem ; /* 1.85px */ 
 
+    /* border radius */
+    --br-xxl: 50%; /* 50% */
+    --br-xl: 0.9375rem; /* 15px */
+    --br-l: 0.625rem; /* 10px */
+    --br-m: 0.5rem; /* 8px */
+    --br-s: 0.375rem; /* 6px */
+
     /* spacing */
     --spacing-1600: 8rem; /* 128px */
     --spacing-1300: 6.5rem; /* 104px */
