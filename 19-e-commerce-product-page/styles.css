@@ -58,6 +58,9 @@
 
 
     /* COMPONENT TOKENS */
+    --body-p: calc(var(--spacing-200) + 3px) var(--spacing-300) calc(var(--spacing-900) - 2px);
+
+    --avatar-width: 1.5rem /* 24px */
 }
 
 *,
@@ -98,6 +101,7 @@ body {
     background-color: #f1f3f5;
     font-family: var(--base-font);
     min-height: 100vh;
+    padding: var(--body-p);
 }
 
 
@@ -110,11 +114,14 @@ body {
 
 .menu-icon-container {
     display: flex;
-    cursor: pointer;
 }
 
 .menu-icon {
 justify-self: end;
+}
+
+.logo-container {
+    margin-right: auto;
 }
 
 .logo-icon {
@@ -124,13 +131,17 @@ justify-self: end;
 }
 
 #avatar-container {
-   
+   width: var(--avatar-width);
+   height: var(--avatar-width);
 }
 
 .avatar-image {
-     width: 24px;
-    height: 24px;
     line-height: 0;
     display: block;
     object-fit: cover;
+    width: 100%;
+}
+
+.pointer {
+    cursor: pointer;
 }
