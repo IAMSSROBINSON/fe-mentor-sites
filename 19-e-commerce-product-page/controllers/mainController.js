@@ -1,14 +1,17 @@
 // imports
-import { mainViewInit } from "../views/mainView.js";
+import { mainViewInit, renderProduct } from "../views/mainView.js";
 import { mainModelInit } from "../models/mainModel.js";
-import { productModelInit } from "../models/productModel.js";
+import { productModelInit, getProducts } from "../models/productModel.js";
 
 // functions
 async function mainControllerInit () {
     console.log('mainControllerInit');
     mainViewInit();
     mainModelInit();
-    productModelInit()
+    await productModelInit()
+    const products = getProducts();
+    console.log("products mainController:", products[0]);
+    renderProduct(products[0]);
 }
 
 // handlers

@@ -6,8 +6,11 @@ function mainViewInit () {
     console.log('mainViewInit');
 }
 
+function renderProduct (productObj) {
+    console.log("products renderProduct:", productObj);
+}
 // handlers
 
 
 // exports
-export { mainViewInit };
+export { mainViewInit, renderProduct };
