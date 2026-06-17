@@ -6,8 +6,12 @@ function mainViewInit () {
     console.log('mainViewInit');
 }
 
-function renderProduct (productObj) {
-    console.log("products renderProduct:", productObj);
+function renderProduct ({data, message}) {
+    if (data) {
+        console.log("renderProduct gotData:", data);
+    } else {
+        console.log("renderProduct noData:", message);
+    }
 }
 // handlers
 

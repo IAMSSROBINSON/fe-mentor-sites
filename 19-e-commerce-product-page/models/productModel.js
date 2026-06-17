@@ -9,14 +9,9 @@ async function productModelInit () {
 }
 
 async function fetchProductData () {
-    try {
-        const response = await fetch('/database/db.json');
-        const data = await response.json();
-        setProductsData(data);
-    }
-    catch (err) {
-        return err;
-    }
+    const response = await fetch('/database/db.json');
+    const data = await response.json();
+    setProductsData(data);
 }
 
 function setProductsData(data) {
