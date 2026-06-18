@@ -19,4 +19,13 @@
     .menu-icon-container {
         display: none;
     }
+    .desktop-list-container {
+        display: block;
+    }
+    .logo-container {
+        margin-right: var(--spacing-700);
+    }
+    .desktop-list-container {
+        margin-right: auto;
+    }
 }

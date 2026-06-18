@@ -31,10 +31,10 @@
     --fw-regular: 400;
 
     /* line height */
-    --lh-s: 3rem ; /* 48px */ 
-    --lh-s: 2rem ; /* 32px */ 
-    --lh-s: 1.625rem ; /* 26px */ 
-    --lh-s: 1rem ; /* 16px */ 
+    --lh-xxl: 3rem ; /* 48px */ 
+    --lh-xl: 2rem ; /* 32px */ 
+    --lh-l: 1.625rem ; /* 26px */ 
+    --lh-m: 1rem ; /* 16px */ 
     --lh-s: 0.9375rem ; /* 15px */ 
 
     /* letter spacing */
@@ -140,6 +140,24 @@ body {
     height: 1.25rem; /* 120px */
 }
 
+.desktop-list-container {
+    display: none;
+}
+
+.desktop-list {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-400);
+}
+
+.desktop-list a {
+    text-decoration: none;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-regular);
+    line-height: var(--lh-l);
+    color: var(--clr-grey-500);
+}
+
 .cart-icon-container {
     display: flex;
     align-items: end;
@@ -188,3 +206,4 @@ body {
 .pointer {
     cursor: pointer;
 }
+
