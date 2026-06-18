@@ -119,10 +119,14 @@ body {
 
 .menu-icon-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-200)
 }
 
 .menu-icon {
-justify-self: end;
+    justify-self: end;
+    fill: var(--clr-grey-950);
 }
 
 .logo-container {
@@ -142,6 +146,7 @@ justify-self: end;
     position: relative;
     width: 28px;
     height: 24px;
+    margin-right: var(--spacing-300);
 }
 
 .cart-number-display-container {
