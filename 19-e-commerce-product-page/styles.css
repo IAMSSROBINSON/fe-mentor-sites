@@ -23,6 +23,7 @@
     --fs-300: 0.9375rem ; /* 15px */
     --fs-200: 0.8125rem ; /* 13px */
     --fs-100: 0.75rem ; /* 12px */
+    --fs-50: 0.625rem ; /* 10px */
 
     --fw-extra-bold: 800;
     --fw-bold: 700;
@@ -114,7 +115,7 @@ body {
 .main-header {
     display: flex;
     align-items: center;
-
+    margin-bottom: calc(var(--spacing-300) + 2px);
 }
 
 .menu-icon-container {
@@ -144,21 +145,19 @@ body {
     align-items: end;
     justify-content: start;
     position: relative;
-    width: 28px;
-    height: 24px;
+    width: calc(var(--spacing-300) + 4px);
+    height: var(--spacing-300);
     margin-right: var(--spacing-300);
 }
 
 .cart-number-display-container {
     background-color: var(--clr-orange-500);
     position: absolute;
-    top: -4px;
     top: 0;
-    right: -6.18px;
     right: 0;
-    width: 19px;
-    height: 13px;
-    font-size: 10px;
+    width: calc(var(--spacing-200) + 3px);
+    height: calc(var(--spacing-200) - 3px);;
+    font-size: var(--fs-50);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,8 +168,8 @@ body {
 }
 
 .cart-icon {
-    width: 21.82px;
-    height: 20px;
+    width: calc(var(--spacing-200) - 2.18px);
+    height: calc(var(--spacing-200) - 4px);
     fill: var(--clr-grey-950);
 }
 
