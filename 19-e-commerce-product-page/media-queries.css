@@ -4,7 +4,9 @@
         --avatar-width: calc(var(--spacing-700) - 6px); /* 56px */
     }
     .main-header {
-        margin-bottom: calc(var(--spacing-1000) + 1px);
+        margin-bottom: var(--spacing-600);
+        padding-bottom: var(--spacing-400);
+        border-bottom: 1px solid var(--clr-grey-100);
     }
     .cart-icon-container {
         margin-right: var(--spacing-600);
@@ -15,6 +17,11 @@
     .wrapper {
         max-width: 1110px;
         margin: 0 auto;
+    }
+    .main-header {
+        margin-bottom: var(--spacing-1200);
+        padding-bottom: var(--spacing-400);
+        border-bottom: 1px solid var(--clr-grey-100);
     }
     .menu-icon-container {
         display: none;
