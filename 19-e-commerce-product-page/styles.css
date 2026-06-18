@@ -164,7 +164,9 @@ justify-self: end;
 }
 
 .cart-icon {
-    
+    width: 21.82px;
+    height: 20px;
+    fill: var(--clr-grey-950);
 }
 
 #avatar-container {
