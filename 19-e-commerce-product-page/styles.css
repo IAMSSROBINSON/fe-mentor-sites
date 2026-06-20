@@ -248,6 +248,7 @@ a {
 #avatar-container {
    width: var(--avatar-width);
    height: var(--avatar-width);
+   flex-shrink: 0;
 }
 
 .avatar-image {
