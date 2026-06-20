@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -28,11 +28,6 @@ async function mainControllerInit () {
 }
 
 // handlers
-function handleMenuIconClick (e) {
-    console.log("menu icon clicked");
-    const body = document.querySelector('body');
-    body.classList.add('no-scroll');
-}
 
 // exports
 export { mainControllerInit };

@@ -54,7 +54,7 @@
         width: fit-content;
         height: fit-content;
         padding: 0;
-        /* background-color: transparent; */
+        background-color: initial;
         margin-right: auto;
         max-width: initial;
 
@@ -64,16 +64,15 @@
     }
     .menu-list {
         flex-direction: row;
-        gap: 32px;
+        gap: var(--spacing-400);
     }
     .menu-list a {
         font-weight: normal;
-        font-size: 15px;
+        font-size: var(--fs-300);
         color: var(--clr-grey-500);
     }
     .no-scroll {
-        height: initial;
-        overflow: none;
+        overflow: initial;
     }
 
     
