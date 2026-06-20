@@ -22,10 +22,17 @@ async function mainControllerInit () {
     catch (err) {
         renderProduct({data: null, message: "Could not fetch data. Try again later..."});
     }
+
+    const menuIconContainer = document.querySelector('.menu-icon-container');
+    menuIconContainer.addEventListener('click', handleMenuIconClick);
 }
 
 // handlers
-
+function handleMenuIconClick (e) {
+    console.log("menu icon clicked");
+    const body = document.querySelector('body');
+    body.classList.add('no-scroll');
+}
 
 // exports
 export { mainControllerInit };
