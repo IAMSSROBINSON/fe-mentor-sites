@@ -6,7 +6,7 @@
 
     .show-menu-mobile-tablet {
         width: 100%;
-        max-width: 301px;
+        max-width: 18.8125rem;
         padding: var(--spacing-600) 0  0 var(--spacing-1000);
     }
 
@@ -21,9 +21,15 @@
 
     /* menu */
     .menu-container {
-        padding: 48px 80px;
+        padding: var(--spacing-600) var(--spacing-1000);
         width: 100%;
-        max-width: 301px;
+        max-width: 18.8125rem;
+    }
+
+    /* cart */
+    .cart-menu-container {
+        top: calc(var(--spacing-1200) - 2px);
+        right: calc(var(--spacing-100) + 1px);;
     }
 }
 
@@ -82,6 +88,11 @@
     }
     .no-scroll {
         overflow: initial;
+    }
+
+    /* cart */
+      .cart-menu-container {
+        right: calc(var(--spacing-1000) + var(--spacing-100) + 1px);
     }
 
     

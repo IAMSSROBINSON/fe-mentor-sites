@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -28,6 +28,9 @@ async function mainControllerInit () {
 
     const menuContainer = document.getElementById('menu-container');
     menuContainer.addEventListener('click', handleMenuContainerClick);
+
+    const cartIconContainer = document.querySelector(".cart-icon-container");
+    cartIconContainer.addEventListener("click", handleCartIconClick);
 }
 
 // handlers
