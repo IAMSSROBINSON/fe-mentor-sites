@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -25,9 +25,13 @@ async function mainControllerInit () {
 
     const menuIconContainer = document.querySelector('.menu-icon-container');
     menuIconContainer.addEventListener('click', handleMenuIconClick);
+
+    const menuContainer = document.getElementById('menu-container');
+    menuContainer.addEventListener('click', handleMenuContainerClick);
 }
 
 // handlers
+ 
 
 // exports
 export { mainControllerInit };

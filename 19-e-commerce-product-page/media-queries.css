@@ -71,6 +71,15 @@
         font-size: var(--fs-300);
         color: var(--clr-grey-500);
     }
+    .link-underline {
+        text-decoration: 4px underline solid var(--clr-orange-500);
+        text-underline-offset: var(--spacing-600);
+       
+        a {
+             color: var(--clr-grey-950);
+            font-weight: var(--fw-regular);
+        }
+    }
     .no-scroll {
         overflow: initial;
     }

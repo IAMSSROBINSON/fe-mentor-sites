@@ -51,8 +51,17 @@ function toggleMenuContainer () {
     console.log("menuContainer:", menuContainer);
 }
 
-
-
+function handleMenuContainerClick (e) {
+    const links = Array.from(document.querySelectorAll('.menu-link-item'));
+    links.forEach((el) => el.classList.remove("link-underline"));
+    
+    const link = e.target.closest("li");
+    if (link) {
+        console.log("handleMenuContainerClick", e.target);
+        link.classList.add("link-underline");
+    }
+   
+}
 
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick };
