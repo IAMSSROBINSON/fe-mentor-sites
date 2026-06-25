@@ -108,7 +108,6 @@ iframe, video, canvas {
 }
 
 body {
-    background-color: #f1f3f5;
     font-family: var(--base-font);
     min-height: 100%;
     padding: var(--body-p);
