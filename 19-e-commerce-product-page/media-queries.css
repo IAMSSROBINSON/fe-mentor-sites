@@ -1,6 +1,9 @@
 @media screen and (min-width: 768px) {
     :root {
-        --body-p: calc(var(--spacing-300) + 4px) var(--spacing-1000) calc(var(--spacing-900) - 2px);
+        --bpt: calc(var(--spacing-300));
+        --bplr: var(--spacing-1000);
+        --bpb: calc(var(--spacing-900) - 2px);
+        --body-p: var(--bpt) var(--bplr) var(--bpb);
         --avatar-width: calc(var(--spacing-700) - 6px); /* 56px */
     }
 
@@ -66,6 +69,11 @@
         margin-right: auto;
         max-width: initial;
         display: block;
+        /* reset any potential absolute values remaining previously */
+        top: initial;
+        left: initial;
+        right: initial;
+        bottom: initial;
     }   
     .close-menu-icon {
         display: none;
