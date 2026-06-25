@@ -211,8 +211,9 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: calc(100% - 44px);
+    height: calc(100% - 58px);
     color: var(--clr-grey-400);
+    overflow-Y: auto;
 }
 
 .hide {

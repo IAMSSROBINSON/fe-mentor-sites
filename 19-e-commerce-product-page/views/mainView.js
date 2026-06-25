@@ -64,7 +64,7 @@ function handleMenuContainerClick (e) {
    
 }
 
-function handleCartIconClick (state) {
+function handleCartIconClick (state = "empty") {
     
     const cartMenuContainer = document.querySelector(".cart-menu-container");
     cartMenuContainer.classList.toggle('hide');
