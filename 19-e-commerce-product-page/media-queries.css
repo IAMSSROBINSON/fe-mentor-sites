@@ -17,6 +17,7 @@
     }
     .cart-icon-container {
         margin-right: var(--spacing-600);
+        position: relative;
     }
 
     /* menu */
@@ -28,8 +29,9 @@
 
     /* cart */
     .cart-menu-container {
-        top: calc(var(--spacing-1200) - 2px);
-        right: calc(var(--spacing-100) + 1px);;
+        top: var(--spacing-600);
+        right: 50%;
+        transform: translateX(50%);
     }
 }
 
@@ -88,12 +90,5 @@
     }
     .no-scroll {
         overflow: initial;
-    }
-
-    /* cart */
-      .cart-menu-container {
-        right: calc(var(--spacing-1000) + var(--spacing-100) + 1px);
-    }
-
-    
+    }    
 }
