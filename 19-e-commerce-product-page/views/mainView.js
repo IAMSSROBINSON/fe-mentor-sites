@@ -64,11 +64,16 @@ function handleMenuContainerClick (e) {
    
 }
 
-function handleCartIconClick (e) {
-    const target = e.target;
-    console.log("handleCartIconClick:", target);
+function handleCartIconClick (state) {
+    
     const cartMenuContainer = document.querySelector(".cart-menu-container");
     cartMenuContainer.classList.toggle('hide');
+
+    const emptyCartMessage = document.getElementById("cart-empty-message");
+    if (state === "empty") {
+        emptyCartMessage.textContent = "Your cart is empty to."
+    }
+
 }
 
 // exports

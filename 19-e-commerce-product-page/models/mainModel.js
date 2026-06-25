@@ -36,6 +36,10 @@ class User {
         this.cart.items = [];
         console.log("Cart cleared:", this.cart);
     }
+    
+    getCartItems () {
+        return this.cart.items;
+    }
 }
 
 

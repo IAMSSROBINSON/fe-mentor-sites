@@ -139,7 +139,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: var(--spacing-200)
+    margin-right: var(--spacing-200);
+    border: none;
 }
 
 .menu-icon {
@@ -202,6 +203,7 @@ a {
 .cart-menu-title {
    padding: calc(var(--spacing-300) / 2) 0px var(--spacing-300) 0px;
    border-bottom: 1px solid var(--clr-grey-400);
+   font-size: inherit;
 }
 
 .cart-menu-items-container {

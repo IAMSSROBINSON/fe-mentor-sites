@@ -10,6 +10,7 @@ async function mainControllerInit () {
     console.log('mainControllerInit');
     user1 = new User('./assets/images/image-avatar.png');
     console.log("user1:", user1);
+    console.log("user1 cart.items:", user1.cart.items);
     mainViewInit();
     renderProfile(user1);
     mainModelInit();
@@ -30,10 +31,19 @@ async function mainControllerInit () {
     menuContainer.addEventListener('click', handleMenuContainerClick);
 
     const cartIconContainer = document.querySelector(".cart-icon-container");
-    cartIconContainer.addEventListener("click", handleCartIconClick);
+    cartIconContainer.addEventListener("click", handleCartClick);
 }
 
 // handlers
+function handleCartClick () {
+    const cartItems = user1.getCartItems();
+
+    if (cartItems.length === 0) {
+         handleCartIconClick("empty");
+    } else {
+        handleCartIconClick("filled");
+    }
+}
  
 
 // exports
