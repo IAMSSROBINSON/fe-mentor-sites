@@ -143,6 +143,8 @@ a {
     justify-content: center;
     margin-right: var(--spacing-200);
     border: none;
+    background-color: transparent;
+
 }
 
 .menu-icon {
@@ -263,6 +265,7 @@ a {
     height: var(--spacing-300);
     margin-right: var(--spacing-300);
     border: none;
+    background-color: transparent;
 }
 
 .cart-number-display-container {
