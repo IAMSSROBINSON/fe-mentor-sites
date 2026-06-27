@@ -55,47 +55,33 @@ function handleCartClick () {
     }
 }
 
-function handleArrowClick (e) {
-    const button = e.target.closest('.arrow-container');
-    if (button) {
-        const id = button.id;
+function handleArrowClick(e) {
+  const button = e.target.closest(".arrow-container");
+  if (button) {
+    const id = button.id;
 
-        const pathname = new URL(document.querySelector(".product-image").src).pathname;
-        // get all the image paths in an array collection
-        const allImages = getProducts()[0].images;
-        // get the index of the current image in the collection
-        const indexOfCurrentIndex = allImages.indexOf(pathname);
-        console.log("indexOfCurrentIndex:", indexOfCurrentIndex);
-        if (id === "previous-arrow-container") {
-                // get the pathname of the current image in its container
-        
-        // if the index - 1 is less than 0 then do nothing 
-        let newIndex = indexOfCurrentIndex - 1;
-        if (newIndex < 0) {
+    const pathname = new URL(document.querySelector(".product-image").src)
+      .pathname;
+    const allImages = getProducts()[0].images;
+    const indexOfCurrentIndex = allImages.indexOf(pathname);
+    console.log("indexOfCurrentIndex:", indexOfCurrentIndex);
+    if (id === "previous-arrow-container") {
+      let newIndex = indexOfCurrentIndex - 1;
+      if (newIndex < 0) {
         newIndex = allImages.length - 1;
-        console.log("newIndex:", newIndex)
-        console.log("this is the first image");
-    }
-        // else currentIndex = index found - 1 
-        // get the pathname from the collection with the currentIndex
-        const newPathname = allImages[newIndex];
-        // send the pathname to handlePrevious to render in the dom
-        handlePrevious(newPathname);
-
-        } else {
-            let newIndex = indexOfCurrentIndex + 1;
-        if (newIndex > allImages.length - 1) {
+      }
+      const newPathname = allImages[newIndex];
+      handlePrevious(newPathname);
+    } else {
+      let newIndex = indexOfCurrentIndex + 1;
+      if (newIndex > allImages.length - 1) {
         newIndex = 0;
-        console.log("newIndex:", newIndex)
-        console.log("this is the first image");
+      }
+
+      const newPathname = allImages[newIndex];
+      handlePrevious(newPathname);
     }
-        // else currentIndex = index found - 1 
-        // get the pathname from the collection with the currentIndex
-        const newPathname = allImages[newIndex];
-        // send the pathname to handlePrevious to render in the dom
-        handlePrevious(newPathname);
-        }
-    }
+  }
 }
 
 
