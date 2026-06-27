@@ -6,8 +6,15 @@ function mainViewInit () {
 }
 
 function renderProduct ({data, message}) {
-    if (data) {
+    if (message === "success") {
         console.log("renderProduct gotData:", data);
+        const galleryImageContainer = document.querySelector(".gallery-image-container");
+        const img = document.createElement('img');
+        img.src = data.images[0];
+        img.classList.add("product-image");
+        img.alt = "Hero image of white sneakers";
+        galleryImageContainer.appendChild(img);
+
     } else {
         console.log("renderProduct noData:", message);
     }
@@ -77,5 +84,10 @@ function handleCartIconClick (state = "empty") {
 
 }
 
+function handlePrevious (newPathname) {
+    const productImage = document.querySelector(".product-image");
+    productImage.src = newPathname;
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handlePrevious };

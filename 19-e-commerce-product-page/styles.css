@@ -319,7 +319,7 @@ a {
     max-width: 608px;
 
     background-color: #f1f3f5;
-    margin-top: calc(var(--bpt) * -1);
+    /* margin-top: calc(var(--bpt) * -1); */
     margin-left: calc(var(--bplr) * -1);
     margin-right: calc(var(--bplr) * -1);
     position: relative;
@@ -365,6 +365,7 @@ a {
 
 .product-image {
     width: 100%;
-    object-position: top;
-    object-fit: cover;
+    /* object-position: top; */
+    /* object-fit: cover; */
+    margin-top: calc(var(--spacing-400) * -1);
 }
