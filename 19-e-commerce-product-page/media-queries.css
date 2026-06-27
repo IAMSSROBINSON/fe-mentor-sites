@@ -68,7 +68,7 @@
         background-color: initial;
         margin-right: auto;
         max-width: initial;
-        display: block;
+        display: flex;
         /* reset any potential absolute values remaining previously */
         top: initial;
         left: initial;

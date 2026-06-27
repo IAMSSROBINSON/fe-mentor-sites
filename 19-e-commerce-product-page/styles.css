@@ -103,7 +103,7 @@ input, select, button, textarea {
     color: inherit;
 }
 
-iframe, video, canvas {
+iframe, video, canvas, embed {
     width: 100%;
     object-fit: cover;
     line-height: 0;
@@ -144,7 +144,6 @@ a {
     margin-right: var(--spacing-200);
     border: none;
     background-color: transparent;
-
 }
 
 .menu-icon {
@@ -189,8 +188,8 @@ a {
 .cart-menu-container {
     position: absolute;
     top: calc(var(--spacing-900) + 4px); /* 76px */
-    right: 0;
-    width: calc(var(--spacing-500) * 9); /* 360px */
+    right: -65px;
+    width: 100vw;
     background-color: var(--clr-white);
     max-width: 22.5rem; /* 360px */
     height: 16rem; /* 256px */
@@ -226,6 +225,11 @@ a {
 
 .show {
     display: block;
+}
+
+.close-menu-button {
+    border: none;
+    background-color: transparent;
 }
 
 .close-menu-icon {
@@ -266,6 +270,7 @@ a {
     margin-right: var(--spacing-300);
     border: none;
     background-color: transparent;
+    position: relative;
 }
 
 .cart-number-display-container {
@@ -311,7 +316,8 @@ a {
 /* gallery */
 .gallery-container {
     height: 300px;
-    min-width: 100%;
+    max-width: 608px;
+
     background-color: #f1f3f5;
     margin-top: calc(var(--bpt) * -1);
     margin-left: calc(var(--bplr) * -1);
@@ -348,4 +354,17 @@ a {
 
 .next-icon {
     margin-right: -2px;
+}
+
+.gallery-image-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: yellow;
+} 
+
+.product-image {
+    width: 100%;
+    object-position: top;
+    object-fit: cover;
 }

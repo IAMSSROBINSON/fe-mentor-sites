@@ -19,6 +19,7 @@ function renderProfile (user) {
     const img = document.createElement('img');
     img.classList.add('avatar-image');
     img.src = user?.profileSrc ? user?.profileSrc : "./assets/icons/avatar-placeholder.svg";
+    img.alt = "Profile image";
     avatarContainer.appendChild(img);
 }
 
