@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handlePrevious } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -59,27 +59,29 @@ function handleArrowClick(e) {
   const button = e.target.closest(".arrow-container");
   if (button) {
     const id = button.id;
-
     const pathname = new URL(document.querySelector(".product-image").src)
       .pathname;
     const allImages = getProducts()[0].images;
     const indexOfCurrentIndex = allImages.indexOf(pathname);
-    console.log("indexOfCurrentIndex:", indexOfCurrentIndex);
+    console.log("indexOfCurrentImage:", indexOfCurrentIndex);
     if (id === "previous-arrow-container") {
       let newIndex = indexOfCurrentIndex - 1;
       if (newIndex < 0) {
         newIndex = allImages.length - 1;
       }
       const newPathname = allImages[newIndex];
-      handlePrevious(newPathname);
+      const className = `product-${newIndex + 1}`;
+      console.log("className: previous", className);
+      handleNextImage(newPathname, className);
     } else {
       let newIndex = indexOfCurrentIndex + 1;
       if (newIndex > allImages.length - 1) {
         newIndex = 0;
       }
-
+      const className = `product-${newIndex + 1}`;
+      console.log("className: next", className);
       const newPathname = allImages[newIndex];
-      handlePrevious(newPathname);
+      handleNextImage(newPathname, className);
     }
   }
 }

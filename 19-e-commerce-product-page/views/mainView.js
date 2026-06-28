@@ -84,10 +84,14 @@ function handleCartIconClick (state = "empty") {
 
 }
 
-function handlePrevious (newPathname) {
+function handleNextImage (newPathname, className) {
+    console.log("className :", className);
     const productImage = document.querySelector(".product-image");
+    productImage.classList = `product-image ${className}`;
+    console.log("handlePrevious newPathname:", newPathname);
     productImage.src = newPathname;
+    console.log("Product image:", productImage);
 }
 
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handlePrevious };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage };

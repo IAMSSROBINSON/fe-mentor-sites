@@ -1,3 +1,13 @@
+@media screen and (min-width: 600px) {
+    .gallery-container .gallery-image-container {
+        border-radius: var(--br-xl);
+    }
+    /* image placement */
+   .product-1 {
+        object-position: 0 -200px;
+    }
+}
+
 @media screen and (min-width: 768px) {
     :root {
         --bpt: calc(var(--spacing-300));
@@ -36,6 +46,19 @@
         right: 50%;
         transform: translateX(50%);
     }
+    /* gallery */
+     .gallery-container .gallery-image-container {
+        height: 290px;
+        background-color: yellow;
+    }
+    .gallery-container .gallery-image-container .product-image {
+        /* margin-top: 20px; */
+        /* padding-bottom: 30px; */
+
+        /* object-position: top; */
+        object-fit: cover;
+    }
+    
 }
 
 @media screen and (min-width: 1440px) {
