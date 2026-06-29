@@ -331,6 +331,7 @@ a {
   align-items: center;
   margin-inline: calc(var(--bplr) * -1);
   flex-direction: column;
+  background: red;
 }
 
 .gallery-container .gallery-image-container {
@@ -398,8 +399,8 @@ a {
 
 /* product information */
 .product-information {
-    max-width: 1110px;
-    /* padding: clamp(var(var(--spacing-300), 50vw, 80px)); */
+    /* max-inline-size: 1110px; */
+    padding: var(--spacing-300);
     background-color: yellow;
   /* width: 500px; */
 }
@@ -511,7 +512,7 @@ a {
     align-items: center;
     gap: var(--spacing-200);
     padding-block: var(--spacing-200);
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
     border-radius: var(--br-l);
     background-color: var(--clr-orange-500);
