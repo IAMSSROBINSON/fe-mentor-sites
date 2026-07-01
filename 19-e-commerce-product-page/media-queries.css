@@ -51,6 +51,12 @@
         height: 290px;
      }
 
+     .product-1 {
+        /* padding: 20px; */
+        object-position: 0 -200px;
+     }
+     
+
     /* typography */
     .tp1 {
         font-size: var(--fs-200);
@@ -183,8 +189,25 @@
         align-items: center;
         gap: 32px;
     }
+
     .product-image {
         width: 100%;
+    }
+
+     .product-1 {
+        object-position: 0;
+    }
+
+    .product-2 {
+        object-position: 0;
+    }
+
+    .product-3 {
+        object-position: 0;
+    }
+
+    .product-4 {
+        object-position: 0;
     }
 
     .gallery-main-image-container {
@@ -210,7 +233,7 @@
         flex-direction: column;
         justify-content: center;
     }
-    
+
     .product-label {
         margin-bottom: var(--spacing-300);
     }
