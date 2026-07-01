@@ -40,8 +40,8 @@ async function mainControllerInit () {
     const cartIconContainer = document.querySelector(".cart-icon-container");
     cartIconContainer.addEventListener("click", handleCartClick);
 
-    const galleryImageContainer = document.querySelector(".gallery-image-container");
-    galleryImageContainer.addEventListener("click", handleArrowClick);
+    const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
+    galleryMainImageContainer.addEventListener("click", handleArrowClick);
 }
 
 // handlers
@@ -62,10 +62,10 @@ function handleArrowClick(e) {
     const pathname = new URL(document.querySelector(".product-image").src)
       .pathname;
     const allImages = getProducts()[0].images;
-    const indexOfCurrentIndex = allImages.indexOf(pathname);
-    console.log("indexOfCurrentImage:", indexOfCurrentIndex);
+    const indexOfCurrentImage = allImages.indexOf(pathname);
+    console.log("indexOfCurrentImage:", indexOfCurrentImage);
     if (id === "previous-arrow-container") {
-      let newIndex = indexOfCurrentIndex - 1;
+      let newIndex = indexOfCurrentImage - 1;
       if (newIndex < 0) {
         newIndex = allImages.length - 1;
       }
@@ -74,7 +74,7 @@ function handleArrowClick(e) {
       console.log("className: previous", className);
       handleNextImage(newPathname, className);
     } else {
-      let newIndex = indexOfCurrentIndex + 1;
+      let newIndex = indexOfCurrentImage + 1;
       if (newIndex > allImages.length - 1) {
         newIndex = 0;
       }

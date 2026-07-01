@@ -1,15 +1,5 @@
 @media screen and (min-width: 600px) {
-    .gallery-container .gallery-image-container {
-        border-radius: var(--br-xl);
-    }
-    /* image placement */
-   .product-1 {
-        object-position: 0 -200px;
-    }
-    .product-information {
-        /* padding-inline: 80px; */
-        max-width: 608px;
-    }
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -51,35 +41,17 @@
         transform: translateX(50%);
     }
     /* gallery */
-     .gallery-container .gallery-image-container {
+     .gallery-container {
+          margin-inline: auto;
+          max-width: 608px;
+     }
+     .gallery-main-image-container {
+        border-radius: var(--br-xl);
+        overflow: hidden;
         height: 290px;
-    }
-    .gallery-container .gallery-image-container .product-image {
-        object-fit: cover;
-    }
+     }
 
-    .product-label, .product-title {
-        margin-bottom: var(--spacing-300);
-    }
-
-    .product-description, .product-price-container {
-        margin-bottom: var(--spacing-300);
-    }
-
-    .quantity-cart-container {
-        flex-direction: row;
-        row-gap: initial; 
-        column-gap: var(--spacing-200);
-    }
-
-    .product-quantity-container {
-        flex: 0 0 47%;
-    }
-
-    .add-to-cart-button {
-        flex: 0 0 50%;
-    }
-
+    /* typography */
     .tp1 {
         font-size: var(--fs-200);
         letter-spacing: var(--ls-l);
@@ -170,18 +142,35 @@
     .gallery-container {
         display: flex;
         flex-direction: row;
+        max-width: 1021px;
+    }
+    .gallery-main-plus-thumbnail-wrapper {
+        padding: 4px;
+        background-color: green;
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 128px;
+        gap: 32px;
     }
-    .gallery-image-container.desktop {
-        inline-size: 448px;
-        block-size: 448px;
+    .product-image {
+        width: 100%;
+    }
 
+    .gallery-main-image-container {
+        height: 448px;
+        width: 448px;
     }
-    .product-information {
-        max-inline-size: 445px;
+
+    .thumbnail-gallery-container {
+        display: flex;
     }
-    .product-1, .product-2, .product-3, .product-4  {
-        object-position: center;
+
+    .thumbnail {
+        padding: 4px;
+        background-color: lime;
+        width: 88px;
+        border-radius: var(--br-l);
     }
+
 }

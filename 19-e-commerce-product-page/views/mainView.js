@@ -8,12 +8,15 @@ function mainViewInit () {
 function renderProduct ({data, message}) {
     if (message === "success") {
         console.log("renderProduct gotData:", data);
-        const galleryImageContainer = document.querySelector(".gallery-image-container");
-        const img = document.createElement('img');
-        img.src = data.images[0];
-        img.classList.add("product-image", "product-1");
-        img.alt = "Hero image of white sneakers";
-        galleryImageContainer.appendChild(img);
+        const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
+        // const img = document.createElement('img');
+        // img.src = data.images[0];
+        // img.classList.add("product-image", "product-1");
+        // img.alt = "Hero image of white sneakers";
+        // galleryMainImageContainer.appendChild(img);
+
+        const mainProductImage = document.querySelector('.product-image');
+        mainProductImage.src = data.images[0];
 
     } else {
         console.log("renderProduct noData:", message);
