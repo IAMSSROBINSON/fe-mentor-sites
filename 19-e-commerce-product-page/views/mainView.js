@@ -55,7 +55,7 @@ function renderThumbnails (thumbnailsArr) {
 
     thumbnailsArr.forEach((thumbnailSrc, index) => {
         const button = document.createElement('button');
-        button.classList.add(`product-${index+1}-button`);
+        button.classList.add(`product-${index+1}-button`, 'thumbnail-button');
         if (index === 0) {
             button.classList.add('selected');
         }
@@ -81,6 +81,12 @@ function renderProfile (user) {
 }
 
 // handlers
+function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
+    allThumbnailsArr.forEach((thumbnail) => {
+        thumbnail.classList.remove('selected');
+    });
+    selectedThumbnail.classList.add('selected');
+}
 
 function handleMenuIconClick(e) {
     console.log("menu icon clicked");
@@ -144,4 +150,4 @@ function handleNextImage (newPathname, className) {
 }
 
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton };
