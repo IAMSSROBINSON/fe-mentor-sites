@@ -181,10 +181,10 @@
         max-width: 1021px;
         gap: 128px;
     }
-    
+
     .gallery-main-plus-thumbnail-wrapper {
         padding: 4px;
-        background-color: green;
+        /* background-color: green; */
         width: fit-content;
         display: flex;
         flex-direction: column;
@@ -222,8 +222,6 @@
     }
 
     .thumbnail {
-        padding: 4px;
-        background-color: lime;
         width: 88px;
         border-radius: var(--br-l);
     }
