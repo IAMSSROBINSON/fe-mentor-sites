@@ -192,6 +192,10 @@
         gap: 32px;
     }
 
+    .arrow-container {
+        display: none;
+    }
+
     .product-image {
         width: 100%;
     }
@@ -225,6 +229,8 @@
         width: 88px;
         border-radius: var(--br-l);
     }
+
+
 
     /* product information */
     .product-information {

@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -90,11 +90,16 @@ function handleArrowClick(e) {
 function handleThumbnailClick (e) {
     console.log("handleThumbnailClick");
     const targetButton = e.target.closest('button');
+    console.log("handleThumbnailClick button:", targetButton.firstChild.classList[1]);
+    const productClass = targetButton.firstChild.classList[1];
+    const mainImageSrc = getProducts()[0].images.filter(src => src === `/assets/images/image-${productClass}.jpg`)[0];
+    console.log("mainImageSrc", mainImageSrc);
 
     const allThumbnailButtons = Array.from(document.querySelectorAll('.thumbnail-button'));
 
     if (targetButton) {
         renderSelectedThumbnailButton(allThumbnailButtons, targetButton);
+        renderMainGalleryImage(mainImageSrc);
     }
     return
 }

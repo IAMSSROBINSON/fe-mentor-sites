@@ -149,5 +149,10 @@ function handleNextImage (newPathname, className) {
     console.log("Product image:", productImage);
 }
 
+function renderMainGalleryImage (mainImageSrc) {
+    const productImage = document.querySelector('.product-image');
+    productImage.src = mainImageSrc;
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage };
