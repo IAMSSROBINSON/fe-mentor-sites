@@ -87,7 +87,11 @@ function handleArrowClick(e) {
 }
 
 
+function handleThumbnailClick (e) {
+    console.log("handleThumbnailClick");
+}
+
  
 
 // exports
-export { mainControllerInit };
+export { mainControllerInit, handleThumbnailClick };
