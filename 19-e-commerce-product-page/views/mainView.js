@@ -18,9 +18,49 @@ function renderProduct ({data, message}) {
         const mainProductImage = document.querySelector('.product-image');
         mainProductImage.src = data.images[0];
 
+        renderThumbnails(data.thumbnails);
+        renderInformation(data);
+
     } else {
         console.log("renderProduct noData:", message);
     }
+}
+
+function renderInformation (data) {
+    console.log("renderInformation:", data);
+    const brandName = document.querySelector('.product-label');
+    brandName.textContent = data.brandName;
+
+    const name = document.querySelector('.product-title');
+    name.textContent = data.name;
+
+    const description = document.querySelector('.product-description');
+    description.textContent = data.description;
+
+    const productPrice = document.querySelector('.product-price');
+    const price = data.isDiscounted ? (data.price * data.discountPercentage /100).toFixed(2) : data.price.toFixed(2);
+    productPrice.textContent = `$${price}`;
+
+    const productDiscount = document.querySelector('.product-discount');
+    productDiscount.textContent = data.isDiscounted ? data.discountPercentage + "%" : "";
+
+    const previousPrice = document.querySelector('.product-previous-price');
+    previousPrice.textContent = `$${data.price.toFixed(2)}`;
+}
+
+function renderThumbnails (thumbnailsArr) {
+    console.log("renderThumbnails:", thumbnailsArr);
+    const thumbNailGalleryContainer = document.querySelector('.thumbnail-gallery-container');
+
+    thumbnailsArr.forEach((thumbnailSrc, index) => {
+        const img = document.createElement("img");
+        img.src = thumbnailSrc;
+        img.classList.add('thumbnail', `product-${index + 1}`);
+        img.alt = "";
+        thumbNailGalleryContainer.appendChild(img);
+    });
+
+
 }
 
 function renderProfile (user) {

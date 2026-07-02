@@ -11,6 +11,7 @@
         --avatar-width: calc(var(--spacing-700) - 6px); /* 56px */
     }
 
+
     .show-menu-mobile-tablet {
         width: 100%;
         max-width: 18.8125rem;
@@ -180,6 +181,7 @@
         max-width: 1021px;
         gap: 128px;
     }
+    
     .gallery-main-plus-thumbnail-wrapper {
         padding: 4px;
         background-color: green;
