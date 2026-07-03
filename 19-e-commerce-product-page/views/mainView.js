@@ -47,6 +47,12 @@ function renderInformation (data) {
 
     const previousPrice = document.querySelector('.product-previous-price');
     previousPrice.textContent = `$${data.price.toFixed(2)}`;
+
+    const addToCartButton = document.querySelector('.add-to-cart-button');
+    addToCartButton.id = data.id;
+    addToCartButton.dataset.productId = data.id;
+    console.log("addToCartButton", addToCartButton);
+
 }
 
 function renderThumbnails (thumbnailsArr) {
@@ -154,5 +160,47 @@ function renderMainGalleryImage (mainImageSrc) {
     productImage.src = mainImageSrc;
 }
 
+function increaseQuantity () {
+    console.log('increaseQuantity');
+
+    const quantity = getQuantity();
+    console.log('quantity quantity', quantity);
+    const newQuantity = quantity + 1;
+    if (newQuantity <= 5) {
+        console.log('increaseQuantity newQuantity', newQuantity);
+        renderQuantity(newQuantity);
+    }
+    return;
+}
+
+
+function decreaseQuantity () {
+    console.log('decreaseQuantity');
+    const quantity = getQuantity();
+    const newQuantity = quantity - 1;
+    if (newQuantity > 0) {
+        
+        console.log('decreaseQuantity newQuantity', newQuantity);
+        renderQuantity(newQuantity);
+    }
+    return;
+}
+
+function renderQuantity (value) {
+    const quantityElement = document.querySelector(".product-quantity");
+    quantityElement.textContent = value;
+}
+
+function getQuantity () {
+    const quantity = parseInt(document.querySelector(".product-quantity").textContent);
+    return quantity;
+}
+
+function renderCartNumber (itemsInCart) {
+    const cartNumberElement = document.querySelector(".cart-number-display-container");
+    cartNumberElement.style.display = "flex";
+    cartNumberElement.textContent = itemsInCart;
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber };

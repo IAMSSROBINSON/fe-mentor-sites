@@ -299,7 +299,7 @@ a {
   width: calc(var(--spacing-200) + 3px);
   height: calc(var(--spacing-200) - 3px);
   font-size: var(--fs-50);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   border-radius: var(--br-s);

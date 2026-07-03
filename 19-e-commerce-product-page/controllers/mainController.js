@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -42,9 +42,61 @@ async function mainControllerInit () {
 
     const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
     galleryMainImageContainer.addEventListener("click", handleArrowClick);
+
+    const addToCartButton = document.querySelector(".add-to-cart-button");
+    addToCartButton.addEventListener("click", handleAddToCartClick);
+
+    const productQuantityContainer = document.querySelector(".product-quantity-container");
+    console.log("productQuantityContainer", productQuantityContainer);
+    productQuantityContainer.addEventListener("click", handleProductQuantityContainer);
 }
 
 // handlers
+function handleProductQuantityContainer (e) {
+  console.log("productQuantityContainer clicked:");
+  const target = e.target.closest('button');
+  if (target && target.classList?.contains('product-minus')) {
+    console.log("minusButtonClicked");
+        decreaseQuantity();
+  } else {
+    increaseQuantity();
+    console.log("plusButtonClicked");
+  }
+
+}
+
+function handleAddToCartClick (e) {
+  console.log("handleAddToCartClick");
+  // get the quantity
+  const quantity = parseInt(document.querySelector(".product-quantity").textContent);
+
+  const addToCartButton = e.target.closest('button');
+  const productId = addToCartButton.dataset.productId;
+
+  console.log("quantity:", quantity);
+  console.log("BUTTON:", addToCartButton);
+  console.log("button:", productId);
+  if (quantity !== 0) {
+    addProductIdToUserCart(productId, quantity);
+  }
+  return;
+}
+
+function addProductIdToUserCart (productId, quantity = 0) {
+    console.log("user1:", user1);
+    console.log("user1:", user1.cart.items);
+    user1.addItem(productId, quantity);
+    const cartLength = user1.cart.items.length;
+    if (cartLength > 0) {
+      const totalItemsInCart = user1.cart.items.reduce((acc, item) => {
+        const count = acc + item.quantity;
+        return count;
+      }, 0);
+      console.log("cartLength:", totalItemsInCart);
+      renderCartNumber(totalItemsInCart);
+    }
+}
+
 function handleCartClick () {
     const cartItems = user1.getCartItems();
 

@@ -27,9 +27,15 @@ class User {
         this.profileSrc = path;
     }
 
-    addItem(item) {
-        this.cart.items.push(item);
-        console.log("Item added:", "item:", item, "cart:", this.cart);
+    addItem(productId, quantity = 0) {
+        // this.cart.items.push(item);
+        const presentProduct = this.cart.items.filter(productObj => productObj.productId === productId);
+        if (presentProduct.length !== 0) {
+            presentProduct[0].quantity += quantity;
+        } else {
+            this.cart.items.push({productId: productId, quantity: quantity})
+        }
+        console.log("Item added:", "item:", productId, "quantity:", quantity, "cart:", this.cart);
     }
 
     clearCart () {
