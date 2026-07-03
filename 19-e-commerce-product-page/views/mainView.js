@@ -202,5 +202,10 @@ function renderCartNumber (itemsInCart) {
     cartNumberElement.textContent = itemsInCart;
 }
 
+function renderResetQuantity () {
+    const quantity = document.querySelector('.product-quantity');
+    quantity.textContent = 1;
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity };
