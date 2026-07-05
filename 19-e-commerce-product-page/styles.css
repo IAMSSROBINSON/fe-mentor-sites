@@ -272,7 +272,7 @@ a {
   line-height: var(--lh-l);
   color: var(--clr-grey-950);
   padding: calc(var(--spacing-200) - 1px);
-  border-radius: var(--br-xl);
+  border-radius: var(--br-l);
 }
 
 
