@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -79,6 +79,7 @@ function handleAddToCartClick (e) {
   if (quantity !== 0) {
     addProductIdToUserCart(productId, quantity);
     renderResetQuantity();
+    renderCloseCartMenu();
   }
   return;
 }
@@ -100,13 +101,30 @@ function addProductIdToUserCart (productId, quantity = 0) {
 
 function handleCartClick () {
     const cartItems = user1.getCartItems();
+    console.log("handleCartClick cartItems:", cartItems);
 
     if (cartItems.length === 0) {
-         handleCartIconClick("empty");
+         handleCartIconClick("empty", cartItems);
     } else {
-        handleCartIconClick("filled");
+
+       cartItems.forEach((itemObj) => {
+        const { productId, quantity } = itemObj;
+        console.log("productId: ", productId, "\n", "quantity :", quantity
+        );
+
+        const product = getProducts().filter(productObj => productObj.id === productId)[0];
+
+        handleCartIconClick("filled", cartItems, product, quantity);
+        // renderCartProduct(product, quantity);
+       })
+
+        // const products = getProducts();
+        // console.log("handleCartClick products:", products);
+      
     }
 }
+
+
 
 function handleArrowClick(e) {
   const button = e.target.closest(".arrow-container");
@@ -157,7 +175,11 @@ function handleThumbnailClick (e) {
     return
 }
 
+function handleProductDelete (e) {
+  console.log("deleteButtonClicked handleProductDelete:");
+  e.stopPropagation();
+} 
  
 
 // exports
-export { mainControllerInit, handleThumbnailClick };
+export { mainControllerInit, handleThumbnailClick, handleProductDelete };

@@ -1,5 +1,5 @@
 // imports
-import { handleThumbnailClick } from '../controllers/mainController.js';
+import { handleThumbnailClick, handleProductDelete } from '../controllers/mainController.js';
 
 // functions
 function mainViewInit () {
@@ -134,16 +134,87 @@ function handleMenuContainerClick (e) {
    
 }
 
-function handleCartIconClick (state = "empty") {
+function handleCartIconClick (state = "empty", cartItems, product, quantity) {
     
     const cartMenuContainer = document.querySelector(".cart-menu-container");
     cartMenuContainer.classList.toggle('hide');
+    const cartMenuLower = document.querySelector('.cart-menu-lower');
+    const checkoutButton = document.querySelector('.cart-checkout-button');
 
-    const emptyCartMessage = document.getElementById("cart-empty-message");
+
+    const emptyCartMessage = document.querySelector(".cart-empty-message");
     if (state === "empty") {
-        emptyCartMessage.textContent = "Your cart is empty to."
+        emptyCartMessage.textContent = "Your cart is empty."
+    } else {
+        emptyCartMessage.textContent = "";
+        console.log("cartNow: ", cartItems);
+        checkoutButton.classList.add('show');
+        renderCartListItems(product, quantity);
+        
     }
+}
 
+function renderCartListItems (product , quantity) {
+    console.log("renderCartListItems:", product);
+    const cartList = document.querySelector(".cart-list");
+    cartList.classList.add('show');
+
+    cartList.innerHTML = "";
+
+    const li = document.createElement('li');
+    li.classList.add('cart-list-item');
+
+
+    // left of item
+    const img = document.createElement('img');
+    img.src = product.thumbnails[0];
+    img.classList.add('cart-image');
+    img.setAttribute('alt', "White with tan panels, Luxury sneakers product shot");
+
+    // middle of item
+     const cartItemMiddleContainer = document.createElement('div');
+    cartItemMiddleContainer.classList.add('cart-item-middle-container');
+
+    // middle top of item
+    const name = document.createElement('p');
+    name.textContent = product.name;
+    name.classList.add('cart-name');
+
+    // middle bottom of item
+    const cartItemMiddleBottomContainer = document.createElement('div');
+    cartItemMiddleBottomContainer.classList.add('cart-item-middle-bottom-container');
+
+    const priceQuantity = document.createElement('p');
+    const discountedPrice = product.isDiscounted ? (product.price * product.discountPercentage /100).toFixed(2) : product.price.toFixed(2);
+    priceQuantity.classList.add('cart-price');
+
+    const priceQuantityString = `$${discountedPrice} x ${quantity}`;
+    priceQuantity.textContent = priceQuantityString;
+
+    const totalPrice = document.createElement('p');
+    totalPrice.classList.add('cart-total-price')
+    totalPrice.textContent = `$${(discountedPrice * quantity).toFixed(2)}`;
+    console.log("totalPrice: ", totalPrice);
+
+    // right of item
+    const deleteButton = document.createElement('button');
+    deleteButton.classList.add("cart-delete-button");
+    const deleteIcon = document.createElement('img');
+    deleteIcon.src = './assets/icons/icon-delete.svg';
+    deleteIcon.classList.add('cart-delete-icon')
+    deleteButton.append(deleteIcon);
+    deleteButton.addEventListener('click', handleProductDelete, true);
+
+    li.appendChild(img);
+    cartItemMiddleContainer.appendChild(name);
+    cartItemMiddleBottomContainer.append(priceQuantity);
+    cartItemMiddleBottomContainer.appendChild(totalPrice);
+    cartItemMiddleContainer.appendChild(cartItemMiddleBottomContainer);
+    li.appendChild(cartItemMiddleContainer);
+    li.appendChild(deleteButton);
+
+
+    cartList.appendChild(li);
 }
 
 function handleNextImage (newPathname, className) {
@@ -203,9 +274,48 @@ function renderCartNumber (itemsInCart) {
 }
 
 function renderResetQuantity () {
-    const quantity = document.querySelector('.product-quantity');
+    const quantity = document.querySelector(".product-quantity");
     quantity.textContent = 1;
 }
 
+function renderCloseCartMenu () {
+    const cartMenuContainer = document.querySelector(".cart-menu-container");
+    cartMenuContainer.classList.add('hide');
+}
+
+function renderCartProduct (product, quantity) {
+    const cartMenuContainer = document.querySelector(".cart-menu-container");
+    cartMenuContainer.classList.add('show');
+
+
+    const list = document.querySelector('.cart-list');
+
+    const li = document.createElement('li');
+    
+    const {name} = product;
+    li.textContent = name;
+
+
+
+
+    
+    const cartMenuLower = document.querySelector('.cart-menu-lower');
+    const checkoutButton = document.querySelector('.cart-checkout-button');
+
+
+    const emptyCartMessage = document.querySelector(".cart-empty-message");
+    if (state === "empty") {
+        emptyCartMessage.textContent = "Your cart is empty."
+    // } else {
+    //     emptyCartMessage.textContent = "";
+    //     console.log("cartNow: ", cartItems);
+    //     renderCartListItems(cartItems);
+    //     checkoutButton.classList.add('show');
+    // }
+    }
+
+
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct };
