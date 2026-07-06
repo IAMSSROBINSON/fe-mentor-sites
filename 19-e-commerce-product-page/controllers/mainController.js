@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -178,6 +178,16 @@ function handleThumbnailClick (e) {
 function handleProductDelete (e) {
   console.log("deleteButtonClicked handleProductDelete:");
   e.stopPropagation();
+
+  const target = e.target.closest('li');
+  const cartItemId = target?.dataset.cartItemId;
+  console.log("target:", target);
+  console.log("cartItemId:", cartItemId);
+  const deletedProduct = user1.deleteProductById(cartItemId);
+  console.log("handleProductDelete deletedProduct:", deletedProduct);
+  if (deletedProduct) {
+    removeDeletedProductFromCart(target);
+  }
 } 
  
 

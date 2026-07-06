@@ -48,17 +48,17 @@ class User {
     }
 
     deleteProductById (id) {
-        const productIdMatch = this.cart.items.filter(product => productId === id);
+        const productIdMatch = this.cart.items.filter(product => product.productId === id);
         if (productIdMatch.length !== 0) {
             const productToDelete = productIdMatch[0];
             const productToDeleteIndex = this.cart.items.indexOf(productToDelete);
             if (productToDeleteIndex !== -1) {
                 console.log('newCartItems before:', this.cart.items);
 
-                const deletedProduct = this.cart.splice(productToDeleteIndex, 1);
+                const deletedProduct = this.cart.items.splice(productToDeleteIndex, 1);
                 console.log('ProductDeleted: ', deletedProduct);
                 console.log('newCartItems after:', this.cart.items);
-                return deletedProduct;
+                return deletedProduct[0];
             }
         } else return null;
     }

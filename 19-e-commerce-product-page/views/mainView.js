@@ -163,6 +163,7 @@ function renderCartListItems (product , quantity) {
 
     const li = document.createElement('li');
     li.classList.add('cart-list-item');
+    li.dataset.cartItemId = product.id;
 
 
     // left of item
@@ -317,5 +318,9 @@ function renderCartProduct (product, quantity) {
 
 }
 
+function removeDeletedProductFromCart (element) {
+        element.remove();
+    }
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart };
