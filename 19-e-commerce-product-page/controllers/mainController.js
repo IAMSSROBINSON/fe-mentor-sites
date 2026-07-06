@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -104,8 +104,6 @@ function handleCartClick () {
     console.log("handleCartClick cartItems:", cartItems);
     toggleCartMenuContainer();
     if (cartItems.length === 0) {
-        //  handleCartIconClick("empty", cartItems);
-        
         showEmptyCartMessage();
         hideCheckout();
     } else {
@@ -120,15 +118,9 @@ function handleCartClick () {
 
         const product = getProducts().filter(productObj => productObj.id === productId)[0];
 
-        // handleCartIconClick("filled", cartItems, product, quantity);
         renderCartListItems(product, quantity);
-        // renderCartProduct(product, quantity);
        })
-
-        // const products = getProducts();
-        // console.log("handleCartClick products:", products);
-    
-          showCheckout(); 
+        showCheckout(); 
     }
 }
 

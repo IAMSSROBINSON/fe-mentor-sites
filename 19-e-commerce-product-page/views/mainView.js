@@ -129,24 +129,6 @@ function handleMenuContainerClick (e) {
    
 }
 
-function handleCartIconClick (state = "empty", cartItems, product, quantity) {
-    
-    const cartMenuContainer = document.querySelector(".cart-menu-container");
-    cartMenuContainer.classList.toggle('hide');
-    const cartMenuLower = document.querySelector('.cart-menu-lower');
-    const checkoutButton = document.querySelector('.cart-checkout-button');
-
-    if (state === "empty") {
-       showEmptyCartMessage();
-       hideCheckout();
-    } else {
-        removeEmptyCartMessage();
-        console.log("cartNow: ", cartItems);
-        renderCartListItems(product, quantity);
-        showCheckout(); 
-    }
-}
-
 function getCartMenuContainer () {
     return document.querySelector(".cart-menu-container");
 }
@@ -406,4 +388,4 @@ function addStyleToCartNumberDisplayContainer () {
 }
 
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
