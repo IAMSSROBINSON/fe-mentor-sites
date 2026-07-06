@@ -136,7 +136,6 @@ function handleCartIconClick (state = "empty", cartItems, product, quantity) {
     const cartMenuLower = document.querySelector('.cart-menu-lower');
     const checkoutButton = document.querySelector('.cart-checkout-button');
 
-
     if (state === "empty") {
        showEmptyCartMessage();
        hideCheckout();
@@ -146,6 +145,24 @@ function handleCartIconClick (state = "empty", cartItems, product, quantity) {
         renderCartListItems(product, quantity);
         showCheckout(); 
     }
+}
+
+function getCartMenuContainer () {
+    return document.querySelector(".cart-menu-container");
+}
+
+function showCartMenuContainer () {
+    getCartMenuContainer().classList.remove('hide');
+    getCartMenuContainer().classList.add('show');
+}
+
+function toggleCartMenuContainer() {
+    getCartMenuContainer().classList.toggle('hide');
+}
+
+function hideCartMenuContainer () {
+    getCartMenuContainer().classList.remove('show');
+    getCartMenuContainer().classList.add('hide');
 }
 
 function getEmptyCartMessageElement () {
@@ -162,12 +179,16 @@ function removeEmptyCartMessage () {
     emptyCartMessage.textContent = ""
 }
 
-function renderCartListItems (product , quantity) {
-    console.log("renderCartListItems:", product);
+function clearCartList () {
     const cartList = document.querySelector(".cart-list");
-    cartList.classList.add('show');
+     cartList.innerHTML = "";
+}
 
-    cartList.innerHTML = "";
+function renderCartListItems (product , quantity) {
+    const cartList = document.querySelector(".cart-list");
+
+    console.log("renderCartListItems:", product);
+    cartList.classList.add('show');
 
     const li = document.createElement('li');
     li.classList.add('cart-list-item');
@@ -328,6 +349,7 @@ function renderCartProduct (product, quantity) {
 
 function removeDeletedProductFromCart (element) {
         element.remove();
+        
     }
 
 function hideCheckout () {
@@ -342,5 +364,46 @@ function showCheckout () {
  checkout.classList.add('show');
 }
 
+function getCartNumberContainer () {
+    return document.querySelector('.cart-number-display-container');
+}
+
+function showCartNumber (numberOfItems = 0) {
+    const cartNumberContainer = getCartNumberContainer();
+    cartNumberContainer.classList.remove('hide');
+    cartNumberContainer.classList.add('show');
+    cartNumberContainer.textContent = numberOfItems;
+}
+
+function removeCartNumber () {
+    const cartNumberContainer = getCartNumberContainer();
+    cartNumberContainer.textContent = ""
+    cartNumberContainer.classList.remove('show');
+    cartNumberContainer.classList.add('hide');
+    cartNumberContainer.style.backgroundColor = 'transparent';
+}
+
+function updateCartNumber (number = 0) {
+    console.log("updateCartNumber", number);
+    const cartNumberContainer = getCartNumberContainer();
+    console.log('cartContainer before:', cartNumberContainer);
+    if (number !== 0) {
+        showCartNumber();
+        cartNumberContainer.textContent = number;
+        console.log('cartContainer after:', cartNumberContainer);
+        return;
+    }
+    cartNumberContainer.textContent = number;
+    removeCartNumber();
+    ;
+    console.log('cartContainer after:', cartNumberContainer);
+
+
+}
+
+function addStyleToCartNumberDisplayContainer () {
+    getCartNumberContainer().style.backgroundColor = '#FF7E1B';
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };

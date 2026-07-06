@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -79,6 +79,7 @@ function handleAddToCartClick (e) {
     addProductIdToUserCart(productId, quantity);
     renderResetQuantity();
     renderCloseCartMenu();
+    addStyleToCartNumberDisplayContainer();
   }
   return;
 }
@@ -101,10 +102,16 @@ function addProductIdToUserCart (productId, quantity = 0) {
 function handleCartClick () {
     const cartItems = user1.getCartItems();
     console.log("handleCartClick cartItems:", cartItems);
-
+    toggleCartMenuContainer();
     if (cartItems.length === 0) {
-         handleCartIconClick("empty", cartItems);
+        //  handleCartIconClick("empty", cartItems);
+        
+        showEmptyCartMessage();
+        hideCheckout();
     } else {
+        
+        clearCartList();
+        removeEmptyCartMessage();
 
        cartItems.forEach((itemObj) => {
         const { productId, quantity } = itemObj;
@@ -113,13 +120,15 @@ function handleCartClick () {
 
         const product = getProducts().filter(productObj => productObj.id === productId)[0];
 
-        handleCartIconClick("filled", cartItems, product, quantity);
+        // handleCartIconClick("filled", cartItems, product, quantity);
+        renderCartListItems(product, quantity);
         // renderCartProduct(product, quantity);
        })
 
         // const products = getProducts();
         // console.log("handleCartClick products:", products);
-      
+    
+          showCheckout(); 
     }
 }
 
@@ -186,8 +195,10 @@ function handleProductDelete (e) {
   console.log("handleProductDelete deletedProduct:", deletedProduct);
   if (deletedProduct) {
     removeDeletedProductFromCart(target);
+    user1.cart.items.length === 0 ? removeEmptyCartMessage() : showCartNumber(user1.cart.items.length);
     user1.cart.items.length === 0 ? hideCheckout() : showCheckout();
     user1.cart.items.length === 0 ? showEmptyCartMessage() : removeEmptyCartMessage();
+    updateCartNumber(user1.cart.items.length);
 
   }
 } 
