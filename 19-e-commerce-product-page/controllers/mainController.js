@@ -1,5 +1,5 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart } from "../views/mainView.js";
+import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage } from "../views/mainView.js";
 import { mainModelInit, User} from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 
@@ -18,12 +18,11 @@ async function mainControllerInit () {
         await productModelInit();
         const products = getProducts();
         console.log("products mainController:", products[0]);
-        const { data, message} = products;
-        renderProduct({data: products[0], message: "success"});
-        if (message === "success") {
+        
+        if (products.length > 0) {
             renderProduct({data: products[0], message: "success"});
         } else {
-            // render default product in view or backup
+            // render default product in view or display error fetching data
         }
     }
     catch (err) {
@@ -187,6 +186,9 @@ function handleProductDelete (e) {
   console.log("handleProductDelete deletedProduct:", deletedProduct);
   if (deletedProduct) {
     removeDeletedProductFromCart(target);
+    user1.cart.items.length === 0 ? hideCheckout() : showCheckout();
+    user1.cart.items.length === 0 ? showEmptyCartMessage() : removeEmptyCartMessage();
+
   }
 } 
  

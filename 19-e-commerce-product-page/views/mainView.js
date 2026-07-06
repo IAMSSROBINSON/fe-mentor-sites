@@ -10,11 +10,6 @@ function renderProduct ({data, message}) {
     if (message === "success") {
         console.log("renderProduct gotData:", data);
         const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
-        // const img = document.createElement('img');
-        // img.src = data.images[0];
-        // img.classList.add("product-image", "product-1");
-        // img.alt = "Hero image of white sneakers";
-        // galleryMainImageContainer.appendChild(img);
 
         const mainProductImage = document.querySelector('.product-image');
         mainProductImage.src = data.images[0];
@@ -142,16 +137,29 @@ function handleCartIconClick (state = "empty", cartItems, product, quantity) {
     const checkoutButton = document.querySelector('.cart-checkout-button');
 
 
-    const emptyCartMessage = document.querySelector(".cart-empty-message");
     if (state === "empty") {
-        emptyCartMessage.textContent = "Your cart is empty."
+       showEmptyCartMessage();
+       hideCheckout();
     } else {
-        emptyCartMessage.textContent = "";
+        removeEmptyCartMessage();
         console.log("cartNow: ", cartItems);
-        checkoutButton.classList.add('show');
         renderCartListItems(product, quantity);
-        
+        showCheckout(); 
     }
+}
+
+function getEmptyCartMessageElement () {
+    return  document.querySelector(".cart-empty-message");
+}
+
+function showEmptyCartMessage () {
+    const emptyCartMessage = getEmptyCartMessageElement();
+    emptyCartMessage.textContent = "Your cart is empty."
+}
+
+function removeEmptyCartMessage () {
+    const emptyCartMessage = getEmptyCartMessageElement();
+    emptyCartMessage.textContent = ""
 }
 
 function renderCartListItems (product , quantity) {
@@ -322,5 +330,17 @@ function removeDeletedProductFromCart (element) {
         element.remove();
     }
 
+function hideCheckout () {
+     const checkoutButton = document.getElementById('checkout');
+     checkout.classList.remove('show');
+     checkout.classList.add('hide');
+}
+
+function showCheckout () {
+ const checkoutButton = document.getElementById('checkout');
+ checkout.classList.remove('hide');
+ checkout.classList.add('show');
+}
+
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleCartIconClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage };
