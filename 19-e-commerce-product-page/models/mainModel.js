@@ -46,6 +46,22 @@ class User {
     getCartItems () {
         return this.cart.items;
     }
+
+    deleteProductById (id) {
+        const productIdMatch = this.cart.items.filter(product => productId === id);
+        if (productIdMatch.length !== 0) {
+            const productToDelete = productIdMatch[0];
+            const productToDeleteIndex = this.cart.items.indexOf(productToDelete);
+            if (productToDeleteIndex !== -1) {
+                console.log('newCartItems before:', this.cart.items);
+
+                const deletedProduct = this.cart.splice(productToDeleteIndex, 1);
+                console.log('ProductDeleted: ', deletedProduct);
+                console.log('newCartItems after:', this.cart.items);
+                return deletedProduct;
+            }
+        } else return null;
+    }
 }
 
 
