@@ -1,5 +1,5 @@
 // imports
-import { handleThumbnailClick, handleProductDelete } from '../controllers/mainController.js';
+import { handleThumbnailClick, handleProductDelete, handleMainImageClick, handleButtonRoving } from '../controllers/mainController.js';
 
 // functions
 function mainViewInit () {
@@ -10,9 +10,26 @@ function renderProduct ({data, message}) {
     if (message === "success") {
         console.log("renderProduct gotData:", data);
         const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
+        galleryMainImageContainer.addEventListener('click', handleMainImageClick);
 
         const mainProductImage = document.querySelector('.product-image');
         mainProductImage.src = data.images[0];
+
+        // const imageButton = document.createElement("button");
+        // imageButton.classList.add('main-image-button');
+
+        // const mainImage = document.createElement('img');
+        // mainImage.alt = "Luxury white sneakers with tan panels";
+        // mainImage.src = data.images[0];
+        // mainImage.classList.add('product-image');
+
+
+        // console.log("mainImage:", mainImage);
+        // imageButton.appendChild(mainImage);
+        // console.log("mainImage:", imageButton);
+        // galleryMainImageContainer.prepend(imageButton);
+
+        galleryMainImageContainer.prepend(mainProductImage);
 
         renderThumbnails(data.thumbnails);
         renderInformation(data);
@@ -56,10 +73,18 @@ function renderThumbnails (thumbnailsArr) {
 
     thumbnailsArr.forEach((thumbnailSrc, index) => {
         const button = document.createElement('button');
+        button.id = `product-${index+1}`
         button.classList.add(`product-${index+1}-button`, 'thumbnail-button');
         if (index === 0) {
             button.classList.add('selected');
+            button.setAttribute("tabindex", "0");
+           
+        } else {
+            button.setAttribute('tabindex', '-1');
         }
+
+         button.addEventListener('keydown', handleButtonRoving)
+        
         const img = document.createElement("img");
         img.src = thumbnailSrc;
         img.classList.add('thumbnail', `product-${index + 1}`);
@@ -70,6 +95,7 @@ function renderThumbnails (thumbnailsArr) {
 
     thumbNailGalleryContainer.addEventListener("click", handleThumbnailClick);
 }
+
 
 function renderProfile (user) {
     const avatarContainer = document.getElementById('avatar-container');
@@ -386,6 +412,7 @@ function updateCartNumber (number = 0) {
 function addStyleToCartNumberDisplayContainer () {
     getCartNumberContainer().style.backgroundColor = '#FF7E1B';
 }
+
 
 // exports
 export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };

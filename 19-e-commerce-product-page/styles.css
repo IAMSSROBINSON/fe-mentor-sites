@@ -381,11 +381,13 @@ a {
 .gallery-main-image-container {
   position: relative;
   height: 300px;
-  /* background-color: lime; */
-  /* padding: 2px; */
-  /* width: 100%; */
   overflow: hidden;
+  border: none;
   cursor: pointer;
+}
+
+.main-image-button {
+  border: none;
 }
 
 .product-image {
@@ -405,6 +407,7 @@ a {
   align-items: center;
   border-radius: var(--br-xxl);
   position: absolute;
+  cursor: pointer;
 }
 
 .previous-arrow-container {

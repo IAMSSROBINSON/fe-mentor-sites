@@ -194,7 +194,55 @@ function handleProductDelete (e) {
 
   }
 } 
+
+function handleMainImageClick (e) {
+  console.log("handleMainImageClicked");
+}
+
+function handleButtonRoving (e) {
+  const target = e.target;
+
+  if (e.key === "ArrowRight") {
+    console.log("ArrowRight clicked");
+
+    const allThumbnailButtons = Array.from(document.querySelectorAll('.thumbnail-button'));
+
+    const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
+    console.log("target:", target);
+    console.log("allThumbnailButtons:", allThumbnailButtons);
+
+    console.log("indexOfCurrentThumbnail", indexOfCurrentThumbnail)
+    if (indexOfCurrentThumbnail === -1) {
+      console.log("cannot find current image in list");
+      return;
+    }
+
+
+    let nextIndex = indexOfCurrentThumbnail + 1;
+    if (nextIndex > allThumbnailButtons.length - 1) {
+      nextIndex = 0;
+    } 
+     const previousButton = allThumbnailButtons[indexOfCurrentThumbnail];
+     const nextButton = allThumbnailButtons[nextIndex];
+
+    console.log("previousButton:", previousButton);
+    console.log("nextButton:", nextButton);
+     previousButton.setAttribute('tabindex', '-1');
+     nextButton.setAttribute('tabindex', '0');
+     nextButton.focus();
+     renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
+    renderMainImageFromArrowClick(nextButton);
+  }
+}
+
+function renderMainImageFromArrowClick (button) {
+  const buttonId = button.id;
+
+    const mainImageSrc = getProducts()[0].images.filter(src => src === `/assets/images/image-${buttonId}.jpg`)[0];
+
+     renderMainGalleryImage(mainImageSrc);
+}
  
 
 // exports
-export { mainControllerInit, handleThumbnailClick, handleProductDelete };
+export { mainControllerInit, handleThumbnailClick, handleProductDelete, handleMainImageClick, handleButtonRoving };
