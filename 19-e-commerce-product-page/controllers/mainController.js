@@ -1,75 +1,118 @@
 // imports
-import { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer } from "../views/mainView.js";
-import { mainModelInit, User} from "../models/mainModel.js";
+import {
+  mainViewInit,
+  renderProduct,
+  renderProfile,
+  handleMenuIconClick,
+  handleMenuContainerClick,
+  handleNextImage,
+  renderSelectedThumbnailButton,
+  renderMainGalleryImage,
+  increaseQuantity,
+  decreaseQuantity,
+  renderCartNumber,
+  renderResetQuantity,
+  renderCloseCartMenu,
+  renderCartProduct,
+  removeDeletedProductFromCart,
+  hideCheckout,
+  showCheckout,
+  showEmptyCartMessage,
+  removeEmptyCartMessage,
+  showCartNumber,
+  removeCartNumber,
+  renderCartListItems,
+  clearCartList,
+  showCartMenuContainer,
+  hideCartMenuContainer,
+  toggleCartMenuContainer,
+  updateCartNumber,
+  addStyleToCartNumberDisplayContainer,
+} from "../views/mainView.js";
+import { mainModelInit, User } from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
+
+document.documentElement.addEventListener("keydown", (e) => {
+  if (e.key == "Tab") {
+    console.log("Key:", e.key);
+    console.log("Component:", e.target);
+  }
+});
 
 let user1 = null;
 
 // functions
-async function mainControllerInit () {
-    console.log('mainControllerInit');
-    user1 = new User('./assets/images/image-avatar.png');
-    console.log("user1:", user1);
-    console.log("user1 cart.items:", user1.cart.items);
-    mainViewInit();
-    renderProfile(user1);
-    mainModelInit();
-    try {
-        await productModelInit();
-        const products = getProducts();
-        console.log("products mainController:", products[0]);
-        
-        if (products.length > 0) {
-            renderProduct({data: products[0], message: "success"});
-        } else {
-            // render default product in view or display error fetching data
-        }
+async function mainControllerInit() {
+  console.log("mainControllerInit");
+  user1 = new User("./assets/images/image-avatar.png");
+  console.log("user1:", user1);
+  console.log("user1 cart.items:", user1.cart.items);
+  mainViewInit();
+  renderProfile(user1);
+  mainModelInit();
+  try {
+    await productModelInit();
+    const products = getProducts();
+    console.log("products mainController:", products[0]);
+
+    if (products.length > 0) {
+      renderProduct({ data: products[0], message: "success" });
+    } else {
+      // render default product in view or display error fetching data
     }
-    catch (err) {
-        // renderProduct({data: null, message: "Could not fetch data. Try again later..."});
-        // instead of doing conditional in view explicitly render error from here in controller
-    }
+  } catch (err) {
+    // renderProduct({data: null, message: "Could not fetch data. Try again later..."});
+    // instead of doing conditional in view explicitly render error from here in controller
+  }
 
-    const menuIconContainer = document.querySelector('.menu-icon-container');
-    menuIconContainer.addEventListener('click', handleMenuIconClick);
+  const menuIconContainer = document.querySelector(".menu-icon-container");
+  menuIconContainer.addEventListener("click", handleMenuIconClick);
 
-    const menuContainer = document.getElementById('menu-container');
-    menuContainer.addEventListener('click', handleMenuContainerClick);
+  const menuContainer = document.getElementById("menu-container");
+  menuContainer.addEventListener("click", handleMenuContainerClick);
 
-    const cartIconContainer = document.querySelector(".cart-icon-container");
-    cartIconContainer.addEventListener("click", handleCartClick);
+  const cartIconContainer = document.querySelector(".cart-icon-container");
+  cartIconContainer.addEventListener("click", handleCartClick);
 
-    const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
-    galleryMainImageContainer.addEventListener("click", handleArrowClick);
+  const galleryMainImageContainer = document.querySelector(
+    ".gallery-main-image-container",
+  );
+  galleryMainImageContainer.addEventListener("click", handleArrowClick);
 
-    const addToCartButton = document.querySelector(".add-to-cart-button");
-    addToCartButton.addEventListener("click", handleAddToCartClick);
+  const addToCartButton = document.querySelector(".add-to-cart-button");
+  addToCartButton.addEventListener("click", handleAddToCartClick);
 
-    const productQuantityContainer = document.querySelector(".product-quantity-container");
-    console.log("productQuantityContainer", productQuantityContainer);
-    productQuantityContainer.addEventListener("click", handleProductQuantityContainer);
+  const productQuantityContainer = document.querySelector(
+    ".product-quantity-container",
+  );
+  console.log("productQuantityContainer", productQuantityContainer);
+  productQuantityContainer.addEventListener(
+    "click",
+    handleProductQuantityContainer,
+  );
 }
 
 // handlers
-function handleProductQuantityContainer (e) {
+function handleProductQuantityContainer(e) {
   console.log("productQuantityContainer clicked:");
-  const target = e.target.closest('button');
-  if (target && target.classList?.contains('product-minus')) {
+  const target = e.target.closest("button");
+  if (target && target.classList?.contains("product-minus")) {
     console.log("minusButtonClicked");
-        decreaseQuantity();
+    decreaseQuantity();
   } else {
     increaseQuantity();
     console.log("plusButtonClicked");
   }
-
 }
 
-function handleAddToCartClick (e) {
+function handleAddToCartClick(e) {
   console.log("handleAddToCartClick");
   // get the quantity
-  const quantity = parseInt(document.querySelector(".product-quantity").textContent);
+  const quantity = parseInt(
+    document.querySelector(".product-quantity").textContent,
+  );
 
-  const addToCartButton = e.target.closest('button');
+  const addToCartButton = e.target.closest("button");
   const productId = addToCartButton.dataset.productId;
 
   console.log("quantity:", quantity);
@@ -84,47 +127,45 @@ function handleAddToCartClick (e) {
   return;
 }
 
-function addProductIdToUserCart (productId, quantity = 0) {
-    console.log("user1:", user1);
-    console.log("user1:", user1.cart.items);
-    user1.addItem(productId, quantity);
-    const cartLength = user1.cart.items.length;
-    if (cartLength > 0) {
-      const totalItemsInCart = user1.cart.items.reduce((acc, item) => {
-        const count = acc + item.quantity;
-        return count;
-      }, 0);
-      console.log("cartLength:", totalItemsInCart);
-      renderCartNumber(totalItemsInCart);
-    }
+function addProductIdToUserCart(productId, quantity = 0) {
+  console.log("user1:", user1);
+  console.log("user1:", user1.cart.items);
+  user1.addItem(productId, quantity);
+  const cartLength = user1.cart.items.length;
+  if (cartLength > 0) {
+    const totalItemsInCart = user1.cart.items.reduce((acc, item) => {
+      const count = acc + item.quantity;
+      return count;
+    }, 0);
+    console.log("cartLength:", totalItemsInCart);
+    renderCartNumber(totalItemsInCart);
+  }
 }
 
-function handleCartClick () {
-    const cartItems = user1.getCartItems();
-    console.log("handleCartClick cartItems:", cartItems);
-    toggleCartMenuContainer();
-    if (cartItems.length === 0) {
-        showEmptyCartMessage();
-        hideCheckout();
-    } else {
-        
-        clearCartList();
-        removeEmptyCartMessage();
+function handleCartClick() {
+  const cartItems = user1.getCartItems();
+  console.log("handleCartClick cartItems:", cartItems);
+  toggleCartMenuContainer();
+  if (cartItems.length === 0) {
+    showEmptyCartMessage();
+    hideCheckout();
+  } else {
+    clearCartList();
+    removeEmptyCartMessage();
 
-       cartItems.forEach((itemObj) => {
-        const { productId, quantity } = itemObj;
-        console.log("productId: ", productId, "\n", "quantity :", quantity
-        );
+    cartItems.forEach((itemObj) => {
+      const { productId, quantity } = itemObj;
+      console.log("productId: ", productId, "\n", "quantity :", quantity);
 
-        const product = getProducts().filter(productObj => productObj.id === productId)[0];
+      const product = getProducts().filter(
+        (productObj) => productObj.id === productId,
+      )[0];
 
-        renderCartListItems(product, quantity);
-       })
-        showCheckout(); 
-    }
+      renderCartListItems(product, quantity);
+    });
+    showCheckout();
+  }
 }
-
-
 
 function handleArrowClick(e) {
   const button = e.target.closest(".arrow-container");
@@ -157,29 +198,35 @@ function handleArrowClick(e) {
   }
 }
 
+function handleThumbnailClick(e) {
+  console.log("handleThumbnailClick");
+  const targetButton = e.target.closest("button");
+  console.log(
+    "handleThumbnailClick button:",
+    targetButton.firstChild.classList[1],
+  );
+  const productClass = targetButton.firstChild.classList[1];
+  const mainImageSrc = getProducts()[0].images.filter(
+    (src) => src === `/assets/images/image-${productClass}.jpg`,
+  )[0];
+  console.log("mainImageSrc", mainImageSrc);
 
-function handleThumbnailClick (e) {
-    console.log("handleThumbnailClick");
-    const targetButton = e.target.closest('button');
-    console.log("handleThumbnailClick button:", targetButton.firstChild.classList[1]);
-    const productClass = targetButton.firstChild.classList[1];
-    const mainImageSrc = getProducts()[0].images.filter(src => src === `/assets/images/image-${productClass}.jpg`)[0];
-    console.log("mainImageSrc", mainImageSrc);
+  const allThumbnailButtons = Array.from(
+    document.querySelectorAll(".thumbnail-button"),
+  );
 
-    const allThumbnailButtons = Array.from(document.querySelectorAll('.thumbnail-button'));
-
-    if (targetButton) {
-        renderSelectedThumbnailButton(allThumbnailButtons, targetButton);
-        renderMainGalleryImage(mainImageSrc);
-    }
-    return
+  if (targetButton) {
+    renderSelectedThumbnailButton(allThumbnailButtons, targetButton);
+    renderMainGalleryImage(mainImageSrc);
+  }
+  return;
 }
 
-function handleProductDelete (e) {
+function handleProductDelete(e) {
   console.log("deleteButtonClicked handleProductDelete:");
   e.stopPropagation();
 
-  const target = e.target.closest('li');
+  const target = e.target.closest("li");
   const cartItemId = target?.dataset.cartItemId;
   console.log("target:", target);
   console.log("cartItemId:", cartItemId);
@@ -187,62 +234,79 @@ function handleProductDelete (e) {
   console.log("handleProductDelete deletedProduct:", deletedProduct);
   if (deletedProduct) {
     removeDeletedProductFromCart(target);
-    user1.cart.items.length === 0 ? removeEmptyCartMessage() : showCartNumber(user1.cart.items.length);
+    user1.cart.items.length === 0
+      ? removeEmptyCartMessage()
+      : showCartNumber(user1.cart.items.length);
     user1.cart.items.length === 0 ? hideCheckout() : showCheckout();
-    user1.cart.items.length === 0 ? showEmptyCartMessage() : removeEmptyCartMessage();
+    user1.cart.items.length === 0
+      ? showEmptyCartMessage()
+      : removeEmptyCartMessage();
     updateCartNumber(user1.cart.items.length);
-
   }
-} 
+}
 
-function handleMainImageClick (e) {
+function handleMainImageClick(e) {
   console.log("handleMainImageClicked");
 }
 
-function handleButtonRoving (e) {
-  const target = e.target;
+function handleButtonRoving(e) {
+  const target = e.target.closest("button");
+
+  const allThumbnailButtons = Array.from(
+    document
+      .querySelector(".thumbnail-gallery-container")
+      .querySelectorAll(".thumbnail-button"),
+  );
+
+  const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
+
+  if (indexOfCurrentThumbnail === -1) {
+    console.log("cannot find current image in list");
+    return;
+  }
+
+  let newIndex;
 
   if (e.key === "ArrowRight") {
     console.log("ArrowRight clicked");
 
-    const allThumbnailButtons = Array.from(document.querySelectorAll('.thumbnail-button'));
-
-    const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
-    console.log("target:", target);
-    console.log("allThumbnailButtons:", allThumbnailButtons);
-
-    console.log("indexOfCurrentThumbnail", indexOfCurrentThumbnail)
-    if (indexOfCurrentThumbnail === -1) {
-      console.log("cannot find current image in list");
-      return;
+    newIndex = indexOfCurrentThumbnail + 1;
+    if (newIndex > allThumbnailButtons.length - 1) {
+      newIndex = 0;
     }
+  } else if (e.key === "ArrowLeft") {
+    console.log("ArrowLeft Clicked.");
 
-
-    let nextIndex = indexOfCurrentThumbnail + 1;
-    if (nextIndex > allThumbnailButtons.length - 1) {
-      nextIndex = 0;
-    } 
-     const previousButton = allThumbnailButtons[indexOfCurrentThumbnail];
-     const nextButton = allThumbnailButtons[nextIndex];
-
-    console.log("previousButton:", previousButton);
-    console.log("nextButton:", nextButton);
-     previousButton.setAttribute('tabindex', '-1');
-     nextButton.setAttribute('tabindex', '0');
-     nextButton.focus();
-     renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
-    renderMainImageFromArrowClick(nextButton);
+    if (indexOfCurrentThumbnail - 1 < 0) {
+      newIndex = allThumbnailButtons.length - 1;
+    } else {
+      newIndex = indexOfCurrentThumbnail - 1;
+    }
   }
+
+  const nextButton = allThumbnailButtons[newIndex];
+  target.setAttribute("tabindex", "-1");
+  nextButton.setAttribute("tabindex", "0");
+  nextButton.focus();
+  renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
+  renderMainImageFromArrowClick(nextButton);
 }
 
-function renderMainImageFromArrowClick (button) {
+function renderMainImageFromArrowClick(button) {
   const buttonId = button.id;
 
-    const mainImageSrc = getProducts()[0].images.filter(src => src === `/assets/images/image-${buttonId}.jpg`)[0];
+  const mainImageSrc = getProducts()[0].images.filter(
+    (src) => src === `/assets/images/image-${buttonId}.jpg`,
+  )[0];
 
-     renderMainGalleryImage(mainImageSrc);
+  renderMainGalleryImage(mainImageSrc);
 }
- 
 
 // exports
-export { mainControllerInit, handleThumbnailClick, handleProductDelete, handleMainImageClick, handleButtonRoving };
+export {
+  mainControllerInit,
+  handleThumbnailClick,
+  handleProductDelete,
+  handleMainImageClick,
+  handleButtonRoving,
+};

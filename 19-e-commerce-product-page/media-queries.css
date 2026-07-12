@@ -202,6 +202,7 @@
 
     .product-image {
         width: 100%;
+        border-radius: var(--br-xl);
     }
 
      .product-1 {
