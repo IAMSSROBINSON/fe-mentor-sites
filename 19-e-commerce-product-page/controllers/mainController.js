@@ -253,9 +253,7 @@ function handleButtonRoving(e) {
   const target = e.target.closest("button");
 
   const allThumbnailButtons = Array.from(
-    document
-      .querySelector(".thumbnail-gallery-container")
-      .querySelectorAll(".thumbnail-button"),
+    document.querySelectorAll(".thumbnail-button"),
   );
 
   const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
@@ -266,15 +264,18 @@ function handleButtonRoving(e) {
   }
 
   let newIndex;
+  const key = e.key;
 
-  if (e.key === "ArrowRight") {
+  if (key !== "ArrowRight" && key !== "ArrowLeft") return;
+
+  if (key === "ArrowRight") {
     console.log("ArrowRight clicked");
 
     newIndex = indexOfCurrentThumbnail + 1;
     if (newIndex > allThumbnailButtons.length - 1) {
       newIndex = 0;
     }
-  } else if (e.key === "ArrowLeft") {
+  } else if (key === "ArrowLeft") {
     console.log("ArrowLeft Clicked.");
 
     if (indexOfCurrentThumbnail - 1 < 0) {
