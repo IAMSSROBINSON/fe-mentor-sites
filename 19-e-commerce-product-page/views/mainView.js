@@ -1,42 +1,9 @@
 // imports
-import { handleThumbnailClick, handleProductDelete, handleMainImageClick, handleButtonRoving } from '../controllers/mainController.js';
+import { handleThumbnailClick, handleProductDelete, handleButtonRoving } from '../controllers/mainController.js';
 
 // functions
 function mainViewInit () {
     console.log('mainViewInit');
-}
-
-function renderProduct ({data, message}) {
-    if (message === "success") {
-        console.log("renderProduct gotData:", data);
-        const galleryMainImageContainer = document.querySelector(".gallery-main-image-container");
-        galleryMainImageContainer.addEventListener('click', handleMainImageClick);
-
-        const mainProductImage = document.querySelector('.product-image');
-        mainProductImage.src = data.images[0];
-
-        // const imageButton = document.createElement("button");
-        // imageButton.classList.add('main-image-button');
-
-        // const mainImage = document.createElement('img');
-        // mainImage.alt = "Luxury white sneakers with tan panels";
-        // mainImage.src = data.images[0];
-        // mainImage.classList.add('product-image');
-
-
-        // console.log("mainImage:", mainImage);
-        // imageButton.appendChild(mainImage);
-        // console.log("mainImage:", imageButton);
-        // galleryMainImageContainer.prepend(imageButton);
-
-        galleryMainImageContainer.prepend(mainProductImage);
-
-        renderThumbnails(data.thumbnails);
-        renderInformation(data);
-
-    } else {
-        console.log("renderProduct noData:", message);
-    }
 }
 
 function renderInformation (data) {
@@ -65,35 +32,6 @@ function renderInformation (data) {
     addToCartButton.dataset.productId = data.id;
     console.log("addToCartButton", addToCartButton);
 
-}
-
-function renderThumbnails (thumbnailsArr) {
-    console.log("renderThumbnails:", thumbnailsArr);
-    const thumbNailGalleryContainer = document.querySelector('.thumbnail-gallery-container');
-
-    thumbnailsArr.forEach((thumbnailSrc, index) => {
-        const button = document.createElement('button');
-        button.id = `product-${index+1}`
-        button.classList.add(`product-${index+1}-button`, 'thumbnail-button');
-        if (index === 0) {
-            button.classList.add('selected');
-            button.setAttribute("tabindex", "0");
-           
-        } else {
-            button.setAttribute('tabindex', '-1');
-        }
-
-         button.addEventListener('keydown', handleButtonRoving)
-        
-        const img = document.createElement("img");
-        img.src = thumbnailSrc;
-        img.classList.add('thumbnail', `product-${index + 1}`);
-        img.alt = `Luxury sneakers ${index === 0 ? "front" : index === 1 ? "back" : index === 2 ? "right side" : "left side"} view`;
-        button.appendChild(img);
-        thumbNailGalleryContainer.appendChild(button);
-    });
-
-    thumbNailGalleryContainer.addEventListener("click", handleThumbnailClick);
 }
 
 
@@ -255,21 +193,6 @@ function renderCartListItems (product , quantity) {
     cartList.appendChild(li);
 }
 
-// function handleNextImage (newPathname, className) {
-//     console.log("className :", className);
-//     const productImage = document.querySelector(".product-image");
-//     productImage.classList = `product-image ${className}`;
-//     console.log("handlePrevious newPathname:", newPathname);
-//     productImage.src = newPathname;
-//     console.log("Product image:", productImage);
-// }
-
-function renderMainGalleryImage (mainImageSrc, className) {
-    const productImage = document.querySelector('.product-image');
-    productImage.classList = `product-image ${className}`;
-
-    productImage.src = mainImageSrc;
-}
 
 function increaseQuantity () {
     console.log('increaseQuantity');
@@ -335,31 +258,17 @@ function renderCartProduct (product, quantity) {
     const {name} = product;
     li.textContent = name;
 
-
-
-
-    
     const cartMenuLower = document.querySelector('.cart-menu-lower');
     const checkoutButton = document.querySelector('.cart-checkout-button');
-
 
     const emptyCartMessage = document.querySelector(".cart-empty-message");
     if (state === "empty") {
         emptyCartMessage.textContent = "Your cart is empty."
-    // } else {
-    //     emptyCartMessage.textContent = "";
-    //     console.log("cartNow: ", cartItems);
-    //     renderCartListItems(cartItems);
-    //     checkoutButton.classList.add('show');
-    // }
     }
-
-
 }
 
 function removeDeletedProductFromCart (element) {
         element.remove();
-        
     }
 
 function hideCheckout () {
@@ -417,4 +326,4 @@ function addStyleToCartNumberDisplayContainer () {
 
 
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, renderSelectedThumbnailButton, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
+export { mainViewInit, renderProfile, handleMenuIconClick, handleMenuContainerClick, renderSelectedThumbnailButton, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer, renderInformation };

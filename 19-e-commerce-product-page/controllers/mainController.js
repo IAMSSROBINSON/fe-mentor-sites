@@ -1,7 +1,6 @@
 // imports
 import {
   mainViewInit,
-  renderProduct,
   renderProfile,
   handleMenuIconClick,
   handleMenuContainerClick,
@@ -26,10 +25,11 @@ import {
   toggleCartMenuContainer,
   updateCartNumber,
   addStyleToCartNumberDisplayContainer,
+  renderInformation
 } from "../views/mainView.js";
 import { mainModelInit, User } from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
-import { renderMainGalleryImage } from "../views/galleryView.js";
+import { mainGalleryInit, renderMainGalleryImage, renderProduct } from "../views/galleryView.js";
 
 document.documentElement.addEventListener("keydown", (e) => {
   if (e.key == "Tab") {
@@ -38,14 +38,15 @@ document.documentElement.addEventListener("keydown", (e) => {
   }
 });
 
-let user1 = null;
+const user1 = new User("./assets/images/image-avatar.png");
+console.log("user1:", user1);
+console.log("user1 cart.items:", user1.cart.items);
+
 
 // functions
 async function mainControllerInit() {
   console.log("mainControllerInit");
-  user1 = new User("./assets/images/image-avatar.png");
-  console.log("user1:", user1);
-  console.log("user1 cart.items:", user1.cart.items);
+  mainGalleryInit();
   mainViewInit();
   renderProfile(user1);
   mainModelInit();
@@ -55,7 +56,8 @@ async function mainControllerInit() {
     console.log("products mainController:", products[0]);
 
     if (products.length > 0) {
-      renderProduct({ data: products[0], message: "success" });
+      renderProduct({ data: products[0]});
+      renderInformation(products[0]);
     } else {
       // render default product in view or display error fetching data
     }
