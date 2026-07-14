@@ -5,9 +5,7 @@ import {
   renderProfile,
   handleMenuIconClick,
   handleMenuContainerClick,
-  handleNextImage,
   renderSelectedThumbnailButton,
-  renderMainGalleryImage,
   increaseQuantity,
   decreaseQuantity,
   renderCartNumber,
@@ -31,6 +29,7 @@ import {
 } from "../views/mainView.js";
 import { mainModelInit, User } from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
+import { renderMainGalleryImage } from "../views/galleryView.js";
 
 document.documentElement.addEventListener("keydown", (e) => {
   if (e.key == "Tab") {
@@ -184,7 +183,7 @@ function handleArrowClick(e) {
       const newPathname = allImages[newIndex];
       const className = `product-${newIndex + 1}`;
       console.log("className: previous", className);
-      handleNextImage(newPathname, className);
+      renderMainGalleryImage(newPathname, className);
     } else {
       let newIndex = indexOfCurrentImage + 1;
       if (newIndex > allImages.length - 1) {
@@ -193,7 +192,7 @@ function handleArrowClick(e) {
       const className = `product-${newIndex + 1}`;
       console.log("className: next", className);
       const newPathname = allImages[newIndex];
-      handleNextImage(newPathname, className);
+      renderMainGalleryImage(newPathname, className);
     }
   }
 }

@@ -255,17 +255,19 @@ function renderCartListItems (product , quantity) {
     cartList.appendChild(li);
 }
 
-function handleNextImage (newPathname, className) {
-    console.log("className :", className);
-    const productImage = document.querySelector(".product-image");
-    productImage.classList = `product-image ${className}`;
-    console.log("handlePrevious newPathname:", newPathname);
-    productImage.src = newPathname;
-    console.log("Product image:", productImage);
-}
+// function handleNextImage (newPathname, className) {
+//     console.log("className :", className);
+//     const productImage = document.querySelector(".product-image");
+//     productImage.classList = `product-image ${className}`;
+//     console.log("handlePrevious newPathname:", newPathname);
+//     productImage.src = newPathname;
+//     console.log("Product image:", productImage);
+// }
 
-function renderMainGalleryImage (mainImageSrc) {
+function renderMainGalleryImage (mainImageSrc, className) {
     const productImage = document.querySelector('.product-image');
+    productImage.classList = `product-image ${className}`;
+
     productImage.src = mainImageSrc;
 }
 
@@ -415,4 +417,4 @@ function addStyleToCartNumberDisplayContainer () {
 
 
 // exports
-export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, handleNextImage, renderSelectedThumbnailButton, renderMainGalleryImage, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
+export { mainViewInit, renderProduct, renderProfile, handleMenuIconClick, handleMenuContainerClick, renderSelectedThumbnailButton, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
