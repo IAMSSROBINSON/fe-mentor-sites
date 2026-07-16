@@ -4,7 +4,6 @@ import {
   renderProfile,
   handleMenuIconClick,
   handleMenuContainerClick,
-  renderSelectedThumbnailButton,
   increaseQuantity,
   decreaseQuantity,
   renderCartNumber,
@@ -24,46 +23,34 @@ import {
   hideCartMenuContainer,
   toggleCartMenuContainer,
   updateCartNumber,
-  addStyleToCartNumberDisplayContainer,
-  renderInformation
+  addStyleToCartNumberDisplayContainer
 } from "../views/mainView.js";
 import { mainModelInit, User } from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
-import { mainGalleryInit, renderMainGalleryImage, renderProduct } from "../views/galleryView.js";
+import { galleryControllerInit } from "./galleryController.js";
 
-document.documentElement.addEventListener("keydown", (e) => {
-  if (e.key == "Tab") {
-    console.log("Key:", e.key);
-    console.log("Component:", e.target);
-  }
-});
 
 const user1 = new User("./assets/images/image-avatar.png");
-console.log("user1:", user1);
-console.log("user1 cart.items:", user1.cart.items);
-
 
 // functions
 async function mainControllerInit() {
   console.log("mainControllerInit");
-  mainGalleryInit();
   mainViewInit();
   renderProfile(user1);
   mainModelInit();
   try {
     await productModelInit();
     const products = getProducts();
+
     console.log("products mainController:", products[0]);
 
     if (products.length > 0) {
-      renderProduct({ data: products[0]});
-      renderInformation(products[0]);
+      galleryControllerInit(products);
     } else {
       // render default product in view or display error fetching data
     }
   } catch (err) {
-    // renderProduct({data: null, message: "Could not fetch data. Try again later..."});
-    // instead of doing conditional in view explicitly render error from here in controller
+    console.log("Could not load products, please refresh and try again later..");
   }
 
   const menuIconContainer = document.querySelector(".menu-icon-container");
@@ -74,11 +61,6 @@ async function mainControllerInit() {
 
   const cartIconContainer = document.querySelector(".cart-icon-container");
   cartIconContainer.addEventListener("click", handleCartClick);
-
-  const galleryMainImageContainer = document.querySelector(
-    ".gallery-main-image-container",
-  );
-  galleryMainImageContainer.addEventListener("click", handleArrowClick);
 
   const addToCartButton = document.querySelector(".add-to-cart-button");
   addToCartButton.addEventListener("click", handleAddToCartClick);
@@ -168,60 +150,6 @@ function handleCartClick() {
   }
 }
 
-function handleArrowClick(e) {
-  const button = e.target.closest(".arrow-container");
-  if (button) {
-    const id = button.id;
-    const pathname = new URL(document.querySelector(".product-image").src)
-      .pathname;
-    const allImages = getProducts()[0].images;
-    const indexOfCurrentImage = allImages.indexOf(pathname);
-    console.log("indexOfCurrentImage:", indexOfCurrentImage);
-    if (id === "previous-arrow-container") {
-      let newIndex = indexOfCurrentImage - 1;
-      if (newIndex < 0) {
-        newIndex = allImages.length - 1;
-      }
-      const newPathname = allImages[newIndex];
-      const className = `product-${newIndex + 1}`;
-      console.log("className: previous", className);
-      renderMainGalleryImage(newPathname, className);
-    } else {
-      let newIndex = indexOfCurrentImage + 1;
-      if (newIndex > allImages.length - 1) {
-        newIndex = 0;
-      }
-      const className = `product-${newIndex + 1}`;
-      console.log("className: next", className);
-      const newPathname = allImages[newIndex];
-      renderMainGalleryImage(newPathname, className);
-    }
-  }
-}
-
-function handleThumbnailClick(e) {
-  console.log("handleThumbnailClick");
-  const targetButton = e.target.closest("button");
-  console.log(
-    "handleThumbnailClick button:",
-    targetButton.firstChild.classList[1],
-  );
-  const productClass = targetButton.firstChild.classList[1];
-  const mainImageSrc = getProducts()[0].images.filter(
-    (src) => src === `/assets/images/image-${productClass}.jpg`,
-  )[0];
-  console.log("mainImageSrc", mainImageSrc);
-
-  const allThumbnailButtons = Array.from(
-    document.querySelectorAll(".thumbnail-button"),
-  );
-
-  if (targetButton) {
-    renderSelectedThumbnailButton(allThumbnailButtons, targetButton);
-    renderMainGalleryImage(mainImageSrc);
-  }
-  return;
-}
 
 function handleProductDelete(e) {
   console.log("deleteButtonClicked handleProductDelete:");
@@ -246,69 +174,10 @@ function handleProductDelete(e) {
   }
 }
 
-function handleMainImageClick(e) {
-  console.log("handleMainImageClicked");
-}
 
-function handleButtonRoving(e) {
-  const target = e.target.closest("button");
-
-  const allThumbnailButtons = Array.from(
-    document.querySelectorAll(".thumbnail-button"),
-  );
-
-  const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
-
-  if (indexOfCurrentThumbnail === -1) {
-    console.log("cannot find current image in list");
-    return;
-  }
-
-  let newIndex;
-  const key = e.key;
-
-  if (key !== "ArrowRight" && key !== "ArrowLeft") return;
-
-  if (key === "ArrowRight") {
-    console.log("ArrowRight clicked");
-
-    newIndex = indexOfCurrentThumbnail + 1;
-    if (newIndex > allThumbnailButtons.length - 1) {
-      newIndex = 0;
-    }
-  } else if (key === "ArrowLeft") {
-    console.log("ArrowLeft Clicked.");
-
-    if (indexOfCurrentThumbnail - 1 < 0) {
-      newIndex = allThumbnailButtons.length - 1;
-    } else {
-      newIndex = indexOfCurrentThumbnail - 1;
-    }
-  }
-
-  const nextButton = allThumbnailButtons[newIndex];
-  target.setAttribute("tabindex", "-1");
-  nextButton.setAttribute("tabindex", "0");
-  nextButton.focus();
-  renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
-  renderMainImageFromArrowClick(nextButton);
-}
-
-function renderMainImageFromArrowClick(button) {
-  const buttonId = button.id;
-
-  const mainImageSrc = getProducts()[0].images.filter(
-    (src) => src === `/assets/images/image-${buttonId}.jpg`,
-  )[0];
-
-  renderMainGalleryImage(mainImageSrc);
-}
 
 // exports
 export {
   mainControllerInit,
-  handleThumbnailClick,
   handleProductDelete,
-  handleMainImageClick,
-  handleButtonRoving,
 };

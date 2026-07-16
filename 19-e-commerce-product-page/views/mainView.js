@@ -1,38 +1,12 @@
 // imports
-import { handleThumbnailClick, handleProductDelete, handleButtonRoving } from '../controllers/mainController.js';
+import { handleProductDelete } from '../controllers/mainController.js';
 
 // functions
 function mainViewInit () {
     console.log('mainViewInit');
 }
 
-function renderInformation (data) {
-    console.log("renderInformation:", data);
-    const brandName = document.querySelector('.product-label');
-    brandName.textContent = data.brandName;
 
-    const name = document.querySelector('.product-title');
-    name.textContent = data.name;
-
-    const description = document.querySelector('.product-description');
-    description.textContent = data.description;
-
-    const productPrice = document.querySelector('.product-price');
-    const price = data.isDiscounted ? (data.price * data.discountPercentage /100).toFixed(2) : data.price.toFixed(2);
-    productPrice.textContent = `$${price}`;
-
-    const productDiscount = document.querySelector('.product-discount');
-    productDiscount.textContent = data.isDiscounted ? data.discountPercentage + "%" : "";
-
-    const previousPrice = document.querySelector('.product-previous-price');
-    previousPrice.textContent = `$${data.price.toFixed(2)}`;
-
-    const addToCartButton = document.querySelector('.add-to-cart-button');
-    addToCartButton.id = data.id;
-    addToCartButton.dataset.productId = data.id;
-    console.log("addToCartButton", addToCartButton);
-
-}
 
 
 function renderProfile (user) {
@@ -45,13 +19,8 @@ function renderProfile (user) {
     avatarContainer.appendChild(img);
 }
 
-// handlers
-function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
-    allThumbnailsArr.forEach((thumbnail) => {
-        thumbnail.classList.remove('selected');
-    });
-    selectedThumbnail.classList.add('selected');
-}
+
+// functions
 
 function handleMenuIconClick(e) {
     console.log("menu icon clicked");
@@ -326,4 +295,4 @@ function addStyleToCartNumberDisplayContainer () {
 
 
 // exports
-export { mainViewInit, renderProfile, handleMenuIconClick, handleMenuContainerClick, renderSelectedThumbnailButton, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer, renderInformation };
+export { mainViewInit, renderProfile, handleMenuIconClick, handleMenuContainerClick, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
