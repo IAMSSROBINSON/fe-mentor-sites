@@ -205,7 +205,52 @@ function attachGalleryEvents (galleryElement, product) {
     thumbnailGalleryContainer.addEventListener("click", (e) => {
         handleThumbnailClick(e, galleryElement, product);
     });
+
+    const galleryMainImageContainer = galleryElement.querySelector(".gallery-main-image-container");
+    galleryMainImageContainer.addEventListener("click", (e) => {
+        handleArrowClick(e, galleryElement, product);
+    });
+
+
+
+    // const mainImageContainerButton = galleryElement.querySelector('.main-image-container-button');
+    // mainImageContainerButton.addEventListener("click", (e) => {
+    //     handleMainImageClick(e);
+    // })
+
+
 }
+
+function handleArrowClick(e, galleryElement, product) {
+  const button = e.target.closest(".arrow-container");
+  if (!button) return;
+
+  const id = button.id;
+  const pathname = new URL(galleryElement.querySelector(".product-image").src)
+    .pathname;
+  const allImages = product.images;
+  const indexOfCurrentImage = allImages.indexOf(pathname);
+  if (id === "previous-arrow-container") {
+    let newIndex = indexOfCurrentImage - 1;
+    if (newIndex < 0) {
+      newIndex = allImages.length - 1;
+    }
+    renderMainImage(galleryElement, product, newIndex);
+  } else {
+    let newIndex = indexOfCurrentImage + 1;
+    if (newIndex > allImages.length - 1) {
+      newIndex = 0;
+    }
+
+    renderMainImage(galleryElement, product, newIndex);
+  }
+}
+
+// function handleMainImageClick(e) {
+//   console.log("handleMainImageClicked");
+// }
+
+
 
 function handleThumbnailClick(e, galleryElement, product) {
   console.log("handleThumbnailClick");
