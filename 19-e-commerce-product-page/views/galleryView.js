@@ -135,5 +135,6 @@ function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
 }
 
 
+
 // exports
 export { renderGallery, renderSelectedThumbnailButton, renderMainImage };

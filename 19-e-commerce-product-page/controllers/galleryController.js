@@ -211,6 +211,15 @@ function attachGalleryEvents (galleryElement, product) {
         handleArrowClick(e, galleryElement, product);
     });
 
+    const thumbnailButtons = galleryElement.querySelectorAll('.thumbnail-button');
+    thumbnailButtons.forEach((button) => {
+          button.addEventListener("keydown", (e) => {
+        handleButtonRoving(e, galleryElement, product);
+    });
+    });
+  
+
+
 
 
     // const mainImageContainerButton = galleryElement.querySelector('.main-image-container-button');
@@ -270,6 +279,51 @@ function handleThumbnailClick(e, galleryElement, product) {
     renderMainImage(galleryElement, product, imageIndex);
   }
   return;
+}
+
+function handleButtonRoving(e, galleryElement, product) {
+  const target = e.target.closest("button");
+    if (!target) return;
+
+  const allThumbnailButtons = Array.from(
+galleryElement.querySelectorAll(".thumbnail-button"),
+  );
+
+  const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
+
+  if (indexOfCurrentThumbnail === -1) {
+    console.log("cannot find current image in list");
+    return;
+  }
+
+  let newIndex;
+  const key = e.key;
+
+  if (key !== "ArrowRight" && key !== "ArrowLeft") return;
+
+  if (key === "ArrowRight") {
+    console.log("ArrowRight clicked");
+
+    newIndex = indexOfCurrentThumbnail + 1;
+    if (newIndex > allThumbnailButtons.length - 1) {
+      newIndex = 0;
+    }
+  } else if (key === "ArrowLeft") {
+    console.log("ArrowLeft Clicked.");
+
+    if (indexOfCurrentThumbnail - 1 < 0) {
+      newIndex = allThumbnailButtons.length - 1;
+    } else {
+      newIndex = indexOfCurrentThumbnail - 1;
+    }
+  }
+
+  const nextButton = allThumbnailButtons[newIndex];
+  target.setAttribute("tabindex", "-1");
+  nextButton.setAttribute("tabindex", "0");
+  nextButton.focus();
+  renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
+  renderMainImage(galleryElement, product, newIndex);
 }
 
 
