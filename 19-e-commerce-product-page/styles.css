@@ -562,9 +562,11 @@ a {
 /* product information */
 .product-price-container {
     display: flex;
+    display: none;
     align-items: center;
     gap: var(--spacing-200);
     flex-wrap: wrap;
+  
 }
 
 .price-item {
@@ -589,11 +591,7 @@ a {
 }
 
 .quantity-button {
-    border: none;
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+    /*  */
 }
 
 .quantity-icon {
