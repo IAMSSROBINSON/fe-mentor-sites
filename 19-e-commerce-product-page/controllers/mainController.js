@@ -192,6 +192,7 @@
 
 // imports
 import { mainModelInit, User } from "../models/mainModel.js";
+import { cartControllerInit } from "./cartController.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 import { galleryControllerInit } from "./galleryController.js";
 
@@ -200,6 +201,7 @@ import { galleryControllerInit } from "./galleryController.js";
 async function mainControllerInit () {
     console.log("mainControllerInit:");
 
+    
     const loader = document.getElementById("loader");
     const galleryElement = document.getElementById("gallery-main-plus-thumbnail-wrapper");
 
@@ -212,6 +214,7 @@ async function mainControllerInit () {
         if (products.length > 0) {
             const product = products[0];
             galleryControllerInit(galleryElement, product);
+            cartControllerInit();
             loader.classList.add("hide");
         }
     }

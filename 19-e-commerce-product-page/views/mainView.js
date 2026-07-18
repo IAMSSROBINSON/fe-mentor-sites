@@ -161,41 +161,41 @@ function renderCartListItems (product , quantity) {
 }
 
 
-function increaseQuantity () {
-    console.log('increaseQuantity');
+// function increaseQuantity () {
+//     console.log('increaseQuantity');
 
-    const quantity = getQuantity();
-    console.log('quantity quantity', quantity);
-    const newQuantity = quantity + 1;
-    if (newQuantity <= 5) {
-        console.log('increaseQuantity newQuantity', newQuantity);
-        renderQuantity(newQuantity);
-    }
-    return;
-}
+//     const quantity = getQuantity();
+//     console.log('quantity quantity', quantity);
+//     const newQuantity = quantity + 1;
+//     if (newQuantity <= 5) {
+//         console.log('increaseQuantity newQuantity', newQuantity);
+//         renderQuantity(newQuantity);
+//     }
+//     return;
+// }
 
 
-function decreaseQuantity () {
-    console.log('decreaseQuantity');
-    const quantity = getQuantity();
-    const newQuantity = quantity - 1;
-    if (newQuantity > 0) {
+// function decreaseQuantity () {
+//     console.log('decreaseQuantity');
+//     const quantity = getQuantity();
+//     const newQuantity = quantity - 1;
+//     if (newQuantity > 0) {
         
-        console.log('decreaseQuantity newQuantity', newQuantity);
-        renderQuantity(newQuantity);
-    }
-    return;
-}
+//         console.log('decreaseQuantity newQuantity', newQuantity);
+//         renderQuantity(newQuantity);
+//     }
+//     return;
+// }
 
-function renderQuantity (value) {
-    const quantityElement = document.querySelector(".product-quantity");
-    quantityElement.textContent = value;
-}
+// function renderQuantity (value) {
+//     const quantityElement = document.querySelector(".product-quantity");
+//     quantityElement.textContent = value;
+// }
 
-function getQuantity () {
-    const quantity = parseInt(document.querySelector(".product-quantity").textContent);
-    return quantity;
-}
+// function getQuantity () {
+//     const quantity = parseInt(document.querySelector(".product-quantity").textContent);
+//     return quantity;
+// }
 
 function renderCartNumber (itemsInCart) {
     const cartNumberElement = document.querySelector(".cart-number-display-container");
