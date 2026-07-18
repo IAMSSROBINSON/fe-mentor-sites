@@ -191,17 +191,16 @@
 
 
 // imports
+import { mainModelInit, User } from "../models/mainModel.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 import { galleryControllerInit } from "./galleryController.js";
-
-
-
 
 
 //  functions
 async function mainControllerInit () {
     console.log("mainControllerInit:");
-    const loader = document.getElementById("loader")
+
+    const loader = document.getElementById("loader");
     const galleryElement = document.getElementById("gallery-main-plus-thumbnail-wrapper");
 
     try {

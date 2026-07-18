@@ -7,8 +7,6 @@ function mainViewInit () {
 }
 
 
-
-
 function renderProfile (user) {
     const avatarContainer = document.getElementById('avatar-container');
 
