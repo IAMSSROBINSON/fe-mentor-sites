@@ -262,6 +262,11 @@ a {
   border-radius: var(--br-l);
 }
 
+.cart-icon-button {
+  border: none;
+  background: transparent;
+}
+
 
 .cart-icon-container {
   display: flex;

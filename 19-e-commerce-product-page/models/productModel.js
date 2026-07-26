@@ -23,10 +23,14 @@ function getProducts () {
     return products;
 }
 
+function getProductById(id) {
+    return products.find((product) => product.id === id);
+}
+
 
 
 
 // handlers
 
 // exports
-export { productModelInit, getProducts };
+export { productModelInit, getProducts, getProductById };

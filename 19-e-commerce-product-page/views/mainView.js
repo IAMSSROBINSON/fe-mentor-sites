@@ -60,9 +60,9 @@ function handleMenuContainerClick (e) {
    
 }
 
-function getCartMenuContainer () {
-    return document.querySelector(".cart-menu-container");
-}
+// function getCartMenuContainer () {
+//     return document.querySelector(".cart-menu-container");
+// }
 
 function showCartMenuContainer () {
     getCartMenuContainer().classList.remove('hide');
@@ -82,20 +82,20 @@ function getEmptyCartMessageElement () {
     return  document.querySelector(".cart-empty-message");
 }
 
-function showEmptyCartMessage () {
-    const emptyCartMessage = getEmptyCartMessageElement();
-    emptyCartMessage.textContent = "Your cart is empty."
-}
+// function showEmptyCartMessage () {
+//     const emptyCartMessage = getEmptyCartMessageElement();
+//     emptyCartMessage.textContent = "Your cart is empty."
+// }
 
-function removeEmptyCartMessage () {
-    const emptyCartMessage = getEmptyCartMessageElement();
-    emptyCartMessage.textContent = ""
-}
+// function removeEmptyCartMessage () {
+//     const emptyCartMessage = getEmptyCartMessageElement();
+//     emptyCartMessage.textContent = ""
+// }
 
-function clearCartList () {
-    const cartList = document.querySelector(".cart-list");
-     cartList.innerHTML = "";
-}
+// function clearCartList () {
+//     const cartList = document.querySelector(".cart-list");
+//      cartList.innerHTML = "";
+// }
 
 function renderCartListItems (product , quantity) {
     const cartList = document.querySelector(".cart-list");
@@ -197,95 +197,80 @@ function renderCartListItems (product , quantity) {
 //     return quantity;
 // }
 
-function renderCartNumber (itemsInCart) {
-    const cartNumberElement = document.querySelector(".cart-number-display-container");
-    cartNumberElement.style.display = "flex";
-    cartNumberElement.textContent = itemsInCart;
-}
+// function renderCartNumber (itemsInCart) {
+//     const cartNumberElement = document.querySelector(".cart-number-display-container");
+//     cartNumberElement.style.display = "flex";
+//     cartNumberElement.textContent = itemsInCart;
+// }
 
-function renderResetQuantity () {
-    const quantity = document.querySelector(".product-quantity");
-    quantity.textContent = 1;
-}
+// function renderResetQuantity () {
+//     const quantity = document.querySelector(".product-quantity");
+//     quantity.textContent = 1;
+// }
 
-function renderCloseCartMenu () {
-    const cartMenuContainer = document.querySelector(".cart-menu-container");
-    cartMenuContainer.classList.add('hide');
-}
+// function renderCloseCartMenu () {
+//     const cartMenuContainer = document.querySelector(".cart-menu-container");
+//     cartMenuContainer.classList.add('hide');
+// }
 
-function renderCartProduct (product, quantity) {
-    const cartMenuContainer = document.querySelector(".cart-menu-container");
-    cartMenuContainer.classList.add('show');
+// function renderCartProduct (product, quantity) {
+//     const cartMenuContainer = document.querySelector(".cart-menu-container");
+//     cartMenuContainer.classList.add('show');
 
-
-    const list = document.querySelector('.cart-list');
-
-    const li = document.createElement('li');
+//     const list = document.querySelector('.cart-list');
+//     const li = document.createElement('li');
     
-    const {name} = product;
-    li.textContent = name;
+//     const {name} = product;
+//     li.textContent = name;
 
-    const cartMenuLower = document.querySelector('.cart-menu-lower');
-    const checkoutButton = document.querySelector('.cart-checkout-button');
+//     const cartMenuLower = document.querySelector('.cart-menu-lower');
+//     const checkoutButton = document.querySelector('.cart-checkout-button');
 
-    const emptyCartMessage = document.querySelector(".cart-empty-message");
-    if (state === "empty") {
-        emptyCartMessage.textContent = "Your cart is empty."
-    }
-}
+//     const emptyCartMessage = document.querySelector(".cart-empty-message");
+//     if (state === "empty") {
+//         emptyCartMessage.textContent = "Your cart is empty."
+       
+//     }
+// }
 
-function removeDeletedProductFromCart (element) {
-        element.remove();
-    }
-
-function hideCheckout () {
-     const checkoutButton = document.getElementById('checkout');
-     checkout.classList.remove('show');
-     checkout.classList.add('hide');
-}
-
-function showCheckout () {
- const checkoutButton = document.getElementById('checkout');
- checkout.classList.remove('hide');
- checkout.classList.add('show');
-}
-
-function getCartNumberContainer () {
-    return document.querySelector('.cart-number-display-container');
-}
-
-function showCartNumber (numberOfItems = 0) {
-    const cartNumberContainer = getCartNumberContainer();
-    cartNumberContainer.classList.remove('hide');
-    cartNumberContainer.classList.add('show');
-    cartNumberContainer.textContent = numberOfItems;
-}
-
-function removeCartNumber () {
-    const cartNumberContainer = getCartNumberContainer();
-    cartNumberContainer.textContent = ""
-    cartNumberContainer.classList.remove('show');
-    cartNumberContainer.classList.add('hide');
-    cartNumberContainer.style.backgroundColor = 'transparent';
-}
-
-function updateCartNumber (number = 0) {
-    console.log("updateCartNumber", number);
-    const cartNumberContainer = getCartNumberContainer();
-    console.log('cartContainer before:', cartNumberContainer);
-    if (number !== 0) {
-        showCartNumber();
-        cartNumberContainer.textContent = number;
-        console.log('cartContainer after:', cartNumberContainer);
-        return;
-    }
-    cartNumberContainer.textContent = number;
-    removeCartNumber();
-    ;
-    console.log('cartContainer after:', cartNumberContainer);
+// function removeDeletedProductFromCart (element) {
+//         element.remove();
+//     }
 
 
-}
+
+// function showCartNumber (numberOfItems = 0) {
+//     const cartNumberContainer = getCartNumberContainer();
+//     cartNumberContainer.classList.remove('hide');
+//     cartNumberContainer.classList.add('show');
+//     cartNumberContainer.textContent = numberOfItems;
+// }
+
+// function removeCartNumber () {
+//     const cartNumberContainer = getCartNumberContainer();
+//     cartNumberContainer.textContent = ""
+//     cartNumberContainer.classList.remove('show');
+//     cartNumberContainer.classList.add('hide');
+//     cartNumberContainer.style.backgroundColor = 'transparent';
+// }
+
+// function updateCartNumber (number = 0) {
+//     console.log("updateCartNumber", number);
+//     const cartNumberContainer = getCartNumberContainer();
+//     console.log('cartContainer before:', cartNumberContainer);
+//     if (number !== 0) {
+//         showCartNumber();
+//         cartNumberContainer.textContent = number;
+//         console.log('cartContainer after:', cartNumberContainer);
+//         return;
+//     }
+//     cartNumberContainer.textContent = number;
+//     removeCartNumber();
+//     ;
+//     console.log('cartContainer after:', cartNumberContainer);
+
+
+// }
 
 function addStyleToCartNumberDisplayContainer () {
     getCartNumberContainer().style.backgroundColor = '#FF7E1B';
@@ -293,4 +278,4 @@ function addStyleToCartNumberDisplayContainer () {
 
 
 // exports
-export { mainViewInit, renderProfile, handleMenuIconClick, handleMenuContainerClick, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, renderCartProduct, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };
+export { mainViewInit, renderProfile, handleMenuIconClick, handleMenuContainerClick, increaseQuantity, decreaseQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, removeEmptyCartMessage, showCartNumber, removeCartNumber, renderCartListItems, clearCartList, showCartMenuContainer, hideCartMenuContainer, toggleCartMenuContainer, updateCartNumber, addStyleToCartNumberDisplayContainer };

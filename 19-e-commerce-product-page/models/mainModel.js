@@ -65,8 +65,8 @@ class User {
 }
 
 
-// handlers
+const user1 = new User("./assets/images/image-avatar.png");
 
 
 // exports
-export { mainModelInit, User };
+export { mainModelInit, user1, User };

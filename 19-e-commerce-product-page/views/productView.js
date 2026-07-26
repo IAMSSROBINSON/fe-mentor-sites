@@ -24,6 +24,7 @@ function renderInformation (data) {
     addToCartButton.dataset.productId = data.id;
     console.log("addToCartButton", addToCartButton);
 
+
 }
 
 export { renderInformation };

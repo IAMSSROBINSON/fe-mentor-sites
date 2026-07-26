@@ -9,7 +9,6 @@
 //   renderCartNumber,
 //   renderResetQuantity,
 //   renderCloseCartMenu,
-//   renderCartProduct,
 //   removeDeletedProductFromCart,
 //   hideCheckout,
 //   showCheckout,
@@ -201,7 +200,6 @@ import { galleryControllerInit } from "./galleryController.js";
 async function mainControllerInit () {
     console.log("mainControllerInit:");
 
-    
     const loader = document.getElementById("loader");
     const galleryElement = document.getElementById("gallery-main-plus-thumbnail-wrapper");
 
