@@ -20,33 +20,33 @@ function renderProfile (user) {
 
 // functions
 
-function handleMenuIconClick(e) {
-    console.log("menu icon clicked");
-    const body = document.querySelector('body');
-    body.classList.add('no-scroll');
-    toggleBlurWrapper();
-    toggleMenuContainer();
+// function handleMenuIconClick(e) {
+//     console.log("menu icon clicked");
+//     const body = document.querySelector('body');
+//     body.classList.add('no-scroll');
+//     toggleBlurWrapper();
+//     toggleMenuContainer();
    
-    const closeMenuIcon = document.getElementById('close-menu-icon');
-    closeMenuIcon.addEventListener("click", handleCloseMenu);
-}
+//     const closeMenuIcon = document.getElementById('close-menu-icon');
+//     closeMenuIcon.addEventListener("click", handleCloseMenu);
+// }
 
-function handleCloseMenu (e) {
-    toggleMenuContainer()
-    toggleBlurWrapper();
-}
+// function handleCloseMenu (e) {
+//     toggleMenuContainer()
+//     toggleBlurWrapper();
+// }
 
-function toggleBlurWrapper () {
-    const blurWrapper = document.getElementById('blur-wrapper');
-    blurWrapper.classList.toggle('show');
-}
+// function toggleBlurWrapper () {
+//     const blurWrapper = document.getElementById('blur-wrapper');
+//     blurWrapper.classList.toggle('show');
+// }
 
 
-function toggleMenuContainer () {
-    const menuContainer = document.getElementById('menu-container');
-    menuContainer.classList.toggle('show');
-    console.log("menuContainer:", menuContainer);
-}
+// function toggleMenuContainer () {
+//     const menuContainer = document.getElementById('menu-container');
+//     menuContainer.classList.toggle('show');
+//     console.log("menuContainer:", menuContainer);
+// }
 
 function handleMenuContainerClick (e) {
     
