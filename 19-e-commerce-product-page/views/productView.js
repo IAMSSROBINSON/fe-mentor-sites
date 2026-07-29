@@ -1,5 +1,6 @@
 function renderInformation (data) {
-    console.log("renderInformation:", data);
+   if (data) {
+     console.log("renderInformation:", data);
     const brandName = document.querySelector('.product-label');
     brandName.textContent = data.brandName;
 
@@ -24,6 +25,7 @@ function renderInformation (data) {
     addToCartButton.dataset.productId = data.id;
     console.log("addToCartButton", addToCartButton);
 
+   }
 
 }
 

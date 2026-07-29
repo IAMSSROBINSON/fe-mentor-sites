@@ -189,6 +189,7 @@ a {
   background-color: rgba(0, 0, 0, 0.75);
   z-index: 2;
   display: none;
+  place-content: center;
 }
 
 .menu-container {
@@ -391,8 +392,9 @@ a {
   cursor: pointer;
 }
 
-.main-image-button {
+.main-image-container-button, .quantity-button {
   border: none;
+  background-color: transparent;
 }
 
 .product-image {
@@ -596,7 +598,8 @@ a {
 }
 
 .quantity-button {
-    /*  */
+  display: flex;
+  align-items: center;
 }
 
 .quantity-icon {
@@ -683,4 +686,12 @@ a {
 
 .cart-delete-icon {
 
+}
+
+
+/* MODAL */
+.modal-card {
+  width: 280px;
+  height: 280px;
+  background-color: yellow;
 }

@@ -190,20 +190,29 @@
 
 
     // imports
-    import { mainModelInit, User } from "../models/mainModel.js";
+    import { mainModelInit, user1, User } from "../models/mainModel.js";
     import { cartControllerInit } from "./cartController.js";
     import { productModelInit, getProducts } from "../models/productModel.js";
     import { galleryControllerInit } from "./galleryController.js";
     import { menuControllerInit } from "./menuController.js";
+    import { modalControllerInit } from "./modalController.js";
+    import { mainViewInit, renderProfile, injectGallery } from "../views/mainView.js";
+    import createGallery from "../components/GalleryComponent.js";
+
 
 
     //  functions
     async function mainControllerInit () {
         console.log("mainControllerInit:");
         menuControllerInit();
+        renderProfile(user1)
 
         const loader = document.getElementById("loader");
-        const galleryElement = document.getElementById("gallery-main-plus-thumbnail-wrapper");
+
+        const gallery = createGallery();
+        console.log("GALLERY:", gallery);
+        injectGallery(gallery);
+
 
         try {
             // load products on backend
@@ -213,8 +222,9 @@
 
             if (products.length > 0) {
                 const product = products[0];
-                galleryControllerInit(galleryElement, product);
+                galleryControllerInit(gallery, product);
                 cartControllerInit();
+                modalControllerInit();
                 loader.classList.add("hide");
             }
         }
@@ -226,7 +236,7 @@
     }
 
 
-
-
     // exports
     export {  mainControllerInit };
+
+    

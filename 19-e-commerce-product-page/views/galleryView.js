@@ -14,6 +14,8 @@ function renderMainImage (galleryElement, product, index = 0) {
 
 function renderThumbnails (galleryElement, product) {
     const thumbnailGalleryContainer = galleryElement.querySelector(".thumbnail-gallery-container");
+    thumbnailGalleryContainer.innerHTML = "";
+    
     const thumbnailsArr = product.thumbnails;
     console.log("renderThumbnails:", thumbnailsArr);
 
@@ -46,6 +48,8 @@ function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
     });
     selectedThumbnail.classList.add('selected');
 }
+
+
 
 
 // exports

@@ -35,12 +35,12 @@ function handleArrowClick(e, galleryElement, product) {
   const button = e.target.closest(".arrow-container");
   if (!button) return;
 
-  const id = button.id;
+  const direction = button.dataset.direction;
   const pathname = new URL(galleryElement.querySelector(".product-image").src)
     .pathname;
   const allImages = product.images;
   const indexOfCurrentImage = allImages.indexOf(pathname);
-  if (id === "previous-arrow-container") {
+  if (direction === "previous") {
     let newIndex = indexOfCurrentImage - 1;
     if (newIndex < 0) {
       newIndex = allImages.length - 1;

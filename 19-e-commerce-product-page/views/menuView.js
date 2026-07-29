@@ -1,73 +1,79 @@
-const body = document.querySelector('body');
-const blurWrapper = document.getElementById('blur-wrapper');
+// cache
+const body = document.querySelector("body");
+const blurWrapper = document.getElementById("blur-wrapper");
 const menu = document.querySelector("#menu-container");
- const focusableElements = Array.from(menu.querySelectorAll("button, li a"));
+const focusableElements = Array.from(menu.querySelectorAll("button, li a"));
 const firstFocusableElement = focusableElements[0];
 const lastFocusableElement = focusableElements[focusableElements.length - 1];
+const hamburgerMenu = document.querySelector(".menu-icon-container");
 
-function toggleMenu () {
-    console.log("toggleMenu");
-   
+function toggleMenu() {
+  console.log("toggleMenu");
 
-    toggleBodyNoScroll(body)
-    toggleBlurWrapper(blurWrapper);
-    toggleMenuContainer(menu);
+  toggleBodyNoScroll(body);
+  toggleElementShow(blurWrapper);
+  toggleElementShow(menu);
+  toggleAriaExpanded();
 }
 
-function toggleBodyNoScroll (element) {
-    element?.classList.toggle('no-scroll');
+function toggleAriaExpanded() {
+  if (menu.classList.contains("show")) {
+    hamburgerMenu.setAttribute("aria-expanded", "true");
+  } else {
+    hamburgerMenu.setAttribute("aria-expanded", "false");
+  }
 }
 
-function toggleBlurWrapper (element) {
-    element?.classList.toggle('show');
+function toggleBodyNoScroll(element) {
+  element?.classList.toggle("no-scroll");
 }
 
-function toggleMenuContainer (element) {
-    element?.classList.toggle('show');
+function toggleElementShow(element) {
+  element?.classList.toggle("show");
 }
 
-function focusFirstMenuElement () {
-    const firstChild = document.querySelector(".menu-list a");
-    firstChild?.focus();
+function focusFirstMenuElement() {
+  const firstChild = document.querySelector(".menu-list a");
+  firstChild?.focus();
 }
 
-function focusHamburgerButton () {
-    const menuIconContainerButton = document.querySelector(".menu-icon-container");
+function focusHamburgerButton() {
+  const menuIconContainerButton = document.querySelector(
+    ".menu-icon-container",
+  );
 
-    menuIconContainerButton?.focus();
+  menuIconContainerButton?.focus();
 }
 
-function handleMenuKeyDown (e) {
-    const key = e.key;
-    if (key === "Escape") {
-        console.log("Escape key pressed");
-        toggleMenu();
-        focusHamburgerButton();
-        return;
-    }
+function handleMenuKeyDown(e) {
+  const key = e.key;
+  if (key === "Escape") {
+    console.log("Escape key pressed");
+    toggleMenu();
+    focusHamburgerButton();
+    return;
+  }
 
-   
+  focusableElements.forEach((ele) => console.log("ele:", ele));
 
+  const activeElement = document.activeElement;
 
+  if (key === "Tab" && e.shiftKey && activeElement === firstFocusableElement) {
+    e.preventDefault();
+    lastFocusableElement.focus();
+  }
 
-        focusableElements.forEach((ele) => console.log("ele:", ele));
+  if (key === "Tab" && !e.shiftKey && activeElement === lastFocusableElement) {
+    e.preventDefault();
+    firstFocusableElement.focus();
+  }
 
-    const activeElement = document.activeElement;
-    
-    
-    if (key === 'Tab' && e.shiftKey && activeElement === firstFocusableElement)  {
-        e.preventDefault();
-        lastFocusableElement.focus();        
-    } 
-
-    if (key === 'Tab' && !e.shiftKey && activeElement === lastFocusableElement) {
-        e.preventDefault();
-        firstFocusableElement.focus();
-    }
-
-    console.log("activeElement", activeElement)
-
+  console.log("activeElement", activeElement);
 }
 
-
-export { toggleMenu, focusFirstMenuElement, focusHamburgerButton, handleMenuKeyDown  };
+export {
+  toggleMenu,
+  focusFirstMenuElement,
+  focusHamburgerButton,
+  handleMenuKeyDown,
+};

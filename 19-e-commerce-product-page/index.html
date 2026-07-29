@@ -23,7 +23,7 @@
     <div class="wrapper-max-w">
         <header class="main-header">
             <!-- menu icon container here -->
-            <button class="menu-icon-container pointer">
+            <button class="menu-icon-container pointer" aria-expanded="false" aria-label="Open menu" aria-controls="menu-container">
                 <svg class="menu-icon" width="16" height="15" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd" />
                 </svg>
@@ -39,7 +39,7 @@
 
             <!-- menu -->
             <nav id="menu-container" class="menu-container">
-                <button class="close-menu-button">
+                <button class="close-menu-button" aria-label="Close menu">
                     <svg id="close-menu-icon" class="close-menu-icon" width="14" height="15"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -47,7 +47,7 @@
                             fill="#69707D" fill-rule="evenodd" />
                     </svg>
                 </button>
-                <ul class="menu-list" aria-label="Page navigation menu">
+                <ul class="menu-list">
                     <li class="menu-link-item"><a href="#">Collections</a></li>
                     <li class="menu-link-item"><a href="#">Men</a></li>
                     <li class="menu-link-item"><a href="#">Women</a></li>
@@ -92,9 +92,9 @@
     <!-- gallery -->
     <section class="gallery-container">
         <p id="loader">... Loading gallery </p>
-        <div id="gallery-main-plus-thumbnail-wrapper" class="gallery-main-plus-thumbnail-wrapper">
+        <!-- <div id="gallery-main-plus-thumbnail-wrapper" class="gallery-main-plus-thumbnail-wrapper">
             <div class="gallery-main-image-container desktop">
-                <button class="main-image-container-button">
+                <button class="main-image-container-button pointer">
                     <img class="product-image" alt="">
                 </button>
                 <button id="previous-arrow-container" class="arrow-container previous-arrow-container">
@@ -109,9 +109,8 @@
                 </button>
             </div>
             <div class="thumbnail-gallery-container">
-    
             </div>
-        </div>
+        </div> -->
         <!-- information -->
         <article class="product-information">
             <p class="product-label tp1"></p>
