@@ -29,15 +29,13 @@ function renderModalCard (modalGallery) {
     const closeModalButton = document.createElement("button");
     closeModalButton.classList.add("close-modal-button");
 
-
-    const closeIconImg = document.createElement("img");
-    closeIconImg.src = closeIconSrc;
+    closeModalButton.innerHTML = `
+    <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#ffffff" fill-rule="evenodd"/></svg>`;
 
     const modalGalleryContainer = document.createElement('div');
     modalGalleryContainer.classList.add('modal-gallery-container');
 
     modalGalleryContainer.appendChild(modalGallery)
-    closeModalButton.appendChild(closeIconImg);
     modalCard.classList.add("modal-card");
     modalCard.appendChild(closeModalButton);
     modalCard.appendChild(modalGalleryContainer);
