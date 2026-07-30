@@ -1,34 +1,41 @@
 // imports
-import { renderGallery, renderSelectedThumbnailButton, renderMainImage } from "../views/galleryView.js";
+import {
+  renderGallery,
+  renderSelectedThumbnailButton,
+  renderMainImage,
+} from "../views/galleryView.js";
 import { renderInformation } from "../views/productView.js";
 
-
 //  functions
-function galleryControllerInit (galleryElement, product) {
-    console.log("galleryControllerInit:", galleryElement, product);
+function galleryControllerInit(galleryElement, product) {
+  console.log("galleryControllerInit:", galleryElement, product);
 
-    renderGallery(galleryElement, product);
-    attachGalleryEvents(galleryElement, product);
-    renderInformation(product);
+  renderGallery(galleryElement, product);
+  attachGalleryEvents(galleryElement, product);
+  renderInformation(product);
 }
 
-function attachGalleryEvents (galleryElement, product) {
-    const thumbnailGalleryContainer = galleryElement.querySelector(".thumbnail-gallery-container");
-    thumbnailGalleryContainer.addEventListener("click", (e) => {
-        handleThumbnailClick(e, galleryElement, product);
-    });
+function attachGalleryEvents(galleryElement, product) {
+  const thumbnailGalleryContainer = galleryElement.querySelector(
+    ".thumbnail-gallery-container",
+  );
+  thumbnailGalleryContainer.addEventListener("click", (e) => {
+    handleThumbnailClick(e, galleryElement, product);
+  });
 
-    const galleryMainImageContainer = galleryElement.querySelector(".gallery-main-image-container");
-    galleryMainImageContainer.addEventListener("click", (e) => {
-        handleArrowClick(e, galleryElement, product);
-    });
+  const galleryMainImageContainer = galleryElement.querySelector(
+    ".gallery-main-image-container",
+  );
+  galleryMainImageContainer.addEventListener("click", (e) => {
+    handleArrowClick(e, galleryElement, product);
+  });
 
-    const thumbnailButtons = galleryElement.querySelectorAll('.thumbnail-button');
-    thumbnailButtons.forEach((button) => {
-          button.addEventListener("keydown", (e) => {
-        handleButtonRoving(e, galleryElement, product);
+  const thumbnailButtons = galleryElement.querySelectorAll(".thumbnail-button");
+  thumbnailButtons.forEach((button) => {
+    button.addEventListener("keydown", (e) => {
+      handleButtonRoving(e, galleryElement, product);
     });
-    });
+  });
 }
 
 function handleArrowClick(e, galleryElement, product) {
@@ -40,20 +47,25 @@ function handleArrowClick(e, galleryElement, product) {
     .pathname;
   const allImages = product.images;
   const indexOfCurrentImage = allImages.indexOf(pathname);
+  const allThumbnailButtons = Array.from(galleryElement.querySelectorAll(".thumbnail-button"));
+
+  let newIndex;
   if (direction === "previous") {
-    let newIndex = indexOfCurrentImage - 1;
+    newIndex = indexOfCurrentImage - 1;
     if (newIndex < 0) {
       newIndex = allImages.length - 1;
     }
-    renderMainImage(galleryElement, product, newIndex);
+  
   } else {
-    let newIndex = indexOfCurrentImage + 1;
+    newIndex = indexOfCurrentImage + 1;
     if (newIndex > allImages.length - 1) {
       newIndex = 0;
     }
-
-    renderMainImage(galleryElement, product, newIndex);
   }
+
+  renderMainImage(galleryElement, product, newIndex);
+    renderSelectedThumbnailButton(allThumbnailButtons, allThumbnailButtons[newIndex]);
+ 
 }
 
 function handleThumbnailClick(e, galleryElement, product) {
@@ -77,10 +89,10 @@ function handleThumbnailClick(e, galleryElement, product) {
 
 function handleButtonRoving(e, galleryElement, product) {
   const target = e.target.closest("button");
-    if (!target) return;
+  if (!target) return;
 
   const allThumbnailButtons = Array.from(
-galleryElement.querySelectorAll(".thumbnail-button"),
+    galleryElement.querySelectorAll(".thumbnail-button"),
   );
 
   const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
@@ -119,7 +131,6 @@ galleryElement.querySelectorAll(".thumbnail-button"),
   renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
   renderMainImage(galleryElement, product, newIndex);
 }
-
 
 // exports
 export { galleryControllerInit };
