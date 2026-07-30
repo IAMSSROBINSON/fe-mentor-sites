@@ -691,7 +691,32 @@ a {
 
 /* MODAL */
 .modal-card {
-  width: 280px;
-  height: 280px;
-  background-color: yellow;
+  /* width: 280px;
+  height: 280px; */
+  /* background-color: yellow; */
+  padding: 24px;
+
+  .gallery-main-image-container {
+    overflow: initial;
+  }
+
+  .arrow-container.previous-arrow-container {
+    display: flex;
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  .arrow-container.next-arrow-container {
+    display: flex;
+    right: 0;
+    transform: translateX(50%);
+  }
+
+  .thumbnail-gallery-container {
+     transform: scale(0.80);
+  }
+
+  .thumbnail-button {
+  
+  }
 }

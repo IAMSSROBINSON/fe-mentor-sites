@@ -5,11 +5,11 @@ const blurWrapper = document.getElementById('blur-wrapper');
 const closeIconSrc = "/assets/icons/icon-close.svg";
 
 
-function renderModal () {
+function renderModal (modalGallery) {
     console.log("modalView renderModal");
 
     blurDocument(blurWrapper);
-    renderModalCard();
+    renderModalCard(modalGallery);
     console.log("blurWrapper", blurWrapper);
 }
 
@@ -22,7 +22,8 @@ function removeDocumentBlur (element) {
     element.style.display = "none";;
 }
 
-function renderModalCard () {
+function renderModalCard (modalGallery) {
+    console.log("modalGallery", modalGallery);
     const modalCard = document.createElement('div');
 
     const closeModalButton = document.createElement("button");
@@ -35,7 +36,7 @@ function renderModalCard () {
     const modalGalleryContainer = document.createElement('div');
     modalGalleryContainer.classList.add('modal-gallery-container');
 
-
+    modalGalleryContainer.appendChild(modalGallery)
     closeModalButton.appendChild(closeIconImg);
     modalCard.classList.add("modal-card");
     modalCard.appendChild(closeModalButton);

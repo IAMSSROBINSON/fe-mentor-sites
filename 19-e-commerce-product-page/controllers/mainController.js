@@ -33,7 +33,7 @@
                 const product = products[0];
                 galleryControllerInit(gallery, product);
                 cartControllerInit();
-                modalControllerInit();
+                modalControllerInit(product);
                 loader.classList.add("hide");
             }
         }
