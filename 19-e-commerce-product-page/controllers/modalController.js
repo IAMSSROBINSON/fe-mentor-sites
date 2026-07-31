@@ -18,12 +18,21 @@ function modalControllerInit (product) {
 }
 
 function attachEvents (product) {
+    document.addEventListener("keydown", handleEscapeKey);
+
     const galleryMainContainerDesktop = document.querySelector('.gallery-main-image-container.desktop');
     console.log("galleryMainContainerDesktop:", galleryMainContainerDesktop);
 
     galleryMainContainerDesktop.addEventListener("click", (e) => {
         handleMainProductClick(e, product);
     })
+}
+
+function handleEscapeKey (e) {
+    const modal = document.querySelector(".modal-card");
+    if (modal && e.key === "Escape") {
+        handleCloseModal();
+    }
 }
 
 function handleMainProductClick (e, product) {
