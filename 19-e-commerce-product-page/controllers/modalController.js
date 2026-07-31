@@ -80,7 +80,7 @@ function handleFocusableElements(e, modalCard) {
     e.preventDefault();
     lastFocusableElement.focus();
   }
-  if (currentFocussedElement === lastFocusableElement && !e.key === "Tab") {
+  if (currentFocussedElement === lastFocusableElement && e.key === "Tab" && !e.shiftKey) {
     e.preventDefault();
 
     firstFocusableElement.focus();
