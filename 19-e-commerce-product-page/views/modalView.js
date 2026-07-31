@@ -23,6 +23,8 @@ function removeDocumentBlur (element) {
 }
 
 function renderModalCard (modalGallery) {
+    blurWrapper.innerHTML = "";
+    
     console.log("modalGallery", modalGallery);
     const modalCard = document.createElement('div');
 
@@ -41,6 +43,14 @@ function renderModalCard (modalGallery) {
     modalCard.appendChild(modalGalleryContainer);
     blurWrapper.appendChild(modalCard);
 
+    freezeBody();
 }
+
+function freezeBody () {
+    document.body.style.height = "100vh";
+    document.body.style.overflow = "hidden";
+}
+
+
 
 export { renderModal };
