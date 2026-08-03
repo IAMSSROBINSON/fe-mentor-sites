@@ -60,5 +60,13 @@ function renderThumbnailTabIndexes (allThumbnails, selectedThumbnail) {
   selectedThumbnail.setAttribute("tabindex", "0");
 }
 
+function renderModalArrowTabIndexes (modalGallery) {
+  
+  const arrows = Array.from(modalGallery.querySelectorAll(".arrow-container"));
+  arrows.forEach((arrow) => {
+    arrow.setAttribute("tabindex", "-1");
+  });
+}
+
 // exports
-export { renderGallery, renderSelectedThumbnailButton, renderMainImage, renderThumbnailTabIndexes };
+export { renderGallery, renderSelectedThumbnailButton, renderMainImage, renderThumbnailTabIndexes, renderModalArrowTabIndexes };

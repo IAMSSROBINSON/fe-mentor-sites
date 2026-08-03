@@ -2,6 +2,7 @@
 import { renderModal } from "../views/modalView.js";
 import createGallery from "../components/GalleryComponent.js";
 import { galleryControllerInit, getSelectedImageIndex } from "./galleryController.js";
+import { renderModalArrowTabIndexes } from "../views/galleryView.js";
 
 // state
 const modalState = {
@@ -47,7 +48,10 @@ function handleMainProductClick(e, product) {
     const modalGallery = createGallery({isModal: true});
     console.log("main Product clicked desktop");
     renderModal(modalGallery);
+    
     galleryControllerInit(modalGallery, product);
+          renderModalArrowTabIndexes(modalGallery);
+
 
     const closeModalButton = document.querySelector(".close-modal-button");
     if (!closeModalButton) return;
@@ -77,9 +81,12 @@ function handleFocusableElements(e, modalCard) {
   const galleryButtons = thumbnailGalleryContainer.querySelectorAll(".thumbnail-button");
   const closeModalButton = modalCard.querySelector(".close-modal-button");
 
-  const focusableElements = [closeModalButton, ...galleryButtons];
+  const focusableElements = [closeModalButton, 
+    
+    document.querySelector('.thumbnail-button[tabindex="0"]')];
 
   console.log("focusableElements length:", focusableElements.length);
+  console.log("focusableElements:", focusableElements);
   console.log("modalCard focusable elements:", focusableElements);
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];

@@ -9,6 +9,9 @@
     import createGallery from "../components/GalleryComponent.js";
 
 
+    window.addEventListener("keydown", (e) => {
+        console.log("ACTIVE ELEMENT HERE:", document.activeElement);
+    })
 
     //  functions
     async function mainControllerInit () {

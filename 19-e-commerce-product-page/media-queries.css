@@ -113,6 +113,8 @@
         --body-p: var(--bpt) var(--bplr) var(--bpb);
         --avatar-width: calc(var(--spacing-700) - 6px); /* 56px */
     }
+
+
     
     .wrapper-max-w {
         max-width: 69.375rem; /* 1110px */
@@ -150,7 +152,7 @@
         right: initial;
         bottom: initial;
     }   
-    .close-menu-icon {
+    .close-menu-button {
         display: none;
     }
     .menu-list {
