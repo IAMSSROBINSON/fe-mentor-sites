@@ -86,10 +86,6 @@ function handleCloseModalOnResize (e) {
 }
 
 
-
-
-
-
 function handleFocusableElements(e, modalCard) {
   const thumbnailGalleryContainer = modalCard.querySelector(".thumbnail-gallery-container");
   console.log("modalCard", modalCard);

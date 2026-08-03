@@ -134,9 +134,9 @@
     }
 
     /* menu */
-    .blur-wrapper {
+    /* .blur-wrapper {
         display: none;
-    }
+    } */
     .menu-container {
         position: relative;
         width: fit-content;

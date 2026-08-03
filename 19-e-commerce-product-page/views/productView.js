@@ -13,6 +13,8 @@ function renderInformation (data) {
     const productPrice = document.querySelector('.product-price');
     const price = Boolean(data.isDiscounted) ? (data.price * data.discountPercentage /100).toFixed(2) : data.price.toFixed(2);
     productPrice.textContent = `$${price}`;
+    console.log("PRICE PRICE: ", price);
+    console.log("PRICE PRICE: ", productPrice);
 
     const productDiscount = document.querySelector('.product-discount');
     productDiscount.textContent = Boolean(data.isDiscounted) ? data.discountPercentage + "%" : "";

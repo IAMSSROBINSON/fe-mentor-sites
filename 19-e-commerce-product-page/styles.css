@@ -569,7 +569,6 @@ a {
 /* product information */
 .product-price-container {
     display: flex;
-    display: none;
     align-items: center;
     gap: var(--spacing-200);
     flex-wrap: wrap;
