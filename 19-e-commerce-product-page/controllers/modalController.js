@@ -9,6 +9,7 @@ const modalState = {
   previouslyFocusedElement: null,
 };
 
+
 // functions
 
 function modalControllerInit(product) {
@@ -70,7 +71,24 @@ function handleMainProductClick(e, product) {
   } else {
     console.log("main Product clicked not desktop");
   }
+
+  if (window.innerWidth >= 1440) {
+    window.addEventListener("resize", handleCloseModalOnResize);
+  }
+
+  
 }
+
+function handleCloseModalOnResize (e) {
+  if (window.innerWidth < 1440) {
+    handleCloseModal();
+  }
+}
+
+
+
+
+
 
 function handleFocusableElements(e, modalCard) {
   const thumbnailGalleryContainer = modalCard.querySelector(".thumbnail-gallery-container");
@@ -114,6 +132,11 @@ function handleFocusableElements(e, modalCard) {
 function handleCloseModal() {
   removeModal();
   restoreFocusToPreviouslyFocussed();
+  removeHandleCloseModalOnResize();
+}
+
+function removeHandleCloseModalOnResize () {
+  window.removeEventListener("resize", handleCloseModalOnResize);
 }
 
 function removeModal() {
