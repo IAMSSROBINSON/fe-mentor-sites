@@ -6,11 +6,16 @@ import {
 } from "../views/galleryView.js";
 import { renderInformation } from "../views/productView.js";
 
+// gallery state
+const galleryState = {
+  currentlySelectedImageIndex: 0,
+}
+
 //  functions
 function galleryControllerInit(galleryElement, product) {
   console.log("galleryControllerInit:", galleryElement, product);
 
-  renderGallery(galleryElement, product);
+  renderGallery(galleryElement, product, getSelectedImageIndex());
   attachGalleryEvents(galleryElement, product);
   renderInformation(product);
 }
@@ -63,9 +68,10 @@ function handleArrowClick(e, galleryElement, product) {
     }
   }
 
+  setSelectedImageIndex(newIndex);
   renderMainImage(galleryElement, product, newIndex);
-    renderSelectedThumbnailButton(allThumbnailButtons, allThumbnailButtons[newIndex]);
- 
+  renderSelectedThumbnailButton(allThumbnailButtons, allThumbnailButtons[newIndex]);
+
 }
 
 function handleThumbnailClick(e, galleryElement, product) {
@@ -83,6 +89,8 @@ function handleThumbnailClick(e, galleryElement, product) {
   if (targetButton) {
     renderSelectedThumbnailButton(allThumbnailButtons, targetButton);
     renderMainImage(galleryElement, product, imageIndex);
+    setSelectedImageIndex(imageIndex);
+
   }
   return;
 }
@@ -130,7 +138,18 @@ function handleButtonRoving(e, galleryElement, product) {
   nextButton.focus();
   renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
   renderMainImage(galleryElement, product, newIndex);
+  setSelectedImageIndex(newIndex);
+
+}
+
+function setSelectedImageIndex (index) {
+  galleryState.currentlySelectedImageIndex = index;
+  console.log("GALLERY STATE:", galleryState);
+}
+
+function getSelectedImageIndex () {
+  return galleryState.currentlySelectedImageIndex;
 }
 
 // exports
-export { galleryControllerInit };
+export { galleryControllerInit, getSelectedImageIndex };

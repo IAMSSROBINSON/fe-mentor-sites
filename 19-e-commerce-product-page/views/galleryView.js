@@ -1,18 +1,18 @@
 // functions
-function renderGallery(galleryElement, product) {
+function renderGallery(galleryElement, product, selectedImageIndex) {
   console.log("renderGallery:", galleryElement, product);
-  renderMainImage(galleryElement, product);
-  renderThumbnails(galleryElement, product);
+  renderMainImage(galleryElement, product, selectedImageIndex);
+  renderThumbnails(galleryElement, product, selectedImageIndex);
 }
 
-function renderMainImage(galleryElement, product, index = 0) {
+function renderMainImage(galleryElement, product, selectedImageIndex = 0) {
   const productImage = galleryElement.querySelector(".product-image");
-  const mainProductImageSrc = product.images[index];
-  productImage.className = `product-image product-${index + 1}`;
+  const mainProductImageSrc = product.images[selectedImageIndex];
+  productImage.className = `product-image product-${selectedImageIndex + 1}`;
   productImage.src = mainProductImageSrc;
 }
 
-function renderThumbnails(galleryElement, product) {
+function renderThumbnails(galleryElement, product, selectedImageIndex) {
   const thumbnailGalleryContainer = galleryElement.querySelector(
     ".thumbnail-gallery-container",
   );
@@ -20,14 +20,15 @@ function renderThumbnails(galleryElement, product) {
 
   const thumbnailsArr = product.thumbnails;
   console.log("renderThumbnails:", thumbnailsArr);
-
+ 
   thumbnailsArr.forEach((thumbnailSrc, index) => {
     const button = document.createElement("button");
     button.classList.add(`product-${index + 1}-button`, "thumbnail-button");
     button.dataset.thumbnailNumber = `${index + 1}`;
-    if (index === 0) {
+    if (index === selectedImageIndex) {
       button.classList.add("selected");
       button.setAttribute("tabindex", "0");
+      
     } else {
       button.setAttribute("tabindex", "-1");
     }
@@ -38,7 +39,10 @@ function renderThumbnails(galleryElement, product) {
     img.alt = `Luxury sneakers ${index === 0 ? "front" : index === 1 ? "back" : index === 2 ? "right side" : "left side"} view`;
     button.appendChild(img);
     thumbnailGalleryContainer.appendChild(button);
+    
   });
+
+  
 }
 
 function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
@@ -46,6 +50,7 @@ function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
     thumbnail.classList.remove("selected");
   });
   selectedThumbnail.classList.add("selected");
+
 }
 
 // exports

@@ -1,7 +1,7 @@
 // imports
 import { renderModal } from "../views/modalView.js";
 import createGallery from "../components/GalleryComponent.js";
-import { galleryControllerInit } from "./galleryController.js";
+import { galleryControllerInit, getSelectedImageIndex } from "./galleryController.js";
 
 // state
 const modalState = {
@@ -44,7 +44,7 @@ function handleMainProductClick(e, product) {
       modalState.previouslyFocusedElement,
     );
 
-    const modalGallery = createGallery();
+    const modalGallery = createGallery({isModal: true});
     console.log("main Product clicked desktop");
     renderModal(modalGallery);
     galleryControllerInit(modalGallery, product);
@@ -58,6 +58,9 @@ function handleMainProductClick(e, product) {
 
     const modalCard = document.querySelector(".modal-card");
     modalCard.addEventListener("keydown", (e) => {
+
+    console.log("e.target:", e.target);
+
       handleFocusableElements(e, modalCard);
     });
   } else {
@@ -66,12 +69,26 @@ function handleMainProductClick(e, product) {
 }
 
 function handleFocusableElements(e, modalCard) {
-  const focusableElements = Array.from(modalCard.querySelectorAll("button"));
+  const thumbnailGalleryContainer = modalCard.querySelector(".thumbnail-gallery-container");
+  console.log("modalCard", modalCard);
+
+  console.log("thumbnailGalleryContainer", thumbnailGalleryContainer);
+  
+  const galleryButtons = thumbnailGalleryContainer.querySelectorAll(".thumbnail-button");
+  const closeModalButton = modalCard.querySelector(".close-modal-button");
+
+  const focusableElements = [closeModalButton, ...galleryButtons];
+
+  console.log("focusableElements length:", focusableElements.length);
   console.log("modalCard focusable elements:", focusableElements);
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];
+  console.log("FIRST:", firstFocusableElement);
+  console.log("LAST:", lastFocusableElement);
+
   const currentFocussedElement = document.activeElement;
 
+ 
   if (
     currentFocussedElement === firstFocusableElement &&
     e.key === "Tab" &&

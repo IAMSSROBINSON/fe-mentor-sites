@@ -1,11 +1,12 @@
-function createGallery () {
+function createGallery ({isModal}) {
     const galleryMainPlusThumbnailWrapper = document.createElement("div");
     galleryMainPlusThumbnailWrapper.classList.add("gallery-main-plus-thumbnail-wrapper");
 
     const galleryMainImageContainer = document.createElement("div");
     galleryMainImageContainer.classList.add("gallery-main-image-container", "desktop");
 
-    const mainImageContainerButton = document.createElement("button");
+
+    const mainImageContainerButton = isModal ? document.createElement("div") : document.createElement("button");
     mainImageContainerButton.classList.add("main-image-container-button", "pointer");
 
     const productImage = document.createElement("img");

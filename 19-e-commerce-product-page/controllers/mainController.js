@@ -18,7 +18,7 @@
 
         const loader = document.getElementById("loader");
 
-        const gallery = createGallery();
+        const gallery = createGallery({isModal: false});
         console.log("GALLERY:", gallery);
         injectGallery(gallery);
 
