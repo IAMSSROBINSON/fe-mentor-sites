@@ -42,7 +42,7 @@ function renderThumbnails(galleryElement, product, selectedImageIndex) {
     
   });
 
-  
+
 }
 
 function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
@@ -53,5 +53,12 @@ function renderSelectedThumbnailButton(allThumbnailsArr, selectedThumbnail) {
 
 }
 
+function renderThumbnailTabIndexes (allThumbnails, selectedThumbnail) {
+  allThumbnails.forEach((thumbnail) => {
+    thumbnail.setAttribute("tabindex", "-1");
+  });
+  selectedThumbnail.setAttribute("tabindex", "0");
+}
+
 // exports
-export { renderGallery, renderSelectedThumbnailButton, renderMainImage };
+export { renderGallery, renderSelectedThumbnailButton, renderMainImage, renderThumbnailTabIndexes };

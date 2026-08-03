@@ -3,6 +3,7 @@ import {
   renderGallery,
   renderSelectedThumbnailButton,
   renderMainImage,
+  renderThumbnailTabIndexes
 } from "../views/galleryView.js";
 import { renderInformation } from "../views/productView.js";
 
@@ -71,6 +72,7 @@ function handleArrowClick(e, galleryElement, product) {
   setSelectedImageIndex(newIndex);
   renderMainImage(galleryElement, product, newIndex);
   renderSelectedThumbnailButton(allThumbnailButtons, allThumbnailButtons[newIndex]);
+  renderThumbnailTabIndexes(allThumbnailButtons, allThumbnailButtons[newIndex]);
 
 }
 
@@ -88,6 +90,7 @@ function handleThumbnailClick(e, galleryElement, product) {
 
   if (targetButton) {
     renderSelectedThumbnailButton(allThumbnailButtons, targetButton);
+    renderThumbnailTabIndexes(allThumbnailButtons, targetButton);
     renderMainImage(galleryElement, product, imageIndex);
     setSelectedImageIndex(imageIndex);
 
@@ -133,10 +136,10 @@ function handleButtonRoving(e, galleryElement, product) {
   }
 
   const nextButton = allThumbnailButtons[newIndex];
-  target.setAttribute("tabindex", "-1");
-  nextButton.setAttribute("tabindex", "0");
-  nextButton.focus();
   renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
+  renderThumbnailTabIndexes(allThumbnailButtons, nextButton);
+  nextButton.focus();
+  
   renderMainImage(galleryElement, product, newIndex);
   setSelectedImageIndex(newIndex);
 
@@ -150,6 +153,8 @@ function setSelectedImageIndex (index) {
 function getSelectedImageIndex () {
   return galleryState.currentlySelectedImageIndex;
 }
+
+
 
 // exports
 export { galleryControllerInit, getSelectedImageIndex };
