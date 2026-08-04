@@ -27,6 +27,9 @@ function renderModalCard (modalGallery) {
     
     console.log("modalGallery", modalGallery);
     const modalCard = document.createElement('div');
+    modalCard.classList.add("modal-card");
+    modalCard.setAttribute("role", "dialog");
+    modalCard.setAttribute("aria-modal", "true");
 
     const closeModalButton = document.createElement("button");
     closeModalButton.classList.add("close-modal-button");
@@ -38,7 +41,6 @@ function renderModalCard (modalGallery) {
     modalGalleryContainer.classList.add('modal-gallery-container');
 
     modalGalleryContainer.appendChild(modalGallery)
-    modalCard.classList.add("modal-card");
     modalCard.appendChild(closeModalButton);
     modalCard.appendChild(modalGalleryContainer);
     blurWrapper.appendChild(modalCard);
