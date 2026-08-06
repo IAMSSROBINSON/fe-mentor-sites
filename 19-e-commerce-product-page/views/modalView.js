@@ -30,6 +30,12 @@ function renderModalCard (modalGallery) {
     modalCard.classList.add("modal-card");
     modalCard.setAttribute("role", "dialog");
     modalCard.setAttribute("aria-modal", "true");
+    modalCard.setAttribute("aria-labelledby", "product-gallery");
+
+    const title = document.createElement("h2");
+    title.textContent = "Product Gallery";
+    title.setAttribute("id", "product-gallery");
+    title.classList.add("visually-hidden");
 
     const closeModalButton = document.createElement("button");
     closeModalButton.classList.add("close-modal-button");
@@ -41,6 +47,7 @@ function renderModalCard (modalGallery) {
     modalGalleryContainer.classList.add('modal-gallery-container');
 
     modalGalleryContainer.appendChild(modalGallery)
+    modalCard.appendChild(title);
     modalCard.appendChild(closeModalButton);
     modalCard.appendChild(modalGalleryContainer);
     blurWrapper.appendChild(modalCard);
