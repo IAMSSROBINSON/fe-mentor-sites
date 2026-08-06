@@ -32,6 +32,7 @@ function renderModalCard (modalGallery) {
     modalCard.setAttribute("aria-modal", "true");
     modalCard.setAttribute("aria-labelledby", "product-gallery");
 
+    
     const title = document.createElement("h2");
     title.textContent = "Product Gallery";
     title.setAttribute("id", "product-gallery");
