@@ -31,12 +31,18 @@ function renderModalCard (modalGallery) {
     modalCard.setAttribute("role", "dialog");
     modalCard.setAttribute("aria-modal", "true");
     modalCard.setAttribute("aria-labelledby", "product-gallery");
+    modalCard.setAttribute("aria-describedby", "gallery-description");
 
     
     const title = document.createElement("h2");
     title.textContent = "Product Gallery";
     title.setAttribute("id", "product-gallery");
     title.classList.add("visually-hidden");
+
+    const description = document.createElement("p");
+    description.textContent = "Press Tab to enter the Thumbnail Gallery. Use Arrow keys to browse images. Press Escape to close the dialog.";
+    description.setAttribute("id", "gallery-description");
+    description.classList.add("visually-hidden");
 
     const closeModalButton = document.createElement("button");
     closeModalButton.classList.add("close-modal-button");
@@ -49,6 +55,7 @@ function renderModalCard (modalGallery) {
 
     modalGalleryContainer.appendChild(modalGallery)
     modalCard.appendChild(title);
+    modalCard.appendChild(description);
     modalCard.appendChild(closeModalButton);
     modalCard.appendChild(modalGalleryContainer);
     blurWrapper.appendChild(modalCard);
