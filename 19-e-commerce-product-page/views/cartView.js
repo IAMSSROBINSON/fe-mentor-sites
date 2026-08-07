@@ -46,6 +46,27 @@ function removeEmptyCartMessage () {
 
 function toggleCartMenuContainer() {
     getCartMenuContainer().classList.toggle('hide');
+    toggleAriaExpanded();
+}
+
+function toggleAriaExpanded () {
+   
+
+   const cartButton = document.querySelector(".cart-icon-button");
+   console.log("cart-icon-button aria-expanded before:", cartButton);
+
+     const isExpanded = cartButton.getAttribute("aria-expanded");
+     console.log("attribute:", isExpanded)
+
+   if (isExpanded === "false") {
+    cartButton.setAttribute("aria-expanded", "true");
+   }
+   else {
+    cartButton.setAttribute("aria-expanded", "false");
+   }
+
+   console.log("cart-icon-button aria-expanded after:", cartButton);
+
 }
 
 function getCartMenuContainer () {
