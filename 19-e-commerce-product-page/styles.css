@@ -155,6 +155,18 @@ a {
   left: 0;
 }
 
+#skip-link:focus-visible {
+ top: 0;
+ left: 0;
+ margin: 0;
+ border: 1px solid black;
+ height: fit-content;
+ clip: auto;
+ width: fit-content;
+ padding: 4px 8px;
+ background-color: yellow;  
+}
+
 /* wrapper */
 .wrapper-max-w {
   position: relative;
