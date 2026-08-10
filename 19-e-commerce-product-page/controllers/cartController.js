@@ -77,6 +77,7 @@ function handleProductDelete(e) {
 
 
 function handleAddToCartClick(e) {
+
   console.log("handleAddToCartClick");
   // get the quantity
   const quantity = getQuantity();
@@ -96,6 +97,8 @@ function handleAddToCartClick(e) {
 }
 
 function addProductIdToUserCart(productId, quantity = 0) {
+  const cartAnnouncement = document.querySelector("#cart-announcement");
+
   console.log("user1:", user1);
   console.log("user1:", user1.cart.items);
   user1.addItem(productId, quantity);
@@ -103,11 +106,17 @@ function addProductIdToUserCart(productId, quantity = 0) {
   if (cartLength > 0) {
     const totalItemsInCart = user1.cart.items.reduce((acc, item) => {
       const count = acc + item.quantity;
+
       return count;
     }, 0);
     console.log("cartLength:", totalItemsInCart);
     renderCartNumber(totalItemsInCart);
+    const isSingleItem = quantity == 1 ? "" : "s";
+    const isTotalItems = totalItemsInCart == 1 ? "" : "s";
+    cartAnnouncement.textContent = `You added ${quantity} item${isSingleItem} to your cart. Your cart now has ${totalItemsInCart} item${isTotalItems}.`;
   }
+
+  
 }
 
 function handleProductQuantityContainer(e) {

@@ -28,7 +28,6 @@ class User {
     }
 
     addItem(productId, quantity = 0) {
-        // this.cart.items.push(item);
         const presentProduct = this.cart.items.filter(productObj => productObj.productId === productId);
         if (presentProduct.length !== 0) {
             presentProduct[0].quantity += quantity;
