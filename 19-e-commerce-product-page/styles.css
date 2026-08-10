@@ -707,6 +707,7 @@ a {
 .cart-delete-button {
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .cart-delete-icon {
