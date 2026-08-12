@@ -46,6 +46,8 @@ function focusHamburgerButton() {
 }
 
 function handleMenuKeyDown(e) {
+  if (!menu.classList.contains("show")) return;
+  
   const key = e.key;
   if (key === "Escape") {
     console.log("Escape key pressed");
