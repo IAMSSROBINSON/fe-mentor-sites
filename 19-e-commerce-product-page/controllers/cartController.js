@@ -16,7 +16,8 @@ import {
   hideCheckout, showCheckout,
   showEmptyCartMessage,
   updateCartNumber,
-  showCartNumber
+  showCartNumber,
+  focusOnCartButton
  } from "../views/cartView.js";
 
 // functions
@@ -56,7 +57,7 @@ function handleCartEscapeClick (e) {
   if (key === "Escape" && cartIconButton.ariaExpanded === "true") {
     console.log("Escape clicked");
     toggleCartMenuContainer();
-    cartIconButton.focus();
+    focusOnCartButton();
   }
 }
 
@@ -83,6 +84,7 @@ function handleProductDelete(e) {
       ? showEmptyCartMessage()
       : removeEmptyCartMessage();
     updateCartNumber(user1.cart.items.length);
+    focusOnCartButton();
   }
 }
 

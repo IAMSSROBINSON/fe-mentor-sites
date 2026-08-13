@@ -78,6 +78,7 @@ function getEmptyCartMessageElement () {
 }
 
 function renderCartListItems (product , quantity) {
+
     const cartList = document.querySelector(".cart-list");
 
     console.log("renderCartListItems:", product);
@@ -87,12 +88,11 @@ function renderCartListItems (product , quantity) {
     li.classList.add('cart-list-item');
     li.dataset.cartItemId = product.id;
 
-
     // left of item
     const img = document.createElement('img');
     img.src = product.thumbnails[0];
     img.classList.add('cart-image');
-    img.setAttribute('alt', "White with tan panels, Luxury sneakers product shot");
+    img.setAttribute('alt', "");
 
     // middle of item
      const cartItemMiddleContainer = document.createElement('div');
@@ -115,8 +115,9 @@ function renderCartListItems (product , quantity) {
     priceQuantity.textContent = priceQuantityString;
 
     const totalPrice = document.createElement('p');
-    totalPrice.classList.add('cart-total-price')
-    totalPrice.textContent = `$${(discountedPrice * quantity).toFixed(2)}`;
+    totalPrice.classList.add('cart-total-price');
+    const priceAmount = `$${(discountedPrice * quantity).toFixed(2)}`;
+    totalPrice.textContent = priceAmount;
     console.log("totalPrice: ", totalPrice);
 
     // right of item
@@ -124,10 +125,19 @@ function renderCartListItems (product , quantity) {
     deleteButton.classList.add("cart-delete-button");
     const deleteIcon = document.createElement('img');
     deleteIcon.src = './assets/icons/icon-delete.svg';
-    deleteIcon.classList.add('cart-delete-icon')
+    deleteIcon.classList.add('cart-delete-icon');
+    deleteButton.setAttribute("aria-label", `Delete ${product.name} from cart`);
     deleteButton.append(deleteIcon);
+    deleteButton.setAttribute("aria-describedby", `product-purchase-described-${product.id}`);
+
+
+    const describedByElement = document.createElement("p");
+    describedByElement.textContent = `${discountedPrice} dollars each, quantity ${quantity}, total ${priceAmount}`;
+    describedByElement.classList.add("visually-hidden");
+    describedByElement.setAttribute("id", `product-purchase-described-${product.id}`);
 
     li.appendChild(img);
+    li.appendChild(describedByElement);
     cartItemMiddleContainer.appendChild(name);
     cartItemMiddleBottomContainer.append(priceQuantity);
     cartItemMiddleBottomContainer.appendChild(totalPrice);
@@ -143,28 +153,11 @@ function removeDeletedProductFromCart (element) {
         element.remove();
     }
 
-    // function handleProductDelete(e, user1) {
-    //   console.log("deleteButtonClicked handleProductDelete:");
-    //   e.stopPropagation();
-    
-    //   const target = e.target.closest("li");
-    //   const cartItemId = target?.dataset.cartItemId;
-    //   console.log("target:", target);
-    //   console.log("cartItemId:", cartItemId);
-    //   const deletedProduct = user1.deleteProductById(cartItemId);
-    //   console.log("handleProductDelete deletedProduct:", deletedProduct);
-    //   if (deletedProduct) {
-    //     removeDeletedProductFromCart(target);
-    //     user1.cart.items.length === 0
-    //       ? removeEmptyCartMessage()
-    //       : showCartNumber(user1.cart.items.length);
-    //     user1.cart.items.length === 0 ? hideCheckout() : showCheckout();
-    //     user1.cart.items.length === 0
-    //       ? showEmptyCartMessage()
-    //       : removeEmptyCartMessage();
-    //     updateCartNumber(user1.cart.items.length);
-    //   }
-    // }
+function focusOnCartButton () {
+      const cartIconButton = document.querySelector(".cart-icon-button");
+        cartIconButton.focus();
+
+}
 
     function hideCheckout () {
      const checkoutButton = document.getElementById('checkout');
@@ -218,4 +211,4 @@ function showCartNumber (numberOfItems = 0) {
 
 
 
-export { getQuantity, renderQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, addStyleToCartNumberDisplayContainer, clearCartList, removeEmptyCartMessage, toggleCartMenuContainer, renderCartListItems, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, updateCartNumber, showCartNumber };
+export { getQuantity, renderQuantity, renderCartNumber, renderResetQuantity, renderCloseCartMenu, addStyleToCartNumberDisplayContainer, clearCartList, removeEmptyCartMessage, toggleCartMenuContainer, renderCartListItems, removeDeletedProductFromCart, hideCheckout, showCheckout, showEmptyCartMessage, updateCartNumber, showCartNumber, focusOnCartButton };
