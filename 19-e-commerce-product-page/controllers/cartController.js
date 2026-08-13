@@ -46,7 +46,18 @@ function attachCartEvents() {
   const cartList = document.querySelector(".cart-list");
   cartList.addEventListener("click", handleProductDelete);
 
-  
+  document.addEventListener("keydown", handleCartEscapeClick);
+}
+
+function handleCartEscapeClick (e) {
+  const cartIconButton = document.querySelector(".cart-icon-button");
+
+  const key = e.key;
+  if (key === "Escape" && cartIconButton.ariaExpanded === "true") {
+    console.log("Escape clicked");
+    toggleCartMenuContainer();
+    cartIconButton.focus();
+  }
 }
 
 function handleProductDelete(e) {
