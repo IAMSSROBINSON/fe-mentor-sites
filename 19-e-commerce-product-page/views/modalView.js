@@ -12,10 +12,6 @@ function blurDocument(element) {
   element.style.zIndex = "3";
 }
 
-function removeDocumentBlur(element) {
-  element.style.display = "none";
-}
-
 function renderModalCard(modalGallery) {
   blurWrapper.innerHTML = "";
   const modalCard = document.createElement("div");
