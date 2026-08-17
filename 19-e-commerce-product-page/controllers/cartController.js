@@ -55,7 +55,6 @@ function handleCartEscapeClick(e) {
 
   const key = e.key;
   if (key === "Escape" && cartIconButton.ariaExpanded === "true") {
-    console.log("Escape clicked");
     toggleCartMenuContainer();
     focusOnCartButton();
   }
@@ -70,7 +69,6 @@ function handleProductDelete(e) {
   const cartItem = e.target.closest("li");
   const cartItemId = cartItem?.dataset.cartItemId;
   const deletedProduct = user1.deleteProductById(cartItemId);
-  console.log("handleProductDelete deletedProduct:", deletedProduct);
 
   if (deletedProduct) {
     removeDeletedProductFromCart(cartItem);

@@ -1,7 +1,10 @@
 // imports
 import { renderModal } from "../views/modalView.js";
 import createGallery from "../components/GalleryComponent.js";
-import { galleryControllerInit, getSelectedImageIndex } from "./galleryController.js";
+import {
+  galleryControllerInit,
+  getSelectedImageIndex,
+} from "./galleryController.js";
 import { renderModalArrowTabIndexes } from "../views/galleryView.js";
 
 // state
@@ -9,12 +12,8 @@ const modalState = {
   previouslyFocusedElement: null,
 };
 
-
 // functions
-
 function modalControllerInit(product) {
-  console.log("modalControllerInit");
-
   attachEvents(product);
 }
 
@@ -24,7 +23,6 @@ function attachEvents(product) {
   const galleryMainContainerDesktop = document.querySelector(
     ".gallery-main-image-container.desktop",
   );
-  console.log("galleryMainContainerDesktop:", galleryMainContainerDesktop);
 
   galleryMainContainerDesktop.addEventListener("click", (e) => {
     handleMainProductClick(e, product);
@@ -41,18 +39,10 @@ function handleEscapeKey(e) {
 function handleMainProductClick(e, product) {
   if (window.innerWidth >= 1440) {
     modalState.previouslyFocusedElement = document.activeElement;
-    console.log(
-      "previouslyFocusedElement:",
-      modalState.previouslyFocusedElement,
-    );
-
-    const modalGallery = createGallery({isModal: true});
-    console.log("main Product clicked desktop");
+    const modalGallery = createGallery({ isModal: true });
     renderModal(modalGallery);
-    
     galleryControllerInit(modalGallery, product);
-          renderModalArrowTabIndexes(modalGallery);
-
+    renderModalArrowTabIndexes(modalGallery);
 
     const closeModalButton = document.querySelector(".close-modal-button");
     if (!closeModalButton) return;
@@ -63,53 +53,36 @@ function handleMainProductClick(e, product) {
 
     const modalCard = document.querySelector(".modal-card");
     modalCard.addEventListener("keydown", (e) => {
-
-    console.log("e.target:", e.target);
-
       handleFocusableElements(e, modalCard);
     });
-  } else {
-    console.log("main Product clicked not desktop");
   }
 
   if (window.innerWidth >= 1440) {
     window.addEventListener("resize", handleCloseModalOnResize);
   }
-
-  
 }
 
-function handleCloseModalOnResize (e) {
+function handleCloseModalOnResize(e) {
   if (window.innerWidth < 1440) {
     handleCloseModal();
   }
 }
 
-
 function handleFocusableElements(e, modalCard) {
-  const thumbnailGalleryContainer = modalCard.querySelector(".thumbnail-gallery-container");
-  console.log("modalCard", modalCard);
-
-  console.log("thumbnailGalleryContainer", thumbnailGalleryContainer);
-  
-  const galleryButtons = thumbnailGalleryContainer.querySelectorAll(".thumbnail-button");
+  const thumbnailGalleryContainer = modalCard.querySelector(
+    ".thumbnail-gallery-container",
+  );
+  const galleryButtons =
+    thumbnailGalleryContainer.querySelectorAll(".thumbnail-button");
   const closeModalButton = modalCard.querySelector(".close-modal-button");
-
-  const focusableElements = [closeModalButton, 
-    
-    document.querySelector('.thumbnail-button[tabindex="0"]')];
-
-  console.log("focusableElements length:", focusableElements.length);
-  console.log("focusableElements:", focusableElements);
-  console.log("modalCard focusable elements:", focusableElements);
+  const focusableElements = [
+    closeModalButton,
+    document.querySelector('.thumbnail-button[tabindex="0"]'),
+  ];
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];
-  console.log("FIRST:", firstFocusableElement);
-  console.log("LAST:", lastFocusableElement);
-
   const currentFocussedElement = document.activeElement;
 
- 
   if (
     currentFocussedElement === firstFocusableElement &&
     e.key === "Tab" &&
@@ -118,9 +91,12 @@ function handleFocusableElements(e, modalCard) {
     e.preventDefault();
     lastFocusableElement.focus();
   }
-  if (currentFocussedElement === lastFocusableElement && e.key === "Tab" && !e.shiftKey) {
+  if (
+    currentFocussedElement === lastFocusableElement &&
+    e.key === "Tab" &&
+    !e.shiftKey
+  ) {
     e.preventDefault();
-
     firstFocusableElement.focus();
   }
 }
@@ -131,7 +107,7 @@ function handleCloseModal() {
   removeHandleCloseModalOnResize();
 }
 
-function removeHandleCloseModalOnResize () {
+function removeHandleCloseModalOnResize() {
   window.removeEventListener("resize", handleCloseModalOnResize);
 }
 
@@ -147,7 +123,6 @@ function hideBlurWrapper() {
 }
 
 function restoreFocusToPreviouslyFocussed() {
-  console.log("modalState:", modalState.previouslyFocusedElement);
   modalState.previouslyFocusedElement.focus();
 }
 
