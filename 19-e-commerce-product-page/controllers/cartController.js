@@ -147,12 +147,28 @@ function handleProductQuantityContainer(e) {
 function decreaseQuantity() {
   console.log("decreaseQuantity");
   const quantity = getQuantity();
+
   const newQuantity = quantity - 1;
+  if (newQuantity === 1) {
+      renderQuantity(newQuantity);
+      disableDecreaseQuantityButton();
+      return;
+  }
   if (newQuantity > 0) {
-    console.log("decreaseQuantity newQuantity", newQuantity);
+    console.log("decreaseQuantity newQuantity", newQuantity); 
     renderQuantity(newQuantity);
   }
   return;
+}
+
+function enableDecreaseQuantityButton () {
+  const minusButton = document.querySelector(".product-minus");
+  minusButton.disabled = false;
+}
+
+function disableDecreaseQuantityButton () {
+  const minusButton = document.querySelector(".product-minus");
+  minusButton.disabled = true;
 }
 
 function increaseQuantity() {
@@ -164,6 +180,7 @@ function increaseQuantity() {
   if (newQuantity <= 5) {
     console.log("increaseQuantity newQuantity", newQuantity);
     renderQuantity(newQuantity);
+    enableDecreaseQuantityButton();
   }
   return;
 }
