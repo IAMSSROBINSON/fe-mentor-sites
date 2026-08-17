@@ -8,8 +8,6 @@ const lastFocusableElement = focusableElements[focusableElements.length - 1];
 const hamburgerMenu = document.querySelector(".menu-icon-container");
 
 function toggleMenu() {
-  console.log("toggleMenu");
-
   toggleBodyNoScroll(body);
   toggleElementShow(blurWrapper);
   toggleElementShow(menu);
@@ -47,17 +45,15 @@ function focusHamburgerButton() {
 
 function handleMenuKeyDown(e) {
   if (!menu.classList.contains("show")) return;
-  
+
   const key = e.key;
   if (key === "Escape") {
-    console.log("Escape key pressed");
     toggleMenu();
     focusHamburgerButton();
     return;
   }
 
   focusableElements.forEach((ele) => console.log("ele:", ele));
-
   const activeElement = document.activeElement;
 
   if (key === "Tab" && e.shiftKey && activeElement === firstFocusableElement) {
@@ -69,8 +65,6 @@ function handleMenuKeyDown(e) {
     e.preventDefault();
     firstFocusableElement.focus();
   }
-
-  console.log("activeElement", activeElement);
 }
 
 export {

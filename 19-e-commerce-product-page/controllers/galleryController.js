@@ -3,19 +3,17 @@ import {
   renderGallery,
   renderSelectedThumbnailButton,
   renderMainImage,
-  renderThumbnailTabIndexes
+  renderThumbnailTabIndexes,
 } from "../views/galleryView.js";
 import { renderInformation } from "../views/productView.js";
 
 // gallery state
 const galleryState = {
   currentlySelectedImageIndex: 0,
-}
+};
 
 //  functions
 function galleryControllerInit(galleryElement, product) {
-  console.log("galleryControllerInit:", galleryElement, product);
-
   renderGallery(galleryElement, product, getSelectedImageIndex());
   attachGalleryEvents(galleryElement, product);
   renderInformation(product);
@@ -53,7 +51,9 @@ function handleArrowClick(e, galleryElement, product) {
     .pathname;
   const allImages = product.images;
   const indexOfCurrentImage = allImages.indexOf(pathname);
-  const allThumbnailButtons = Array.from(galleryElement.querySelectorAll(".thumbnail-button"));
+  const allThumbnailButtons = Array.from(
+    galleryElement.querySelectorAll(".thumbnail-button"),
+  );
 
   let newIndex;
   if (direction === "previous") {
@@ -61,7 +61,6 @@ function handleArrowClick(e, galleryElement, product) {
     if (newIndex < 0) {
       newIndex = allImages.length - 1;
     }
-  
   } else {
     newIndex = indexOfCurrentImage + 1;
     if (newIndex > allImages.length - 1) {
@@ -71,19 +70,19 @@ function handleArrowClick(e, galleryElement, product) {
 
   setSelectedImageIndex(newIndex);
   renderMainImage(galleryElement, product, newIndex);
-  renderSelectedThumbnailButton(allThumbnailButtons, allThumbnailButtons[newIndex]);
+  renderSelectedThumbnailButton(
+    allThumbnailButtons,
+    allThumbnailButtons[newIndex],
+  );
   renderThumbnailTabIndexes(allThumbnailButtons, allThumbnailButtons[newIndex]);
-
 }
 
 function handleThumbnailClick(e, galleryElement, product) {
-  console.log("handleThumbnailClick");
   const targetButton = e.target.closest("button");
   if (!targetButton) return;
+
   const imageNumber = targetButton.dataset.thumbnailNumber;
   const imageIndex = imageNumber - 1 || 0;
-  console.log("handleThumbnailClick imageNumber:", imageNumber);
-
   const allThumbnailButtons = Array.from(
     galleryElement.querySelectorAll(".thumbnail-button"),
   );
@@ -93,7 +92,6 @@ function handleThumbnailClick(e, galleryElement, product) {
     renderThumbnailTabIndexes(allThumbnailButtons, targetButton);
     renderMainImage(galleryElement, product, imageIndex);
     setSelectedImageIndex(imageIndex);
-
   }
   return;
 }
@@ -109,25 +107,18 @@ function handleButtonRoving(e, galleryElement, product) {
   const indexOfCurrentThumbnail = allThumbnailButtons.indexOf(target);
 
   if (indexOfCurrentThumbnail === -1) {
-    console.log("cannot find current image in list");
     return;
   }
 
   let newIndex;
   const key = e.key;
-
   if (key !== "ArrowRight" && key !== "ArrowLeft") return;
-
   if (key === "ArrowRight") {
-    console.log("ArrowRight clicked");
-
     newIndex = indexOfCurrentThumbnail + 1;
     if (newIndex > allThumbnailButtons.length - 1) {
       newIndex = 0;
     }
   } else if (key === "ArrowLeft") {
-    console.log("ArrowLeft Clicked.");
-
     if (indexOfCurrentThumbnail - 1 < 0) {
       newIndex = allThumbnailButtons.length - 1;
     } else {
@@ -139,22 +130,18 @@ function handleButtonRoving(e, galleryElement, product) {
   renderSelectedThumbnailButton(allThumbnailButtons, nextButton);
   renderThumbnailTabIndexes(allThumbnailButtons, nextButton);
   nextButton.focus();
-  
+
   renderMainImage(galleryElement, product, newIndex);
   setSelectedImageIndex(newIndex);
-
 }
 
-function setSelectedImageIndex (index) {
+function setSelectedImageIndex(index) {
   galleryState.currentlySelectedImageIndex = index;
-  console.log("GALLERY STATE:", galleryState);
 }
 
-function getSelectedImageIndex () {
+function getSelectedImageIndex() {
   return galleryState.currentlySelectedImageIndex;
 }
-
-
 
 // exports
 export { galleryControllerInit, getSelectedImageIndex };

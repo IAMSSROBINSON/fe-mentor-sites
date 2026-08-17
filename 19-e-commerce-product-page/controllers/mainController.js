@@ -1,54 +1,50 @@
 // imports
-    import { mainModelInit, user1, User } from "../models/mainModel.js";
-    import { cartControllerInit } from "./cartController.js";
-    import { productModelInit, getProducts } from "../models/productModel.js";
-    import { galleryControllerInit } from "./galleryController.js";
-    import { menuControllerInit } from "./menuController.js";
-    import { modalControllerInit } from "./modalController.js";
-    import { mainViewInit, renderProfile, injectGallery } from "../views/mainView.js";
-    import createGallery from "../components/GalleryComponent.js";
+import { user1, User } from "../models/mainModel.js";
+import { cartControllerInit } from "./cartController.js";
+import { productModelInit, getProducts } from "../models/productModel.js";
+import { galleryControllerInit } from "./galleryController.js";
+import { menuControllerInit } from "./menuController.js";
+import { modalControllerInit } from "./modalController.js";
+import {
+  renderProfile,
+  injectGallery,
+} from "../views/mainView.js";
+import createGallery from "../components/GalleryComponent.js";
 
+// elements
+const skipLink = document.querySelector("#skip-link");
+const mainContent = document.querySelector("#main-content");
+skipLink.addEventListener("click", handleSkipLinkClick);
 
-    window.addEventListener("keydown", (e) => {
-        console.log("ACTIVE ELEMENT HERE:", document.activeElement);
-    })
+//  functions
+function handleSkipLinkClick(e) {
+  e.preventDefault;
+  mainContent.focus();
+}
 
-    //  functions
-    async function mainControllerInit () {
-        console.log("mainControllerInit:");
-        menuControllerInit();
-        renderProfile(user1)
+async function mainControllerInit() {
+  menuControllerInit();
+  renderProfile(user1);
 
-        const loader = document.getElementById("loader");
+  const loader = document.getElementById("loader");
+  const gallery = createGallery({ isModal: false });
+  injectGallery(gallery);
 
-        const gallery = createGallery({isModal: false});
-        console.log("GALLERY:", gallery);
-        injectGallery(gallery);
+  try {
+    await productModelInit();
+    const products = getProducts();
 
-
-        try {
-            // load products on backend
-            await productModelInit();
-            const products = getProducts();
-            console.log(products);
-
-            if (products.length > 0) {
-                const product = products[0];
-                galleryControllerInit(gallery, product);
-                cartControllerInit();
-                modalControllerInit(product);
-                loader.classList.add("hide");
-            }
-        }
-        catch(err) {
-            console.log("mainController Error:", err);
-            loader.classList.remove("hide");
-
-        }
+    if (products.length > 0) {
+      const product = products[0];
+      galleryControllerInit(gallery, product);
+      cartControllerInit();
+      modalControllerInit(product);
+      loader.classList.add("hide");
     }
+  } catch (err) {
+    loader.classList.remove("hide");
+  }
+}
 
-
-    // exports
-    export {  mainControllerInit };
-
-    
+// exports
+export { mainControllerInit };
