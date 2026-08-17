@@ -1,8 +1,6 @@
 // imports
 import { user1 } from "../models/mainModel.js";
 import {
-  productModelInit,
-  getProducts,
   getProductById,
 } from "../models/productModel.js";
 import {
@@ -92,6 +90,7 @@ function handleAddToCartClick(e) {
   if (quantity !== 0) {
     addProductIdToUserCart(productId, quantity);
     renderResetQuantity();
+    disableDecreaseQuantityButton();
     renderCloseCartMenu();
     addStyleToCartNumberDisplayContainer();
   }

@@ -1,5 +1,5 @@
 // imports
-import { user1, User } from "../models/mainModel.js";
+import { user1 } from "../models/mainModel.js";
 import { cartControllerInit } from "./cartController.js";
 import { productModelInit, getProducts } from "../models/productModel.js";
 import { galleryControllerInit } from "./galleryController.js";

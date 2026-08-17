@@ -27,6 +27,7 @@ function renderResetQuantity() {
 function renderCloseCartMenu() {
   const cartMenuContainer = document.querySelector(".cart-menu-container");
   cartMenuContainer.classList.add("hide");
+  toggleAriaExpanded();
 }
 
 function addStyleToCartNumberDisplayContainer() {

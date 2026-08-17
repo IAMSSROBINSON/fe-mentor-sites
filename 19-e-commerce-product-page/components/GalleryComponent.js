@@ -27,6 +27,7 @@ function createGallery({ isModal }) {
     "arrow-container",
     "previous-arrow-container",
   );
+  arrowContainerPrevious.setAttribute("aria-label", "Go to previous image");
   arrowContainerPrevious.dataset.direction = "previous";
 
   const arrowContainerPreviousHTML = `<svg class="previous-icon" width="12" height="18" xmlns="http://www.w3.org/2000/svg">
@@ -38,6 +39,8 @@ function createGallery({ isModal }) {
   const arrowContainerNext = document.createElement("button");
   arrowContainerNext.classList.add("arrow-container", "next-arrow-container");
   arrowContainerNext.dataset.direction = "next";
+  arrowContainerNext.setAttribute("aria-label", "Go to next image");
+
 
   const arrowContainerNextHTML = `<svg class="next-icon" width="13" height="18" xmlns="http://www.w3.org/2000/svg">
                         <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
