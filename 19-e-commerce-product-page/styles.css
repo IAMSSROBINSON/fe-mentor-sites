@@ -401,7 +401,6 @@ a {
 /* includes main product image only */
 .gallery-main-image-container {
   position: relative;
-  height: 300px;
   height: auto;
   overflow: hidden;
   border: none;
@@ -496,18 +495,6 @@ a {
 
 .thumbnail {
   background-color: var(--clr-grey-50);
-}
-
-/* image placement */
-
-.product-2 {
-  object-position: 0 -20px;
-}
-.product-3 {
-  object-position: 0 -20px;
-}
-.product-4 {
-  object-position: 0 -40px;
 }
 
 /* product information */
