@@ -402,6 +402,7 @@ a {
 .gallery-main-image-container {
   position: relative;
   height: 300px;
+  height: auto;
   overflow: hidden;
   border: none;
   cursor: pointer;
