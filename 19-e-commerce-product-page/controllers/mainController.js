@@ -18,7 +18,7 @@ skipLink.addEventListener("click", handleSkipLinkClick);
 
 //  functions
 function handleSkipLinkClick(e) {
-  e.preventDefault;
+  e.preventDefault();
   mainContent.focus();
 }
 
