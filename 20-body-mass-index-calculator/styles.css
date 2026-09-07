@@ -16,6 +16,22 @@
 
     --clr-gradient: linear-gradient(to right, #D6FCFE, #D6E6FE);
 
+
+    /* spacing */
+    --spacing-1800: 9rem; /* 144px */
+    --spacing-1600: 8rem; /* 128px */
+    --spacing-1300: 6.5rem; /* 104px */
+    --spacing-1200: 6rem; /* 96px */
+    --spacing-1100: 5.5rem; /* 88px */
+    --spacing-900: 4.5rem; /* 72px */
+    --spacing-700: 3.5rem; /* 56px */
+    --spacing-600: 3rem; /* 48px */
+    --spacing-500: 2.5rem; /* 40px */
+    --spacing-400: 2rem; /* 32px */
+    --spacing-300: 1.5rem; /* 24px */
+    --spacing-200: 1rem; /* 16px */
+    --spacing-100: 0.5rem; /* 8px */
+
     
 }
 
