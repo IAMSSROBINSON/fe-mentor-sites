@@ -1,5 +1,22 @@
 :root {
 
+    /* TOKENS */
+
+    /* colors */
+    --clr-white: #ffffff;
+    --clr-black: #000000;
+
+    --clr-grey-500: #5E6E85;
+    --clr-grey-300: #ACC1DE;
+
+    --clr-blue-900: #253347;
+    --clr-blue-500: #345FF6;
+    --clr-blue-300: #B3D3F1;
+    --clr-blue-100: #E1E7FE;
+
+    --clr-gradient: linear-gradient(to right, #D6FCFE, #D6E6FE);
+
+    
 }
 
 *,
@@ -41,5 +58,5 @@ body {
 }
 
 body {
-    background-color: dodgerblue;
+    background: dodgerblue
 }
