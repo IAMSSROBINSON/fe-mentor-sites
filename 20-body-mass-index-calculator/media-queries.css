@@ -1,0 +1,25 @@
+@media screen and (max-width: 768px) {
+    .logo-icon {
+        width: var(--logo-size-mobile);
+        height: var(--logo-size-mobile);
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .logo-icon {
+        width: var(--logo-size-desktop);
+        height: var(--logo-size-desktop);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .title {
+        font-size: var(--fs-700);
+        font-weight: var(--fw-semi-bold);
+        line-height: var(--lh-s);
+        letter-spacing: var(--ls-s);
+    }
+}
+
+

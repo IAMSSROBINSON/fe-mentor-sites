@@ -1,3 +1,4 @@
+/* general */
 :root {
 
     /* TOKENS */
@@ -14,7 +15,7 @@
     --clr-blue-300: #B3D3F1;
     --clr-blue-100: #E1E7FE;
 
-    --clr-gradient: linear-gradient(to right, #D6FCFE, #D6E6FE);
+    --clr-gradient: linear-gradient(to left, #D6FCFE, #D6E6FE);
 
 
     /* spacing */
@@ -24,6 +25,7 @@
     --spacing-1200: 6rem; /* 96px */
     --spacing-1100: 5.5rem; /* 88px */
     --spacing-900: 4.5rem; /* 72px */
+    --spacing-800: 4rem; /* 64px */
     --spacing-700: 3.5rem; /* 56px */
     --spacing-600: 3rem; /* 48px */
     --spacing-500: 2.5rem; /* 40px */
@@ -58,6 +60,12 @@
     --lh-m: 1.2; /* 120% */
     --lh-s: 1.1; /* 110% */
     
+
+    /* COMPONENT TOKENS */
+
+    /* logo */
+    --logo-size-mobile: var(--spacing-500); /* 40px */
+    --logo-size-desktop: var(--spacing-800); /* 64px */
 }
 
 *,
@@ -161,4 +169,35 @@ body {
     font-size: var(--fs-100);
     font-weight: var(--fw-regular);
     line-height: var(--lh-l);
+}
+
+/* content */
+.logo-icon {
+   
+}
+
+.title {
+    color: var(--clr-blue-900);
+}
+
+.info {
+    color: var(--clr-grey-500);
+}
+
+/* header */
+.header-top {
+    background: var(--clr-gradient);
+    
+}
+
+.header-bottom {
+    background-color: orange;
+}
+
+
+/* form */
+form {
+    width: 100%;
+    min-height: 400px;
+    background-color: red;
 }
