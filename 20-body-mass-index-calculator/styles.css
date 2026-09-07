@@ -32,6 +32,25 @@
     --spacing-200: 1rem; /* 16px */
     --spacing-100: 0.5rem; /* 8px */
 
+    /* font */
+    --base-font: "Inter", sans-serif;
+    
+    /* font-size */
+    --fs-700: 4rem; /* 64px */
+    --fs-600: 3rem; /* 48px */
+    --fs-500: 2rem; /* 32px */
+    --fs-400: 1.5rem; /* 24px */
+    --fs-300: 1.25rem; /* 20px */
+    --fs-200: 1rem; /* 16px */
+    --fs-100: 0.875rem; /* 14px */
+
+    /* letter spacing */
+    --ls-s: -5%;
+
+    /* line height */
+    --lh-l: 1.5; /* 150% */
+    --lh-m: 1.2; /* 120% */
+    --lh-s: 1.1; /* 110% */
     
 }
 
@@ -71,6 +90,7 @@ img, svg, canvas, iframe, video, embed {
 
 body {
     min-height: 100vh;
+    font-family: var(--base-font);
 }
 
 body {
