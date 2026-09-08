@@ -238,3 +238,14 @@ form {
     border-radius: var(--br-m);
     box-shadow: var(--clr-shadow);
 }
+
+.form-title {
+
+}
+
+/* input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+} */
