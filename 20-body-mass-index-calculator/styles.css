@@ -16,7 +16,7 @@
     --clr-blue-100: #E1E7FE;
 
     --clr-gradient: linear-gradient(to right, #d6fcfe00, #D6E6FE);
-
+    --clr-shadow: 16px 32px 56px 0 rgba(143, 174, 207, 0.25);
 
     /* spacing */
     --spacing-1800: 9rem; /* 144px */
@@ -59,6 +59,9 @@
     --lh-l: 1.5; /* 150% */
     --lh-m: 1.2; /* 120% */
     --lh-s: 1.1; /* 110% */
+
+    /* border radius */
+    --br-m: 1rem; /* 16px */
     
 
     /* COMPONENT TOKENS */
@@ -91,6 +94,7 @@ html {
 p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
     text-wrap: pretty;
+    /* text-wrap: balance; */
 }
 
 input, button, select, textarea {
@@ -205,11 +209,13 @@ body {
 .title {
     color: var(--clr-blue-900);
     text-align: center;
-    margin: 0 auto;
+    margin: 0 auto 24px auto;
 }
 
 .info {
     color: var(--clr-grey-500);
+    text-align: center;
+    margin-bottom: 32px;
 }
 
 /* hero */
@@ -219,8 +225,7 @@ body {
 }
 
 .hero-bottom {
-    background-color: orange;
-    padding: 20px;
+    /* background-color: orange; */
 }
 
 
@@ -228,5 +233,8 @@ body {
 form {
     width: 100%;
     height: 665px;
-    background-color: red;
+    background-color: #f1f3f5;
+    background-color: var(--clr-white);
+    border-radius: var(--br-m);
+    box-shadow: var(--clr-shadow);
 }
