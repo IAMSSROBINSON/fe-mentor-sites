@@ -177,6 +177,29 @@ body {
     line-height: var(--lh-l);
 }
 
+.sr-only {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    padding:  0;
+    white-space: nowrap;
+}
+
+.skip-to-main-content:focus-visible {
+    width: unset;
+    height: unset;
+    padding: 16px 32px;
+    background-color: yellow;
+    cursor: pointer;
+    margin: unset;
+    clip: unset;
+}
+
 /* content */
 .hero-container {
     width: 100vw;
