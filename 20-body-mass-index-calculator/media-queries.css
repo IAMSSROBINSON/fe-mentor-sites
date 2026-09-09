@@ -1,0 +1,6 @@
+@media screen and (min-width: 1440px) {
+    .logo-icon {
+        width: var(--logo-size-desktop);
+        height: var(--logo-size-desktop);
+    }
+}

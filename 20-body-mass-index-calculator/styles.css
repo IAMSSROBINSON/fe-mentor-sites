@@ -177,3 +177,11 @@ body {
 }
 
 /* content */
+.logo-container {
+
+}
+
+.logo-icon {
+    width: var(--logo-size-mobile);
+    height: var(--logo-size-mobile);
+}
