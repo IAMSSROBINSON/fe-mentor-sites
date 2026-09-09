@@ -61,6 +61,7 @@
     --lh-s: 1.1; /* 110% */
 
     /* border radius */
+    --br-l: 2.1875rem; /* 35px */
     --br-m: 1rem; /* 16px */
     
 
@@ -177,6 +178,24 @@ body {
 }
 
 /* content */
+.hero-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.hero-container::before {
+    background: var(--clr-gradient);
+    content: "";
+    width: 100%;
+    height: 640px;
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    border-radius: 0 0 var(--br-l) var(--br-l);
+
+}
 .logo-container {
 
 }

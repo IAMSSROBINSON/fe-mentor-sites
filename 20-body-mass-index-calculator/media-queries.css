@@ -3,4 +3,11 @@
         width: var(--logo-size-desktop);
         height: var(--logo-size-desktop);
     }
+
+    .hero-container::before {
+        width: 69.58333333335%;
+        height: 737px;
+    }
 }
+
+
