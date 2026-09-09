@@ -68,7 +68,7 @@
     /* COMPONENT TOKENS */
 
     /* general */
-    --viewport-padding: 32px 24px 96px 24px;
+    --viewport-padding: 32px 24px 61px 24px;
 
     /* logo */
     --logo-size-mobile: var(--spacing-500); /* 40px */
@@ -182,6 +182,7 @@ body {
     width: 100vw;
     height: 100vh;
     position: relative;
+    padding: var(--viewport-padding);
 }
 
 .hero-container::before {
@@ -203,4 +204,5 @@ body {
 .logo-icon {
     width: var(--logo-size-mobile);
     height: var(--logo-size-mobile);
+    margin: 0 auto;
 }

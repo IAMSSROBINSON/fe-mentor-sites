@@ -1,7 +1,18 @@
+@media screen and (min-width: 768px) {
+    :root {
+        --viewport-padding: 32px 40px 19px 40px;
+    }
+}
+
 @media screen and (min-width: 1440px) {
+    :root {
+        --viewport-padding: 88px 140px 121px 140px;
+    }
+
     .logo-icon {
         width: var(--logo-size-desktop);
         height: var(--logo-size-desktop);
+        margin: unset;
     }
 
     .hero-container::before {
