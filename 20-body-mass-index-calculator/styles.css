@@ -218,5 +218,5 @@ body {
     color: var(--clr-grey-500);    
     text-align: center;
     max-inline-size: 32ch;
-    margin: 0 auto;
+    margin: 0 auto 32px auto;
 }

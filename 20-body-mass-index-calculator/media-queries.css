@@ -13,6 +13,8 @@
 
     .hero-description {
         max-inline-size: initial;
+        margin: 0 auto 40px auto;
+
     }
 }
 
