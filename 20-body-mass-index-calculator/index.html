@@ -34,6 +34,20 @@
                 <!-- form -->
                  <form id="form" class="form" method="#" action="#" novalidate>
 
+                    <h2>Enter your details below</h2>
+
+                    <fieldset class="form-units-container">
+                        <legend id="unit-description" class="sr-only">Select your unit of measurement, Metric or Imperial</legend>
+                        <div class="metric-radio-container">
+                            <input type="radio" id="metric-unit" name="unit" value="metric" checked aria-described-by="unit-description">
+                            <label for="metric-unit">Metric</label>
+                        </div>
+
+                        <div class="imperial-radio-container">
+                            <input type="radio" id="imperial-unit" name="unit" value="imperial" aria-described-by="unit-description">
+                            <label for="imperial-unit">Imperial</label>
+                        </div>
+                    </fieldset>
                  </form>
             </main>
         </div>

@@ -200,7 +200,7 @@ body {
     clip: unset;
 }
 
-/* content */
+/* hero */
 .hero-container {
     width: 100vw;
     height: 100vh;
@@ -243,3 +243,5 @@ body {
     max-inline-size: 32ch;
     margin: 0 auto 32px auto;
 }
+
+/* form */
