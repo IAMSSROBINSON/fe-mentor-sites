@@ -32,20 +32,38 @@
             </header>
             <main class="main" id="main">
                 <!-- form -->
-                 <form id="form" class="form" method="#" action="#" novalidate>
+                 <form id="form" class="form" method="#" action="#" novalidate aria-labelledby="form-title">
 
-                    <h2>Enter your details below</h2>
+                    <h2 id="form-title">Enter your details below</h2>
 
                     <fieldset class="form-units-container">
                         <legend id="unit-description" class="sr-only">Select your unit of measurement, Metric or Imperial</legend>
                         <div class="metric-radio-container">
-                            <input type="radio" id="metric-unit" name="unit" value="metric" checked aria-described-by="unit-description">
+                            <input type="radio" id="metric-unit" name="unit" value="metric" checked>
                             <label for="metric-unit">Metric</label>
                         </div>
 
                         <div class="imperial-radio-container">
-                            <input type="radio" id="imperial-unit" name="unit" value="imperial" aria-described-by="unit-description">
+                            <input type="radio" id="imperial-unit" name="unit" value="imperial">
                             <label for="imperial-unit">Imperial</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="metric-content-container">
+                        <legend>Enter your height in cm and your weight in kilograms</legend>
+                        <div class="metric-height-container">
+                            <label for="metric-height">Height</label>
+                            <div class="metric-height-content">
+                                <input type="number" id="metric-height" name="metric-height" placeholder="0">
+                                <span>cm</span>
+                            </div>
+                        </div>
+                        <div class="metric-weight-container">
+                            <label for="metric-weight">Weight</label>
+                            <div class="metric-weight-content">
+                                <input type="number" id="metric-weight" name="metric-weight" placeholder="0">
+                                <span>kg</span>
+                            </div>
                         </div>
                     </fieldset>
                  </form>

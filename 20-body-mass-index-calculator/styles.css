@@ -245,3 +245,11 @@ body {
 }
 
 /* form */
+.form {
+    background-color: yellow;
+    height: 100%;
+}
+
+#metric-height {
+    position: relative;
+}
