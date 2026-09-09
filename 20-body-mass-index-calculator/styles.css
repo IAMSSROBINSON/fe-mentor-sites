@@ -196,10 +196,10 @@ body {
     position: absolute;
     border-radius: 0 0 var(--br-l) var(--br-l);
     z-index: -1;
-
 }
-.logo-container {
 
+.logo-container {
+    margin-bottom: 32px;
 }
 
 .logo-icon {
@@ -211,7 +211,7 @@ body {
 .hero-title {
     color: var(--clr-grey-900);
     text-align: center;
-    margin: 0 auto; 
+    margin: 0 auto 24px auto; 
 }
 
 .hero-description {

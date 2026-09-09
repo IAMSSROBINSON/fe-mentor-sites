@@ -3,6 +3,10 @@
         --viewport-padding: 32px 40px 19px 40px;
     }
 
+    .logo-container {
+        margin-bottom: 40px;
+    }
+
     .hero-title {
         max-inline-size: 12ch;
     }
@@ -15,6 +19,10 @@
 @media screen and (min-width: 1440px) {
     :root {
         --viewport-padding: 88px 140px 121px 140px;
+    }
+
+    .logo-container {
+        margin-bottom: 24px;
     }
 
     .logo-icon {
@@ -34,7 +42,7 @@
         line-height: var(--lh-s);
         letter-spacing: var(--ls-s);
         text-align: left;
-        margin: unset;
+        margin: 0 0 32px 0;
     }
     
     .hero-description {
