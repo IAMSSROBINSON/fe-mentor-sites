@@ -49,6 +49,7 @@
                         </div>
                     </fieldset>
 
+                    <!-- metric fields -->
                     <fieldset class="metric-content-container">
                         <legend>Enter your height in cm and your weight in kilograms</legend>
                         <div class="metric-height-container">
@@ -63,6 +64,34 @@
                             <div class="metric-weight-content">
                                 <input type="number" id="metric-weight" name="metric-weight" placeholder="0">
                                 <span>kg</span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- imperial fields-->
+                    <fieldset class="imperial-content-container">
+                        <legend>Enter your height in feet and inches and your weight in stones and pounds</legend>
+
+                        <div class="imperial-height-container">
+                            <label id="imperial-height-label">Height</label>
+                            <div class="imperial-height-content">
+
+                                <input type="number" id="imperial-height-ft" name="imperial-height-ft" placeholder="0" aria-labelledby="imperial-height-label imperial-height-ft-unit">
+                                <span id="imperial-height-ft-unit">ft</span>
+
+                                <input type="number" id="imperial-height-in" name="imperial-height-in" placeholder="0" aria-labelledby="imperial-height-label imperial-height-in-unit">
+                                <span id="imperial-height-in-unit">in</span>
+                            </div>
+                        </div>
+                        <div class="imperial-weight-container">
+                            <label id="imperial-weight-label">Weight</label>
+                            <div class="imperial-weight-content">
+                                <input type="number" id="imperial-weight-st" name="imperial-weight-st" placeholder="0"
+                                aria-labelledby="imperial-weight-label imperial-weight-st-unit">
+                                <span id="imperial-weight-st-unit">st</span>
+
+                                <input type="number" id="imperial-weight-lbs" name="imperial-weight-lbs" placeholder="0" aria-labelledby="imperial-weight-label imperial-weight-lbs-unit">
+                                <span id="imperial-weight-lbs-unit">lbs</span>
                             </div>
                         </div>
                     </fieldset>
