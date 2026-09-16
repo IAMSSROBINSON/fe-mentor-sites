@@ -1,18 +1,17 @@
 // element cache
 const metricInput = document.getElementById("metric-unit");
 const imperialInput = document.getElementById("imperial-unit");
+const inputs = [metricInput, imperialInput];
 
 const metricContentContainer = document.querySelector(".metric-content-container");
 const imperialContentContainer = document.querySelector(".imperial-content-container");
 
-const inputs = [metricInput, imperialInput];
 
-document.addEventListener("DOMContentLoaded", showCheckedUnitInputs);
 
 // event listeners
-for(const input of inputs) {
-    console.log(input);
+document.addEventListener("DOMContentLoaded", showCheckedUnitInputs);
 
+for(const input of inputs) {
     input.addEventListener("change", handleInputChange);
 }
 
@@ -28,8 +27,6 @@ function hideUncheckedInputContainer (unit) {
 
     const hideContainer = `${unit}` === "metric" ? imperialContentContainer : metricContentContainer;
 
-    console.log("hide this container:", hideContainer);
-
     hideContainer.style.display = "none";
     showContainer.style.display = "block";
 }
@@ -41,15 +38,12 @@ function handleInputChange (e) {
 
 function handleCheckedAndUnchecked (input) {
     const currentCheckedInputIndex = inputs.indexOf(input);
-    console.log("currentCheckedInputIndex:", currentCheckedInputIndex);
 
     const uncheckedInputIndex = currentCheckedInputIndex === 0 ? 1 : 0;
+    inputs[currentCheckedInputIndex].checked = true;
     inputs[uncheckedInputIndex].checked = false;
 
     hideUncheckedInputContainer(input.value);
-
-    console.log("currentCheckedInputIsChecked:", inputs[currentCheckedInputIndex].checked);
-    console.log("otherInputIsChecked:", inputs[uncheckedInputIndex].checked);
 }
 
 function getCurrentlyCheckedInput () {
